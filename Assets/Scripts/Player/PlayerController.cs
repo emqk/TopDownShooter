@@ -1,11 +1,9 @@
 ﻿using UnityEngine;
 
 [RequireComponent(typeof(CharacterController))]
+[RequireComponent(typeof(Player))]
 public class PlayerController : MonoBehaviour
 {
-    [SerializeField] int testSpawnCount = 10;
-    [SerializeField] GameObject testSpawn;
-    [SerializeField] Weapon equipedWeapon;
     [SerializeField] Transform body;
     [SerializeField] float movementSpeed;
 
@@ -14,17 +12,14 @@ public class PlayerController : MonoBehaviour
     [SerializeField] Joystick rotationJoystick;
     
     CharacterController characterController;
+    Player controlledPlayer;
     Vector2 screenCenter = new Vector2(Screen.width / 2, Screen.height / 2);
 
 
     void Start()
     {
         characterController = GetComponent<CharacterController>();
-
-        for (int i = 0; i < testSpawnCount; i++)
-        {
-            Instantiate(testSpawn, transform.position + new Vector3(Random.Range(-20f, 20f), -1.4f, Random.Range(-20f, 20f)), transform.rotation );
-        }
+        controlledPlayer = GetComponent<Player>();
     }
 
     void Update()
@@ -44,9 +39,9 @@ public class PlayerController : MonoBehaviour
         RotateToScreenPoint(Input.mousePosition);
 
         //Shooting
-        if (Input.GetKey(KeyCode.Mouse0) && equipedWeapon)
+        if (Input.GetKey(KeyCode.Mouse0))
         {
-            equipedWeapon.UpdateMe();
+            controlledPlayer.WeaponShoot();
         }
     }
 
@@ -63,14 +58,10 @@ public class PlayerController : MonoBehaviour
         if (rotationJoystick.IsFingerOnMe())
         {
             Vector2 lookVec = rotationJoystick.GetResult();
-            Quaternion lookRot = Quaternion.LookRotation(new Vector3(lookVec.x, 0, lookVec.y));
-            body.rotation = lookRot;
+            RotateToNormalizedVector(lookVec);
 
             //Shooting
-            if (equipedWeapon)
-            {
-                equipedWeapon.UpdateMe();
-            }
+            controlledPlayer.WeaponShoot();
         }
     }
 
@@ -83,6 +74,12 @@ public class PlayerController : MonoBehaviour
     {
         Vector2 dirToCursor = (screenPoint - screenCenter).normalized;
         Quaternion lookRot = Quaternion.LookRotation(new Vector3(dirToCursor.x, 0, dirToCursor.y));
+        body.rotation = lookRot;
+    }
+
+    void RotateToNormalizedVector(Vector2 vec)
+    {
+        Quaternion lookRot = Quaternion.LookRotation(new Vector3(vec.x, 0, vec.y));
         body.rotation = lookRot;
     }
 }

@@ -18,6 +18,7 @@ public class Weapon : MonoBehaviour
         {
             Instantiate(weaponData.projectile, shootSource.transform.position, shootSource.rotation);
             timeToShoot = weaponData.shootRate;
+            return;
         }
 
         timeToShoot -= Time.deltaTime;

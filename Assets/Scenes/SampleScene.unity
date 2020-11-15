@@ -122,12 +122,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &30251817 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: e41eaba6627b22a45b2c196030856064,
-    type: 3}
-  m_PrefabInstance: {fileID: 382238487}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &51622315
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2335,6 +2329,7 @@ GameObject:
   - component: {fileID: 2079955182}
   - component: {fileID: 2079955184}
   - component: {fileID: 2079955183}
+  - component: {fileID: 2079955185}
   m_Layer: 8
   m_Name: Player
   m_TagString: Untagged
@@ -2369,9 +2364,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b202f08c0595ec741b0bb73dfd3999f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  testSpawnCount: 1000
-  testSpawn: {fileID: 30251817}
-  equipedWeapon: {fileID: 1680697151}
   body: {fileID: 2071931788}
   movementSpeed: 10
   movementJoystick: {fileID: 2097252353}
@@ -2394,6 +2386,19 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &2079955185
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2079955181}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 384ecb156804ff94fa2940d3ff1d9e94, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  equipedWeapon: {fileID: 1680697151}
 --- !u!224 &2097252350 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 2772571911416982311, guid: 0d3ee2111d43e564a8c81f36ee8206e6,
