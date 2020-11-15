@@ -12,7 +12,7 @@ public class Projectile : MonoBehaviour
         transform.position += transform.forward * 30 * Time.deltaTime;       
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
         Destroy(gameObject);
     }

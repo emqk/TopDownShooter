@@ -3,13 +3,13 @@
 [RequireComponent(typeof(CharacterController))]
 public class PlayerController : MonoBehaviour
 {
-    [SerializeField] Projectile projectile;
-    [SerializeField] Transform shootSource;
+    [SerializeField] Weapon equipedWeapon;
     [SerializeField] Transform body;
     [SerializeField] float movementSpeed;
     
     CharacterController characterController;
     Vector2 screenCenter = new Vector2(Screen.width / 2, Screen.height / 2);
+
 
     void Start()
     {
@@ -19,14 +19,9 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         ControlKeyboardMouseInput();
-        ControlShooting();
-    }
-
-    void ControlShooting()
-    {
-        if (Input.GetKeyDown(KeyCode.Mouse0))
+        if (equipedWeapon)
         {
-            Instantiate(projectile, shootSource.transform.position, shootSource.transform.rotation);
+            equipedWeapon.UpdateMe();
         }
     }
 
