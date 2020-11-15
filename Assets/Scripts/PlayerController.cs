@@ -3,6 +3,8 @@
 [RequireComponent(typeof(CharacterController))]
 public class PlayerController : MonoBehaviour
 {
+    [SerializeField] int testSpawnCount = 10;
+    [SerializeField] GameObject testSpawn;
     [SerializeField] Weapon equipedWeapon;
     [SerializeField] Transform body;
     [SerializeField] float movementSpeed;
@@ -18,6 +20,11 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         characterController = GetComponent<CharacterController>();
+
+        for (int i = 0; i < testSpawnCount; i++)
+        {
+            Instantiate(testSpawn, transform.position + new Vector3(Random.Range(-20f, 20f), -1.4f, Random.Range(-20f, 20f)), transform.rotation );
+        }
     }
 
     void Update()
@@ -29,8 +36,8 @@ public class PlayerController : MonoBehaviour
     void ControlKeyboardMouseInput()
     {
         //Movement
-        float hor = Input.GetAxis("Horizontal");
-        float ver = Input.GetAxis("Vertical");
+        float hor = Input.GetAxisRaw("Horizontal");
+        float ver = Input.GetAxisRaw("Vertical");
         MoveBy(new Vector3(hor, 0, ver).normalized);
 
         //Look
