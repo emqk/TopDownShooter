@@ -3,6 +3,8 @@
 [RequireComponent(typeof(CharacterController))]
 public class PlayerController : MonoBehaviour
 {
+    [SerializeField] Projectile projectile;
+    [SerializeField] Transform shootSource;
     [SerializeField] Transform body;
     [SerializeField] float movementSpeed;
     
@@ -17,6 +19,15 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         ControlKeyboardMouseInput();
+        ControlShooting();
+    }
+
+    void ControlShooting()
+    {
+        if (Input.GetKeyDown(KeyCode.Mouse0))
+        {
+            Instantiate(projectile, shootSource.transform.position, shootSource.transform.rotation);
+        }
     }
 
     void ControlKeyboardMouseInput()
