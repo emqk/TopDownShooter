@@ -6,6 +6,9 @@ public class PlayerController : MonoBehaviour
     [SerializeField] Weapon equipedWeapon;
     [SerializeField] Transform body;
     [SerializeField] float movementSpeed;
+
+    [Header("Touch input")]
+    [SerializeField] Joystick movementJoystick;
     
     CharacterController characterController;
     Vector2 screenCenter = new Vector2(Screen.width / 2, Screen.height / 2);
@@ -18,6 +21,7 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
+        ControlTouchInput();
         ControlKeyboardMouseInput();
         if (equipedWeapon)
         {
@@ -34,6 +38,12 @@ public class PlayerController : MonoBehaviour
 
         //Look
         RotateToScreenPoint(Input.mousePosition);
+    }
+
+    void ControlTouchInput()
+    {
+        Vector2 moveVec = movementJoystick.GetResult();
+        MoveBy(new Vector3(moveVec.x, 0, moveVec.y));
     }
 
     void MoveBy(Vector3 moveVecNorm)
