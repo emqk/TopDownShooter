@@ -29,12 +29,18 @@ public class PlayerController : MonoBehaviour
     void ControlKeyboardMouseInput()
     {
         //Movement
-        float hor = Input.GetAxisRaw("Horizontal");
-        float ver = Input.GetAxisRaw("Vertical");
+        float hor = Input.GetAxis("Horizontal");
+        float ver = Input.GetAxis("Vertical");
         MoveBy(new Vector3(hor, 0, ver).normalized);
 
         //Look
         RotateToScreenPoint(Input.mousePosition);
+
+        //Shooting
+        if (Input.GetKey(KeyCode.Mouse0) && equipedWeapon)
+        {
+            equipedWeapon.UpdateMe();
+        }
     }
 
     void ControlTouchInput()

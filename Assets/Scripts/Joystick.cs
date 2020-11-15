@@ -2,7 +2,7 @@
 
 public class Joystick : MonoBehaviour
 {
-    [SerializeField] RectTransform background;
+    [SerializeField] RectTransform root;
     [SerializeField] RectTransform handle;
     float joystickRadius = 0;
 
@@ -20,7 +20,7 @@ public class Joystick : MonoBehaviour
 
     void Start()
     {
-        joystickRadius = background.sizeDelta.x / 2.0f;
+        joystickRadius = root.sizeDelta.x / 2.0f;
         ResetHandle();
     }
 
@@ -56,7 +56,7 @@ public class Joystick : MonoBehaviour
 
     bool IsInRange(Vector2 position)
     {
-        float distTohandle = Vector2.Distance(background.position, position);
+        float distTohandle = Vector2.Distance(root.position, position);
         return distTohandle <= joystickRadius;
     }
 
