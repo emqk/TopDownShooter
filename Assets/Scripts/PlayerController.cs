@@ -9,6 +9,7 @@ public class PlayerController : MonoBehaviour
 
     [Header("Touch input")]
     [SerializeField] Joystick movementJoystick;
+    [SerializeField] Joystick rotationJoystick;
     
     CharacterController characterController;
     Vector2 screenCenter = new Vector2(Screen.width / 2, Screen.height / 2);
@@ -22,11 +23,7 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         ControlTouchInput();
-        ControlKeyboardMouseInput();
-        if (equipedWeapon)
-        {
-            equipedWeapon.UpdateMe();
-        }
+        //ControlKeyboardMouseInput();
     }
 
     void ControlKeyboardMouseInput()
@@ -42,8 +39,26 @@ public class PlayerController : MonoBehaviour
 
     void ControlTouchInput()
     {
-        Vector2 moveVec = movementJoystick.GetResult();
-        MoveBy(new Vector3(moveVec.x, 0, moveVec.y));
+        //Movement
+        if (movementJoystick.IsFingerOnMe())
+        {
+            Vector2 moveVec = movementJoystick.GetResult();
+            MoveBy(new Vector3(moveVec.x, 0, moveVec.y));
+        }
+
+        //Look
+        if (rotationJoystick.IsFingerOnMe())
+        {
+            Vector2 lookVec = rotationJoystick.GetResult();
+            Quaternion lookRot = Quaternion.LookRotation(new Vector3(lookVec.x, 0, lookVec.y));
+            body.rotation = lookRot;
+
+            //Shooting
+            if (equipedWeapon)
+            {
+                equipedWeapon.UpdateMe();
+            }
+        }
     }
 
     void MoveBy(Vector3 moveVecNorm)

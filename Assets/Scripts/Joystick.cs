@@ -13,6 +13,11 @@ public class Joystick : MonoBehaviour
         return new Vector2(handle.localPosition.x / joystickRadius, handle.localPosition.y / joystickRadius);
     }
 
+    public bool IsFingerOnMe()
+    {
+        return fingerOnMe >= 0;
+    }
+
     void Start()
     {
         joystickRadius = background.sizeDelta.x / 2.0f;
@@ -21,22 +26,26 @@ public class Joystick : MonoBehaviour
 
     void Update()
     {
-        if (Input.touchCount > 0)
+        for (int i = 0; i < Input.touchCount; i++)
         {
-            Touch touch = Input.GetTouch(0);
-            if (touch.phase == TouchPhase.Canceled || touch.phase == TouchPhase.Ended)
+            Touch touch = Input.GetTouch(i);
+
+            //Reset handle if touch ended
+            if (touch.phase == TouchPhase.Canceled || touch.phase == TouchPhase.Ended && fingerOnMe == touch.fingerId)
             {
                 fingerOnMe = -1;
                 ResetHandle();
                 return;
             }
 
-            if (fingerOnMe < 0 && touch.phase == TouchPhase.Began && IsInRange(touch.position))
+            //Detect joystick touch start
+            if (fingerOnMe < i && touch.phase == TouchPhase.Began && IsInRange(touch.position))
             {
                 fingerOnMe = touch.fingerId;
             }
-            
-            if (fingerOnMe >= 0)
+
+            //Update handle position
+            if (fingerOnMe >= i)
             {
                 handle.position = touch.position;
             }
@@ -50,6 +59,7 @@ public class Joystick : MonoBehaviour
         float distTohandle = Vector2.Distance(background.position, position);
         return distTohandle <= joystickRadius;
     }
+
 
     void ClampHandle()
     {

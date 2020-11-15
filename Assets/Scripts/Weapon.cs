@@ -14,7 +14,7 @@ public class Weapon : MonoBehaviour
 
     public void UpdateMe()
     {
-        if (Input.GetKey(KeyCode.Mouse0) && timeToShoot <= 0)
+        if (timeToShoot <= 0)
         {
             Instantiate(weaponData.projectile, shootSource.transform.position, shootSource.rotation);
             timeToShoot = weaponData.shootRate;
