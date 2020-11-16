@@ -2,8 +2,14 @@
 
 public class Projectile : MonoBehaviour
 {
+    ProjectileData projectileData;
     Vector3 lastFramePos = new Vector3();
     RaycastHit hit = new RaycastHit();
+
+    public void Init(ProjectileData data)
+    {
+        projectileData = data;
+    }
 
     private void Start()
     {
@@ -13,7 +19,7 @@ public class Projectile : MonoBehaviour
 
     void Update()
     {
-        transform.position += transform.forward * 40 * Time.deltaTime;
+        transform.position += transform.forward * projectileData.moveSpeed * Time.deltaTime;
         CheckCollision();
         lastFramePos = transform.position;
     }
@@ -25,7 +31,8 @@ public class Projectile : MonoBehaviour
             IDamageable damageable = hit.collider.GetComponent<IDamageable>();
             if (damageable != null)
             {
-                damageable.TakeDamage(24);
+                int damageToGive = Random.Range(projectileData.damageRange.x, projectileData.damageRange.y);
+                damageable.TakeDamage(damageToGive);
             }
 
             ParticleManager.instance.SpawnParticle(hit.point, Quaternion.LookRotation(hit.normal));

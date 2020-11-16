@@ -3,7 +3,13 @@
 [CreateAssetMenu(fileName = "NewWeaponData", menuName = "Weapons/Create New Weapon")]
 public class WeaponData : ScriptableObject
 {
+    [Header("Projectile")]
     public Projectile projectile;
-    public AudioClip shootSound;
+    public ProjectileData projectileData;
+
+    [Header("Stats")]
     public float shootRate;
+
+    [Header("AudioVisuals")]
+    public AudioClip shootSound;
 }

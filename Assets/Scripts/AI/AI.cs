@@ -11,8 +11,9 @@ public class AI : MonoBehaviour, IDamageable
 
     public void TakeDamage(int damageAmount)
     {
+        Debug.Log("Damage taken: " + damageAmount);
         health.ChangeByAmount(-damageAmount);
-        if (!health.IsGreaterThanZero())
+        if (!health.IsGreaterThanMinimum())
         {
             Destroy(gameObject);
         }

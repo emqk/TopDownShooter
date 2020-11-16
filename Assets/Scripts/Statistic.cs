@@ -30,9 +30,9 @@ public class Statistic
         return minAmount;
     }
 
-    public bool IsGreaterThanZero()
+    public bool IsGreaterThanMinimum()
     {
-        return GetAmount() > 0;
+        return GetAmount() > minAmount;
     }
 
     public void ChangeByAmount(int amount) 
