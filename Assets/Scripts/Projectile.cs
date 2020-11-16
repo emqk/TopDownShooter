@@ -22,6 +22,12 @@ public class Projectile : MonoBehaviour
     {
         if (Physics.Linecast(lastFramePos, transform.position, out hit))
         {
+            IDamageable damageable = hit.collider.GetComponent<IDamageable>();
+            if (damageable != null)
+            {
+                damageable.TakeDamage(24);
+            }
+
             ParticleManager.instance.SpawnParticle(hit.point, Quaternion.LookRotation(hit.normal));
             Destroy(gameObject);
         }
