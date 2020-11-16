@@ -11,7 +11,7 @@ public class Weapon : MonoBehaviour
 
     void Start()
     {
-        timeToShoot = weaponData.shootRate;
+        timeToShoot = weaponData.ShootRate;
         audioSource = GetComponent<AudioSource>();
     }
 
@@ -19,11 +19,11 @@ public class Weapon : MonoBehaviour
     {
         if (timeToShoot <= 0)
         {
-            Projectile projectileInstance = Instantiate(weaponData.projectile, shootSource.transform.position, shootSource.rotation);
-            projectileInstance.Init(weaponData.projectileData);
+            Projectile projectileInstance = Instantiate(weaponData.Projectile, shootSource.transform.position, shootSource.rotation);
+            projectileInstance.Init(weaponData.ProjectileData);
             
-            timeToShoot = weaponData.shootRate;
-            audioSource.PlayOneShot(weaponData.shootSound);
+            timeToShoot = weaponData.ShootRate;
+            audioSource.PlayOneShot(weaponData.ShootSound);
             return;
         }
 

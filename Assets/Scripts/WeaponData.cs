@@ -4,12 +4,17 @@
 public class WeaponData : ScriptableObject
 {
     [Header("Projectile")]
-    public Projectile projectile;
-    public ProjectileData projectileData;
+    [SerializeField] Projectile projectile;
+    [SerializeField] ProjectileData projectileData;
+    public Projectile Projectile { get => projectile; }
+    public ProjectileData ProjectileData { get => projectileData; }
 
     [Header("Stats")]
-    public float shootRate;
+    [SerializeField] float shootRate;
+    public float ShootRate { get => shootRate; }
 
     [Header("AudioVisuals")]
-    public AudioClip shootSound;
+    [SerializeField] AudioClip shootSound;
+    public AudioClip ShootSound { get => shootSound; }
+
 }

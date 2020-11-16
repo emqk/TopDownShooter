@@ -19,7 +19,7 @@ public class Projectile : MonoBehaviour
 
     void Update()
     {
-        transform.position += transform.forward * projectileData.moveSpeed * Time.deltaTime;
+        transform.position += transform.forward * projectileData.MoveSpeed * Time.deltaTime;
         CheckCollision();
         lastFramePos = transform.position;
     }
@@ -31,7 +31,7 @@ public class Projectile : MonoBehaviour
             IDamageable damageable = hit.collider.GetComponent<IDamageable>();
             if (damageable != null)
             {
-                int damageToGive = Random.Range(projectileData.damageRange.x, projectileData.damageRange.y);
+                int damageToGive = Random.Range(projectileData.DamageRange.x, projectileData.DamageRange.y);
                 damageable.TakeDamage(damageToGive);
             }
 
