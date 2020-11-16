@@ -10,7 +10,7 @@ public class NotificationManager : MonoBehaviour
     List<TMP_Text> damageInfoInstances = new List<TMP_Text>();
 
     float textMoveUpSpeed = 1;
-    float textAlphaChangeSpeed = 1;
+    float textAlphaChangeSpeed = 1.5f;
 
     public static NotificationManager instance;
 
@@ -36,10 +36,11 @@ public class NotificationManager : MonoBehaviour
         }
     }
 
-    public void SpawnDamageInfo(Vector3 location)
+    public void SpawnDamageInfo(Vector3 location, int damage)
     {
         TMP_Text damageInfoInstance = Instantiate(damageTextPrefab);
         damageInfoInstance.transform.position = location;
+        damageInfoInstance.text = damage.ToString("f0");
         damageInfoInstances.Add(damageInfoInstance);
 
         StartCoroutine(WaitAndDestroy(damageInfoInstance, 5));
