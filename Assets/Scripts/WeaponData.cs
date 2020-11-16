@@ -5,4 +5,5 @@ public class WeaponData : ScriptableObject
 {
     public Projectile projectile;
     public float shootRate;
+    public AudioClip shootSound;
 }
