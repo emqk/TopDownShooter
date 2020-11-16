@@ -4,8 +4,8 @@ using UnityEngine.AI;
 [RequireComponent(typeof(NavMeshAgent))]
 public class AI : MonoBehaviour, IDamageable
 {
-    [SerializeField] Transform target;
     [SerializeField] Statistic health = new Statistic();
+    Transform target;
 
     NavMeshAgent agent;
 
@@ -20,6 +20,11 @@ public class AI : MonoBehaviour, IDamageable
         }
     }
 
+
+    public void SetTarget(Transform targetTrans)
+    {
+        target = targetTrans;
+    }
 
     void Start()
     {
