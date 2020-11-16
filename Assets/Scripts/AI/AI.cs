@@ -13,6 +13,7 @@ public class AI : MonoBehaviour, IDamageable
     {
         Debug.Log("Damage taken: " + damageAmount);
         health.ChangeByAmount(-damageAmount);
+        NotificationManager.instance.SpawnDamageInfo(transform.position + new Vector3(0, 2, 0));
         if (!health.IsGreaterThanMinimum())
         {
             Destroy(gameObject);

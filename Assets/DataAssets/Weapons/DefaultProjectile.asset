@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ebc0660225d7e4429cd581d8e5f65de, type: 3}
   m_Name: DefaultProjectile
   m_EditorClassIdentifier: 
-  damageRange: {x: 1, y: 50}
+  damageRange: {x: 1, y: 15}
   moveSpeed: 30
