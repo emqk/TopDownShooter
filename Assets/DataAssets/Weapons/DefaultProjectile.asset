@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: DefaultProjectile
   m_EditorClassIdentifier: 
   damageRange: {x: 1, y: 100}
-  moveSpeed: 50
+  moveSpeed: 40
