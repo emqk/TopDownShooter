@@ -21,6 +21,12 @@ public class Statistic
     {
         return currentAmount;
     }
+
+    public float GetAmountNormalized()
+    {
+        return (float)currentAmount / (float)maxAmount;
+    }
+
     public int GetMaxAmount()
     {
         return maxAmount;
