@@ -11,10 +11,11 @@ public class WeaponData : ScriptableObject
 
     [Header("Stats")]
     [SerializeField] float shootRate;
+    [SerializeField] float heatPerShot;
     public float ShootRate { get => shootRate; }
+    public float HeatPerShot { get => heatPerShot; }
 
     [Header("AudioVisuals")]
     [SerializeField] AudioClip shootSound;
     public AudioClip ShootSound { get => shootSound; }
-
 }

@@ -19,13 +19,18 @@ public class Player : MonoBehaviour, IDamageable
     {
         Vector3 pos = playerCamera.WorldToScreenPoint(transform.position);
         healthFillImage.transform.parent.position = new Vector3(pos.x, pos.y + hpImageYPercentOffset * Screen.height, pos.z);
+
+        if (equipedWeapon)
+        {
+            equipedWeapon.UpdateMe();
+        }
     }
 
     public void WeaponShoot()
     {
         if (equipedWeapon)
         {
-            equipedWeapon.UpdateMe();
+            equipedWeapon.Shoot();
         }
     }
 }
