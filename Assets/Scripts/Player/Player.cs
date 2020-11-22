@@ -9,6 +9,11 @@ public class Player : MonoBehaviour, IDamageable
     [SerializeField] Image healthFillImage;
     Statistic health = new Statistic();
 
+    public void AddHealth(int amount)
+    {
+        health.ChangeByAmount(amount);
+    }
+
     public void TakeDamage(int damageAmount)
     {
         health.ChangeByAmount(-damageAmount);
