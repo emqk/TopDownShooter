@@ -7,17 +7,28 @@ public class Player : MonoBehaviour, IDamageable
     [SerializeField] Camera playerCamera;
     [SerializeField] float hpImageYPercentOffset;
     [SerializeField] Image healthFillImage;
-    Statistic health = new Statistic();
+    Statistic health = new Statistic(0, 100, 100);
 
     public void AddHealth(int amount)
     {
         health.ChangeByAmount(amount);
+        RefreshHPFillUI();
     }
 
     public void TakeDamage(int damageAmount)
     {
         health.ChangeByAmount(-damageAmount);
+        RefreshHPFillUI();
+    }
+
+    void RefreshHPFillUI()
+    {
         healthFillImage.fillAmount = health.GetAmountNormalized();
+    }
+
+    void Start()
+    {
+        RefreshHPFillUI();
     }
 
     private void LateUpdate()
