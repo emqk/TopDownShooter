@@ -18,7 +18,6 @@ public class Spawner : MonoBehaviour
         for (int i = 0; i < amount; i++)
         {
             AI aiInstance = Instantiate(aiToSpawn);
-            aiInstance.SetTarget(targetToFollow);
             aiInstance.transform.position = new Vector3(
                   transform.position.x + Random.Range(-1.0f, 1.0f) * spawnRadius
                 , transform.position.y

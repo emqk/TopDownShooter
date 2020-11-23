@@ -6,7 +6,8 @@ public class AI : MonoBehaviour, IDamageable
 {
     public int Damage { get => 10; }
     [SerializeField] Statistic health = new Statistic();
-    Transform target;
+
+    [SerializeField] AudioClip deathSound;
 
     NavMeshAgent agent;
     StateMachine stateMachine;
@@ -25,14 +26,10 @@ public class AI : MonoBehaviour, IDamageable
 
     public void Die()
     {
+        AudioSource.PlayClipAtPoint(deathSound, transform.position);
         gameObject.SetActive(false);
     }
 
-
-    public void SetTarget(Transform targetTrans)
-    {
-        target = targetTrans;
-    }
 
     void Start()
     {
