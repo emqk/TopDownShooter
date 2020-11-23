@@ -1,5 +1,4 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Spawner : MonoBehaviour
@@ -11,7 +10,7 @@ public class Spawner : MonoBehaviour
 
     void Start()
     {
-        StartCoroutine(SpawnAndWait(amountToSpawn, 0.2f));
+        StartCoroutine(SpawnAndWait(amountToSpawn, 0.1f));
     }
 
     IEnumerator SpawnAndWait(int amount, float wait)

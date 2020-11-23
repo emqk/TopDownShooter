@@ -13,12 +13,22 @@ public class Player : MonoBehaviour, IDamageable
     {
         health.ChangeByAmount(amount);
         RefreshHPFillUI();
+
+        if (!health.IsGreaterThanMinimum())
+        {
+            Die();
+        }
     }
 
     public void TakeDamage(int damageAmount)
     {
         health.ChangeByAmount(-damageAmount);
         RefreshHPFillUI();
+    }
+
+    public void Die()
+    {
+        throw new System.NotImplementedException();
     }
 
     void RefreshHPFillUI()
