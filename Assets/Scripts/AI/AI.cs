@@ -31,12 +31,14 @@ public class AI : MonoBehaviour, IDamageable
     {
         agent = GetComponent<NavMeshAgent>();
         ChaseState chaseState = new ChaseState(agent, GameObject.FindObjectOfType<Player>());
-        stateMachine = new StateMachine(this, chaseState);
+        AttackState attackState = new AttackState(agent, GameObject.FindObjectOfType<Player>());
+        stateMachine = new StateMachine(this);
+        stateMachine.AddTransition(chaseState, attackState, () => true);
+        stateMachine.SetState(chaseState);
     }
 
     void Update()
     {
         stateMachine.Update();
-        //agent.SetDestination(target.position);
     }
 }
