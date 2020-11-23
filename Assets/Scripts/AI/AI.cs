@@ -8,6 +8,7 @@ public class AI : MonoBehaviour, IDamageable
     Transform target;
 
     NavMeshAgent agent;
+    StateMachine stateMachine;
 
     public void TakeDamage(int damageAmount)
     {
@@ -29,10 +30,13 @@ public class AI : MonoBehaviour, IDamageable
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
+        ChaseState chaseState = new ChaseState(agent, GameObject.FindObjectOfType<Player>());
+        stateMachine = new StateMachine(this, chaseState);
     }
 
     void Update()
     {
-        agent.SetDestination(target.position);
+        stateMachine.Update();
+        //agent.SetDestination(target.position);
     }
 }
