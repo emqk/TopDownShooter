@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-[CreateAssetMenu(fileName = "NewMapData", menuName = "Maps/NewMapData")]
+[CreateAssetMenu(fileName = "NewPurchaseData", menuName = "Purchase/NewPurchaseData")]
 public class PurchaseData : ScriptableObject
 {
     [SerializeField] string title;
