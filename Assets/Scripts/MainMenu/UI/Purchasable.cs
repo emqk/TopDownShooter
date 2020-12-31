@@ -19,11 +19,4 @@ public abstract class Purchasable : MonoBehaviour
     public abstract void Select();
 
     public abstract void Refresh();
-
-
-    private void OnEnable()
-    {
-        Refresh();
-    }
-
 }

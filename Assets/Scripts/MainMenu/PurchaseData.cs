@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 
 [CreateAssetMenu(fileName = "NewMapData", menuName = "Maps/NewMapData")]
-public class MapData : ScriptableObject
+public class PurchaseData : ScriptableObject
 {
     [SerializeField] string title;
     [SerializeField] Sprite thumbnail;

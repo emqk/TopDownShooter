@@ -5,7 +5,7 @@ using TMPro;
 
 public class MapPurchase : Purchasable
 {
-    [SerializeField] MapData mapData;
+    [SerializeField] PurchaseData mapData;
 
     public override void Buy()
     {
@@ -24,5 +24,10 @@ public class MapPurchase : Purchasable
         description.text = mapData.Description;
 
         selectText.text = $"Buy ({mapData.Cost})";
+    }
+
+    public void SetMapData(PurchaseData data)
+    {
+        mapData = data;
     }
 }
