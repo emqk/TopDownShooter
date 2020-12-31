@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using TMPro;
 
 public enum PanelType
@@ -20,6 +21,8 @@ public class MainMenuUIManager : MonoBehaviour
     [SerializeField] List<PurchaseData> weaponsSecond = new List<PurchaseData>();
 
     [SerializeField] GameObject visualizationObj;
+    [SerializeField] Image weaponFirstThumbnail;
+    [SerializeField] Image weaponSecondThumbnail;
 
 
     PanelType currentPanelType = PanelType.None;
@@ -39,6 +42,18 @@ public class MainMenuUIManager : MonoBehaviour
     void RefreshGold()
     {
         goldText.text = MoneyManager.instance.GetGoldAmount().ToString();
+    }
+
+    public void RefreshWeaponIcon(PurchaseData data, bool isItFirst)
+    {
+        if (isItFirst)
+        {
+            weaponFirstThumbnail.sprite = data.Thumbnail;
+        }
+        else
+        {
+            weaponSecondThumbnail.sprite = data.Thumbnail;
+        }
     }
 
 
@@ -75,7 +90,7 @@ public class MainMenuUIManager : MonoBehaviour
         foreach (PurchaseData data in list)
         {
             MapPurchase instance = Instantiate(purchasePrefab, panelParent);
-            instance.SetMapData(data);
+            instance.SetData(data, currentPanelType);
             instance.Refresh();
         }
     }

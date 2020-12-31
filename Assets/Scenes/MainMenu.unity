@@ -4584,6 +4584,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 6c7a2cb5b65dde74c8ef2c31c83393fe, type: 2}
   weaponsSecond: []
   visualizationObj: {fileID: 919132147521189573}
+  weaponFirstThumbnail: {fileID: 748703685}
+  weaponSecondThumbnail: {fileID: 2045741285}
 --- !u!82 &1944854524
 AudioSource:
   m_ObjectHideFlags: 0

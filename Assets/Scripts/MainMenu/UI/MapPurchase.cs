@@ -1,11 +1,7 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using TMPro;
-
-public class MapPurchase : Purchasable
+﻿public class MapPurchase : Purchasable
 {
-    [SerializeField] PurchaseData mapData;
+    PurchaseData data;
+    PanelType type;
 
     public override void Buy()
     {
@@ -14,20 +10,38 @@ public class MapPurchase : Purchasable
 
     public override void Select()
     {
-        MainMenuUIManager.instance.RefreshVisualizationFromData(mapData);
+        if (data.Mesh && data.Material)
+        {
+            MainMenuUIManager.instance.RefreshVisualizationFromData(data);
+        }
+
+        if (type == PanelType.WeaponFirst)
+        {
+            MainMenuUIManager.instance.RefreshWeaponIcon(data, true);
+        }
+        else if (type == PanelType.WeaponSecond)
+        {
+            MainMenuUIManager.instance.RefreshWeaponIcon(data, false);
+        }
     }
 
     public override void Refresh()
     {
-        title.text = mapData.Title;
-        thumbnail.sprite = mapData.Thumbnail;
-        description.text = mapData.Description;
+        title.text = data.Title;
+        thumbnail.sprite = data.Thumbnail;
+        description.text = data.Description;
 
-        selectText.text = $"Buy ({mapData.Cost})";
+        selectText.text = $"Buy ({data.Cost})";
     }
 
-    public void SetMapData(PurchaseData data)
+    public void SetData(PurchaseData data, PanelType panelType)
     {
-        mapData = data;
+        this.data = data;
+        type = panelType;
+    }
+
+    PanelType GetPanelType()
+    {
+        return type;
     }
 }
