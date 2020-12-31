@@ -14,7 +14,7 @@ public class MapPurchase : Purchasable
 
     public override void Select()
     {
-        throw new System.NotImplementedException();
+        MainMenuUIManager.instance.RefreshVisualizationFromData(mapData);
     }
 
     public override void Refresh()

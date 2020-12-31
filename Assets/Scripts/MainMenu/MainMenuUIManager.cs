@@ -19,6 +19,11 @@ public class MainMenuUIManager : MonoBehaviour
     [SerializeField] List<PurchaseData> weaponsFirst = new List<PurchaseData>();
     [SerializeField] List<PurchaseData> weaponsSecond = new List<PurchaseData>();
 
+    [SerializeField] GameObject visualizationObj;
+
+
+    PanelType currentPanelType = PanelType.None;
+
     public static MainMenuUIManager instance;
 
     private void Awake()
@@ -41,8 +46,8 @@ public class MainMenuUIManager : MonoBehaviour
     {
         ClearPanel();
 
-        PanelType panel = (PanelType)panelType;
-        switch (panel)
+        currentPanelType = (PanelType)panelType;
+        switch (currentPanelType)
         {
             case PanelType.None:
                 break;
@@ -57,6 +62,12 @@ public class MainMenuUIManager : MonoBehaviour
             default:
                 break;
         }
+    }
+
+    public void RefreshVisualizationFromData(PurchaseData data)
+    {
+        visualizationObj.GetComponent<MeshFilter>().sharedMesh = data.Mesh;
+        visualizationObj.GetComponent<MeshRenderer>().sharedMaterial = data.Material;
     }
 
     void SpawnFromList(List<PurchaseData> list)
