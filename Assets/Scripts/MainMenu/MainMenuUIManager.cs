@@ -19,6 +19,6 @@ public class MainMenuUIManager : MonoBehaviour
 
     void RefreshGold()
     {
-        goldText.text = "Gold: " + MoneyManager.instance.GetGoldAmount().ToString();
+        goldText.text = MoneyManager.instance.GetGoldAmount().ToString();
     }
 }
