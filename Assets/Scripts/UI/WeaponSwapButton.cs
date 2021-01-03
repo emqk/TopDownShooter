@@ -5,17 +5,18 @@ using UnityEngine.UI;
 
 public class WeaponSwapButton : MonoBehaviour
 {
-    [SerializeField] Weapon playerWeapon;
+    [SerializeField] Player player;
     [SerializeField] Image buttonImage;
 
     public void SwapPlayerWeapon()
     {
-        playerWeapon.SwapWeapon();
+        player.SwapWeapon();
         RefreshImage();
     }
 
     public void RefreshImage()
     {
-        buttonImage.sprite = playerWeapon.GetEquipedWeaponData().Thumbnail;
+        Debug.Log("REFRESH");
+        buttonImage.sprite = player.GetEquipedWeaponData().Thumbnail;
     }
 }

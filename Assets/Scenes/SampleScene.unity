@@ -3263,7 +3263,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c1772d81ca786645b26e6ee22630e16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerWeapon: {fileID: 1680697151}
+  player: {fileID: 2079955185}
   buttonImage: {fileID: 1385364884}
 --- !u!1 &1417432851
 GameObject:
@@ -3847,7 +3847,7 @@ GameObject:
   - component: {fileID: 1680697151}
   - component: {fileID: 1680697152}
   m_Layer: 8
-  m_Name: WeaponHandle
+  m_Name: WeaponRoot
   m_TagString: Untagged
   m_Icon: {fileID: 2488908585195742037, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -3879,23 +3879,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40fbe03002e4f904d818c8dd47a7feae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  firstWeaponData: {fileID: 11400000, guid: 250249b682ab61b41a9bb85a58d74e8e, type: 2}
-  secondWeaponData: {fileID: 11400000, guid: 0f3b641c9aacb8c42bd3b4d0bbfad390, type: 2}
   shootSource: {fileID: 1680697150}
-  onWeaponEquip:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1385364886}
-        m_MethodName: RefreshImage
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+  weaponData: {fileID: 11400000, guid: 250249b682ab61b41a9bb85a58d74e8e, type: 2}
 --- !u!82 &1680697152
 AudioSource:
   m_ObjectHideFlags: 0
@@ -5843,7 +5828,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 384ecb156804ff94fa2940d3ff1d9e94, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  weaponRoot: {fileID: 1680697150}
+  firstWeaponData: {fileID: 11400000, guid: 250249b682ab61b41a9bb85a58d74e8e, type: 2}
+  secondWeaponData: {fileID: 11400000, guid: 0f3b641c9aacb8c42bd3b4d0bbfad390, type: 2}
   equipedWeapon: {fileID: 1680697151}
+  onWeaponEquip:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1385364886}
+        m_MethodName: RefreshImage
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   playerCamera: {fileID: 1687258584}
   hpImageYPercentOffset: -0.055
   healthFillImage: {fileID: 211771040}

@@ -5,13 +5,13 @@ public class WeaponData : PurchaseData
 {
     [Header("--------------------------------- [ WEAPON INFO ] ---------------------------------")]
     [Header("Weapon", order = 1)]
-    [SerializeField] GameObject model;
+    [SerializeField] Weapon prefab;
 
     [Header("Projectile")]
     [SerializeField] Projectile projectile;
     [SerializeField] ProjectileData projectileData;
 
-    public GameObject Model { get => model; }
+    public Weapon Prefab { get => prefab; }
     public Projectile Projectile { get => projectile; }
     public ProjectileData ProjectileData { get => projectileData; }
 

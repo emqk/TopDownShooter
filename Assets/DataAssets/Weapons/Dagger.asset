@@ -20,7 +20,7 @@ MonoBehaviour:
   mesh: {fileID: -8213443026856553256, guid: 1926727a1761cd54a9d0ff6e76b96ca6, type: 3}
   material: {fileID: -8469494145858465668, guid: 1926727a1761cd54a9d0ff6e76b96ca6,
     type: 3}
-  model: {fileID: 4839157416502258605, guid: f3a53e548f4bbd148a8fe93bb937f23d, type: 3}
+  prefab: {fileID: 5202384375074156635, guid: 8eb9242bceb45a14d8be8ee1ab1de470, type: 3}
   projectile: {fileID: -8417403802403430722, guid: 2ea9f4cd2428a6b4eb6be68185bc177b,
     type: 3}
   projectileData: {fileID: 11400000, guid: 3f5ac53691ccef548970de7c96143fb9, type: 2}
