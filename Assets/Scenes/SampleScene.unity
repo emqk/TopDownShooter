@@ -632,7 +632,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 291322517}
-  m_LocalRotation: {x: 0.49970073, y: 0.000000033326653, z: -0.000000019225801, w: 0.8661982}
+  m_LocalRotation: {x: 0.49970073, y: -0.000000033326657, z: 0.000000019225803, w: 0.8661982}
   m_LocalPosition: {x: 0, y: 12.94, z: -6.76}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -3735,6 +3735,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   firstWeaponData: {fileID: 11400000, guid: 250249b682ab61b41a9bb85a58d74e8e, type: 2}
+  secondWeaponData: {fileID: 0}
   shootSource: {fileID: 1680697150}
 --- !u!82 &1680697152
 AudioSource:
@@ -3944,7 +3945,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1687258581}
-  m_LocalRotation: {x: 0.49970073, y: 0.000000033326653, z: -0.000000019225801, w: 0.8661982}
+  m_LocalRotation: {x: 0.49970073, y: -0.000000033326657, z: 0.000000019225803, w: 0.8661982}
   m_LocalPosition: {x: 0, y: 12.94, z: -6.76}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
