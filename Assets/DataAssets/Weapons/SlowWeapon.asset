@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0aab363f5fe91f04997c455702f48aee, type: 3}
   m_Name: SlowWeapon
   m_EditorClassIdentifier: 
+  model: {fileID: 6641841124949456342, guid: fe6542f2d47771d4fa3397685701f47d, type: 3}
   projectile: {fileID: -8417403802403430722, guid: 2ea9f4cd2428a6b4eb6be68185bc177b,
     type: 3}
   projectileData: {fileID: 11400000, guid: 3f5ac53691ccef548970de7c96143fb9, type: 2}

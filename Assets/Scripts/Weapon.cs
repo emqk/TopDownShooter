@@ -3,8 +3,14 @@
 [RequireComponent(typeof(AudioSource))]
 public class Weapon : MonoBehaviour
 {
-    [SerializeField] WeaponData weaponData;
+    [SerializeField] WeaponData firstWeaponData;
+    [SerializeField] WeaponData secondWeaponData;
     [SerializeField] Transform shootSource;
+
+    WeaponData equipedWeaponData = null;
+
+    GameObject firstWeaponModel;
+    GameObject secondWeaponModel;
 
     float currentHeat = 0;
     const float overheatValue = 2;
@@ -14,8 +20,65 @@ public class Weapon : MonoBehaviour
 
     void Start()
     {
-        timeToShoot = weaponData.ShootRate;
+        timeToShoot = firstWeaponData.ShootRate;
         audioSource = GetComponent<AudioSource>();
+        if (firstWeaponData)
+        {
+            firstWeaponModel = Instantiate(firstWeaponData.Model, transform);
+        }
+        else
+        {
+            Debug.Log("Fist weapon is null!");
+        }
+
+        if (secondWeaponData)
+        {
+            secondWeaponModel = Instantiate(firstWeaponData.Model, transform);
+        }
+        else
+        {
+            Debug.Log("Second weapon is null!");
+        }
+
+
+        if (firstWeaponData)
+        {
+            EquipWeapon(true);
+        }
+        else if(secondWeaponData)
+        {
+            EquipWeapon(false);
+        }
+    }
+
+    void EquipWeapon(bool first)
+    {
+        if (first)
+        {
+            if (firstWeaponData)
+            {
+                firstWeaponModel?.SetActive(true);
+                secondWeaponModel?.SetActive(false);
+                equipedWeaponData = firstWeaponData;
+            }
+            else
+            {
+                Debug.LogError("Can't equip first weapon - weapon data in null!");
+            }
+        }
+        else
+        {
+            if (secondWeaponData)
+            {
+                firstWeaponModel?.SetActive(false);
+                secondWeaponModel?.SetActive(true);
+                equipedWeaponData = secondWeaponData;
+            }
+            else
+            {
+                Debug.LogError("Can't equip second weapon - weapon data in null!");
+            }
+        }
     }
 
     public void UpdateMe()
@@ -35,12 +98,12 @@ public class Weapon : MonoBehaviour
     {
         if (timeToShoot <= 0 && !isOverheated)
         {
-            Projectile projectileInstance = Instantiate(weaponData.Projectile, shootSource.transform.position, shootSource.rotation);
-            projectileInstance.Init(weaponData.ProjectileData);
+            Projectile projectileInstance = Instantiate(firstWeaponData.Projectile, shootSource.transform.position, shootSource.rotation);
+            projectileInstance.Init(firstWeaponData.ProjectileData);
 
-            timeToShoot = weaponData.ShootRate;
-            currentHeat += weaponData.HeatPerShot;
-            audioSource.PlayOneShot(weaponData.ShootSound);
+            timeToShoot = firstWeaponData.ShootRate;
+            currentHeat += firstWeaponData.HeatPerShot;
+            audioSource.PlayOneShot(firstWeaponData.ShootSound);
             return;
         }
     }

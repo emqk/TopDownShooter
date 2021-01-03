@@ -3,6 +3,7 @@
 [CreateAssetMenu(fileName = "NewPurchaseData", menuName = "Purchase/NewPurchaseData")]
 public class PurchaseData : ScriptableObject
 {
+    [SerializeField] string ID;
     [SerializeField] string title;
     [SerializeField] Sprite thumbnail;
     [SerializeField] int cost;

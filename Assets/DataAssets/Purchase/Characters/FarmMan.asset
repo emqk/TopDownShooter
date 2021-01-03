@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96f53e955ae2f284cac3c48fa8e6459b, type: 3}
   m_Name: FarmMan
   m_EditorClassIdentifier: 
+  ID: FarmMan
   title: Farm man
   thumbnail: {fileID: 21300000, guid: bfc8097007f21334fb766212cd73825d, type: 3}
   cost: 5

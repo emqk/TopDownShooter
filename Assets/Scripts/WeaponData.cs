@@ -3,9 +3,14 @@
 [CreateAssetMenu(fileName = "NewWeaponData", menuName = "Weapons/Create New Weapon")]
 public class WeaponData : ScriptableObject
 {
+    [Header("Weapon")]
+    [SerializeField] GameObject model;
+
     [Header("Projectile")]
     [SerializeField] Projectile projectile;
     [SerializeField] ProjectileData projectileData;
+
+    public GameObject Model { get => model; }
     public Projectile Projectile { get => projectile; }
     public ProjectileData ProjectileData { get => projectileData; }
 
