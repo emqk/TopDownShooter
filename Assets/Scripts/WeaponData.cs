@@ -1,9 +1,10 @@
 ﻿using UnityEngine;
 
 [CreateAssetMenu(fileName = "NewWeaponData", menuName = "Weapons/Create New Weapon")]
-public class WeaponData : ScriptableObject
+public class WeaponData : PurchaseData
 {
-    [Header("Weapon")]
+    [Header("--------------------------------- [ WEAPON INFO ] ---------------------------------")]
+    [Header("Weapon", order = 1)]
     [SerializeField] GameObject model;
 
     [Header("Projectile")]

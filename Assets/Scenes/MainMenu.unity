@@ -99,7 +99,7 @@ LightmapSettings:
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 112000000, guid: d44c3281ce9af1549a056d31f56a96b0,
     type: 2}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -6517,8 +6517,9 @@ MonoBehaviour:
   maps:
   - {fileID: 11400000, guid: 1e98f0e802294d24884efd387821051a, type: 2}
   weaponsFirst:
-  - {fileID: 11400000, guid: 6c7a2cb5b65dde74c8ef2c31c83393fe, type: 2}
-  weaponsSecond: []
+  - {fileID: 11400000, guid: 250249b682ab61b41a9bb85a58d74e8e, type: 2}
+  weaponsSecond:
+  - {fileID: 11400000, guid: 0f3b641c9aacb8c42bd3b4d0bbfad390, type: 2}
   visualizationObj: {fileID: 919132147521189573}
   weaponFirstThumbnail: {fileID: 748703685}
   weaponSecondThumbnail: {fileID: 2045741285}

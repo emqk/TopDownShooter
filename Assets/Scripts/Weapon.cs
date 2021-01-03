@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.Events;
 
 [RequireComponent(typeof(AudioSource))]
 public class Weapon : MonoBehaviour
@@ -6,6 +7,8 @@ public class Weapon : MonoBehaviour
     [SerializeField] WeaponData firstWeaponData;
     [SerializeField] WeaponData secondWeaponData;
     [SerializeField] Transform shootSource;
+
+    [SerializeField] UnityEvent onWeaponEquip;
 
     WeaponData equipedWeaponData = null;
 
@@ -33,7 +36,7 @@ public class Weapon : MonoBehaviour
 
         if (secondWeaponData)
         {
-            secondWeaponModel = Instantiate(firstWeaponData.Model, transform);
+            secondWeaponModel = Instantiate(secondWeaponData.Model, transform);
         }
         else
         {
@@ -48,6 +51,23 @@ public class Weapon : MonoBehaviour
         else if(secondWeaponData)
         {
             EquipWeapon(false);
+        }
+    }
+
+    public WeaponData GetEquipedWeaponData()
+    {
+        return equipedWeaponData;
+    }
+
+    public void SwapWeapon()
+    {
+        if (equipedWeaponData == firstWeaponData)
+        {
+            EquipWeapon(false);
+        }
+        else
+        {
+            EquipWeapon(true);
         }
     }
 
@@ -79,6 +99,8 @@ public class Weapon : MonoBehaviour
                 Debug.LogError("Can't equip second weapon - weapon data in null!");
             }
         }
+
+        onWeaponEquip.Invoke();
     }
 
     public void UpdateMe()
@@ -98,12 +120,12 @@ public class Weapon : MonoBehaviour
     {
         if (timeToShoot <= 0 && !isOverheated)
         {
-            Projectile projectileInstance = Instantiate(firstWeaponData.Projectile, shootSource.transform.position, shootSource.rotation);
-            projectileInstance.Init(firstWeaponData.ProjectileData);
+            Projectile projectileInstance = Instantiate(equipedWeaponData.Projectile, shootSource.transform.position, shootSource.rotation);
+            projectileInstance.Init(equipedWeaponData.ProjectileData);
 
-            timeToShoot = firstWeaponData.ShootRate;
-            currentHeat += firstWeaponData.HeatPerShot;
-            audioSource.PlayOneShot(firstWeaponData.ShootSound);
+            timeToShoot = equipedWeaponData.ShootRate;
+            currentHeat += equipedWeaponData.HeatPerShot;
+            audioSource.PlayOneShot(equipedWeaponData.ShootSound);
             return;
         }
     }
