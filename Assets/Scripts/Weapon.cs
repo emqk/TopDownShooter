@@ -6,6 +6,8 @@ public class Weapon : MonoBehaviour
     [SerializeField] Transform shootSource;
     [SerializeField] WeaponData weaponData;
 
+    WeaponHeatImage weaponHeatImage;
+
     float currentHeat = 0;
     const float overheatValue = 2;
     bool isOverheated = false;
@@ -16,11 +18,18 @@ public class Weapon : MonoBehaviour
     {
         timeToShoot = weaponData.ShootRate;
         audioSource = GetComponent<AudioSource>();
+        weaponHeatImage = UIManager.instance.GetWeaponHeatImage();
     }
 
     public void UpdateMe()
     {
         timeToShoot -= Time.deltaTime;
+        UpdateHeat();
+        UpdateWeaponHeatImage();
+    }
+
+    void UpdateHeat()
+    {
         currentHeat -= Time.deltaTime;
         if (currentHeat < 0)
         {
@@ -29,6 +38,11 @@ public class Weapon : MonoBehaviour
         }
         else if (currentHeat >= overheatValue)
             isOverheated = true;
+    }
+
+    void UpdateWeaponHeatImage()
+    {
+        weaponHeatImage.Refresh(currentHeat / overheatValue);
     }
 
     public WeaponData GetWeaponData()
