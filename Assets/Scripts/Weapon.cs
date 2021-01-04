@@ -9,7 +9,7 @@ public class Weapon : MonoBehaviour
     WeaponHeatImage weaponHeatImage;
 
     float currentHeat = 0;
-    const float overheatValue = 2;
+    const float overheatValue = 5;
     bool isOverheated = false;
     float timeToShoot;
     AudioSource audioSource;
@@ -25,7 +25,6 @@ public class Weapon : MonoBehaviour
     {
         timeToShoot -= Time.deltaTime;
         UpdateHeat();
-        UpdateWeaponHeatImage();
     }
 
     void UpdateHeat()
@@ -40,7 +39,7 @@ public class Weapon : MonoBehaviour
             isOverheated = true;
     }
 
-    void UpdateWeaponHeatImage()
+    public void UpdateWeaponHeatImage()
     {
         weaponHeatImage.Refresh(currentHeat / overheatValue);
     }
