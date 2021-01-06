@@ -1,27 +1,23 @@
-﻿using UnityEngine;
-
-public class MoneyManager : MonoBehaviour
+﻿public static class MoneyManager
 {
-    Statistic gold = new Statistic(0, 50, 1000000);
+    static Statistic gold = new Statistic(0, 50, 1000000);
 
-    public static MoneyManager instance;
-
-    private void Awake()
-    {
-        if (!instance)
-        {
-            instance = this;
-            DontDestroyOnLoad(gameObject);
-        }
-        else if(instance != this)
-        {
-            Destroy(gameObject);
-            Debug.Log("Removed MoneyManager there is one already set!");
-        }
-    }
-
-    public int GetGoldAmount()
+    public static int GetGoldAmount()
     {
         return gold.GetAmount();
+    }
+
+    /// <summary></summary>
+    /// <param name="cost">Must be >= 0</param>
+    /// <returns></returns>
+    public static bool HaveEnoughGold(int cost)
+    {
+        return gold.GetAmount() - cost >= 0;
+    }
+
+    public static void SpendGold(int cost)
+    {
+        gold.ChangeByAmount(-cost);
+        MainMenuUIManager.instance.RefreshGold();
     }
 }

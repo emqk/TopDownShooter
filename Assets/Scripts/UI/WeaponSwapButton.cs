@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
 public class WeaponSwapButton : MonoBehaviour
@@ -16,7 +14,6 @@ public class WeaponSwapButton : MonoBehaviour
 
     public void RefreshImage()
     {
-        Debug.Log("REFRESH");
         buttonImage.sprite = player.GetEquipedWeaponData().Thumbnail;
     }
 }

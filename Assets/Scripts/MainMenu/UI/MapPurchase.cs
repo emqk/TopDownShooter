@@ -1,15 +1,38 @@
-﻿public class MapPurchase : Purchasable
+﻿using UnityEngine;
+
+public class MapPurchase : Purchasable
 {
     PurchaseData data;
     PanelType type;
 
-    public override void Buy()
+    public override bool Buy()
     {
-        throw new System.NotImplementedException();
+        if (MoneyManager.HaveEnoughGold(data.Cost))
+        {
+            MoneyManager.SpendGold(data.Cost);
+            Purchase();
+            Refresh();
+            return true;
+        }
+
+        return false;
     }
 
     public override void Select()
     {
+        if (!IsPurchased())
+        {
+            if (Buy())
+            {
+                Debug.Log("Item has been bought!");
+            }
+            else
+            {
+                Debug.Log("Can't be bought!");
+                return;
+            }
+        }
+
         if (data.Mesh && data.Material)
         {
             MainMenuUIManager.instance.RefreshVisualizationFromData(data);
@@ -31,7 +54,14 @@
         thumbnail.sprite = data.Thumbnail;
         description.text = data.Description;
 
-        selectText.text = $"Buy ({data.Cost})";
+        if (IsPurchased())
+        {
+            selectText.text = "Use";
+        }
+        else
+        {
+            selectText.text = $"Buy ({data.Cost})";
+        }
     }
 
     public void SetData(PurchaseData data, PanelType panelType)

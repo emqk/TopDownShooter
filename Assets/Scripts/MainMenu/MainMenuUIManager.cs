@@ -39,9 +39,9 @@ public class MainMenuUIManager : MonoBehaviour
         RefreshGold();
     }
 
-    void RefreshGold()
+    public void RefreshGold()
     {
-        goldText.text = MoneyManager.instance.GetGoldAmount().ToString();
+        goldText.text = MoneyManager.GetGoldAmount().ToString();
     }
 
     public void RefreshWeaponIcon(PurchaseData data, bool isItFirst)
