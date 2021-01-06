@@ -12,6 +12,7 @@ public class MapPurchase : Purchasable
             MoneyManager.SpendGold(data.Cost);
             Purchase();
             Refresh();
+            Database.instance.AddPurchaseElementID(data.GetID);
             return true;
         }
 
@@ -64,10 +65,11 @@ public class MapPurchase : Purchasable
         }
     }
 
-    public void SetData(PurchaseData data, PanelType panelType)
+    public void SetData(PurchaseData data, PanelType panelType, bool alreadyPurchased)
     {
         this.data = data;
         type = panelType;
+        isPurchased = alreadyPurchased;
     }
 
     PanelType GetPanelType()

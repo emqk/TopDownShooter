@@ -20,4 +20,5 @@ public class PurchaseData : ScriptableObject
 
     public Mesh Mesh { get => mesh; }
     public Material Material { get => material; }
+    public string GetID { get => ID; }
 }

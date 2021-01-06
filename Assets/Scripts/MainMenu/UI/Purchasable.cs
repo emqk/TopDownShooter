@@ -10,7 +10,7 @@ public abstract class Purchasable : MonoBehaviour
     [SerializeField] protected Image thumbnail;
     [SerializeField] protected TMP_Text selectText;
     [SerializeField] protected Button selectButton;
-    bool isPurchased;
+    protected bool isPurchased;
 
     public abstract bool Buy();
 

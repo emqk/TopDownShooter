@@ -90,7 +90,8 @@ public class MainMenuUIManager : MonoBehaviour
         foreach (PurchaseData data in list)
         {
             MapPurchase instance = Instantiate(purchasePrefab, panelParent);
-            instance.SetData(data, currentPanelType);
+            bool alreadyPurchased = Database.instance.IsElementOfIDPurchased(data.GetID);
+            instance.SetData(data, currentPanelType, alreadyPurchased);
             instance.Refresh();
         }
     }
