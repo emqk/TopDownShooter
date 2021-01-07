@@ -13,6 +13,8 @@ public class PurchaseData : ScriptableObject
     [SerializeField] Mesh mesh;
     [SerializeField] Material material;
 
+    [SerializeField] UpgradeKitData upgradeKit;
+
     public string Title { get => title; }
     public Sprite Thumbnail { get => thumbnail; }
     public int Cost { get => cost; }
@@ -21,4 +23,5 @@ public class PurchaseData : ScriptableObject
     public Mesh Mesh { get => mesh; }
     public Material Material { get => material; }
     public string GetID { get => ID; }
+    public UpgradeKitData UpgradeKit { get => upgradeKit; }
 }

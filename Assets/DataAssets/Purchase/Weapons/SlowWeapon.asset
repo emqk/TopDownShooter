@@ -20,6 +20,14 @@ MonoBehaviour:
   mesh: {fileID: -8213443026856553256, guid: dea2f5ee6f48d024086d0fdc6cd64ae2, type: 3}
   material: {fileID: -8469494145858465668, guid: dea2f5ee6f48d024086d0fdc6cd64ae2,
     type: 3}
+  upgradeKit:
+    ID: PistolUpgrade
+    upgradeDatas:
+    - upgradeName: Power Shoot
+      thumbnail: {fileID: 21300000, guid: 39b57fafc6a7610449766c67a54745df, type: 3}
+      powerAndCost: []
+      currentLevel: 0
+      maxLevels: 0
   prefab: {fileID: 561045076462038702, guid: edfe0afd5267cf6499f4fc8a41c17917, type: 3}
   projectile: {fileID: -8417403802403430722, guid: 2ea9f4cd2428a6b4eb6be68185bc177b,
     type: 3}

@@ -12,7 +12,7 @@ public class MapPurchase : Purchasable
             MoneyManager.SpendGold(data.Cost);
             Purchase();
             Refresh();
-            Database.instance.AddPurchaseElementID(data.GetID);
+            Database.instance.AddPurchaseElementID(data);
             return true;
         }
 

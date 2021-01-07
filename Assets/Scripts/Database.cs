@@ -11,6 +11,7 @@ public class Database : MonoBehaviour
 {
     //List of purchased items, stored as IDs
     List<string> purchased = new List<string>();
+    List<UpgradeKitData> upgrades = new List<UpgradeKitData>();
 
     public static Database instance;
 
@@ -27,16 +28,17 @@ public class Database : MonoBehaviour
         }
     }
 
-    public void AddPurchaseElementID(string ID)
+    public void AddPurchaseElementID(PurchaseData purchaseData)
     {
-        if (!purchased.Contains(ID))
+        if (!purchased.Contains(purchaseData.GetID))
         {
-            purchased.Add(ID);
+            purchased.Add(purchaseData.GetID);
+            upgrades.Add(purchaseData.UpgradeKit);
             Serializer.Serialize();
         }
         else
         {
-            Debug.LogError($"Can't add - Item of ID {ID}, is in database!");
+            Debug.LogError($"Can't add - Item of ID {purchaseData.GetID}, is in database!");
         }
     }
 
