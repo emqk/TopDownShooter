@@ -1,10 +1,16 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
+[System.Serializable]
+public class DatabaseSerializationData
+{
+    public List<string> purchased;
+}
+
 public class Database : MonoBehaviour
 {
     //List of purchased items, stored as IDs
-    [SerializeField] List<string> purchased = new List<string>();
+    List<string> purchased = new List<string>();
 
     public static Database instance;
 
@@ -26,6 +32,7 @@ public class Database : MonoBehaviour
         if (!purchased.Contains(ID))
         {
             purchased.Add(ID);
+            Serializer.Serialize();
         }
         else
         {
@@ -39,7 +46,20 @@ public class Database : MonoBehaviour
         {
             return true;
         }
-        Debug.Log($"Element of ID: {ID} wasn't purchased");
         return false;
+    }
+
+    public DatabaseSerializationData GetSerializationData()
+    {
+        DatabaseSerializationData data = new DatabaseSerializationData
+        {
+            purchased = purchased
+        };
+        return data;
+    }
+
+    public void SetDatabaseFromData(DatabaseSerializationData databaseSerializationData)
+    {
+        purchased = databaseSerializationData.purchased;
     }
 }
