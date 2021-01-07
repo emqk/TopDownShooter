@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using UnityEngine.UI;
 using TMPro;
 
 public class UpgradeUIElement : Purchasable
@@ -16,18 +15,45 @@ public class UpgradeUIElement : Purchasable
 
     public override bool Buy()
     {
-        throw new System.NotImplementedException();
+        int cost = myData.powerAndCost[myData.CurrentLevel].cost;
+        if (MoneyManager.HaveEnoughGold(cost))
+        {
+            MoneyManager.SpendGold(cost);
+            if (myData.CanBeUpgraded())
+            {
+                myData.Upgrade();
+                if (!myData.CanBeUpgraded())
+                    Purchase();
+            }
+
+            Refresh();
+
+            return true;
+        }
+
+        return false;
     }
 
     public override void Select()
     {
-        throw new System.NotImplementedException();
+        if (!IsPurchased())
+        {
+            if (Buy())
+            {
+                Debug.Log("Item has been upgraded!");
+            }
+            else
+            {
+                Debug.Log("Can't be upgraded!");
+                return;
+            }
+        }
     }
 
     public override void Refresh()
     {
         thumbnail.sprite = myData.thumbnail;
-        costText.text = myData.powerAndCost[myData.currentLevel].cost.ToString("f0");
-        levelsText.text = myData.currentLevel + " / " + myData.powerAndCost.Count;
+        costText.text = myData.powerAndCost[myData.CurrentLevel].cost.ToString("f0");
+        levelsText.text = myData.CurrentLevel + " / " + myData.powerAndCost.Count;
     }
 }

@@ -11,7 +11,7 @@ public class Database : MonoBehaviour
 {
     //List of purchased items, stored as IDs
     List<string> purchased = new List<string>();
-    List<UpgradeKitData> upgrades = new List<UpgradeKitData>();
+    [SerializeField]List<UpgradeKitData> upgrades = new List<UpgradeKitData>();
 
     public static Database instance;
 
@@ -45,7 +45,7 @@ public class Database : MonoBehaviour
         if (!purchased.Contains(purchaseData.GetID))
         {
             purchased.Add(purchaseData.GetID);
-            upgrades.Add(purchaseData.UpgradeKit);
+            upgrades.Add(new UpgradeKitData(purchaseData.UpgradeKit));
             Serializer.Serialize();
         }
         else
