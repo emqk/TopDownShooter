@@ -47,6 +47,9 @@ public class MapPurchase : Purchasable
         {
             MainMenuUIManager.instance.RefreshWeaponIcon(data, false);
         }
+
+        //Upgrades
+        MainMenuUIManager.instance.ShowUpgrades(Database.instance.GetUpgradeKitData(data.UpgradeKit.ID));
     }
 
     public override void Refresh()

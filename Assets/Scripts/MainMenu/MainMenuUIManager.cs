@@ -12,8 +12,10 @@ public class MainMenuUIManager : MonoBehaviour
 {
     [SerializeField] TMP_Text goldText;
 
-    [SerializeField] RectTransform panelParent;
+    [SerializeField] RectTransform purchaseElementsPanel;
+    [SerializeField] RectTransform upgradeElementsPanel;
     [SerializeField] MapPurchase purchasePrefab;
+    [SerializeField] UpgradeUIElement upgradeUIPrefab;
 
     [SerializeField] List<PurchaseData> characters = new List<PurchaseData>();
     [SerializeField] List<PurchaseData> maps = new List<PurchaseData>();
@@ -59,20 +61,20 @@ public class MainMenuUIManager : MonoBehaviour
 
     public void ShowPanel(int panelType)
     {
-        ClearPanel();
+        ClearPurchasePanel();
 
         currentPanelType = (PanelType)panelType;
         switch (currentPanelType)
         {
             case PanelType.None:
                 break;
-            case PanelType.Character:   SpawnFromList(characters);
+            case PanelType.Character:   SpawnPurchasableFromList(characters);
                 break;
-            case PanelType.Map:         SpawnFromList(maps);
+            case PanelType.Map:         SpawnPurchasableFromList(maps);
                 break;
-            case PanelType.WeaponFirst: SpawnFromList(weaponsFirst);
+            case PanelType.WeaponFirst: SpawnPurchasableFromList(weaponsFirst);
                 break;
-            case PanelType.WeaponSecond:SpawnFromList(weaponsSecond);
+            case PanelType.WeaponSecond:SpawnPurchasableFromList(weaponsSecond);
                 break;
             default:
                 break;
@@ -85,22 +87,46 @@ public class MainMenuUIManager : MonoBehaviour
         visualizationObj.GetComponent<MeshRenderer>().sharedMaterial = data.Material;
     }
 
-    void SpawnFromList(List<PurchaseData> list)
+    void SpawnPurchasableFromList(List<PurchaseData> list)
     {
         foreach (PurchaseData data in list)
         {
-            MapPurchase instance = Instantiate(purchasePrefab, panelParent);
+            MapPurchase instance = Instantiate(purchasePrefab, purchaseElementsPanel);
             bool alreadyPurchased = Database.instance.IsElementOfIDPurchased(data.GetID);
             instance.SetData(data, currentPanelType, alreadyPurchased);
             instance.Refresh();
         }
     }
 
-    void ClearPanel()
+    void ClearPurchasePanel()
     {
-        foreach (Transform child in panelParent)
+        foreach (Transform child in purchaseElementsPanel)
         {
             Destroy(child.gameObject);
+        }
+    }
+
+
+    public void ShowUpgrades(UpgradeKitData upgradeKitData)
+    {
+        if (upgradeKitData == null)
+        {
+            Debug.LogError("Can't refresh - upgradeData is null!");
+            return;
+        }
+
+        //Clear panel
+        foreach (Transform child in upgradeElementsPanel)
+        {
+            Destroy(child.gameObject);
+        }
+
+        //Show upgrades
+        foreach (UpgradeData data in upgradeKitData.upgradeDatas)
+        {
+            UpgradeUIElement instance = Instantiate(upgradeUIPrefab, upgradeElementsPanel);
+            instance.SetData(data);
+            instance.Refresh();
         }
     }
 }

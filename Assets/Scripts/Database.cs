@@ -28,6 +28,18 @@ public class Database : MonoBehaviour
         }
     }
 
+    public UpgradeKitData GetUpgradeKitData(string kitID)
+    {
+        foreach (UpgradeKitData currKit in upgrades)
+        {
+            if (currKit.ID == kitID)
+            {
+                return currKit;
+            }
+        }
+        return null;
+    }
+
     public void AddPurchaseElementID(PurchaseData purchaseData)
     {
         if (!purchased.Contains(purchaseData.GetID))
