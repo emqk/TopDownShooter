@@ -24,10 +24,15 @@ public class UpgradeData
 
     public List<PowerAndCostPair> powerAndCost;
 
-    int currentLevel = 0;
+    [SerializeField] int currentLevel = -1;
     public int maxLevels;
 
     public int CurrentLevel { get => currentLevel; }
+
+    public UpgradeData()
+    {
+        currentLevel = -1;
+    }
 
     //Copy constructor
     public UpgradeData(UpgradeData other)
@@ -55,7 +60,18 @@ public class UpgradeData
 
     public PowerAndCostPair GetCurrentPowerCostPair()
     {
+        if (currentLevel < 0)
+            return null;
+
         return powerAndCost[CurrentLevel];
+    }
+
+    public PowerAndCostPair GetNextPowerCostPair()
+    {
+        if (currentLevel + 1 >= powerAndCost.Count)
+            return null;
+
+        return powerAndCost[CurrentLevel + 1];
     }
 }
 

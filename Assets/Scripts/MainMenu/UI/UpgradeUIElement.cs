@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using TMPro;
 
 public class UpgradeUIElement : Purchasable
@@ -15,18 +16,17 @@ public class UpgradeUIElement : Purchasable
 
     public override bool Buy()
     {
-        int cost = myData.powerAndCost[myData.CurrentLevel].cost;
-        if (MoneyManager.HaveEnoughGold(cost))
+        int cost = myData.GetNextPowerCostPair().cost;
+        if (MoneyManager.HaveEnoughGold(cost) && myData.CanBeUpgraded())
         {
             MoneyManager.SpendGold(cost);
-            if (myData.CanBeUpgraded())
-            {
-                myData.Upgrade();
-                if (!myData.CanBeUpgraded())
-                    Purchase();
-            }
+            myData.Upgrade();
+            if (!myData.CanBeUpgraded())
+                Purchase();
 
             Refresh();
+
+            // ------------> NEED TO UPDATE DATABASE SERIALIZATION HERE!! <------------
 
             return true;
         }
@@ -52,8 +52,10 @@ public class UpgradeUIElement : Purchasable
 
     public override void Refresh()
     {
+        PowerAndCostPair nextPowerAndCost = myData.GetNextPowerCostPair();
+
         thumbnail.sprite = myData.thumbnail;
-        costText.text = myData.powerAndCost[myData.CurrentLevel].cost.ToString("f0");
-        levelsText.text = myData.CurrentLevel + " / " + myData.powerAndCost.Count;
+        costText.text = nextPowerAndCost != null ? myData.GetNextPowerCostPair().cost.ToString("f0") : "-";
+        levelsText.text = myData.CanBeUpgraded() ? (myData.CurrentLevel + 1) + " / " + myData.powerAndCost.Count : "MAX!";
     }
 }

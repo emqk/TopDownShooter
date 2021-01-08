@@ -11,7 +11,7 @@ public class Database : MonoBehaviour
 {
     //List of purchased items, stored as IDs
     List<string> purchased = new List<string>();
-    [SerializeField]List<UpgradeKitData> upgrades = new List<UpgradeKitData>();
+    List<UpgradeKitData> upgrades = new List<UpgradeKitData>();
 
     public static Database instance;
 
@@ -37,8 +37,10 @@ public class Database : MonoBehaviour
                 return currKit;
             }
         }
+
         return null;
     }
+
 
     public void AddPurchaseElementID(PurchaseData purchaseData)
     {
