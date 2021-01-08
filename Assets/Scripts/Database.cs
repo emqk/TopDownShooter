@@ -5,6 +5,7 @@ using UnityEngine;
 public class DatabaseSerializationData
 {
     public List<string> purchased;
+    public List<UpgradeKitData> upgrades;
 }
 
 public class Database : MonoBehaviour
@@ -69,7 +70,8 @@ public class Database : MonoBehaviour
     {
         DatabaseSerializationData data = new DatabaseSerializationData
         {
-            purchased = purchased
+            purchased = purchased,
+            upgrades = upgrades
         };
         return data;
     }
@@ -77,5 +79,6 @@ public class Database : MonoBehaviour
     public void SetDatabaseFromData(DatabaseSerializationData databaseSerializationData)
     {
         purchased = databaseSerializationData.purchased;
+        upgrades = databaseSerializationData.upgrades;
     }
 }

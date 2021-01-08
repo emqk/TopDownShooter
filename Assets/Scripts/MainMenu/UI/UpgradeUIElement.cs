@@ -25,8 +25,7 @@ public class UpgradeUIElement : Purchasable
                 Purchase();
 
             Refresh();
-
-            // ------------> NEED TO UPDATE DATABASE SERIALIZATION HERE!! <------------
+            Serializer.Serialize();
 
             return true;
         }
