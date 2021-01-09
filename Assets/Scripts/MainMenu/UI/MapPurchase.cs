@@ -34,6 +34,8 @@ public class MapPurchase : Purchasable
             }
         }
 
+        UpgradeKitData upgradeKitData = Database.instance.GetUpgradeKitData(data.UpgradeKit.ID);
+
         if (data.Mesh && data.Material)
         {
             MainMenuUIManager.instance.RefreshVisualizationFromData(data);
@@ -42,14 +44,18 @@ public class MapPurchase : Purchasable
         if (type == PanelType.WeaponFirst)
         {
             MainMenuUIManager.instance.RefreshWeaponIcon(data, true);
+            Database.instance.SetWeaponData((WeaponData)data, true);
+            Database.instance.SetWeaponUpgradeKitData(upgradeKitData, true);
         }
         else if (type == PanelType.WeaponSecond)
         {
             MainMenuUIManager.instance.RefreshWeaponIcon(data, false);
+            Database.instance.SetWeaponData((WeaponData)data, false);
+            Database.instance.SetWeaponUpgradeKitData(upgradeKitData, false);
         }
 
         //Upgrades
-        MainMenuUIManager.instance.ShowUpgrades(Database.instance.GetUpgradeKitData(data.UpgradeKit.ID));
+        MainMenuUIManager.instance.ShowUpgrades(upgradeKitData);
     }
 
     public override void Refresh()

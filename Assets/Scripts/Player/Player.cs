@@ -6,10 +6,8 @@ public class Player : MonoBehaviour, IDamageable
 {
     [Header("Weapon")]
     [SerializeField] Transform weaponRoot;
-    [SerializeField] WeaponData firstWeaponData;
-    [SerializeField] WeaponData secondWeaponData;
-    [SerializeField] UpgradeKitData firstWeaponUpgradeData;
-    [SerializeField] UpgradeKitData secondWeaponUpgradeData;
+    UpgradeKitData firstWeaponUpgradeData;
+    UpgradeKitData secondWeaponUpgradeData;
 
     [SerializeField] Weapon equipedWeapon;
 
@@ -51,11 +49,15 @@ public class Player : MonoBehaviour, IDamageable
         healthFillImage.fillAmount = health.GetAmountNormalized();
     }
 
-    void Start()
+    void SetupWeapons()
     {
-        RefreshHPFillUI();
+        WeaponData firstWeaponData = Database.instance.GetWeaponData(true);
+        WeaponData secondWeaponData = Database.instance.GetWeaponData(false);
 
-        //Weapon
+        firstWeaponUpgradeData = Database.instance.GetWeaponUpgradeKitData(true);
+        secondWeaponUpgradeData = Database.instance.GetWeaponUpgradeKitData(false);
+
+        //Spawn weapons
         if (firstWeaponData)
         {
             firstWeapon = Instantiate(firstWeaponData.Prefab, weaponRoot);
@@ -74,19 +76,25 @@ public class Player : MonoBehaviour, IDamageable
             Debug.Log("Second weapon is null!");
         }
 
-
-        if (firstWeaponData)
+        //Equip first available weapon
+        if (firstWeapon)
         {
             EquipWeapon(true);
         }
-        else if (secondWeaponData)
+        else if (secondWeapon)
         {
             EquipWeapon(false);
         }
 
-
+        //Set weapon data to all available weapons
         firstWeapon?.Init(firstWeaponUpgradeData);
         secondWeapon?.Init(secondWeaponUpgradeData);
+    }
+
+    void Start()
+    {
+        SetupWeapons();
+        RefreshHPFillUI();
     }
 
     void Update()
@@ -132,7 +140,7 @@ public class Player : MonoBehaviour, IDamageable
     {
         if (first)
         {
-            if (firstWeaponData)
+            if (firstWeapon)
             {
                 firstWeapon?.gameObject.SetActive(true);
                 secondWeapon?.gameObject.SetActive(false);
@@ -140,12 +148,12 @@ public class Player : MonoBehaviour, IDamageable
             }
             else
             {
-                Debug.LogError("Can't equip first weapon - weapon data in null!");
+                Debug.Log("Can't equip first weapon - weapon data in null!");
             }
         }
         else
         {
-            if (secondWeaponData)
+            if (secondWeapon)
             {
                 firstWeapon?.gameObject.SetActive(false);
                 secondWeapon?.gameObject.SetActive(true);
@@ -153,7 +161,7 @@ public class Player : MonoBehaviour, IDamageable
             }
             else
             {
-                Debug.LogError("Can't equip second weapon - weapon data in null!");
+                Debug.Log("Can't equip second weapon - weapon data in null!");
             }
         }
 

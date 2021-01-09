@@ -14,6 +14,13 @@ public class Database : MonoBehaviour
     List<string> purchased = new List<string>();
     List<UpgradeKitData> upgrades = new List<UpgradeKitData>();
 
+    WeaponData firstWeaponData = null;
+    WeaponData secondWeaponData = null;
+
+    UpgradeKitData firstWeaponUpgradeKitData = null;
+    UpgradeKitData secondWeaponUpgradeKitData = null;
+
+
     public static Database instance;
 
     private void Awake()
@@ -28,6 +35,38 @@ public class Database : MonoBehaviour
             instance = this;
             DontDestroyOnLoad(gameObject);
         }
+    }
+
+    public WeaponData GetWeaponData(bool isItFirst)
+    {
+        if (isItFirst)
+            return firstWeaponData;
+        else
+            return secondWeaponData;
+    }
+
+    public void SetWeaponData(WeaponData weaponData, bool isItFirst)
+    {
+        if (isItFirst)
+            firstWeaponData = weaponData;
+        else
+            secondWeaponData = weaponData;
+    }
+
+    public UpgradeKitData GetWeaponUpgradeKitData(bool isItFirstWeapon)
+    {
+        if (isItFirstWeapon)
+            return firstWeaponUpgradeKitData;
+        else
+            return secondWeaponUpgradeKitData;
+    }
+
+    public void SetWeaponUpgradeKitData(UpgradeKitData upgradeKitData, bool isItFirst)
+    {
+        if (isItFirst)
+            firstWeaponUpgradeKitData = upgradeKitData;
+        else
+            secondWeaponUpgradeKitData = upgradeKitData;
     }
 
     public UpgradeKitData GetUpgradeKitData(string kitID)
