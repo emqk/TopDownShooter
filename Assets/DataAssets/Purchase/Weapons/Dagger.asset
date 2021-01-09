@@ -22,12 +22,7 @@ MonoBehaviour:
     type: 3}
   upgradeKit:
     ID: 
-    upgradeDatas:
-    - upgradeName: 
-      thumbnail: {fileID: 0}
-      powerAndCost: []
-      currentLevel: 0
-      maxLevels: 0
+    upgradeDatas: []
   prefab: {fileID: 5202384375074156635, guid: 8eb9242bceb45a14d8be8ee1ab1de470, type: 3}
   projectile: {fileID: -8417403802403430722, guid: 2ea9f4cd2428a6b4eb6be68185bc177b,
     type: 3}

@@ -65,10 +65,10 @@ public class Weapon : MonoBehaviour
             ProjectileData projectileData = weaponData.ProjectileData;
             if (UpgradeData != null)
             {
-                UpgradeData damageUpgrade = UpgradeData.GetUpgradeDataByType(UpgradeType.Damage);
+                UpgradeDataInstance damageUpgrade = UpgradeData.GetUpgradeDataInstanceByType(UpgradeType.Damage);
                 float damageUpgradeValue = damageUpgrade != null ? damageUpgrade.GetCurrentPowerCostPair().power : 1;
 
-                UpgradeData moveSpeedUpgrade = UpgradeData.GetUpgradeDataByType(UpgradeType.Speed);
+                UpgradeDataInstance moveSpeedUpgrade = UpgradeData.GetUpgradeDataInstanceByType(UpgradeType.Speed);
                 float moveSpeedUpgradeValue = moveSpeedUpgrade != null ? moveSpeedUpgrade.GetCurrentPowerCostPair().power : 1;
 
                 projectileData = new ProjectileData(

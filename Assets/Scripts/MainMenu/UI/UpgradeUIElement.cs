@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using UnityEngine.UI;
 using TMPro;
 
 public class UpgradeUIElement : Purchasable
@@ -7,21 +6,21 @@ public class UpgradeUIElement : Purchasable
     [SerializeField] TMP_Text costText;
     [SerializeField] TMP_Text levelsText;
 
-    UpgradeData myData;
+    UpgradeDataInstance myDataInstance;
 
-    public void SetData(UpgradeData upgradeData)
+    public void SetData(UpgradeDataInstance upgradeInstance)
     {
-        myData = upgradeData;
+        myDataInstance = upgradeInstance;
     }
 
     public override bool Buy()
     {
-        int cost = myData.GetNextPowerCostPair().cost;
-        if (MoneyManager.HaveEnoughGold(cost) && myData.CanBeUpgraded())
+        int cost = myDataInstance.GetNextPowerCostPair().cost;
+        if (MoneyManager.HaveEnoughGold(cost) && myDataInstance.CanBeUpgraded())
         {
             MoneyManager.SpendGold(cost);
-            myData.Upgrade();
-            if (!myData.CanBeUpgraded())
+            myDataInstance.Upgrade();
+            if (!myDataInstance.CanBeUpgraded())
                 Purchase();
 
             Refresh();
@@ -51,10 +50,10 @@ public class UpgradeUIElement : Purchasable
 
     public override void Refresh()
     {
-        PowerAndCostPair nextPowerAndCost = myData.GetNextPowerCostPair();
+        PowerAndCostPair nextPowerAndCost = myDataInstance.GetNextPowerCostPair();
 
-        thumbnail.sprite = myData.thumbnail;
-        costText.text = nextPowerAndCost != null ? myData.GetNextPowerCostPair().cost.ToString("f0") : "-";
-        levelsText.text = myData.CanBeUpgraded() ? (myData.CurrentLevel + 1) + " / " + myData.powerAndCost.Count : "MAX!";
+        thumbnail.sprite = myDataInstance.Thumbnail;
+        costText.text = nextPowerAndCost != null ? myDataInstance.GetNextPowerCostPair().cost.ToString("f0") : "-";
+        levelsText.text = myDataInstance.CanBeUpgraded() ? (myDataInstance.CurrentLevel + 1) + " / " + myDataInstance.PowerAndCost.Count : "MAX!";
     }
 }

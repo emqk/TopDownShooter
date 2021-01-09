@@ -5939,33 +5939,15 @@ MonoBehaviour:
   firstWeaponUpgradeData:
     ID: '[TEST UPGRADE_KIT]'
     upgradeDatas:
-    - upgradeName: TEST UPGRADE DAMAGE
-      upgradeType: 2
-      thumbnail: {fileID: 0}
-      powerAndCost:
-      - power: 7.55
-        cost: 0
-      currentLevel: 0
-      maxLevels: 1
-    - upgradeName: TEST UPGRADE SPEED
-      upgradeType: 3
-      thumbnail: {fileID: 0}
-      powerAndCost:
-      - power: 2.33
-        cost: 0
-      currentLevel: 0
-      maxLevels: 1
+    - upgradeData: {fileID: 11400000, guid: eb63a62ce8b4c434e818a01e4e565a8a, type: 2}
+      currentLevel: 1
+    - upgradeData: {fileID: 11400000, guid: 5e1dda519ba16e84a850203e715aa01d, type: 2}
+      currentLevel: 1
   secondWeaponUpgradeData:
     ID: 
     upgradeDatas:
-    - upgradeName: TEST UPGRADE SPEED
-      upgradeType: 3
-      thumbnail: {fileID: 0}
-      powerAndCost:
-      - power: 0.2
-        cost: 0
+    - upgradeData: {fileID: 11400000, guid: 5e1dda519ba16e84a850203e715aa01d, type: 2}
       currentLevel: 0
-      maxLevels: 1
   equipedWeapon: {fileID: 1680697151}
   onWeaponEquip:
     m_PersistentCalls:

@@ -122,10 +122,10 @@ public class MainMenuUIManager : MonoBehaviour
         }
 
         //Show upgrades, and send deep copied datas to UI instances
-        foreach (UpgradeData data in Database.instance.GetUpgradeKitData(upgradeKitData.ID).upgradeDatas)
+        foreach (UpgradeDataInstance dataInstance in Database.instance.GetUpgradeKitData(upgradeKitData.ID).upgradeDatas)
         {
             UpgradeUIElement instance = Instantiate(upgradeUIPrefab, upgradeElementsPanel);
-            instance.SetData(data);
+            instance.SetData(dataInstance);
             instance.Refresh();
         }
     }

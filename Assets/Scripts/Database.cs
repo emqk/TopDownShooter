@@ -50,7 +50,7 @@ public class Database : MonoBehaviour
         if (!purchased.Contains(purchaseData.GetID))
         {
             purchased.Add(purchaseData.GetID);
-            upgrades.Add(new UpgradeKitData(purchaseData.UpgradeKit));
+            upgrades.Add(purchaseData.UpgradeKit);
             Serializer.Serialize();
         }
         else

@@ -10,21 +10,14 @@ public enum UpgradeType
 public class UpgradeKitData
 {
     public string ID;
-    public List<UpgradeData> upgradeDatas;
+    public List<UpgradeDataInstance> upgradeDatas;
 
-    //Copy contructor
-    public UpgradeKitData(UpgradeKitData other)
-    {
-        ID = other.ID;
-        upgradeDatas = new List<UpgradeData>(other.upgradeDatas);
-        upgradeDatas = other.upgradeDatas.ConvertAll(book => new UpgradeData(book));
-    }
 
-    public UpgradeData GetUpgradeDataByType(UpgradeType upgradeType)
+    public UpgradeDataInstance GetUpgradeDataInstanceByType(UpgradeType upgradeType)
     {
-        foreach (UpgradeData item in upgradeDatas)
+        foreach (UpgradeDataInstance item in upgradeDatas)
         {
-            if (item.upgradeType == upgradeType)
+            if (item.UpgradeType == upgradeType)
             {
                 return item;
             }
@@ -36,34 +29,24 @@ public class UpgradeKitData
 }
 
 [System.Serializable]
-public class UpgradeData
+public class UpgradeDataInstance
 {
-    public string upgradeName;
-    public UpgradeType upgradeType;
-    public Sprite thumbnail;
+    [SerializeField] UpgradeData upgradeData;
+    [SerializeField] int currentLevel;
 
-    public List<PowerAndCostPair> powerAndCost;
-
-    [SerializeField] int currentLevel = -1;
-    public int maxLevels;
-
-    public int CurrentLevel { get => currentLevel; }
-
-    public UpgradeData()
-    {
+    public UpgradeDataInstance()
+    { 
         currentLevel = -1;
     }
 
-    //Copy constructor
-    public UpgradeData(UpgradeData other)
-    {
-        upgradeName = other.upgradeName;
-        upgradeType = other.upgradeType;
-        thumbnail = other.thumbnail;
-        powerAndCost = other.powerAndCost;
-        currentLevel = other.currentLevel;
-        maxLevels = other.maxLevels;
-    }
+    public string UpgradeName { get => upgradeData.UpgradeName; }
+    public UpgradeType UpgradeType { get => upgradeData.UpgradeType; }
+    public Sprite Thumbnail { get => upgradeData.Thumbnail; }
+    public List<PowerAndCostPair> PowerAndCost { get => upgradeData.PowerAndCost; }
+    public int MaxLevels { get => upgradeData.MaxLevels; }
+
+    public int CurrentLevel { get => currentLevel; }
+
 
     public bool Upgrade()
     {
@@ -76,7 +59,7 @@ public class UpgradeData
 
     public bool CanBeUpgraded()
     {
-        return CurrentLevel < powerAndCost.Count - 1;
+        return CurrentLevel < upgradeData.PowerAndCost.Count - 1;
     }
 
     /// <summary> Is current level >= 0? </summary>
@@ -91,16 +74,33 @@ public class UpgradeData
         if (currentLevel < 0)
             return null;
 
-        return powerAndCost[CurrentLevel];
+        return upgradeData.PowerAndCost[CurrentLevel];
     }
 
     public PowerAndCostPair GetNextPowerCostPair()
     {
-        if (currentLevel + 1 >= powerAndCost.Count)
+        if (currentLevel + 1 >= upgradeData.PowerAndCost.Count)
             return null;
 
-        return powerAndCost[CurrentLevel + 1];
+        return upgradeData.PowerAndCost[CurrentLevel + 1];
     }
+}
+
+[CreateAssetMenu(fileName = "NewUpgradeData", menuName = "Weapons/Create New Upgrade Data")]
+[System.Serializable]
+public class UpgradeData : ScriptableObject
+{
+    [SerializeField] string upgradeName;
+    [SerializeField] UpgradeType upgradeType;
+    [SerializeField] Sprite thumbnail;
+
+    [SerializeField] List<PowerAndCostPair> powerAndCost;
+
+    public string UpgradeName { get => upgradeName; }
+    public UpgradeType UpgradeType { get => upgradeType; }
+    public Sprite Thumbnail { get => thumbnail; }
+    public List<PowerAndCostPair> PowerAndCost { get => powerAndCost; }
+    public int MaxLevels { get => PowerAndCost.Count; }
 }
 
 [System.Serializable]

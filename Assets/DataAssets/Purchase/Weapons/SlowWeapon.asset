@@ -23,30 +23,10 @@ MonoBehaviour:
   upgradeKit:
     ID: PistolUpgrade
     upgradeDatas:
-    - upgradeName: Power Shoot
-      thumbnail: {fileID: 21300000, guid: 39b57fafc6a7610449766c67a54745df, type: 3}
-      powerAndCost:
-      - power: 0.1
-        cost: 2
-      - power: 0.5
-        cost: 3
+    - upgradeData: {fileID: 11400000, guid: eb63a62ce8b4c434e818a01e4e565a8a, type: 2}
       currentLevel: -1
-      maxLevels: 0
-    - upgradeName: Super speed
-      thumbnail: {fileID: 21300000, guid: 23223a7c86f2ac7489cdb1635c85ed4a, type: 3}
-      powerAndCost:
-      - power: 0.1
-        cost: 2
-      - power: 0.5
-        cost: 3
-      - power: 0.74
-        cost: 22
-      - power: 1.5
-        cost: 37
-      - power: 2.88
-        cost: 202
+    - upgradeData: {fileID: 11400000, guid: 5e1dda519ba16e84a850203e715aa01d, type: 2}
       currentLevel: -1
-      maxLevels: 0
   prefab: {fileID: 561045076462038702, guid: edfe0afd5267cf6499f4fc8a41c17917, type: 3}
   projectile: {fileID: -8417403802403430722, guid: 2ea9f4cd2428a6b4eb6be68185bc177b,
     type: 3}
