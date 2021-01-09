@@ -8,6 +8,8 @@ public class Player : MonoBehaviour, IDamageable
     [SerializeField] Transform weaponRoot;
     [SerializeField] WeaponData firstWeaponData;
     [SerializeField] WeaponData secondWeaponData;
+    [SerializeField] UpgradeKitData firstWeaponUpgradeData;
+    [SerializeField] UpgradeKitData secondWeaponUpgradeData;
 
     [SerializeField] Weapon equipedWeapon;
 
@@ -81,6 +83,10 @@ public class Player : MonoBehaviour, IDamageable
         {
             EquipWeapon(false);
         }
+
+
+        firstWeapon?.Init(firstWeaponUpgradeData);
+        secondWeapon?.Init(secondWeaponUpgradeData);
     }
 
     void Update()

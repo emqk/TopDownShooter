@@ -632,7 +632,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 291322517}
-  m_LocalRotation: {x: 0.49970073, y: -0.000000033326657, z: 0.000000019225803, w: 0.8661982}
+  m_LocalRotation: {x: 0.49970073, y: 0.000000033326653, z: -0.000000019225801, w: 0.8661982}
   m_LocalPosition: {x: 0, y: 12.94, z: -6.76}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -4194,7 +4194,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1687258581}
-  m_LocalRotation: {x: 0.49970073, y: -0.000000033326657, z: 0.000000019225803, w: 0.8661982}
+  m_LocalRotation: {x: 0.49970073, y: 0.000000033326653, z: -0.000000019225801, w: 0.8661982}
   m_LocalPosition: {x: 0, y: 12.94, z: -6.76}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -5936,6 +5936,36 @@ MonoBehaviour:
   weaponRoot: {fileID: 1680697150}
   firstWeaponData: {fileID: 11400000, guid: 250249b682ab61b41a9bb85a58d74e8e, type: 2}
   secondWeaponData: {fileID: 11400000, guid: 0f3b641c9aacb8c42bd3b4d0bbfad390, type: 2}
+  firstWeaponUpgradeData:
+    ID: '[TEST UPGRADE_KIT]'
+    upgradeDatas:
+    - upgradeName: TEST UPGRADE DAMAGE
+      upgradeType: 2
+      thumbnail: {fileID: 0}
+      powerAndCost:
+      - power: 7.55
+        cost: 0
+      currentLevel: 0
+      maxLevels: 1
+    - upgradeName: TEST UPGRADE SPEED
+      upgradeType: 3
+      thumbnail: {fileID: 0}
+      powerAndCost:
+      - power: 2.33
+        cost: 0
+      currentLevel: 0
+      maxLevels: 1
+  secondWeaponUpgradeData:
+    ID: 
+    upgradeDatas:
+    - upgradeName: TEST UPGRADE SPEED
+      upgradeType: 3
+      thumbnail: {fileID: 0}
+      powerAndCost:
+      - power: 0.2
+        cost: 0
+      currentLevel: 0
+      maxLevels: 1
   equipedWeapon: {fileID: 1680697151}
   onWeaponEquip:
     m_PersistentCalls:

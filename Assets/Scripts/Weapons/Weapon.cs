@@ -5,6 +5,7 @@ public class Weapon : MonoBehaviour
 {
     [SerializeField] Transform shootSource;
     [SerializeField] WeaponData weaponData;
+    UpgradeKitData upgradeData;
 
     WeaponHeatImage weaponHeatImage;
 
@@ -13,6 +14,13 @@ public class Weapon : MonoBehaviour
     bool isOverheated = false;
     float timeToShoot;
     AudioSource audioSource;
+
+    public UpgradeKitData UpgradeData { get => upgradeData; }
+
+    public void Init(UpgradeKitData _upgradeData)
+    {
+        upgradeData = _upgradeData;
+    }
 
     void Start()
     {
@@ -54,7 +62,20 @@ public class Weapon : MonoBehaviour
         if (timeToShoot <= 0 && !isOverheated)
         {
             Projectile projectileInstance = Instantiate(weaponData.Projectile, shootSource.transform.position, shootSource.rotation);
-            projectileInstance.Init(weaponData.ProjectileData);
+            ProjectileData projectileData = weaponData.ProjectileData;
+            if (UpgradeData != null)
+            {
+                UpgradeData damageUpgrade = UpgradeData.GetUpgradeDataByType(UpgradeType.Damage);
+                float damageUpgradeValue = damageUpgrade != null ? damageUpgrade.GetCurrentPowerCostPair().power : 1;
+
+                UpgradeData moveSpeedUpgrade = UpgradeData.GetUpgradeDataByType(UpgradeType.Speed);
+                float moveSpeedUpgradeValue = moveSpeedUpgrade != null ? moveSpeedUpgrade.GetCurrentPowerCostPair().power : 1;
+
+                projectileData = new ProjectileData(
+                    new Vector2Int((int)(projectileData.DamageRange.x * damageUpgradeValue), (int)(projectileData.DamageRange.y * damageUpgradeValue))
+                    , projectileData.MoveSpeed * moveSpeedUpgradeValue);
+            }
+            projectileInstance.Init(projectileData);
 
             timeToShoot = weaponData.ShootRate;
             currentHeat += weaponData.HeatPerShot;

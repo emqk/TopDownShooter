@@ -26,6 +26,7 @@ public class Database : MonoBehaviour
         else
         {
             instance = this;
+            DontDestroyOnLoad(gameObject);
         }
     }
 
@@ -39,6 +40,7 @@ public class Database : MonoBehaviour
             }
         }
 
+        Debug.LogError("Can't find Upgrade data of id: " + kitID);
         return null;
     }
 

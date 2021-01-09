@@ -1,6 +1,11 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
+public enum UpgradeType
+{
+    None, Rate, Damage, Speed
+}
+
 [System.Serializable]
 public class UpgradeKitData
 {
@@ -14,12 +19,27 @@ public class UpgradeKitData
         upgradeDatas = new List<UpgradeData>(other.upgradeDatas);
         upgradeDatas = other.upgradeDatas.ConvertAll(book => new UpgradeData(book));
     }
+
+    public UpgradeData GetUpgradeDataByType(UpgradeType upgradeType)
+    {
+        foreach (UpgradeData item in upgradeDatas)
+        {
+            if (item.upgradeType == upgradeType)
+            {
+                return item;
+            }
+        }
+
+        Debug.LogError("Can't find upgrade data of given type!");
+        return null;
+    }
 }
 
 [System.Serializable]
 public class UpgradeData
 {
     public string upgradeName;
+    public UpgradeType upgradeType;
     public Sprite thumbnail;
 
     public List<PowerAndCostPair> powerAndCost;
@@ -38,6 +58,7 @@ public class UpgradeData
     public UpgradeData(UpgradeData other)
     {
         upgradeName = other.upgradeName;
+        upgradeType = other.upgradeType;
         thumbnail = other.thumbnail;
         powerAndCost = other.powerAndCost;
         currentLevel = other.currentLevel;
@@ -56,6 +77,13 @@ public class UpgradeData
     public bool CanBeUpgraded()
     {
         return CurrentLevel < powerAndCost.Count - 1;
+    }
+
+    /// <summary> Is current level >= 0? </summary>
+    /// <returns></returns>
+    public bool WasUpgraded()
+    {
+        return currentLevel >= 0;
     }
 
     public PowerAndCostPair GetCurrentPowerCostPair()

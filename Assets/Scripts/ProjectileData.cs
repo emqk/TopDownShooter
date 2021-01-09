@@ -8,4 +8,16 @@ public class ProjectileData : ScriptableObject
 
     public float MoveSpeed { get => moveSpeed; }
     [SerializeField] float moveSpeed;
+
+    public ProjectileData(ProjectileData other)
+    {
+        damageRange = other.damageRange;
+        moveSpeed = other.moveSpeed;
+    }
+
+    public ProjectileData(Vector2Int _damageRange, float _moveSpeed)
+    {
+        damageRange = _damageRange;
+        moveSpeed = _moveSpeed;
+    }
 }
