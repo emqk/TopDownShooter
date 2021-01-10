@@ -11,8 +11,8 @@ public class MapPurchase : Purchasable
         {
             MoneyManager.SpendGold(data.Cost);
             Purchase();
-            Refresh();
             Database.instance.AddPurchaseElementID(data);
+
             return true;
         }
 
@@ -25,6 +25,7 @@ public class MapPurchase : Purchasable
         {
             if (Buy())
             {
+                Refresh();
                 Debug.Log("Item has been bought!");
             }
             else
@@ -56,6 +57,9 @@ public class MapPurchase : Purchasable
 
         //Upgrades
         MainMenuUIManager.instance.ShowUpgrades(upgradeKitData);
+
+        //Serialize
+        Serializer.Serialize();
     }
 
     public override void Refresh()

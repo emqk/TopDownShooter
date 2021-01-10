@@ -23,9 +23,6 @@ public class UpgradeUIElement : Purchasable
             if (!myDataInstance.CanBeUpgraded())
                 Purchase();
 
-            Refresh();
-            Serializer.Serialize();
-
             return true;
         }
 
@@ -38,6 +35,8 @@ public class UpgradeUIElement : Purchasable
         {
             if (Buy())
             {
+                Refresh();
+                Serializer.Serialize();
                 Debug.Log("Item has been upgraded!");
             }
             else

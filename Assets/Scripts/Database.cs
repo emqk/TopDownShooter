@@ -6,6 +6,12 @@ public class DatabaseSerializationData
 {
     public List<string> purchased;
     public List<UpgradeKitData> upgrades;
+
+    public WeaponData firstWeaponData;
+    public WeaponData secondWeaponData;
+
+    public UpgradeKitData firstWeaponUpgradeKitData;
+    public UpgradeKitData secondWeaponUpgradeKitData;
 }
 
 public class Database : MonoBehaviour
@@ -90,7 +96,6 @@ public class Database : MonoBehaviour
         {
             purchased.Add(purchaseData.GetID);
             upgrades.Add(purchaseData.UpgradeKit);
-            Serializer.Serialize();
         }
         else
         {
@@ -112,7 +117,11 @@ public class Database : MonoBehaviour
         DatabaseSerializationData data = new DatabaseSerializationData
         {
             purchased = purchased,
-            upgrades = upgrades
+            upgrades = upgrades,
+            firstWeaponData = firstWeaponData,
+            secondWeaponData = secondWeaponData,
+            firstWeaponUpgradeKitData = firstWeaponUpgradeKitData,
+            secondWeaponUpgradeKitData = secondWeaponUpgradeKitData
         };
         return data;
     }
@@ -121,5 +130,11 @@ public class Database : MonoBehaviour
     {
         purchased = databaseSerializationData.purchased;
         upgrades = databaseSerializationData.upgrades;
+
+        firstWeaponData = databaseSerializationData.firstWeaponData;
+        secondWeaponData = databaseSerializationData.secondWeaponData;
+
+        firstWeaponUpgradeKitData = databaseSerializationData.firstWeaponUpgradeKitData;
+        secondWeaponUpgradeKitData = databaseSerializationData.secondWeaponUpgradeKitData;
     }
 }
