@@ -1,4 +1,11 @@
-﻿public static class MoneyManager
+﻿
+[System.Serializable]
+public class MoneySerializationData
+{
+    public Statistic gold;
+}
+
+public static class MoneyManager
 {
     static Statistic gold = new Statistic(0, 50, 1000000);
 
@@ -19,5 +26,19 @@
     {
         gold.ChangeByAmount(-cost);
         MainMenuUIManager.instance.RefreshGold();
+    }
+
+    public static MoneySerializationData GetMoneyData()
+    {
+        MoneySerializationData data = new MoneySerializationData
+        {
+            gold = gold
+        };
+        return data;
+    }
+
+    public static void SetMoneyFromData(MoneySerializationData moneySerializationData)
+    {
+        gold = moneySerializationData.gold;
     }
 }

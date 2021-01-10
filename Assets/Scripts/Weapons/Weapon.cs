@@ -22,7 +22,7 @@ public class Weapon : MonoBehaviour
         upgradeData = _upgradeData;
     }
 
-    void Start()
+    void Awake()
     {
         timeToShoot = weaponData.ShootRate;
         audioSource = GetComponent<AudioSource>();
@@ -66,10 +66,10 @@ public class Weapon : MonoBehaviour
             if (UpgradeData != null)
             {
                 UpgradeDataInstance damageUpgrade = UpgradeData.GetUpgradeDataInstanceByType(UpgradeType.Damage);
-                float damageUpgradeValue = damageUpgrade != null ? damageUpgrade.GetCurrentPowerCostPair().power : 1;
+                float damageUpgradeValue = damageUpgrade != null && damageUpgrade.GetCurrentPowerCostPair() != null ? damageUpgrade.GetCurrentPowerCostPair().power : 1;
 
                 UpgradeDataInstance moveSpeedUpgrade = UpgradeData.GetUpgradeDataInstanceByType(UpgradeType.Speed);
-                float moveSpeedUpgradeValue = moveSpeedUpgrade != null ? moveSpeedUpgrade.GetCurrentPowerCostPair().power : 1;
+                float moveSpeedUpgradeValue = moveSpeedUpgrade != null && moveSpeedUpgrade.GetCurrentPowerCostPair() != null ? moveSpeedUpgrade.GetCurrentPowerCostPair().power : 1;
 
                 projectileData = new ProjectileData(
                     new Vector2Int((int)(projectileData.DamageRange.x * damageUpgradeValue), (int)(projectileData.DamageRange.y * damageUpgradeValue))

@@ -5,6 +5,7 @@ using UnityEngine;
 public class SerializeData
 {
     public DatabaseSerializationData databaseData;
+    public MoneySerializationData moneyData;
 }
 
 public static class Serializer
@@ -18,7 +19,8 @@ public static class Serializer
         Directory.CreateDirectory(filePath);
         SerializeData dataToSerialize = new SerializeData
         {
-            databaseData = Database.instance.GetSerializationData()
+            databaseData = Database.instance.GetSerializationData(),
+            moneyData = MoneyManager.GetMoneyData()
         };
         string json = JsonUtility.ToJson(dataToSerialize);
         File.WriteAllText(fullPath, json);
@@ -30,6 +32,7 @@ public static class Serializer
         if (serializeData != null)
         {
             Database.instance.SetDatabaseFromData(serializeData.databaseData);
+            MoneyManager.SetMoneyFromData(serializeData.moneyData);
         }
     }
 
