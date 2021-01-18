@@ -22,7 +22,7 @@ public class MainMenuUIManager : MonoBehaviour
     [SerializeField] List<PurchaseData> weaponsFirst = new List<PurchaseData>();
     [SerializeField] List<PurchaseData> weaponsSecond = new List<PurchaseData>();
 
-    [SerializeField] GameObject visualizationObj;
+    [SerializeField] Transform visualizationObjParent;
     [SerializeField] Image weaponFirstThumbnail;
     [SerializeField] Image weaponSecondThumbnail;
 
@@ -83,8 +83,12 @@ public class MainMenuUIManager : MonoBehaviour
 
     public void RefreshVisualizationFromData(PurchaseData data)
     {
-        visualizationObj.GetComponent<MeshFilter>().sharedMesh = data.Mesh;
-        visualizationObj.GetComponent<MeshRenderer>().sharedMaterial = data.Material;
+        foreach (Transform child in visualizationObjParent)
+        {
+            Destroy(child.gameObject);
+        }
+
+        Instantiate(data.Prefab, visualizationObjParent);
     }
 
     void SpawnPurchasableFromList(List<PurchaseData> list)

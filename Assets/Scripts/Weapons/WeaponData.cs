@@ -4,14 +4,10 @@
 public class WeaponData : PurchaseData
 {
     [Header("--------------------------------- [ WEAPON INFO ] ---------------------------------")]
-    [Header("Weapon", order = 1)]
-    [SerializeField] Weapon prefab;
-
-    [Header("Projectile")]
+    [Header("Projectile", order = 1)]
     [SerializeField] Projectile projectile;
     [SerializeField] ProjectileData projectileData;
 
-    public Weapon Prefab { get => prefab; }
     public Projectile Projectile { get => projectile; }
     public ProjectileData ProjectileData { get => projectileData; }
 

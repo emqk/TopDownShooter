@@ -26,7 +26,10 @@ public class Weapon : MonoBehaviour
     {
         timeToShoot = weaponData.ShootRate;
         audioSource = GetComponent<AudioSource>();
-        weaponHeatImage = UIManager.instance.GetWeaponHeatImage();
+        if (UIManager.instance)
+            weaponHeatImage = UIManager.instance.GetWeaponHeatImage();
+        else
+            Debug.LogError("Can't find UIManager instance!");
     }
 
     public void UpdateMe()

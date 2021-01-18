@@ -10,8 +10,7 @@ public class PurchaseData : ScriptableObject
     [SerializeField] int cost;
     [SerializeField] [TextArea] string description;
 
-    [SerializeField] Mesh mesh;
-    [SerializeField] Material material;
+    [SerializeField] GameObject prefab;
 
     [SerializeField] UpgradeKitData upgradeKit;
 
@@ -20,8 +19,7 @@ public class PurchaseData : ScriptableObject
     public int Cost { get => cost; }
     public string Description { get => description; }
 
-    public Mesh Mesh { get => mesh; }
-    public Material Material { get => material; }
+    public GameObject Prefab { get => prefab; }
     public string GetID { get => ID; }
     public UpgradeKitData UpgradeKit { get => upgradeKit; }
 }

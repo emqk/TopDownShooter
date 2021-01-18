@@ -37,7 +37,7 @@ public class MapPurchase : Purchasable
 
         UpgradeKitData upgradeKitData = Database.instance.GetUpgradeKitData(data.UpgradeKit.ID);
 
-        if (data.Mesh && data.Material)
+        if (data.Prefab)
         {
             MainMenuUIManager.instance.RefreshVisualizationFromData(data);
         }

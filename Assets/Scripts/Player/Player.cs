@@ -60,7 +60,7 @@ public class Player : MonoBehaviour, IDamageable
         //Spawn weapons
         if (firstWeaponData)
         {
-            firstWeapon = Instantiate(firstWeaponData.Prefab, weaponRoot);
+            firstWeapon = Instantiate(firstWeaponData.Prefab, weaponRoot).GetComponent<Weapon>();
         }
         else
         {
@@ -69,7 +69,7 @@ public class Player : MonoBehaviour, IDamageable
 
         if (secondWeaponData)
         {
-            secondWeapon = Instantiate(secondWeaponData.Prefab, weaponRoot);
+            secondWeapon = Instantiate(secondWeaponData.Prefab, weaponRoot).GetComponent<Weapon>();
         }
         else
         {
