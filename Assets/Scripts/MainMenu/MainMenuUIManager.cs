@@ -17,15 +17,21 @@ public class MainMenuUIManager : MonoBehaviour
     [SerializeField] MapPurchase purchasePrefab;
     [SerializeField] UpgradeUIElement upgradeUIPrefab;
 
+    [Header("Data")]
     [SerializeField] List<PurchaseData> characters = new List<PurchaseData>();
     [SerializeField] List<PurchaseData> maps = new List<PurchaseData>();
     [SerializeField] List<PurchaseData> weaponsFirst = new List<PurchaseData>();
     [SerializeField] List<PurchaseData> weaponsSecond = new List<PurchaseData>();
 
+    [Header("Mesh visualization")]
     [SerializeField] Transform visualizationObjParent;
     [SerializeField] Image weaponFirstThumbnail;
     [SerializeField] Image weaponSecondThumbnail;
 
+    [Header("Character info")]
+    [SerializeField] RectTransform characterInfoPanel;
+    [SerializeField] TMP_Text healthText;
+    [SerializeField] TMP_Text movementSpeedText;
 
     PanelType currentPanelType = PanelType.None;
 
@@ -46,7 +52,7 @@ public class MainMenuUIManager : MonoBehaviour
         goldText.text = MoneyManager.GetGoldAmount().ToString();
     }
 
-    public void RefreshWeaponIcon(PurchaseData data, bool isItFirst)
+    void RefreshWeaponIcon(PurchaseData data, bool isItFirst)
     {
         if (isItFirst)
         {
@@ -81,8 +87,32 @@ public class MainMenuUIManager : MonoBehaviour
         }
     }
 
+    public void RefreshWeaponsUI()
+    {
+        WeaponData firstWeapon = Database.instance.GetWeaponData(true);
+        WeaponData secondWeapon = Database.instance.GetWeaponData(false);
+
+        if (firstWeapon)
+            RefreshWeaponIcon(firstWeapon, true);
+        if (secondWeapon)
+            RefreshWeaponIcon(secondWeapon, false);
+    }
+
+    public void RefreshCharacterSkin()
+    {
+        CharacterData characterData = Database.instance.GetCharacterData();
+        RefreshVisualizationFromData(characterData);
+        SetCharacterInfoActive(characterData);
+    }
+
     public void RefreshVisualizationFromData(PurchaseData data)
     {
+        if (!data)
+        {
+            Debug.LogError("Can't visialize from data - data is null!");
+            return;
+        }
+
         foreach (Transform child in visualizationObjParent)
         {
             Destroy(child.gameObject);
@@ -131,6 +161,20 @@ public class MainMenuUIManager : MonoBehaviour
             UpgradeUIElement instance = Instantiate(upgradeUIPrefab, upgradeElementsPanel);
             instance.SetData(dataInstance);
             instance.Refresh();
+        }
+    }
+
+    public void SetCharacterInfoActive(CharacterData characterData)
+    {
+        if (characterData)
+        {
+            characterInfoPanel.gameObject.SetActive(true);
+            healthText.text = characterData.MaxHealth.ToString();
+            movementSpeedText.text = characterData.MovementSpeed.ToString();
+        }
+        else
+        {
+            characterInfoPanel.gameObject.SetActive(false);
         }
     }
 }

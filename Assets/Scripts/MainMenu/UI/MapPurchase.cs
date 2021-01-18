@@ -35,6 +35,7 @@ public class MapPurchase : Purchasable
             }
         }
 
+        MainMenuUIManager.instance.SetCharacterInfoActive(null);
         UpgradeKitData upgradeKitData = Database.instance.GetUpgradeKitData(data.UpgradeKit.ID);
 
         if (data.Prefab)
@@ -44,19 +45,20 @@ public class MapPurchase : Purchasable
 
         if (type == PanelType.WeaponFirst)
         {
-            MainMenuUIManager.instance.RefreshWeaponIcon(data, true);
             Database.instance.SetWeaponData((WeaponData)data, true);
             Database.instance.SetWeaponUpgradeKitData(upgradeKitData, true);
+            MainMenuUIManager.instance.RefreshWeaponsUI();
         }
         else if (type == PanelType.WeaponSecond)
         {
-            MainMenuUIManager.instance.RefreshWeaponIcon(data, false);
             Database.instance.SetWeaponData((WeaponData)data, false);
             Database.instance.SetWeaponUpgradeKitData(upgradeKitData, false);
+            MainMenuUIManager.instance.RefreshWeaponsUI();
         }
         else if (type == PanelType.Character)
         {
             Database.instance.SetCharacterData((CharacterData)data);
+            MainMenuUIManager.instance.SetCharacterInfoActive((CharacterData)data);
         }
 
         //Upgrades
