@@ -6,7 +6,14 @@ public class MainMenuManager : MonoBehaviour
     private void Start()
     {
         Serializer.Load();
+        RefreshCharacterSkin();
         RefreshWeaponsUI();
+    }
+
+    void RefreshCharacterSkin()
+    {
+        PurchaseData characterSkin = Database.instance.GetCharacterData();
+        MainMenuUIManager.instance.RefreshVisualizationFromData(characterSkin);
     }
 
     void RefreshWeaponsUI()

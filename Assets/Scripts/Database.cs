@@ -12,6 +12,8 @@ public class DatabaseSerializationData
 
     public UpgradeKitData firstWeaponUpgradeKitData;
     public UpgradeKitData secondWeaponUpgradeKitData;
+
+    public PurchaseData characterData;
 }
 
 public class Database : MonoBehaviour
@@ -25,6 +27,8 @@ public class Database : MonoBehaviour
 
     UpgradeKitData firstWeaponUpgradeKitData = null;
     UpgradeKitData secondWeaponUpgradeKitData = null;
+
+    PurchaseData characterData;
 
 
     public static Database instance;
@@ -74,7 +78,6 @@ public class Database : MonoBehaviour
         else
             secondWeaponUpgradeKitData = upgradeKitData;
     }
-
     public UpgradeKitData GetUpgradeKitData(string kitID)
     {
         foreach (UpgradeKitData currKit in upgrades)
@@ -89,6 +92,15 @@ public class Database : MonoBehaviour
         return null;
     }
 
+    public void SetCharacterData(PurchaseData _characterData)
+    {
+        characterData = _characterData;
+    }
+
+    public PurchaseData GetCharacterData()
+    {
+        return characterData;
+    }
 
     public void AddPurchaseElementID(PurchaseData purchaseData)
     {
@@ -121,7 +133,8 @@ public class Database : MonoBehaviour
             firstWeaponData = firstWeaponData,
             secondWeaponData = secondWeaponData,
             firstWeaponUpgradeKitData = firstWeaponUpgradeKitData,
-            secondWeaponUpgradeKitData = secondWeaponUpgradeKitData
+            secondWeaponUpgradeKitData = secondWeaponUpgradeKitData,
+            characterData = characterData
         };
         return data;
     }
@@ -136,5 +149,7 @@ public class Database : MonoBehaviour
 
         firstWeaponUpgradeKitData = databaseSerializationData.firstWeaponUpgradeKitData;
         secondWeaponUpgradeKitData = databaseSerializationData.secondWeaponUpgradeKitData;
+
+        characterData = databaseSerializationData.characterData;
     }
 }

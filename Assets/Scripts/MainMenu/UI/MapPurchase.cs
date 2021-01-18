@@ -54,6 +54,10 @@ public class MapPurchase : Purchasable
             Database.instance.SetWeaponData((WeaponData)data, false);
             Database.instance.SetWeaponUpgradeKitData(upgradeKitData, false);
         }
+        else if (type == PanelType.Character)
+        {
+            Database.instance.SetCharacterData(data);
+        }
 
         //Upgrades
         MainMenuUIManager.instance.ShowUpgrades(upgradeKitData);
