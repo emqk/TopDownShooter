@@ -16,6 +16,8 @@ public class Player : MonoBehaviour, IDamageable
     Weapon firstWeapon;
     Weapon secondWeapon;
 
+    GameObject characterSkin;
+
     [Header("Other")]
     [SerializeField] Camera playerCamera;
     [SerializeField] float hpImageYPercentOffset;
@@ -91,8 +93,15 @@ public class Player : MonoBehaviour, IDamageable
         secondWeapon?.Init(secondWeaponUpgradeData);
     }
 
+    void SetupCharacterSkin()
+    {
+        PurchaseData skinData = Database.instance.GetCharacterData();
+        characterSkin = Instantiate(skinData.Prefab, transform.GetChild(0));
+    }
+
     void Start()
     {
+        SetupCharacterSkin();
         SetupWeapons();
         RefreshHPFillUI();
     }

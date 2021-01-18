@@ -17,7 +17,7 @@ MonoBehaviour:
   thumbnail: {fileID: 21300000, guid: bfc8097007f21334fb766212cd73825d, type: 3}
   cost: 5
   description: Basic character
-  prefab: {fileID: 919132149155446097, guid: dcde06d8aaa064d46a0fe17f8f263065, type: 3}
+  prefab: {fileID: 8651642329860659847, guid: 92ad147aa13cc204b9c90c532dc840ab, type: 3}
   upgradeKit:
     ID: 
     upgradeDatas: []
