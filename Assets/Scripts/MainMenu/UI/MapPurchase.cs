@@ -56,7 +56,7 @@ public class MapPurchase : Purchasable
         }
         else if (type == PanelType.Character)
         {
-            Database.instance.SetCharacterData(data);
+            Database.instance.SetCharacterData((CharacterData)data);
         }
 
         //Upgrades

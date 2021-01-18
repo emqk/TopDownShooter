@@ -5,7 +5,7 @@
 public class PlayerController : MonoBehaviour
 {
     [SerializeField] Transform body;
-    [SerializeField] float movementSpeed;
+    float movementSpeed;
 
     [Header("Touch input")]
     [SerializeField] Joystick movementJoystick;
@@ -26,6 +26,11 @@ public class PlayerController : MonoBehaviour
     {
         ControlTouchInput();
         //ControlKeyboardMouseInput();
+    }
+
+    public void SetMovementSpeed(float newSpeed)
+    {
+        movementSpeed = newSpeed;
     }
 
     void ControlKeyboardMouseInput()

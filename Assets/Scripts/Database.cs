@@ -13,7 +13,7 @@ public class DatabaseSerializationData
     public UpgradeKitData firstWeaponUpgradeKitData;
     public UpgradeKitData secondWeaponUpgradeKitData;
 
-    public PurchaseData characterData;
+    public CharacterData characterData;
 }
 
 public class Database : MonoBehaviour
@@ -28,7 +28,7 @@ public class Database : MonoBehaviour
     UpgradeKitData firstWeaponUpgradeKitData = null;
     UpgradeKitData secondWeaponUpgradeKitData = null;
 
-    PurchaseData characterData;
+    CharacterData characterData;
 
 
     public static Database instance;
@@ -92,12 +92,12 @@ public class Database : MonoBehaviour
         return null;
     }
 
-    public void SetCharacterData(PurchaseData _characterData)
+    public void SetCharacterData(CharacterData _characterData)
     {
         characterData = _characterData;
     }
 
-    public PurchaseData GetCharacterData()
+    public CharacterData GetCharacterData()
     {
         return characterData;
     }

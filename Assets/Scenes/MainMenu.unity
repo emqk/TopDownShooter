@@ -4384,7 +4384,7 @@ MonoBehaviour:
   upgradeUIPrefab: {fileID: 131454822616836337, guid: f0db22272cc276747826733078b970a9,
     type: 3}
   characters:
-  - {fileID: 11400000, guid: eba9638d749d9484d8041b740551f140, type: 2}
+  - {fileID: 11400000, guid: 8ff81d447439e9d449c69b7e031d949c, type: 2}
   maps:
   - {fileID: 11400000, guid: 1e98f0e802294d24884efd387821051a, type: 2}
   weaponsFirst:

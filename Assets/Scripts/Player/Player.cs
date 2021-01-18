@@ -24,6 +24,8 @@ public class Player : MonoBehaviour, IDamageable
     [SerializeField] Image healthFillImage;
     Statistic health = new Statistic(0, 100, 100);
 
+    PlayerController playerController;
+
     public void AddHealth(int amount)
     {
         health.ChangeByAmount(amount);
@@ -93,15 +95,20 @@ public class Player : MonoBehaviour, IDamageable
         secondWeapon?.Init(secondWeaponUpgradeData);
     }
 
-    void SetupCharacterSkin()
+    void SetupCharacterData()
     {
-        PurchaseData skinData = Database.instance.GetCharacterData();
-        characterSkin = Instantiate(skinData.Prefab, transform.GetChild(0));
+        CharacterData characterData = Database.instance.GetCharacterData();
+        characterSkin = Instantiate(characterData.Prefab, transform.GetChild(0));
+
+        health = new Statistic(0, characterData.MaxHealth, characterData.MaxHealth);
+        playerController.SetMovementSpeed(characterData.MovementSpeed);
     }
 
     void Start()
     {
-        SetupCharacterSkin();
+        playerController = GetComponent<PlayerController>();
+
+        SetupCharacterData();
         SetupWeapons();
         RefreshHPFillUI();
     }
