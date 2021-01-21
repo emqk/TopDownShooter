@@ -109,7 +109,7 @@ public class MainMenuUIManager : MonoBehaviour
     {
         if (!data)
         {
-            Debug.LogError("Can't visialize from data - data is null!");
+            Debug.LogError("Can't visualize from data - data is null!");
             return;
         }
 
