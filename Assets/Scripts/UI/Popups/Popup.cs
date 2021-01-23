@@ -59,8 +59,9 @@ public class Popup : MonoBehaviour
         }
     }
 
-    private void OnDestroy()
+    public void DestroyMe()
     {
-        Destroy(blocker);
+        Destroy(gameObject);
+        Destroy(blocker.gameObject);
     }
 }

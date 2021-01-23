@@ -356,7 +356,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   popupPrefab: {fileID: 8995862741863126219, guid: ab3bf2d0976bb994e968af8726c0bebb,
     type: 3}
+  blockerPanel: {fileID: 6970477344135337967, guid: 79589578b03775b4fae2867a38c04923,
+    type: 3}
   targetCanvas: {fileID: 2146868909}
+  popups: []
 --- !u!4 &54251311
 Transform:
   m_ObjectHideFlags: 0

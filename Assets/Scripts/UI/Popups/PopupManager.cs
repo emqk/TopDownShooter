@@ -7,7 +7,7 @@ public class PopupManager : MonoBehaviour
     [SerializeField] RectTransform blockerPanel;
     [SerializeField] Canvas targetCanvas;
 
-    List<Popup> popups = new List<Popup>();
+    public List<Popup> popups = new List<Popup>();
 
     public static PopupManager instance;
 
@@ -27,6 +27,7 @@ public class PopupManager : MonoBehaviour
 
     private void Start()
     {
+
         PopupData popupData = new PopupData()
         {
             title = "Test title",
@@ -34,11 +35,22 @@ public class PopupManager : MonoBehaviour
             buttonsData = new List<PopupButttonData>()
             {
                 new PopupButttonData() { text = "Show debug", onClick = () => Debug.Log("Clicked button 0") },
-                new PopupButttonData() { text = "Close", onClick = () => Debug.Log("close") }
+                new PopupButttonData() { text = "Close", onClick = CloseLastPopup }
             }
         };
 
         CreatePopup(popupData);
+    }
+
+    public void CloseLastPopup()
+    {
+        if (popups.Count <= 0)
+        {
+            Debug.Log("Can't close the last popup - popups count <= 0!");
+            return;
+        }
+
+        popups[popups.Count - 1].DestroyMe();
     }
 
     public void CreatePopup(PopupData popupData)
