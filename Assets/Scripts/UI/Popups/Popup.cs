@@ -42,6 +42,7 @@ public class Popup : MonoBehaviour
         foreach (PopupButttonData button in data)
         {
             Button buttonInstance = Instantiate(buttonPrefab, buttonsPanel);
+            buttonInstance.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = button.text;
             buttonInstance.onClick.AddListener(button.onClick);
         }
     }
