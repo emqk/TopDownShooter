@@ -24,11 +24,15 @@ public class Popup : MonoBehaviour
     [SerializeField] RectTransform buttonsPanel;
     [SerializeField] Button buttonPrefab;
 
-    public void Setup(PopupData popupData)
+    RectTransform blocker;
+
+
+    public void Setup(PopupData popupData, RectTransform _blocker)
     {
         ClearPanel();
         RefreshText(popupData);
         SpawnButtons(popupData.buttonsData);
+        blocker = _blocker;
     }
 
     void RefreshText(PopupData popupData)
@@ -53,5 +57,10 @@ public class Popup : MonoBehaviour
         {
             Destroy(child);
         }
+    }
+
+    private void OnDestroy()
+    {
+        Destroy(blocker);
     }
 }

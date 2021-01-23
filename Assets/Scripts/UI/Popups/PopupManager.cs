@@ -4,9 +4,10 @@ using UnityEngine;
 public class PopupManager : MonoBehaviour
 {
     [SerializeField] Popup popupPrefab;
+    [SerializeField] RectTransform blockerPanel;
     [SerializeField] Canvas targetCanvas;
 
-    
+    List<Popup> popups = new List<Popup>();
 
     public static PopupManager instance;
 
@@ -32,8 +33,8 @@ public class PopupManager : MonoBehaviour
             description = "Test description",
             buttonsData = new List<PopupButttonData>()
             {
-                new PopupButttonData() { text = "Button 0", onClick = () => Debug.Log("Clicked button 0") },
-                new PopupButttonData() { text = "Button 1", onClick = () => Debug.Log("Clicked button 1") }
+                new PopupButttonData() { text = "Show debug", onClick = () => Debug.Log("Clicked button 0") },
+                new PopupButttonData() { text = "Close", onClick = () => Debug.Log("close") }
             }
         };
 
@@ -42,7 +43,9 @@ public class PopupManager : MonoBehaviour
 
     public void CreatePopup(PopupData popupData)
     {
+        RectTransform backgroundBlockerInstance = Instantiate(blockerPanel, targetCanvas.transform);
         Popup popupInstance = Instantiate(popupPrefab, targetCanvas.transform);
-        popupInstance.Setup(popupData);
+        popupInstance.Setup(popupData, backgroundBlockerInstance);
+        popups.Add(popupInstance);
     }
 }
