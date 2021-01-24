@@ -3,6 +3,12 @@ using UnityEngine;
 
 public class PopupManager : MonoBehaviour
 {
+    [Header("Colors")]
+    [SerializeField] Color defaultColor;
+    [SerializeField] Color badColor;
+    [SerializeField] Color goodColor;
+
+    [Header("Other")]
     [SerializeField] Popup popupPrefab;
     [SerializeField] RectTransform blockerPanel;
     [SerializeField] Canvas targetCanvas;
@@ -40,7 +46,22 @@ public class PopupManager : MonoBehaviour
     {
         RectTransform backgroundBlockerInstance = Instantiate(blockerPanel, targetCanvas.transform);
         Popup popupInstance = Instantiate(popupPrefab, targetCanvas.transform);
-        popupInstance.Setup(popupData, backgroundBlockerInstance);
+        popupInstance.Setup(popupData, backgroundBlockerInstance, GetColorFromType(popupData.popupType));
         popups.Add(popupInstance);
+    }
+
+    Color GetColorFromType(PopupType popupType)
+    {
+        switch (popupType)
+        {
+            case PopupType.Default:
+                return defaultColor;
+            case PopupType.Bad:
+                return badColor;
+            case PopupType.Good:
+                return goodColor;
+            default:
+                return defaultColor;
+        }
     }
 }

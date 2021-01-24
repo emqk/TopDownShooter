@@ -22,7 +22,8 @@ public class UpgradeUIElement : Purchasable
             //Popup - upgrade is at max level!
             PopupData popupData = new PopupData()
             {
-                title = "Can't upgrade!",
+                popupType = PopupType.Good,
+                title = "Already upgraded",
                 description = "This upgrade is on the maximum level!",
                 buttonsData = new List<PopupButttonData>()
                 {
@@ -50,6 +51,7 @@ public class UpgradeUIElement : Purchasable
             //Popup - Not enough money!
             PopupData popupData = new PopupData()
             {
+                popupType = PopupType.Bad,
                 title = "Can't upgrade!",
                 description = "You don't have enough gold to purchase this upgrade!",
                 buttonsData = new List<PopupButttonData>()

@@ -34,6 +34,7 @@ public class MapPurchase : Purchasable
                 //Popup - Not enough money!
                 PopupData popupData = new PopupData()
                 {
+                    popupType = PopupType.Bad,
                     title = "Can't purchase!",
                     description = "You don't have enough gold to purchase this item!",
                     buttonsData = new List<PopupButttonData>()

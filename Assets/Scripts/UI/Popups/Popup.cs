@@ -5,8 +5,15 @@ using UnityEngine.UI;
 using TMPro;
 using System.Collections;
 
+public enum PopupType
+{
+    Default, Bad, Good
+}
+
+
 public struct PopupData
 {
+    public PopupType popupType;
     public string title;
     public string description;
     public List<PopupButttonData> buttonsData;
@@ -20,6 +27,7 @@ public struct PopupButttonData
 
 public class Popup : MonoBehaviour
 {
+    [SerializeField] Image titleBar;
     [SerializeField] TMP_Text titleText;
     [SerializeField] TMP_Text descriptionText;
     [SerializeField] RectTransform buttonsPanel;
@@ -33,12 +41,13 @@ public class Popup : MonoBehaviour
         animator = GetComponent<Animator>();
     }
 
-    public void Setup(PopupData popupData, RectTransform _blocker)
+    public void Setup(PopupData popupData, RectTransform _blocker, Color titleBarColor)
     {
         ClearPanel();
         RefreshText(popupData);
         SpawnButtons(popupData.buttonsData);
         blocker = _blocker;
+        titleBar.color = titleBarColor;
     }
 
     void RefreshText(PopupData popupData)
@@ -74,7 +83,7 @@ public class Popup : MonoBehaviour
 
     IEnumerator CleanupClose()
     {
-        yield return new WaitForSeconds(0.3f);
+        yield return new WaitForSeconds(0.2f);
         Destroy(gameObject);
         Destroy(blocker.gameObject);
     }
