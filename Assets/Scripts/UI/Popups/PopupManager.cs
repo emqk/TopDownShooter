@@ -7,7 +7,7 @@ public class PopupManager : MonoBehaviour
     [SerializeField] RectTransform blockerPanel;
     [SerializeField] Canvas targetCanvas;
 
-    public List<Popup> popups = new List<Popup>();
+    List<Popup> popups = new List<Popup>();
 
     public static PopupManager instance;
 
@@ -23,23 +23,6 @@ public class PopupManager : MonoBehaviour
             instance = this;
             DontDestroyOnLoad(gameObject);
         }
-    }
-
-    private void Start()
-    {
-
-        PopupData popupData = new PopupData()
-        {
-            title = "Test title",
-            description = "Test description",
-            buttonsData = new List<PopupButttonData>()
-            {
-                new PopupButttonData() { text = "Show debug", onClick = () => Debug.Log("Clicked button 0") },
-                new PopupButttonData() { text = "Close", onClick = CloseLastPopup }
-            }
-        };
-
-        CreatePopup(popupData);
     }
 
     public void CloseLastPopup()

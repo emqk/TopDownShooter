@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using TMPro;
+using System.Collections.Generic;
 
 public class UpgradeUIElement : Purchasable
 {
@@ -15,8 +16,26 @@ public class UpgradeUIElement : Purchasable
 
     public override bool Buy()
     {
+        bool canUpgrade = myDataInstance.CanBeUpgraded();
+        if (!canUpgrade)
+        {
+            //Popup - upgrade is at max level!
+            PopupData popupData = new PopupData()
+            {
+                title = "Can't upgrade!",
+                description = "This upgrade is on the maximum level!",
+                buttonsData = new List<PopupButttonData>()
+                {
+                    new PopupButttonData() { text = "Ok", onClick = PopupManager.instance.CloseLastPopup }
+                }
+            };
+            PopupManager.instance.CreatePopup(popupData);
+            return false;
+        }
+
         int cost = myDataInstance.GetNextPowerCostPair().cost;
-        if (MoneyManager.HaveEnoughGold(cost) && myDataInstance.CanBeUpgraded())
+        bool haveGold = MoneyManager.HaveEnoughGold(cost);
+        if (haveGold && canUpgrade)
         {
             MoneyManager.SpendGold(cost);
             myDataInstance.Upgrade();
@@ -24,6 +43,22 @@ public class UpgradeUIElement : Purchasable
                 Purchase();
 
             return true;
+        }
+
+        if (!haveGold)
+        {
+            //Popup - Not enough money!
+            PopupData popupData = new PopupData()
+            {
+                title = "Can't upgrade!",
+                description = "You don't have enough gold to purchase this upgrade!",
+                buttonsData = new List<PopupButttonData>()
+                {
+                    new PopupButttonData() { text = "Ok", onClick = PopupManager.instance.CloseLastPopup }
+                }
+            };
+            PopupManager.instance.CreatePopup(popupData);
+            return false;
         }
 
         return false;

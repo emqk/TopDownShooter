@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 
 public class MapPurchase : Purchasable
 {
@@ -30,7 +31,18 @@ public class MapPurchase : Purchasable
             }
             else
             {
-                Debug.Log("Can't be bought!");
+                //Popup - Not enough money!
+                PopupData popupData = new PopupData()
+                {
+                    title = "Can't purchase!",
+                    description = "You don't have enough gold to purchase this item!",
+                    buttonsData = new List<PopupButttonData>()
+                    {
+                        new PopupButttonData() { text = "Ok", onClick = PopupManager.instance.CloseLastPopup }
+                    }
+                };
+                PopupManager.instance.CreatePopup(popupData);
+
                 return;
             }
         }
