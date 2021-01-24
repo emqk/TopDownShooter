@@ -3,6 +3,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
 using TMPro;
+using System.Collections;
 
 public struct PopupData
 {
@@ -25,7 +26,12 @@ public class Popup : MonoBehaviour
     [SerializeField] Button buttonPrefab;
 
     RectTransform blocker;
+    Animator animator;
 
+    private void Awake()
+    {
+        animator = GetComponent<Animator>();
+    }
 
     public void Setup(PopupData popupData, RectTransform _blocker)
     {
@@ -59,8 +65,16 @@ public class Popup : MonoBehaviour
         }
     }
 
-    public void DestroyMe()
+    public void Close()
     {
+        animator.SetBool("Hide", true);
+        blocker.GetComponent<Animator>().SetBool("Hide", true);
+        StartCoroutine(CleanupClose());
+    }
+
+    IEnumerator CleanupClose()
+    {
+        yield return new WaitForSeconds(0.3f);
         Destroy(gameObject);
         Destroy(blocker.gameObject);
     }

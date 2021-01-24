@@ -50,7 +50,7 @@ public class PopupManager : MonoBehaviour
             return;
         }
 
-        popups[popups.Count - 1].DestroyMe();
+        popups[popups.Count - 1].Close();
     }
 
     public void CreatePopup(PopupData popupData)

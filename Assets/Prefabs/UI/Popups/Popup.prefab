@@ -216,6 +216,7 @@ GameObject:
   - component: {fileID: 8995862741863126218}
   - component: {fileID: 8995862741863126217}
   - component: {fileID: 8995862741863126219}
+  - component: {fileID: 5719484093013831838}
   m_Layer: 5
   m_Name: Popup
   m_TagString: Untagged
@@ -299,6 +300,25 @@ MonoBehaviour:
   buttonsPanel: {fileID: 8995862741651576802}
   buttonPrefab: {fileID: 3689145971019859036, guid: 5ce754fb471fb7a41ab2577d64140681,
     type: 3}
+--- !u!95 &5719484093013831838
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8995862741863126223}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 2ec59e3becce35f449a8a55c96b7efa2, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &8995862742173758806
 GameObject:
   m_ObjectHideFlags: 0
