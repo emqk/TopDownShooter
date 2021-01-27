@@ -99,7 +99,7 @@ LightmapSettings:
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 112000000, guid: d44c3281ce9af1549a056d31f56a96b0,
     type: 2}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -354,12 +354,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6db44d978076ed642b2e27187b0f1d1b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  defaultColor: {r: 0.3882353, g: 0.3882353, b: 0.3882353, a: 1}
+  badColor: {r: 0.9339623, g: 0.2599235, b: 0.30686525, a: 1}
+  goodColor: {r: 0.43078175, g: 0.8867924, b: 0.38065147, a: 1}
   popupPrefab: {fileID: 8995862741863126219, guid: ab3bf2d0976bb994e968af8726c0bebb,
     type: 3}
   blockerPanel: {fileID: 6970477344135337967, guid: 79589578b03775b4fae2867a38c04923,
     type: 3}
   targetCanvas: {fileID: 2146868909}
-  popups: []
 --- !u!4 &54251311
 Transform:
   m_ObjectHideFlags: 0
@@ -3810,7 +3812,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 98, y: 99.4}
+  m_AnchoredPosition: {x: 98, y: 99.3999}
   m_SizeDelta: {x: 155.68115, y: -345.12134}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1606451235
@@ -4796,7 +4798,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 529.5, y: 108.599976}
+  m_AnchoredPosition: {x: 529.5, y: 108.6001}
   m_SizeDelta: {x: 1059, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1887245434

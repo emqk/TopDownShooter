@@ -46,7 +46,8 @@ public class PlayerController : MonoBehaviour
         //Shooting
         if (Input.GetKey(KeyCode.Mouse0))
         {
-            controlledPlayer.WeaponShoot();
+            if(controlledPlayer.WeaponShoot())
+                controlledPlayer.OnWeaponShoot();
         }
     }
 
@@ -66,7 +67,8 @@ public class PlayerController : MonoBehaviour
             RotateToNormalizedVector(lookVec);
 
             //Shooting
-            controlledPlayer.WeaponShoot();
+            if(controlledPlayer.WeaponShoot())
+                controlledPlayer.OnWeaponShoot();
         }
     }
 

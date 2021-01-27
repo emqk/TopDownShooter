@@ -6,6 +6,8 @@ public class Player : MonoBehaviour, IDamageable
 {
     [Header("Weapon")]
     [SerializeField] Transform weaponRoot;
+    Vector3 defaultWeaponRootLocalPosition;
+    Vector3 shootWeaponRootLocalPosition;
     UpgradeKitData firstWeaponUpgradeData;
     UpgradeKitData secondWeaponUpgradeData;
 
@@ -95,6 +97,11 @@ public class Player : MonoBehaviour, IDamageable
         secondWeapon?.Init(secondWeaponUpgradeData);
     }
 
+    public void OnWeaponShoot()
+    {
+        weaponRoot.localPosition = shootWeaponRootLocalPosition;
+    }
+
     void SetupCharacterData()
     {
         CharacterData characterData = Database.instance.GetCharacterData();
@@ -107,6 +114,8 @@ public class Player : MonoBehaviour, IDamageable
     void Start()
     {
         playerController = GetComponent<PlayerController>();
+        defaultWeaponRootLocalPosition = weaponRoot.localPosition;
+        shootWeaponRootLocalPosition = defaultWeaponRootLocalPosition - weaponRoot.forward * 0.35f;
 
         SetupCharacterData();
         SetupWeapons();
@@ -119,6 +128,13 @@ public class Player : MonoBehaviour, IDamageable
         secondWeapon?.UpdateMe();
 
         equipedWeapon?.UpdateWeaponHeatImage();
+
+        UpdateWeaponRootPosition();
+    }
+
+    void UpdateWeaponRootPosition()
+    {
+        weaponRoot.localPosition = Vector3.Lerp(weaponRoot.localPosition, defaultWeaponRootLocalPosition, Time.deltaTime * 5);
     }
 
     private void LateUpdate()
@@ -127,12 +143,14 @@ public class Player : MonoBehaviour, IDamageable
         healthFillImage.transform.parent.position = new Vector3(pos.x, pos.y + hpImageYPercentOffset * Screen.height, pos.z);
     }
 
-    public void WeaponShoot()
+    public bool WeaponShoot()
     {
         if (equipedWeapon)
         {
-            equipedWeapon.Shoot();
+            return equipedWeapon.Shoot();
         }
+
+        return false;
     }
 
     public WeaponData GetEquipedWeaponData()

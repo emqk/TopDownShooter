@@ -60,7 +60,7 @@ public class Weapon : MonoBehaviour
         return weaponData;
     }
 
-    public void Shoot()
+    public bool Shoot()
     {
         if (timeToShoot <= 0 && !isOverheated)
         {
@@ -83,7 +83,9 @@ public class Weapon : MonoBehaviour
             timeToShoot = weaponData.ShootRate;
             currentHeat += weaponData.HeatPerShot;
             audioSource.PlayOneShot(weaponData.ShootSound);
-            return;
+            return true;
         }
+
+        return false;
     }
 }
