@@ -8,6 +8,11 @@ public class PopupManager : MonoBehaviour
     [SerializeField] Color badColor;
     [SerializeField] Color goodColor;
 
+    [Header("Sounds")]
+    [SerializeField] AudioClip defaultSound;
+    [SerializeField] AudioClip badSound;
+    [SerializeField] AudioClip goodSound;
+
     [Header("Other")]
     [SerializeField] Popup popupPrefab;
     [SerializeField] RectTransform blockerPanel;
@@ -46,7 +51,7 @@ public class PopupManager : MonoBehaviour
     {
         RectTransform backgroundBlockerInstance = Instantiate(blockerPanel, targetCanvas.transform);
         Popup popupInstance = Instantiate(popupPrefab, targetCanvas.transform);
-        popupInstance.Setup(popupData, backgroundBlockerInstance, GetColorFromType(popupData.popupType));
+        popupInstance.Setup(popupData, backgroundBlockerInstance, GetColorFromType(popupData.popupType), GetSoundFromType(popupData.popupType));
         popups.Add(popupInstance);
     }
 
@@ -62,6 +67,21 @@ public class PopupManager : MonoBehaviour
                 return goodColor;
             default:
                 return defaultColor;
+        }
+    }
+
+    AudioClip GetSoundFromType(PopupType popupType)
+    {
+        switch (popupType)
+        {
+            case PopupType.Default:
+                return defaultSound;
+            case PopupType.Bad:
+                return badSound;
+            case PopupType.Good:
+                return goodSound;
+            default:
+                return defaultSound;
         }
     }
 }

@@ -25,6 +25,7 @@ public struct PopupButttonData
     public UnityAction onClick;
 }
 
+[RequireComponent(typeof(AudioSource))]
 public class Popup : MonoBehaviour
 {
     [SerializeField] Image titleBar;
@@ -35,19 +36,22 @@ public class Popup : MonoBehaviour
 
     RectTransform blocker;
     Animator animator;
+    AudioSource audioSource;
 
     private void Awake()
     {
         animator = GetComponent<Animator>();
+        audioSource = GetComponent<AudioSource>();
     }
 
-    public void Setup(PopupData popupData, RectTransform _blocker, Color titleBarColor)
+    public void Setup(PopupData popupData, RectTransform _blocker, Color titleBarColor, AudioClip audioClip)
     {
         ClearPanel();
         RefreshText(popupData);
         SpawnButtons(popupData.buttonsData);
         blocker = _blocker;
         titleBar.color = titleBarColor;
+        audioSource.PlayOneShot(audioClip);
     }
 
     void RefreshText(PopupData popupData)
