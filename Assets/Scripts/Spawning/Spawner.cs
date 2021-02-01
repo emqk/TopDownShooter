@@ -4,20 +4,20 @@ using UnityEngine;
 public class Spawner : MonoBehaviour
 {
     [SerializeField] Transform targetToFollow;
-    [SerializeField] AI aiToSpawn;
-    [SerializeField] int amountToSpawn;
     [SerializeField] float spawnRadius;
+    SpawnData spawnData;
 
-    void Start()
+    public void StartSpawning(SpawnData newSpawnData)
     {
-        StartCoroutine(SpawnAndWait(amountToSpawn, 0.1f));
+        spawnData = newSpawnData;
+        StartCoroutine(SpawnAndWait(spawnData.amountToSpawn, spawnData.spawnInterval));
     }
 
     IEnumerator SpawnAndWait(int amount, float wait)
     {
         for (int i = 0; i < amount; i++)
         {
-            AI aiInstance = Instantiate(aiToSpawn);
+            AI aiInstance = Instantiate(spawnData.toSpawn);
             aiInstance.transform.position = new Vector3(
                   transform.position.x + Random.Range(-1.0f, 1.0f) * spawnRadius
                 , transform.position.y
