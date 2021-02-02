@@ -28,6 +28,7 @@ public class AI : MonoBehaviour, IDamageable
     {
         AudioSource.PlayClipAtPoint(deathSound, transform.position);
         gameObject.SetActive(false);
+        SpawnManager.RegisterKill(this);
     }
 
 

@@ -632,7 +632,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 291322517}
-  m_LocalRotation: {x: 0.49970073, y: 0.000000033326653, z: -0.000000019225801, w: 0.8661982}
+  m_LocalRotation: {x: 0.49970073, y: -0.000000033326657, z: 0.000000019225803, w: 0.8661982}
   m_LocalPosition: {x: 0, y: 12.94, z: -6.76}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -963,18 +963,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d3021aa524000644b8a9a3d976589a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  nextWaveTimeSpan: 10
   spawnWaves:
   - spawnData:
-    - amountToSpawn: 5
+    - spawner: {fileID: 908492881}
+      amountToSpawn: 5
       toSpawn: {fileID: 5761446191328258010, guid: 56870d1d456f7394993b262a533dc118,
         type: 3}
-      spawner: {fileID: 908492881}
       spawnInterval: 0.5
-    - amountToSpawn: 10
+    - spawner: {fileID: 1015394116}
+      amountToSpawn: 10
       toSpawn: {fileID: 5761446191328258010, guid: 56870d1d456f7394993b262a533dc118,
         type: 3}
-      spawner: {fileID: 1015394116}
       spawnInterval: 0.1
+  - spawnData:
+    - spawner: {fileID: 908492881}
+      amountToSpawn: 50
+      toSpawn: {fileID: 5761446191328258010, guid: 56870d1d456f7394993b262a533dc118,
+        type: 3}
+      spawnInterval: 0.01
 --- !u!1001 &362579562
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4261,7 +4268,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1687258581}
-  m_LocalRotation: {x: 0.49970073, y: 0.000000033326653, z: -0.000000019225801, w: 0.8661982}
+  m_LocalRotation: {x: 0.49970073, y: -0.000000033326657, z: 0.000000019225803, w: 0.8661982}
   m_LocalPosition: {x: 0, y: 12.94, z: -6.76}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
