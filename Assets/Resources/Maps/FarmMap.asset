@@ -15,7 +15,9 @@ MonoBehaviour:
   ID: FarmMap
   title: Farm
   thumbnail: {fileID: 21300000, guid: 21569588613d4884dbc1a98aa0ddd2ea, type: 3}
-  cost: 123
+  cost: 16
   description: Trash default map :)
-  mesh: {fileID: 0}
-  material: {fileID: 0}
+  prefab: {fileID: 0}
+  upgradeKit:
+    ID: 
+    upgradeDatas: []

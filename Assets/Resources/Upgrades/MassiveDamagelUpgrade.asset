@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 350c285954b356841b6695fb460124af, type: 3}
   m_Name: MassiveDamagelUpgrade
   m_EditorClassIdentifier: 
+  ID: TurboDamage0
   upgradeName: Turbo Damage!
   upgradeType: 2
   thumbnail: {fileID: 21300000, guid: 23223a7c86f2ac7489cdb1635c85ed4a, type: 3}

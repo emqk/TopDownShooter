@@ -49,7 +49,7 @@ public class MapPurchase : Purchasable
         }
 
         MainMenuUIManager.instance.SetCharacterInfoActive(null);
-        UpgradeKitData upgradeKitData = Database.instance.GetUpgradeKitData(data.UpgradeKit.ID);
+        UpgradeKitData upgradeKitData = Database.instance.GetUpgradeKitDataByID(data.UpgradeKit.ID);
 
         if (data.Prefab)
         {

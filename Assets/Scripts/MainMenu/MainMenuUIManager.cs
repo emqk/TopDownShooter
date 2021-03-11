@@ -155,8 +155,8 @@ public class MainMenuUIManager : MonoBehaviour
             Destroy(child.gameObject);
         }
 
-        //Show upgrades, and send deep copied datas to UI instances
-        foreach (UpgradeDataInstance dataInstance in Database.instance.GetUpgradeKitData(upgradeKitData.ID).upgradeDatas)
+        //Spawn panels
+        foreach (UpgradeDataInstance dataInstance in Database.instance.GetUpgradeKitDataByID(upgradeKitData.ID).upgradeDatas)
         {
             UpgradeUIElement instance = Instantiate(upgradeUIPrefab, upgradeElementsPanel);
             instance.SetData(dataInstance);
