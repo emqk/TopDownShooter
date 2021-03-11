@@ -24,6 +24,7 @@ public static class Serializer
         };
         string json = JsonUtility.ToJson(dataToSerialize);
         File.WriteAllText(fullPath, json);
+        Debug.Log("Data has been serialized to: " + fullPath);
     }
 
     public static void Load()

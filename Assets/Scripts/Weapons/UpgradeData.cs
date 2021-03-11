@@ -90,12 +90,14 @@ public class UpgradeDataInstance
 [System.Serializable]
 public class UpgradeData : ScriptableObject
 {
+    [SerializeField] string ID;
     [SerializeField] string upgradeName;
     [SerializeField] UpgradeType upgradeType;
     [SerializeField] Sprite thumbnail;
 
     [SerializeField] List<PowerAndCostPair> powerAndCost;
 
+    public string GetID { get => ID; }
     public string UpgradeName { get => upgradeName; }
     public UpgradeType UpgradeType { get => upgradeType; }
     public Sprite Thumbnail { get => thumbnail; }

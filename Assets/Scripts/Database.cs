@@ -18,6 +18,12 @@ public class DatabaseSerializationData
 
 public class Database : MonoBehaviour
 {
+    //Lists of assets IDs loaded from Resource
+    CharacterData[] availableCharacters;
+    PurchaseData[] availableMaps;
+    WeaponData[] availableWeapons;
+    UpgradeData[] availableUpgrades;
+
     //List of purchased items, stored as IDs
     List<string> purchased = new List<string>();
     List<UpgradeKitData> upgrades = new List<UpgradeKitData>();
@@ -43,8 +49,17 @@ public class Database : MonoBehaviour
         else
         {
             instance = this;
+            LoadResources();
             DontDestroyOnLoad(gameObject);
         }
+    }
+
+    void LoadResources()
+    {
+        availableCharacters = Resources.LoadAll<CharacterData>("Characters");
+        availableMaps = Resources.LoadAll<PurchaseData>("Maps");
+        availableWeapons = Resources.LoadAll<WeaponData>("Weapons");
+        availableUpgrades = Resources.LoadAll<UpgradeData>("Upgrades");
     }
 
     public WeaponData GetWeaponData(bool isItFirst)
