@@ -54,7 +54,14 @@ public class SpawnManager : MonoBehaviour
 
     void StartNextWave()
     {
-        Debug.Log("Wave started!");
+        //Show notification about starting wave
+        ScreenNotificationData screenNotification = new ScreenNotificationData
+        (
+            $"Wave {currentWaveIndex + 1}!",
+            2
+        );
+        NotificationManager.instance.ShowNotification(screenNotification);
+
         isWaitingForNextWave = false;
 
         //Start spawning AI
@@ -67,7 +74,13 @@ public class SpawnManager : MonoBehaviour
 
     void EndCurrentWave()
     {
-        Debug.Log("Wave ended!");
+        //Show notification about ending wave
+        ScreenNotificationData screenNotification = new ScreenNotificationData
+        (
+            "Enemies defeated!",
+            2
+        );
+        NotificationManager.instance.ShowNotification(screenNotification);
 
         if (currentWaveIndex + 1 >= spawnWaves.Count)
         {

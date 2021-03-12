@@ -5,6 +5,12 @@ public struct ScreenNotificationData
 {
     public string notificationText;
     public float displayDuration;
+
+    public ScreenNotificationData(string _notificationText, float _displayDuration)
+    {
+        notificationText = _notificationText;
+        displayDuration = _displayDuration;
+    }
 }
 
 public class ScreenNotification : MonoBehaviour
