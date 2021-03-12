@@ -5,6 +5,7 @@ using System.Collections;
 
 public class NotificationManager : MonoBehaviour
 {
+    [SerializeField] ScreenNotification screenNotification;
     [SerializeField] TMP_Text damageTextPrefab;
     [SerializeField] Camera textLookCamera;
     List<TMP_Text> damageInfoInstances = new List<TMP_Text>();
@@ -51,5 +52,11 @@ public class NotificationManager : MonoBehaviour
         yield return new WaitForSeconds(waitTime);
         damageInfoInstances.Remove(infoInstance);
         Destroy(infoInstance.gameObject);
+    }
+
+
+    public void ShowNotification(ScreenNotificationData screenNotificationData)
+    {
+        screenNotification.Init(screenNotificationData);
     }
 }
