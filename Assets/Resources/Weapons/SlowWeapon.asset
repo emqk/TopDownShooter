@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: Pistol
   title: Pistol
-  thumbnail: {fileID: 21300000, guid: 9b582f5240696694c85817ec9b317a6d, type: 3}
+  thumbnail: {fileID: 21300000, guid: 72e72616a0e02c34aa08c4d72f7decf5, type: 3}
   cost: 8
   description: Simple pistol
   prefab: {fileID: 561045076462038700, guid: edfe0afd5267cf6499f4fc8a41c17917, type: 3}

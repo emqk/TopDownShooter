@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: FarmMap
   title: Farm
-  thumbnail: {fileID: 21300000, guid: 21569588613d4884dbc1a98aa0ddd2ea, type: 3}
+  thumbnail: {fileID: 21300000, guid: d3afe748ed0d54047a6374c99b322e81, type: 3}
   cost: 16
   description: Trash default map :)
   prefab: {fileID: 0}
