@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 0a22c9d5969987246973e4b2bf2faf46
+guid: 629ff8112114d21408487caf1aa03b7c
 TrueTypeFontImporter:
   externalObjects: {}
   serializedVersion: 4
@@ -8,9 +8,9 @@ TrueTypeFontImporter:
   characterSpacing: 0
   characterPadding: 1
   includeFontData: 1
-  fontName: Fredoka One
+  fontName: Luckiest Guy
   fontNames:
-  - Fredoka One
+  - Luckiest Guy
   fallbackFontReferences: []
   customCharacters: 
   fontRenderingMode: 0

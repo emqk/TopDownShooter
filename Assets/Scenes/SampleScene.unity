@@ -840,7 +840,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   screenNotification: {fileID: 1201117345081579161}
-  damageTextPrefab: {fileID: 2321158877007391840, guid: 86c44bbd118c2b844ba8a5471815bc60,
+  damageTextPrefab: {fileID: 4539270622267331346, guid: 86c44bbd118c2b844ba8a5471815bc60,
     type: 3}
   textLookCamera: {fileID: 1687258584}
 --- !u!82 &312251109
