@@ -22,8 +22,7 @@ public class Player : MonoBehaviour, IDamageable
 
     [Header("Other")]
     [SerializeField] Camera playerCamera;
-    [SerializeField] float hpImageYPercentOffset;
-    [SerializeField] Image healthFillImage;
+    [SerializeField] FillUI healthUI;
     Statistic health = new Statistic(0, 100, 100);
 
     PlayerController playerController;
@@ -52,7 +51,7 @@ public class Player : MonoBehaviour, IDamageable
 
     void RefreshHPFillUI()
     {
-        healthFillImage.fillAmount = health.GetAmountNormalized();
+        healthUI.Refresh(health.GetAmount(), health.GetAmountNormalized());
     }
 
     void SetupWeapons()
@@ -117,6 +116,7 @@ public class Player : MonoBehaviour, IDamageable
         defaultWeaponRootLocalPosition = weaponRoot.localPosition;
         shootWeaponRootLocalPosition = defaultWeaponRootLocalPosition - weaponRoot.forward * 0.35f;
 
+        healthUI.Init(transform, playerCamera);
         SetupCharacterData();
         SetupWeapons();
         RefreshHPFillUI();
@@ -139,8 +139,7 @@ public class Player : MonoBehaviour, IDamageable
 
     private void LateUpdate()
     {
-        Vector3 pos = playerCamera.WorldToScreenPoint(transform.position);
-        healthFillImage.transform.parent.position = new Vector3(pos.x, pos.y + hpImageYPercentOffset * Screen.height, pos.z);
+        healthUI.RefreshLocation();
     }
 
     public bool WeaponShoot()
