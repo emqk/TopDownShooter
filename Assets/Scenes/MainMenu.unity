@@ -3539,6 +3539,7 @@ MonoBehaviour:
     type: 3}
   characters:
   - {fileID: 11400000, guid: 8ff81d447439e9d449c69b7e031d949c, type: 2}
+  - {fileID: 11400000, guid: dff96d7855420f34c858bc73a7b1fba2, type: 2}
   maps:
   - {fileID: 11400000, guid: 1e98f0e802294d24884efd387821051a, type: 2}
   weaponsFirst:
