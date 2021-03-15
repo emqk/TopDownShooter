@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: WindMat
+  m_Name: TallTreeMat
   m_Shader: {fileID: -6465566751694194690, guid: 855958cbf8f1fe6468db8a5656ebd16a,
     type: 3}
   m_ShaderKeywords: 
@@ -30,4 +30,4 @@ Material:
     - Vector1_EC153BD4: 0.17
     - Vector1_FC1E1C15: 0.85
     m_Colors:
-    - Color_E8FC3F5E: {r: 0.45030972, g: 0.6415094, b: 0.099857606, a: 0}
+    - Color_E8FC3F5E: {r: 0.34676278, g: 0.6132076, b: 0.09545213, a: 0}
