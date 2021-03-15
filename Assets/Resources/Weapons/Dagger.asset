@@ -28,4 +28,5 @@ MonoBehaviour:
   projectileData: {fileID: 11400000, guid: 3f5ac53691ccef548970de7c96143fb9, type: 2}
   shootRate: 0.1
   heatPerShot: 0.6
+  accuracy: 15
   shootSound: {fileID: 8300000, guid: 10bcd1e88451e014f9cfd813bc988930, type: 3}

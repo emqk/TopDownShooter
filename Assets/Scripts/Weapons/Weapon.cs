@@ -64,7 +64,11 @@ public class Weapon : MonoBehaviour
     {
         if (timeToShoot <= 0 && !isOverheated)
         {
-            Projectile projectileInstance = Instantiate(weaponData.Projectile, shootSource.transform.position, shootSource.rotation);
+            float weaponAccuracy = weaponData.Accuracy;
+            Vector3 projectileDirection = Quaternion.Euler(0, Random.Range(-weaponAccuracy, weaponAccuracy), 0) * shootSource.forward;
+            Quaternion projectileRotation = Quaternion.LookRotation(projectileDirection);
+
+            Projectile projectileInstance = Instantiate(weaponData.Projectile, shootSource.transform.position, projectileRotation);
             ProjectileData projectileData = weaponData.ProjectileData;
             if (UpgradeData != null)
             {
