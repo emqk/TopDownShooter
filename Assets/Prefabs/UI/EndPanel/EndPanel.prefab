@@ -218,6 +218,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4046776553010886885}
   - component: {fileID: 4046776553010886887}
+  - component: {fileID: -8589507379197566224}
   m_Layer: 5
   m_Name: EndPanel
   m_TagString: Untagged
@@ -257,6 +258,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4046776553010886884}
   m_CullTransparentMesh: 0
+--- !u!114 &-8589507379197566224
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4046776553010886884}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a09d695d4d1a704fa3f1e5bd1c19094, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  wavesText: {fileID: 4046776553774793239}
+  moneyText: {fileID: 4046776554162165125}
 --- !u!1 &4046776553374152318
 GameObject:
   m_ObjectHideFlags: 0

@@ -28,6 +28,16 @@ public class SpawnManager : MonoBehaviour
         instance.enemiesToKill -= 1;
     }
 
+    public int GetCurrentWaveIndex()
+    {
+        return currentWaveIndex;
+    }
+
+    public int GetNumberOfWaves()
+    {
+        return spawnWaves.Count;
+    }
+
     void Update()
     {
         if (spawningEnded)
@@ -74,21 +84,21 @@ public class SpawnManager : MonoBehaviour
 
     void EndCurrentWave()
     {
-        //Show notification about ending wave
-        ScreenNotificationData screenNotification = new ScreenNotificationData
-        (
-            "Enemies defeated!",
-            2
-        );
-        NotificationManager.instance.ShowNotification(screenNotification);
-
         if (currentWaveIndex + 1 >= spawnWaves.Count)
         {
-            Debug.Log("That was the last wave on this map. Should show Victory UI panel or something");
+            UIManager.instance.ShowEndPanel();
             spawningEnded = true;
         }
         else
         {
+            //Show notification about ending wave
+            ScreenNotificationData screenNotification = new ScreenNotificationData
+            (
+                "Enemies defeated!",
+                2
+            );
+            NotificationManager.instance.ShowNotification(screenNotification);
+
             isWaitingForNextWave = true;
         }
     }
