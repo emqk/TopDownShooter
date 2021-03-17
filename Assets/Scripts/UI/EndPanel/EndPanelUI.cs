@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using TMPro;
 
@@ -20,6 +21,11 @@ public class EndPanelUI : MonoBehaviour
         Refresh();
     }
 
+    public void LoadMainMenu()
+    {
+        SceneManager.LoadScene("MainMenu");
+    }
+
     void Refresh()
     {
         int waveIndex = SpawnManager.instance.GetCurrentWaveIndex();
@@ -27,13 +33,13 @@ public class EndPanelUI : MonoBehaviour
         if (waveIndex >= numOfWaves)
         {
             titleText.text = "Victory!";
-            wavesBackgroundImage.color = wavesCompletedBackgroundColor;
+            SetColorToWavesBackground(wavesCompletedBackgroundColor);
             wavesText.text = "Map completed!";
         }
         else
         {
             titleText.text = "Try again next time...";
-            wavesBackgroundImage.color = wavesNotCompletedBackgroundColor;
+            SetColorToWavesBackground(wavesNotCompletedBackgroundColor);
             wavesText.text = waveIndex + " / " + numOfWaves;
         }
 

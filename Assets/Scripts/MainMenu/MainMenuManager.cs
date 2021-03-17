@@ -10,6 +10,11 @@ public class MainMenuManager : MonoBehaviour
         MainMenuUIManager.instance.RefreshWeaponsUI();
     }
 
+    private void OnLevelWasLoaded(int level)
+    {
+        Time.timeScale = 1;
+    }
+
     public void Play()
     {
         SceneManager.LoadScene("SampleScene");
