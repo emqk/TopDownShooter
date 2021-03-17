@@ -14,7 +14,13 @@ public class EndPanelUI : MonoBehaviour
     [SerializeField] TextMeshProUGUI titleText;
     [SerializeField] TextMeshProUGUI moneyText;
 
-    public void Refresh()
+    public void Open()
+    {
+        BattleManager.instance.Pause();
+        Refresh();
+    }
+
+    void Refresh()
     {
         int waveIndex = SpawnManager.instance.GetCurrentWaveIndex();
         int numOfWaves = SpawnManager.instance.GetNumberOfWaves();

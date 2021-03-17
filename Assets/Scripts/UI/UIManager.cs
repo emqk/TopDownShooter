@@ -29,6 +29,6 @@ public class UIManager : MonoBehaviour
         }
 
         endPanelInstance = Instantiate(endPanelPrefab, targetCanvas.transform);
-        endPanelInstance.Refresh();
+        endPanelInstance.Open();
     }
 }
