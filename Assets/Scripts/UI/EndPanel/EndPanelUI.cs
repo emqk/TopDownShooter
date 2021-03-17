@@ -14,6 +14,7 @@ public class EndPanelUI : MonoBehaviour
     [Header("Other")]
     [SerializeField] TextMeshProUGUI titleText;
     [SerializeField] TextMeshProUGUI moneyText;
+    [SerializeField] TextMeshProUGUI premiumMoneyText;
 
     public void Open()
     {
@@ -43,7 +44,8 @@ public class EndPanelUI : MonoBehaviour
             wavesText.text = waveIndex + " / " + numOfWaves;
         }
 
-        moneyText.text = "Testing from code: 123";
+        moneyText.text = "12";
+        premiumMoneyText.text = "123333";
     }
 
     void SetColorToWavesBackground(Color color) 
