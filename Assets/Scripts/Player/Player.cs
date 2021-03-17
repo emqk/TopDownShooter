@@ -31,6 +31,12 @@ public class Player : MonoBehaviour, IDamageable
     {
         health.ChangeByAmount(amount);
         RefreshHPFillUI();
+    }
+
+    public void TakeDamage(int damageAmount)
+    {
+        health.ChangeByAmount(-damageAmount);
+        RefreshHPFillUI();
 
         if (!health.IsGreaterThanMinimum())
         {
@@ -38,15 +44,9 @@ public class Player : MonoBehaviour, IDamageable
         }
     }
 
-    public void TakeDamage(int damageAmount)
-    {
-        health.ChangeByAmount(-damageAmount);
-        RefreshHPFillUI();
-    }
-
     public void Die()
     {
-        throw new System.NotImplementedException();
+        UIManager.instance.ShowEndPanel();
     }
 
     void RefreshHPFillUI()

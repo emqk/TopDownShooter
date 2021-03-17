@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
@@ -8,6 +7,7 @@ public class UIManager : MonoBehaviour
 
     [SerializeField] Canvas targetCanvas;
 
+    EndPanelUI endPanelInstance;
     public static UIManager instance;
 
     private void Awake()
@@ -22,7 +22,13 @@ public class UIManager : MonoBehaviour
 
     public void ShowEndPanel()
     {
-        EndPanelUI endPanelInstance = Instantiate(endPanelPrefab, targetCanvas.transform);
+        if (endPanelInstance)
+        {
+            Debug.Log("Can't show end panel - is already opened!");
+            return;
+        }
+
+        endPanelInstance = Instantiate(endPanelPrefab, targetCanvas.transform);
         endPanelInstance.Refresh();
     }
 }
