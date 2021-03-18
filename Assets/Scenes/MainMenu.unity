@@ -3164,7 +3164,9 @@ MonoBehaviour:
   content: {fileID: 155273658}
   spacing: 3
   canMove: 1
-  moveSpeed: 1
+  rawMoveSpeed: 3
+  smoothMoveSpeed: 5
+  focusLocationThresholdDistance: 0.25
   startMoveOffset: {x: 0, y: 0, z: 0}
   canRotate: 1
   rotateSpeed: 10

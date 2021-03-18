@@ -11,6 +11,7 @@ public class HorizontalView3D : MonoBehaviour
     [SerializeField] bool canMove = true;
     [SerializeField] float rawMoveSpeed = 1;
     [SerializeField] float smoothMoveSpeed = 5;
+    [SerializeField] float focusClosestOnDistance = 0.5f;
     [SerializeField] Vector3 startMoveOffset = Vector3.zero;
     float currentMoveOffsetX = 0;
 
@@ -44,12 +45,24 @@ public class HorizontalView3D : MonoBehaviour
         currentMoveOffsetX += touchDeltaNormalized.x * rawMoveSpeed;
         currentMoveOffsetX = GetClampToContent(currentMoveOffsetX);
 
+        float currentTargetDifferenceX = Mathf.Abs(content.transform.localPosition.x - currentMoveOffsetX);
+        if (Input.touchCount == 0 && currentTargetDifferenceX <= focusClosestOnDistance)
+        {
+            currentMoveOffsetX = RoundToClosestElement(currentMoveOffsetX);
+        }
+
         content.transform.localPosition = Vector3.Lerp(content.transform.localPosition, new Vector3(currentMoveOffsetX, 0, 0), smoothMoveSpeed * Time.deltaTime);
     }
 
     float GetClampToContent(float locationX)
     {
         return Mathf.Clamp(locationX, -maxContentSize, minContentSize);
+    }
+
+    float RoundToClosestElement(float locationX)
+    {
+        return Mathf.RoundToInt(locationX / spacing) * spacing;
+        return 0;
     }
 
     void RotateContent()
