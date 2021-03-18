@@ -19,6 +19,9 @@ public class HorizontalView3D : MonoBehaviour
     [SerializeField] float startRotation = 0;
     float currentRotation = 0;
 
+    float minContentSize = 0;
+    float maxContentSize = 0;
+
     List<GameObject> currentContentObjects = new List<GameObject>();
 
 
@@ -38,22 +41,14 @@ public class HorizontalView3D : MonoBehaviour
     {
         Vector2 touchDeltaNormalized = GetTouchDeltaScreenNormalized();
         currentMoveOffsetX += touchDeltaNormalized.x * moveSpeed;
+        currentMoveOffsetX = GetClampToContent(currentMoveOffsetX);
 
         content.transform.localPosition = new Vector3(currentMoveOffsetX, 0, 0);
     }
 
-    Vector2 GetTouchDeltaScreenNormalized()
+    float GetClampToContent(float locationX)
     {
-        if (Input.touchCount > 0)
-        {
-            Touch touch = Input.GetTouch(0);
-            Vector2 dragDistanceUnscaled = touch.deltaPosition;
-            float dragDistanceScaledX = dragDistanceUnscaled.x / Screen.width;
-            float dragDistanceScaledY = dragDistanceUnscaled.y / Screen.height;
-            return new Vector2(dragDistanceScaledX, dragDistanceScaledY);
-        }
-
-        return Vector2.zero;
+        return Mathf.Clamp(locationX, -maxContentSize, minContentSize);
     }
 
     void RotateContent()
@@ -77,6 +72,9 @@ public class HorizontalView3D : MonoBehaviour
             instance.transform.localPosition = new Vector3(spacing * i, 0, 0);
             currentContentObjects.Add(instance);
         }
+
+        minContentSize = 0;
+        maxContentSize = spacing * (currentContentObjects.Count - 1);
     }
 
     void ClearContent()
@@ -94,5 +92,19 @@ public class HorizontalView3D : MonoBehaviour
         //Set default move and transform location
         currentMoveOffsetX = startMoveOffset.x;
         content.transform.localPosition = startMoveOffset;
+    }
+
+    Vector2 GetTouchDeltaScreenNormalized()
+    {
+        if (Input.touchCount > 0)
+        {
+            Touch touch = Input.GetTouch(0);
+            Vector2 dragDistanceUnscaled = touch.deltaPosition;
+            float dragDistanceScaledX = dragDistanceUnscaled.x / Screen.width;
+            float dragDistanceScaledY = dragDistanceUnscaled.y / Screen.height;
+            return new Vector2(dragDistanceScaledX, dragDistanceScaledY);
+        }
+
+        return Vector2.zero;
     }
 }

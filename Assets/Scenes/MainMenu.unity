@@ -3165,7 +3165,7 @@ MonoBehaviour:
   spacing: 3
   canMove: 1
   moveSpeed: 1
-  startMoveOffsetX: 0
+  startMoveOffset: {x: 0, y: 0, z: 0}
   canRotate: 1
   rotateSpeed: 10
   startRotation: 0
