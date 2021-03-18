@@ -9,7 +9,8 @@ public class HorizontalView3D : MonoBehaviour
 
     [Header("Movement")]
     [SerializeField] bool canMove = true;
-    [SerializeField] float moveSpeed = 1;
+    [SerializeField] float rawMoveSpeed = 1;
+    [SerializeField] float smoothMoveSpeed = 5;
     [SerializeField] Vector3 startMoveOffset = Vector3.zero;
     float currentMoveOffsetX = 0;
 
@@ -40,10 +41,10 @@ public class HorizontalView3D : MonoBehaviour
     void MoveContent()
     {
         Vector2 touchDeltaNormalized = GetTouchDeltaScreenNormalized();
-        currentMoveOffsetX += touchDeltaNormalized.x * moveSpeed;
+        currentMoveOffsetX += touchDeltaNormalized.x * rawMoveSpeed;
         currentMoveOffsetX = GetClampToContent(currentMoveOffsetX);
 
-        content.transform.localPosition = new Vector3(currentMoveOffsetX, 0, 0);
+        content.transform.localPosition = Vector3.Lerp(content.transform.localPosition, new Vector3(currentMoveOffsetX, 0, 0), smoothMoveSpeed * Time.deltaTime);
     }
 
     float GetClampToContent(float locationX)
