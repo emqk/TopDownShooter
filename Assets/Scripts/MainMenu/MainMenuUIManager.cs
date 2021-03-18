@@ -12,6 +12,7 @@ public class MainMenuUIManager : MonoBehaviour
 {
     [SerializeField] TMP_Text goldText;
 
+    [SerializeField] RectTransform mapsUI;
     [SerializeField] RectTransform purchaseElementsPanel;
     [SerializeField] RectTransform upgradeElementsPanel;
     [SerializeField] MapPurchase purchasePrefab;
@@ -64,6 +65,30 @@ public class MainMenuUIManager : MonoBehaviour
         }
     }
 
+    public void ToggleMapsUI()
+    {
+        if (mapsUI.gameObject.activeSelf)
+        {
+            HideMaps();
+        }
+        else
+        {
+            ShowMaps();
+        }
+    }
+
+    void ShowMaps()
+    {
+        ClearPurchasePanel();
+        currentPanelType = PanelType.Map;
+        SpawnPurchasableFromList(maps);
+        mapsUI.gameObject.SetActive(true);
+    }
+
+    void HideMaps()
+    {
+        mapsUI.gameObject.SetActive(false);
+    }
 
     public void ShowPanel(int panelType)
     {
