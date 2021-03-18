@@ -17,6 +17,7 @@ public class MainMenuUIManager : MonoBehaviour
     [SerializeField] RectTransform upgradeElementsPanel;
     [SerializeField] MapPurchase purchasePrefab;
     [SerializeField] UpgradeUIElement upgradeUIPrefab;
+    [SerializeField] HorizontalView3D view3D;
 
     [Header("Data")]
     [SerializeField] List<PurchaseData> characters = new List<PurchaseData>();
@@ -88,6 +89,32 @@ public class MainMenuUIManager : MonoBehaviour
     void HideMaps()
     {
         mapsUI.gameObject.SetActive(false);
+    }
+
+    public void ShowWeaponsFirst()
+    {
+        SpawnDataPrefabsOnView3D(weaponsFirst);
+    }
+
+    public void ShowWeaponsSecond()
+    {
+        SpawnDataPrefabsOnView3D(weaponsSecond);
+    }
+
+    public void ShowCharacters()
+    {
+        SpawnDataPrefabsOnView3D(characters);
+    }
+
+    void SpawnDataPrefabsOnView3D(List<PurchaseData> data)
+    {
+        GameObject[] objs = new GameObject[data.Count];
+        for (int i = 0; i < data.Count; i++)
+        {
+            objs[i] = data[i].Prefab;
+        }
+
+        view3D.SetContentObjects(objs);
     }
 
     public void ShowPanel(int panelType)
