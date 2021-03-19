@@ -467,6 +467,7 @@ GameObject:
   - component: {fileID: 272374051}
   - component: {fileID: 272374050}
   - component: {fileID: 272374052}
+  - component: {fileID: 272374053}
   m_Layer: 5
   m_Name: ItemInfoPanel
   m_TagString: Untagged
@@ -547,6 +548,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_ShowMaskGraphic: 1
+--- !u!114 &272374053
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 272374048}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e6f673f53a7f5d4aae8288e191653b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  title: {fileID: 1900483900}
+  description: {fileID: 1430081649}
+  thumbnail: {fileID: 0}
+  selectText: {fileID: 1286184713}
 --- !u!1 &282609061
 GameObject:
   m_ObjectHideFlags: 0
@@ -4820,6 +4837,7 @@ MonoBehaviour:
     type: 3}
   playerRepresentation: {fileID: 1132194246}
   view3D: {fileID: 1719828049}
+  purchaseUI: {fileID: 272374053}
   mainMenuCanvas: {fileID: 743710933}
   shopCanvas: {fileID: 1820875572}
   characters:
