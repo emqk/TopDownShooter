@@ -3751,6 +3751,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1719828050}
+  - component: {fileID: 1719828051}
   - component: {fileID: 1719828049}
   m_Layer: 0
   m_Name: View3D
@@ -3781,6 +3782,21 @@ MonoBehaviour:
   canRotate: 1
   rotateSpeed: 10
   startRotation: 0
+  onSelectedChange:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1944854523}
+        m_TargetAssemblyTypeName: MainMenuUIManager, Assembly-CSharp
+        m_MethodName: RefreshShopItemInfo
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!4 &1719828050
 Transform:
   m_ObjectHideFlags: 0
@@ -3796,6 +3812,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1719828051
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1719828048}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fbc0fdc555bdf074c9f7a42095d47128, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  view3D: {fileID: 1719828049}
 --- !u!1 &1722305591
 GameObject:
   m_ObjectHideFlags: 0
@@ -4161,9 +4190,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1944854521}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: Play
+      - m_Target: {fileID: 272374053}
+        m_TargetAssemblyTypeName: MapPurchase, Assembly-CSharp
+        m_MethodName: Select
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4836,8 +4865,8 @@ MonoBehaviour:
   upgradeUIPrefab: {fileID: 131454822616836337, guid: f0db22272cc276747826733078b970a9,
     type: 3}
   playerRepresentation: {fileID: 1132194246}
-  view3D: {fileID: 1719828049}
-  purchaseUI: {fileID: 272374053}
+  purchaseProxy: {fileID: 1719828051}
+  itemInfoPanel: {fileID: 272374053}
   mainMenuCanvas: {fileID: 743710933}
   shopCanvas: {fileID: 1820875572}
   characters:

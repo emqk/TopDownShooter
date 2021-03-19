@@ -20,7 +20,8 @@ public class MainMenuUIManager : MonoBehaviour
 
     [Header("Shop")]
     [SerializeField] GameObject playerRepresentation;
-    [SerializeField] HorizontalView3D view3D;
+    [SerializeField] PurchaseProxy purchaseProxy;
+    [SerializeField] MapPurchase itemInfoPanel;
 
     [Header("Canvases")]
     [SerializeField] Canvas mainMenuCanvas;
@@ -100,17 +101,32 @@ public class MainMenuUIManager : MonoBehaviour
 
     public void ShowWeaponsFirst()
     {
+        currentPanelType = PanelType.WeaponFirst;
         SpawnDataPrefabsOnView3D(weaponsFirst);
     }
 
     public void ShowWeaponsSecond()
     {
+        currentPanelType = PanelType.WeaponSecond;
         SpawnDataPrefabsOnView3D(weaponsSecond);
     }
 
     public void ShowCharacters()
     {
+        currentPanelType = PanelType.Character;
         SpawnDataPrefabsOnView3D(characters);
+    }
+
+    public void RefreshShopItemInfo()
+    {
+        PurchaseData purchaseData = purchaseProxy.GetAtIndex(purchaseProxy.View3D.GetSelectedIndex());
+
+        if (purchaseData)
+        {
+            bool alreadyPurchased = Database.instance.IsElementOfIDPurchased(purchaseData.GetID);
+            itemInfoPanel.SetData(purchaseData, currentPanelType, alreadyPurchased);
+            itemInfoPanel.Refresh();
+        }
     }
 
     void SpawnDataPrefabsOnView3D(List<PurchaseData> data)
@@ -121,7 +137,8 @@ public class MainMenuUIManager : MonoBehaviour
             objs[i] = data[i].Prefab;
         }
 
-        view3D.SetContentObjects(objs);
+        purchaseProxy.SetPurchaseData(data);
+        purchaseProxy.View3D.SetContentObjects(objs);
     }
 
     public void ShowPanel(int panelType)
@@ -242,7 +259,7 @@ public class MainMenuUIManager : MonoBehaviour
         mainMenuCanvas.gameObject.SetActive(true);
         shopCanvas.gameObject.SetActive(false);
         playerRepresentation.SetActive(true);
-        view3D.gameObject.SetActive(false);
+        purchaseProxy.gameObject.SetActive(false);
     }
 
     public void ShowShopCanvas()
@@ -250,6 +267,6 @@ public class MainMenuUIManager : MonoBehaviour
         shopCanvas.gameObject.SetActive(true);
         mainMenuCanvas.gameObject.SetActive(false);
         playerRepresentation.SetActive(false);
-        view3D.gameObject.SetActive(true);
+        purchaseProxy.gameObject.SetActive(true);
     }
 }

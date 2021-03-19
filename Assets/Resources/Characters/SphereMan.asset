@@ -16,7 +16,7 @@ MonoBehaviour:
   title: Sphere Man
   thumbnail: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
   cost: 1
-  description: 'Basic character
+  description: 'Basic blobby character
 
 '
   prefab: {fileID: 2692926944869614407, guid: 8313da45b0914af4384d84832a5a3280, type: 3}

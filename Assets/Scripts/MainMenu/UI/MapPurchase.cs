@@ -83,9 +83,12 @@ public class MapPurchase : Purchasable
 
     public override void Refresh()
     {
-        title.text = data.Title;
-        thumbnail.sprite = data.Thumbnail;
-        description.text = data.Description;
+        if(title)
+            title.text = data.Title;
+        if(thumbnail)
+            thumbnail.sprite = data.Thumbnail;
+        if(description)
+            description.text = data.Description;
 
         if (IsPurchased())
         {

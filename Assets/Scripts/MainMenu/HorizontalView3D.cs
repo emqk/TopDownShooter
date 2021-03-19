@@ -29,7 +29,7 @@ public class HorizontalView3D : MonoBehaviour
     float maxContentSize = 0;
 
     List<GameObject> currentContentObjects = new List<GameObject>();
-    GameObject selectedObject = null;
+    int selectedIndex = 0;
 
     private void Update()
     {
@@ -58,12 +58,12 @@ public class HorizontalView3D : MonoBehaviour
         content.transform.localPosition = Vector3.Lerp(content.transform.localPosition, new Vector3(currentMoveOffsetX, 0, 0), smoothMoveSpeed * Time.deltaTime);
 
         //Set currently selected object and invoke event when newSelectedObject != oldSelectedObject
-        GameObject newSelectedObject = GetClosestElement();
-        if (selectedObject != newSelectedObject)
+        int newSelectedObjectIndex = GetClosestElementIndex();
+        if (selectedIndex != newSelectedObjectIndex)
         {
+            selectedIndex = newSelectedObjectIndex;
             onSelectedChange.Invoke();
         }
-        selectedObject = newSelectedObject;
     }
 
     float GetClampToContent(float locationX)
@@ -133,13 +133,18 @@ public class HorizontalView3D : MonoBehaviour
         return Vector2.zero;
     }
 
-    GameObject GetClosestElement()
+    public int GetSelectedIndex()
+    {
+        return selectedIndex;
+    }
+
+    int GetClosestElementIndex()
     {
         if (currentContentObjects.Count < 1)
-            return null;
+            return -1;
         
         float closestX = Mathf.Abs(RoundToClosestElement(currentMoveOffsetX));
         int index = Mathf.RoundToInt(closestX / spacing);
-        return currentContentObjects[index];
+        return index;
     }
 }
