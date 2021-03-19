@@ -100,6 +100,9 @@ public class HorizontalView3D : MonoBehaviour
 
         minContentSize = 0;
         maxContentSize = spacing * (currentContentObjects.Count - 1);
+
+        //Invoke after new objects spawned, because selected object data will probably change after setting new content
+        onSelectedChange.Invoke();
     }
 
     void ClearContent()

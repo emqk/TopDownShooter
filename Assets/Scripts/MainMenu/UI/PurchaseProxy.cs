@@ -16,7 +16,7 @@ public class PurchaseProxy : MonoBehaviour
 
     public PurchaseData GetAtIndex(int index)
     {
-        if (index >= purchaseDatas.Count)
+        if (index >= purchaseDatas.Count || index < 0)
             return null;
 
         return purchaseDatas[index];

@@ -29,7 +29,7 @@ public class Weapon : MonoBehaviour
         if (UIManager.instance)
             weaponHeatImage = UIManager.instance.GetWeaponHeatImage();
         else
-            Debug.LogError("Can't find UIManager instance!");
+            Debug.Log("Weapon can't find UIManager instance!");
     }
 
     public void UpdateMe()
