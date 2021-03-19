@@ -62,7 +62,6 @@ public class HorizontalView3D : MonoBehaviour
     float RoundToClosestElement(float locationX)
     {
         return Mathf.RoundToInt(locationX / spacing) * spacing;
-        return 0;
     }
 
     void RotateContent()

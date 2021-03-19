@@ -17,7 +17,14 @@ public class MainMenuUIManager : MonoBehaviour
     [SerializeField] RectTransform upgradeElementsPanel;
     [SerializeField] MapPurchase purchasePrefab;
     [SerializeField] UpgradeUIElement upgradeUIPrefab;
+
+    [Header("Shop")]
+    [SerializeField] GameObject playerRepresentation;
     [SerializeField] HorizontalView3D view3D;
+
+    [Header("Canvases")]
+    [SerializeField] Canvas mainMenuCanvas;
+    [SerializeField] Canvas shopCanvas;
 
     [Header("Data")]
     [SerializeField] List<PurchaseData> characters = new List<PurchaseData>();
@@ -228,5 +235,21 @@ public class MainMenuUIManager : MonoBehaviour
         {
             characterInfoPanel.gameObject.SetActive(false);
         }
+    }
+
+    public void ShowMainMenuCanvas()
+    {
+        mainMenuCanvas.gameObject.SetActive(true);
+        shopCanvas.gameObject.SetActive(false);
+        playerRepresentation.SetActive(true);
+        view3D.gameObject.SetActive(false);
+    }
+
+    public void ShowShopCanvas()
+    {
+        shopCanvas.gameObject.SetActive(true);
+        mainMenuCanvas.gameObject.SetActive(false);
+        playerRepresentation.SetActive(false);
+        view3D.gameObject.SetActive(true);
     }
 }
