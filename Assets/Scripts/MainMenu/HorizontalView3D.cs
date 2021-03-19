@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class HorizontalView3D : MonoBehaviour
 {
@@ -20,6 +21,9 @@ public class HorizontalView3D : MonoBehaviour
     [SerializeField] float rotateSpeed = 10;
     [SerializeField] float startRotation = 0;
     float currentRotation = 0;
+
+    [Header("Other")]
+    [SerializeField] UnityEvent onSelectedChange;
 
     float minContentSize = 0;
     float maxContentSize = 0;
@@ -52,7 +56,14 @@ public class HorizontalView3D : MonoBehaviour
         }
 
         content.transform.localPosition = Vector3.Lerp(content.transform.localPosition, new Vector3(currentMoveOffsetX, 0, 0), smoothMoveSpeed * Time.deltaTime);
-        selectedObject = GetClosestElement();
+
+        //Set currently selected object and invoke event when newSelectedObject != oldSelectedObject
+        GameObject newSelectedObject = GetClosestElement();
+        if (selectedObject != newSelectedObject)
+        {
+            onSelectedChange.Invoke();
+        }
+        selectedObject = newSelectedObject;
     }
 
     float GetClampToContent(float locationX)
