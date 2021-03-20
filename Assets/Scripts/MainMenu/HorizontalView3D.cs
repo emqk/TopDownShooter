@@ -31,6 +31,12 @@ public class HorizontalView3D : MonoBehaviour
     List<GameObject> currentContentObjects = new List<GameObject>();
     int selectedIndex = 0;
 
+    public void MoveByElements(int amount)
+    {
+        selectedIndex = Mathf.Clamp(selectedIndex + amount, 0, currentContentObjects.Count - 1);
+        currentMoveOffsetX = -RoundToClosestElement(selectedIndex * spacing);
+    }
+
     private void Update()
     {
         if (canMove)
