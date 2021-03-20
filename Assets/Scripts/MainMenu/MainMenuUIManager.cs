@@ -117,6 +117,12 @@ public class MainMenuUIManager : MonoBehaviour
         SpawnDataPrefabsOnView3D(characters);
     }
 
+    public void ShowMapsNew()
+    {
+        currentPanelType = PanelType.Map;
+        SpawnDataPrefabsOnView3D(maps);
+    }
+
     public void RefreshShopItemInfo()
     {
         PurchaseData purchaseData = purchaseProxy.GetAtIndex(purchaseProxy.View3D.GetSelectedIndex());
