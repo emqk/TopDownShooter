@@ -25,7 +25,7 @@ public class SpawnManager : MonoBehaviour
 
     public static void RegisterKill(AI killedAI)
     {
-        Debug.Log("Reward: " + killedAI.GetReward());
+        BattleManager.instance.AddToReward(killedAI.GetReward());
         instance.enemiesToKill -= 1;
     }
 
