@@ -43,7 +43,7 @@ public class EndPanelUI : MonoBehaviour
             wavesText.text = waveIndex + " / " + numOfWaves;
         }
 
-        moneyText.text = "12";
+        moneyText.text = BattleManager.instance.GetReward().ToString();
     }
 
     void SetColorToWavesBackground(Color color) 
