@@ -6,6 +6,7 @@ public class AI : MonoBehaviour, IDamageable
 {
     public int Damage { get => 10; }
     [SerializeField] Statistic health = new Statistic();
+    [SerializeField] Vector2Int rewardRange;
 
     [SerializeField] AudioClip deathSound;
 
@@ -74,5 +75,11 @@ public class AI : MonoBehaviour, IDamageable
         {
             coll.enabled = active;
         }
+    }
+
+    public int GetReward()
+    {
+        //Adding 1 because random for int is inclusive for max
+        return Random.Range(rewardRange.x, rewardRange.y + 1);
     }
 }
