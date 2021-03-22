@@ -1,14 +1,21 @@
 using UnityEngine;
+using TMPro;
 
 public class BattleManager : MonoBehaviour
 {
-    int battleReward = 0;
+    [SerializeField] TextMeshProUGUI rewardText;
 
+    int battleReward = 0;
     public static BattleManager instance;
 
     private void Awake()
     {
         instance = this;
+    }
+
+    private void Start()
+    {
+        RefreshRewardText();
     }
 
     public int GetReward()
@@ -19,6 +26,12 @@ public class BattleManager : MonoBehaviour
     public void AddToReward(int amount)
     {
         battleReward += amount;
+        RefreshRewardText();
+    }
+
+    void RefreshRewardText()
+    {
+        rewardText.text = battleReward.ToString();
     }
 
     public void UnPause()
