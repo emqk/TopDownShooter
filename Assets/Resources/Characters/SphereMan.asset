@@ -24,4 +24,4 @@ MonoBehaviour:
     ID: 
     upgradeDatas: []
   maxHealth: 80
-  movementSpeed: 6
+  movementSpeed: 12
