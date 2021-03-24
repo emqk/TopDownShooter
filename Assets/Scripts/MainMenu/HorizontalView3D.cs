@@ -35,6 +35,7 @@ public class HorizontalView3D : MonoBehaviour
     {
         selectedIndex = Mathf.Clamp(selectedIndex + amount, 0, currentContentObjects.Count - 1);
         currentMoveOffsetX = -RoundToClosestElement(selectedIndex * spacing);
+        OnSelectedChange();
     }
 
     private void Update()
@@ -68,8 +69,14 @@ public class HorizontalView3D : MonoBehaviour
         if (selectedIndex != newSelectedObjectIndex)
         {
             selectedIndex = newSelectedObjectIndex;
-            onSelectedChange.Invoke();
+            OnSelectedChange();
         }
+    }
+
+
+    void OnSelectedChange()
+    {
+        onSelectedChange.Invoke();
     }
 
     float GetClampToContent(float locationX)
