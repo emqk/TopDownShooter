@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7016691987458910591}
   - component: {fileID: 6451732835592044335}
   m_Layer: 0
-  m_Name: Sphere
+  m_Name: SphereGlow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -59,7 +59,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 137865e9f1f29574bb0ab1999eb8ac4b, type: 2}
+  - {fileID: 2100000, guid: d3a9b70aad493ba48a6ba36c654f2da1, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

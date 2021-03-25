@@ -1508,7 +1508,7 @@ Transform:
   m_LocalScale: {x: 70, y: 70, z: 70}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &636491963
 GameObject:
@@ -4001,7 +4001,7 @@ Transform:
   m_Children:
   - {fileID: 155273658}
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1719828051
 MonoBehaviour:
@@ -5334,6 +5334,7 @@ MonoBehaviour:
   characters:
   - {fileID: 11400000, guid: 8ff81d447439e9d449c69b7e031d949c, type: 2}
   - {fileID: 11400000, guid: dff96d7855420f34c858bc73a7b1fba2, type: 2}
+  - {fileID: 11400000, guid: a110b05efa54a5242a3cc0e7b00e268a, type: 2}
   maps:
   - {fileID: 11400000, guid: 1e98f0e802294d24884efd387821051a, type: 2}
   weaponsFirst:
