@@ -14,6 +14,8 @@ public class DatabaseSerializationData
     public string secondWeaponUpgradeKitDataID;
 
     public string characterDataID;
+
+    public string mapDataID;
 }
 
 public class Database : MonoBehaviour
@@ -36,7 +38,7 @@ public class Database : MonoBehaviour
 
     CharacterData characterData;
 
-    MapData MapData = null;
+    MapData mapData = null;
 
 
     public static Database instance;
@@ -108,12 +110,12 @@ public class Database : MonoBehaviour
 
     public void SetMapData(MapData _mapData)
     {
-        MapData = _mapData;
+        mapData = _mapData;
     }
 
     public MapData GetMapData()
     {
-        return MapData;
+        return mapData;
     }
 
     public void AddPurchaseElementID(PurchaseData purchaseData)
@@ -202,9 +204,9 @@ public class Database : MonoBehaviour
         return null;
     }
 
-    PurchaseData GetMapDataByID(string ID)
+    MapData GetMapDataByID(string ID)
     {
-        foreach (PurchaseData data in availableMaps)
+        foreach (MapData data in availableMaps)
         {
             if (data.GetID == ID)
                 return data;
@@ -222,6 +224,7 @@ public class Database : MonoBehaviour
         string secondWeaponUpgradeKitID = secondWeaponUpgradeKitData != null? secondWeaponUpgradeKitData.ID : "";
 
         string characterDataID = characterData ? characterData.GetID : "";
+        string mapDataID = mapData ? mapData.GetID : "";
 
         DatabaseSerializationData data = new DatabaseSerializationData
         {
@@ -231,7 +234,8 @@ public class Database : MonoBehaviour
             secondWeaponDataID = secondWeaponID,
             firstWeaponUpgradeKitDataID = firstWeaponUpgradeKitID,
             secondWeaponUpgradeKitDataID = secondWeaponUpgradeKitID,
-            characterDataID = characterDataID
+            characterDataID = characterDataID,
+            mapDataID = mapDataID
         };
         return data;
     }
@@ -252,5 +256,7 @@ public class Database : MonoBehaviour
         secondWeaponUpgradeKitData = GetUpgradeKitDataByID(databaseSerializationData.secondWeaponUpgradeKitDataID);
 
         characterData = GetCharacterDataByID(databaseSerializationData.characterDataID);
+
+        mapData = GetMapDataByID(databaseSerializationData.mapDataID);
     }
 }
