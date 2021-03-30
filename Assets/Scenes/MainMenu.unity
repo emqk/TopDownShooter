@@ -5336,7 +5336,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: dff96d7855420f34c858bc73a7b1fba2, type: 2}
   - {fileID: 11400000, guid: a110b05efa54a5242a3cc0e7b00e268a, type: 2}
   maps:
-  - {fileID: 11400000, guid: 1e98f0e802294d24884efd387821051a, type: 2}
+  - {fileID: 11400000, guid: 1ca0d0f3960a2a945969583202f889a3, type: 2}
+  - {fileID: 11400000, guid: 87f9dd9c47b46a349aabf5a497b0ceb2, type: 2}
   weaponsFirst:
   - {fileID: 11400000, guid: 250249b682ab61b41a9bb85a58d74e8e, type: 2}
   weaponsSecond:

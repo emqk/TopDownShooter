@@ -73,6 +73,10 @@ public class MapPurchase : Purchasable
             Database.instance.SetCharacterData((CharacterData)data);
             MainMenuUIManager.instance.SetCharacterInfoActive((CharacterData)data);
         }
+        else if (type == PanelType.Map)
+        {
+            Database.instance.SetMapData((MapData)data);
+        }
 
         //Upgrades
         MainMenuUIManager.instance.ShowUpgrades(upgradeKitData);

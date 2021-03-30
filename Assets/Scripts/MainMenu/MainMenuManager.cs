@@ -17,7 +17,16 @@ public class MainMenuManager : MonoBehaviour
 
     public void Play()
     {
-        SceneManager.LoadScene("SampleScene");
+        MapData mapData = Database.instance.GetMapData();
+        if (mapData)
+        {
+            string sceneName = mapData.SceneName;
+            SceneManager.LoadScene(sceneName);
+        }
+        else
+        {
+            Debug.LogError("Can't load scene - mapData is null!");
+        }
     }
 
     public void Quit()

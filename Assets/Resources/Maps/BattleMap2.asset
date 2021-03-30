@@ -9,15 +9,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 96f53e955ae2f284cac3c48fa8e6459b, type: 3}
-  m_Name: FarmMap
+  m_Script: {fileID: 11500000, guid: 07a3eea4419403e4192be3498aedfbb7, type: 3}
+  m_Name: BattleMap2
   m_EditorClassIdentifier: 
-  ID: FarmMap
-  title: Farm
+  ID: BattleMap2
+  title: Battle Map Two
   thumbnail: {fileID: 21300000, guid: d3afe748ed0d54047a6374c99b322e81, type: 3}
-  cost: 16
-  description: Trash default map :)
-  prefab: {fileID: 5698117131018165361, guid: 6e28ad6e99b515d4c8e7be6f3280995c, type: 3}
+  cost: 2
+  description: Neons 2
+  prefab: {fileID: 5698117131018165361, guid: 327aa8654bc6f3e4b8cdcf1626acb7a4, type: 3}
   upgradeKit:
     ID: 
     upgradeDatas: []
+  sceneName: BattleScene2

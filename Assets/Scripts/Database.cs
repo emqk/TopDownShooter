@@ -20,7 +20,7 @@ public class Database : MonoBehaviour
 {
     //Lists of assets IDs loaded from Resource
     CharacterData[] availableCharacters;
-    PurchaseData[] availableMaps;
+    MapData[] availableMaps;
     WeaponData[] availableWeapons;
     UpgradeData[] availableUpgrades;
 
@@ -35,6 +35,8 @@ public class Database : MonoBehaviour
     UpgradeKitData secondWeaponUpgradeKitData = null;
 
     CharacterData characterData;
+
+    MapData MapData = null;
 
 
     public static Database instance;
@@ -57,7 +59,7 @@ public class Database : MonoBehaviour
     void LoadResources()
     {
         availableCharacters = Resources.LoadAll<CharacterData>("Characters");
-        availableMaps = Resources.LoadAll<PurchaseData>("Maps");
+        availableMaps = Resources.LoadAll<MapData>("Maps");
         availableWeapons = Resources.LoadAll<WeaponData>("Weapons");
         availableUpgrades = Resources.LoadAll<UpgradeData>("Upgrades");
     }
@@ -102,6 +104,16 @@ public class Database : MonoBehaviour
     public CharacterData GetCharacterData()
     {
         return characterData;
+    }
+
+    public void SetMapData(MapData _mapData)
+    {
+        MapData = _mapData;
+    }
+
+    public MapData GetMapData()
+    {
+        return MapData;
     }
 
     public void AddPurchaseElementID(PurchaseData purchaseData)
