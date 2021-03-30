@@ -48,12 +48,17 @@ public class MapPurchase : Purchasable
             }
         }
 
-        MainMenuUIManager.instance.SetCharacterInfoActive(null);
         UpgradeKitData upgradeKitData = Database.instance.GetUpgradeKitDataByID(data.UpgradeKit.ID);
 
-        if (data.Prefab)
+        if (type != PanelType.Map)
         {
-            MainMenuUIManager.instance.RefreshVisualizationFromData(data);
+            MainMenuUIManager.instance.SetCharacterInfoActive(null);
+            MainMenuUIManager.instance.ShowUpgrades(upgradeKitData);
+
+            if (data.Prefab)
+            {
+                MainMenuUIManager.instance.RefreshVisualizationFromData(data);
+            }
         }
 
         if (type == PanelType.WeaponFirst)
@@ -77,9 +82,6 @@ public class MapPurchase : Purchasable
         {
             Database.instance.SetMapData((MapData)data);
         }
-
-        //Upgrades
-        MainMenuUIManager.instance.ShowUpgrades(upgradeKitData);
 
         //Serialize
         Serializer.Serialize();
