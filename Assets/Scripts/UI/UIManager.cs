@@ -9,6 +9,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] Joystick rotationJoystick;
 
     [Header("Other")]
+    [SerializeField] Canvas mainBattleCanvas;
     [SerializeField] EndPanelUI endScreenCanvasPrefab;
 
     EndPanelUI endPanelInstance;
@@ -35,6 +36,8 @@ public class UIManager : MonoBehaviour
             Debug.Log("Can't show end panel - is already opened!");
             return;
         }
+
+        mainBattleCanvas.gameObject.SetActive(false);
 
         endPanelInstance = Instantiate(endScreenCanvasPrefab);
         endPanelInstance.Open();
