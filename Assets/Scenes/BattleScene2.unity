@@ -134,7 +134,7 @@ PrefabInstance:
     - target: {fileID: 8184694129277565382, guid: ea9581401d8ed6b45bbab4e4fd07b23a,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8184694129277565382, guid: ea9581401d8ed6b45bbab4e4fd07b23a,
         type: 3}
@@ -224,7 +224,7 @@ PrefabInstance:
     - target: {fileID: 8367001524077062379, guid: 9568b1218b4ec174993bf6df8a704025,
         type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8367001524077062379, guid: 9568b1218b4ec174993bf6df8a704025,
         type: 3}
@@ -286,6 +286,21 @@ PrefabInstance:
       propertyPath: playerCamera
       value: 
       objectReference: {fileID: 273177743}
+    - target: {fileID: 8367001524077062388, guid: 9568b1218b4ec174993bf6df8a704025,
+        type: 3}
+      propertyPath: onWeaponEquip.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1381954083}
+    - target: {fileID: 8367001524077062388, guid: 9568b1218b4ec174993bf6df8a704025,
+        type: 3}
+      propertyPath: onWeaponEquip.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: RefreshImage
+      objectReference: {fileID: 0}
+    - target: {fileID: 8367001524077062388, guid: 9568b1218b4ec174993bf6df8a704025,
+        type: 3}
+      propertyPath: onWeaponEquip.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: WeaponSwapButton, Assembly-CSharp
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9568b1218b4ec174993bf6df8a704025, type: 3}
 --- !u!4 &144040980 stripped
@@ -294,6 +309,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 144040979}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &144040981 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8367001524077062388, guid: 9568b1218b4ec174993bf6df8a704025,
+    type: 3}
+  m_PrefabInstance: {fileID: 144040979}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 384ecb156804ff94fa2940d3ff1d9e94, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &234998919
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -390,7 +417,7 @@ PrefabInstance:
     - target: {fileID: 116805626816092352, guid: 6f9a7d4ff32492544863f58b24fd6f40,
         type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 116805626816092352, guid: 6f9a7d4ff32492544863f58b24fd6f40,
         type: 3}
@@ -480,7 +507,7 @@ PrefabInstance:
     - target: {fileID: 6712761293413840099, guid: 8eec71c4619bc1e4e8c707d4257d2136,
         type: 3}
       propertyPath: m_RootOrder
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6712761293413840099, guid: 8eec71c4619bc1e4e8c707d4257d2136,
         type: 3}
@@ -577,6 +604,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: BattleCanvas
       objectReference: {fileID: 0}
+    - target: {fileID: 6712761293464626424, guid: 8eec71c4619bc1e4e8c707d4257d2136,
+        type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 144040981}
+    - target: {fileID: 6712761293464626429, guid: 8eec71c4619bc1e4e8c707d4257d2136,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1381954083}
+    - target: {fileID: 6712761293464626429, guid: 8eec71c4619bc1e4e8c707d4257d2136,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SwapPlayerWeapon
+      objectReference: {fileID: 0}
+    - target: {fileID: 6712761293464626429, guid: 8eec71c4619bc1e4e8c707d4257d2136,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: WeaponSwapButton, Assembly-CSharp
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8eec71c4619bc1e4e8c707d4257d2136, type: 3}
 --- !u!114 &1381954076 stripped
@@ -657,6 +704,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1381954083 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6712761293464626424, guid: 8eec71c4619bc1e4e8c707d4257d2136,
+    type: 3}
+  m_PrefabInstance: {fileID: 1381954075}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c1772d81ca786645b26e6ee22630e16, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1498222466
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -664,6 +723,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3410247527156802353, guid: 283434351c37f1d4f94547f9f5ce394b,
+        type: 3}
+      propertyPath: mainCamera
+      value: 
+      objectReference: {fileID: 273177743}
     - target: {fileID: 3410247527156802353, guid: 283434351c37f1d4f94547f9f5ce394b,
         type: 3}
       propertyPath: rewardText
@@ -677,7 +741,7 @@ PrefabInstance:
     - target: {fileID: 3410247527156802362, guid: 283434351c37f1d4f94547f9f5ce394b,
         type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3410247527156802362, guid: 283434351c37f1d4f94547f9f5ce394b,
         type: 3}
@@ -761,6 +825,11 @@ PrefabInstance:
       objectReference: {fileID: 234998920}
     - target: {fileID: 3410247527156802367, guid: 283434351c37f1d4f94547f9f5ce394b,
         type: 3}
+      propertyPath: healthUI
+      value: 
+      objectReference: {fileID: 1381954076}
+    - target: {fileID: 3410247527156802367, guid: 283434351c37f1d4f94547f9f5ce394b,
+        type: 3}
       propertyPath: targetCanvas
       value: 
       objectReference: {fileID: 1381954079}
@@ -769,6 +838,16 @@ PrefabInstance:
       propertyPath: weaponHeatImage
       value: 
       objectReference: {fileID: 1381954080}
+    - target: {fileID: 3410247527156802367, guid: 283434351c37f1d4f94547f9f5ce394b,
+        type: 3}
+      propertyPath: movementJoystick
+      value: 
+      objectReference: {fileID: 1381954078}
+    - target: {fileID: 3410247527156802367, guid: 283434351c37f1d4f94547f9f5ce394b,
+        type: 3}
+      propertyPath: rotationJoystick
+      value: 
+      objectReference: {fileID: 1381954077}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 283434351c37f1d4f94547f9f5ce394b, type: 3}
 --- !u!1001 &1526928468
@@ -781,7 +860,7 @@ PrefabInstance:
     - target: {fileID: 6264197683642982226, guid: b91be01db3d3ab040971ea45894f51dd,
         type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 6264197683642982226, guid: b91be01db3d3ab040971ea45894f51dd,
         type: 3}
@@ -934,5 +1013,5 @@ Transform:
   m_LocalScale: {x: 150, y: 150, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}

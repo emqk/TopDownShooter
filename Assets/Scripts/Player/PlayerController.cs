@@ -8,8 +8,8 @@ public class PlayerController : MonoBehaviour
     float movementSpeed;
 
     [Header("Touch input")]
-    [SerializeField] Joystick movementJoystick;
-    [SerializeField] Joystick rotationJoystick;
+    Joystick movementJoystick;
+    Joystick rotationJoystick;
     
     CharacterController characterController;
     Player controlledPlayer;
@@ -20,6 +20,9 @@ public class PlayerController : MonoBehaviour
     {
         characterController = GetComponent<CharacterController>();
         controlledPlayer = GetComponent<Player>();
+
+        movementJoystick = UIManager.instance.MovementJoystick;
+        rotationJoystick = UIManager.instance.RotationJoystick;
     }
 
     void Update()

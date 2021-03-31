@@ -21,8 +21,8 @@ public class Player : MonoBehaviour, IDamageable
     GameObject characterSkin;
 
     [Header("Other")]
-    [SerializeField] Camera playerCamera;
-    [SerializeField] FillUI healthUI;
+    Camera playerCamera;
+    FillUI healthUI;
     Statistic health = new Statistic(0, 100, 100);
 
     PlayerController playerController;
@@ -113,10 +113,13 @@ public class Player : MonoBehaviour, IDamageable
     void Start()
     {
         playerController = GetComponent<PlayerController>();
+        playerCamera = BattleManager.instance.MainCamera;
         defaultWeaponRootLocalPosition = weaponRoot.localPosition;
         shootWeaponRootLocalPosition = defaultWeaponRootLocalPosition - weaponRoot.forward * 0.35f;
 
+        healthUI = UIManager.instance.HealthUI;
         healthUI.Init(transform, playerCamera);
+
         SetupCharacterData();
         SetupWeapons();
         RefreshHPFillUI();

@@ -7,7 +7,7 @@ public class NotificationManager : MonoBehaviour
 {
     [SerializeField] ScreenNotification screenNotification;
     [SerializeField] TMP_Text damageTextPrefab;
-    [SerializeField] Camera textLookCamera;
+    Camera textLookCamera;
     List<TMP_Text> damageInfoInstances = new List<TMP_Text>();
 
     float textMoveUpSpeed = 1;
@@ -18,6 +18,11 @@ public class NotificationManager : MonoBehaviour
     void Awake()
     {
         instance = this;
+    }
+
+    private void Start()
+    {
+        textLookCamera = BattleManager.instance.MainCamera;
     }
 
     private void Update()

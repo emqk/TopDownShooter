@@ -4,9 +4,13 @@ using TMPro;
 public class BattleManager : MonoBehaviour
 {
     [SerializeField] TextMeshProUGUI rewardText;
+    [SerializeField] Camera mainCamera;
 
     int battleReward = 0;
     public static BattleManager instance;
+
+    public Camera MainCamera { get => mainCamera; }
+
 
     private void Awake()
     {
