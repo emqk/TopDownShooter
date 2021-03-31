@@ -2200,6 +2200,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3410247527156802353, guid: 283434351c37f1d4f94547f9f5ce394b,
         type: 3}
+      propertyPath: mainCamera
+      value: 
+      objectReference: {fileID: 1687258584}
+    - target: {fileID: 3410247527156802353, guid: 283434351c37f1d4f94547f9f5ce394b,
+        type: 3}
       propertyPath: rewardText
       value: 
       objectReference: {fileID: 1638436294}
@@ -2290,6 +2295,11 @@ PrefabInstance:
       objectReference: {fileID: 908492881}
     - target: {fileID: 3410247527156802367, guid: 283434351c37f1d4f94547f9f5ce394b,
         type: 3}
+      propertyPath: healthUI
+      value: 
+      objectReference: {fileID: 1074815914}
+    - target: {fileID: 3410247527156802367, guid: 283434351c37f1d4f94547f9f5ce394b,
+        type: 3}
       propertyPath: targetCanvas
       value: 
       objectReference: {fileID: 1468919180}
@@ -2298,6 +2308,16 @@ PrefabInstance:
       propertyPath: weaponHeatImage
       value: 
       objectReference: {fileID: 983864889}
+    - target: {fileID: 3410247527156802367, guid: 283434351c37f1d4f94547f9f5ce394b,
+        type: 3}
+      propertyPath: movementJoystick
+      value: 
+      objectReference: {fileID: 2097252353}
+    - target: {fileID: 3410247527156802367, guid: 283434351c37f1d4f94547f9f5ce394b,
+        type: 3}
+      propertyPath: rotationJoystick
+      value: 
+      objectReference: {fileID: 74207242}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 283434351c37f1d4f94547f9f5ce394b, type: 3}
 --- !u!1001 &4191700808845053820

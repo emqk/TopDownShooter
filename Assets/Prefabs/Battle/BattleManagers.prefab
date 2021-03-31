@@ -49,6 +49,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rewardText: {fileID: 0}
+  mainCamera: {fileID: 0}
 --- !u!114 &3410247527156802363
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -78,7 +79,6 @@ MonoBehaviour:
   screenNotification: {fileID: 0}
   damageTextPrefab: {fileID: 4539270622267331346, guid: 86c44bbd118c2b844ba8a5471815bc60,
     type: 3}
-  textLookCamera: {fileID: 0}
 --- !u!114 &3410247527156802367
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -91,10 +91,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b22fb657ac5f5d743a5a4e1137237e85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  healthUI: {fileID: 0}
   weaponHeatImage: {fileID: 0}
-  endPanelPrefab: {fileID: -8589507379197566224, guid: cba3fcfa50fa24041aa647142c7b1a6d,
+  movementJoystick: {fileID: 0}
+  rotationJoystick: {fileID: 0}
+  endScreenCanvasPrefab: {fileID: 6418205718718172368, guid: ed9d86d74dac9044e9c79b935592bd4b,
     type: 3}
-  targetCanvas: {fileID: 0}
 --- !u!114 &3410247527156802366
 MonoBehaviour:
   m_ObjectHideFlags: 0

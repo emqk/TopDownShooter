@@ -9,9 +9,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] Joystick rotationJoystick;
 
     [Header("Other")]
-    [SerializeField] EndPanelUI endPanelPrefab;
-
-    [SerializeField] Canvas targetCanvas;
+    [SerializeField] EndPanelUI endScreenCanvasPrefab;
 
     EndPanelUI endPanelInstance;
     public static UIManager instance;
@@ -38,7 +36,7 @@ public class UIManager : MonoBehaviour
             return;
         }
 
-        endPanelInstance = Instantiate(endPanelPrefab, targetCanvas.transform);
+        endPanelInstance = Instantiate(endScreenCanvasPrefab);
         endPanelInstance.Open();
     }
 }
