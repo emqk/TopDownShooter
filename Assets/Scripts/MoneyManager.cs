@@ -7,7 +7,7 @@ public class MoneySerializationData
 
 public static class MoneyManager
 {
-    static Statistic gold = new Statistic(0, 50, 1000000);
+    static Statistic gold = new Statistic(0, 50, int.MaxValue);
 
     public static int GetGoldAmount()
     {
@@ -22,6 +22,12 @@ public static class MoneyManager
         return gold.GetAmount() - cost >= 0;
     }
 
+    public static void AddGold(int amount)
+    {
+        gold.ChangeByAmount(amount);
+        MainMenuUIManager.instance.RefreshGold();
+    }
+    
     public static void SpendGold(int cost)
     {
         gold.ChangeByAmount(-cost);

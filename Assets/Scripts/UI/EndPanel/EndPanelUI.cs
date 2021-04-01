@@ -19,11 +19,19 @@ public class EndPanelUI : MonoBehaviour
     {
         BattleManager.instance.Pause();
         Refresh();
+        AddEarnedReward();
     }
 
     public void LoadMainMenu()
     {
         SceneManager.LoadScene("MainMenu");
+    }
+
+    void AddEarnedReward()
+    {
+        Debug.Log("Adding reward");
+        MoneyManager.AddGold(BattleManager.instance.GetReward());
+        Serializer.Serialize();
     }
 
     void Refresh()
