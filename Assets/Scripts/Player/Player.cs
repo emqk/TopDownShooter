@@ -15,8 +15,7 @@ public class Player : MonoBehaviour, IDamageable
 
     [SerializeField] UnityEvent onWeaponEquip;
 
-    Weapon firstWeapon;
-    Weapon secondWeapon;
+    Weapon weapon;
 
     GameObject characterSkin;
 
@@ -56,44 +55,27 @@ public class Player : MonoBehaviour, IDamageable
 
     void SetupWeapons()
     {
-        WeaponData firstWeaponData = Database.instance.GetWeaponData(true);
-        WeaponData secondWeaponData = Database.instance.GetWeaponData(false);
-
-        firstWeaponUpgradeData = Database.instance.GetWeaponUpgradeKitData(true);
-        secondWeaponUpgradeData = Database.instance.GetWeaponUpgradeKitData(false);
+        WeaponData weaponData = Database.instance.GetWeaponData();
+        firstWeaponUpgradeData = Database.instance.GetWeaponUpgradeKitData();
 
         //Spawn weapons
-        if (firstWeaponData)
+        if (weaponData)
         {
-            firstWeapon = Instantiate(firstWeaponData.Prefab, weaponRoot).GetComponent<Weapon>();
+            weapon = Instantiate(weaponData.Prefab, weaponRoot).GetComponent<Weapon>();
         }
         else
         {
-            Debug.Log("Fist weapon is null!");
-        }
-
-        if (secondWeaponData)
-        {
-            secondWeapon = Instantiate(secondWeaponData.Prefab, weaponRoot).GetComponent<Weapon>();
-        }
-        else
-        {
-            Debug.Log("Second weapon is null!");
+            Debug.Log("Weapon is null!");
         }
 
         //Equip first available weapon
-        if (firstWeapon)
+        if (weapon)
         {
-            EquipWeapon(true);
-        }
-        else if (secondWeapon)
-        {
-            EquipWeapon(false);
+            EquipWeapon();
         }
 
         //Set weapon data to all available weapons
-        firstWeapon?.Init(firstWeaponUpgradeData);
-        secondWeapon?.Init(secondWeaponUpgradeData);
+        weapon?.Init(firstWeaponUpgradeData);
     }
 
     public void OnWeaponShoot()
@@ -127,9 +109,7 @@ public class Player : MonoBehaviour, IDamageable
 
     void Update()
     {
-        firstWeapon?.UpdateMe();
-        secondWeapon?.UpdateMe();
-
+        weapon?.UpdateMe();
         equipedWeapon?.UpdateWeaponHeatImage();
 
         UpdateWeaponRootPosition();
@@ -160,45 +140,16 @@ public class Player : MonoBehaviour, IDamageable
         return equipedWeapon.GetWeaponData();
     }
 
-    public void SwapWeapon()
+    void EquipWeapon()
     {
-        if (equipedWeapon == firstWeapon)
+        if (weapon)
         {
-            EquipWeapon(false);
+            weapon?.gameObject.SetActive(true);
+            equipedWeapon = weapon;
         }
         else
         {
-            EquipWeapon(true);
-        }
-    }
-
-    void EquipWeapon(bool first)
-    {
-        if (first)
-        {
-            if (firstWeapon)
-            {
-                firstWeapon?.gameObject.SetActive(true);
-                secondWeapon?.gameObject.SetActive(false);
-                equipedWeapon = firstWeapon;
-            }
-            else
-            {
-                Debug.Log("Can't equip first weapon - weapon data in null!");
-            }
-        }
-        else
-        {
-            if (secondWeapon)
-            {
-                firstWeapon?.gameObject.SetActive(false);
-                secondWeapon?.gameObject.SetActive(true);
-                equipedWeapon = secondWeapon;
-            }
-            else
-            {
-                Debug.Log("Can't equip second weapon - weapon data in null!");
-            }
+            Debug.Log("Can't equip weapon - weapon data in null!");
         }
 
         onWeaponEquip.Invoke();

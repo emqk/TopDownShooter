@@ -61,16 +61,10 @@ public class MapPurchase : Purchasable
             }
         }
 
-        if (type == PanelType.WeaponFirst)
+        if (type == PanelType.Weapon)
         {
-            Database.instance.SetWeaponData((WeaponData)data, true);
-            Database.instance.SetWeaponUpgradeKitData(upgradeKitData, true);
-            MainMenuUIManager.instance.RefreshWeaponsUI();
-        }
-        else if (type == PanelType.WeaponSecond)
-        {
-            Database.instance.SetWeaponData((WeaponData)data, false);
-            Database.instance.SetWeaponUpgradeKitData(upgradeKitData, false);
+            Database.instance.SetWeaponData((WeaponData)data);
+            Database.instance.SetWeaponUpgradeKitData(upgradeKitData);
             MainMenuUIManager.instance.RefreshWeaponsUI();
         }
         else if (type == PanelType.Character)

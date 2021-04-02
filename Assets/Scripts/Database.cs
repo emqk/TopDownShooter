@@ -7,11 +7,8 @@ public class DatabaseSerializationData
     public List<string> purchasedID;
     public List<UpgradeKitDataSerizalizationData> upgrades;
 
-    public string firstWeaponDataID;
-    public string secondWeaponDataID;
-
-    public string firstWeaponUpgradeKitDataID;
-    public string secondWeaponUpgradeKitDataID;
+    public string weaponDataID;
+    public string weaponUpgradeKitDataID;
 
     public string characterDataID;
 
@@ -30,11 +27,9 @@ public class Database : MonoBehaviour
     List<string> purchased = new List<string>();
     List<UpgradeKitData> upgrades = new List<UpgradeKitData>();
 
-    WeaponData firstWeaponData = null;
-    WeaponData secondWeaponData = null;
+    WeaponData weaponData = null;
 
-    UpgradeKitData firstWeaponUpgradeKitData = null;
-    UpgradeKitData secondWeaponUpgradeKitData = null;
+    UpgradeKitData weaponUpgradeKitData = null;
 
     CharacterData characterData;
 
@@ -66,36 +61,24 @@ public class Database : MonoBehaviour
         availableUpgrades = Resources.LoadAll<UpgradeData>("Upgrades");
     }
 
-    public WeaponData GetWeaponData(bool isItFirst)
+    public WeaponData GetWeaponData()
     {
-        if (isItFirst)
-            return firstWeaponData;
-        else
-            return secondWeaponData;
+        return weaponData;
     }
 
-    public void SetWeaponData(WeaponData weaponData, bool isItFirst)
+    public void SetWeaponData(WeaponData newWeaponData)
     {
-        if (isItFirst)
-            firstWeaponData = weaponData;
-        else
-            secondWeaponData = weaponData;
+        weaponData = newWeaponData;
     }
 
-    public UpgradeKitData GetWeaponUpgradeKitData(bool isItFirstWeapon)
+    public UpgradeKitData GetWeaponUpgradeKitData()
     {
-        if (isItFirstWeapon)
-            return firstWeaponUpgradeKitData;
-        else
-            return secondWeaponUpgradeKitData;
+        return weaponUpgradeKitData;
     }
 
-    public void SetWeaponUpgradeKitData(UpgradeKitData upgradeKitData, bool isItFirst)
+    public void SetWeaponUpgradeKitData(UpgradeKitData upgradeKitData)
     {
-        if (isItFirst)
-            firstWeaponUpgradeKitData = upgradeKitData;
-        else
-            secondWeaponUpgradeKitData = upgradeKitData;
+        weaponUpgradeKitData = upgradeKitData;
     }
 
     public void SetCharacterData(CharacterData _characterData)
@@ -217,11 +200,8 @@ public class Database : MonoBehaviour
 
     public DatabaseSerializationData GetSerializationData()
     {
-        string firstWeaponID = firstWeaponData ? firstWeaponData.GetID : "";
-        string secondWeaponID = secondWeaponData ? secondWeaponData.GetID : "";
-
-        string firstWeaponUpgradeKitID = firstWeaponUpgradeKitData != null? firstWeaponUpgradeKitData.ID : "";
-        string secondWeaponUpgradeKitID = secondWeaponUpgradeKitData != null? secondWeaponUpgradeKitData.ID : "";
+        string weaponID = weaponData ? weaponData.GetID : "";
+        string weaponUpgradeKitID = weaponUpgradeKitData != null? weaponUpgradeKitData.ID : "";
 
         string characterDataID = characterData ? characterData.GetID : "";
         string mapDataID = mapData ? mapData.GetID : "";
@@ -230,10 +210,8 @@ public class Database : MonoBehaviour
         {
             purchasedID = new List<string>(purchased),
             upgrades = CreateSerializedUpgradeData(),
-            firstWeaponDataID = firstWeaponID,
-            secondWeaponDataID = secondWeaponID,
-            firstWeaponUpgradeKitDataID = firstWeaponUpgradeKitID,
-            secondWeaponUpgradeKitDataID = secondWeaponUpgradeKitID,
+            weaponDataID = weaponID,
+            weaponUpgradeKitDataID = weaponUpgradeKitID,
             characterDataID = characterDataID,
             mapDataID = mapDataID
         };
@@ -249,11 +227,8 @@ public class Database : MonoBehaviour
             upgrades.Add(CreateUpgradeKitDataFromSerialized(item));
         }
 
-        firstWeaponData = GetWeaponDataByID(databaseSerializationData.firstWeaponDataID);
-        secondWeaponData = GetWeaponDataByID(databaseSerializationData.secondWeaponDataID);
-
-        firstWeaponUpgradeKitData = GetUpgradeKitDataByID(databaseSerializationData.firstWeaponUpgradeKitDataID);
-        secondWeaponUpgradeKitData = GetUpgradeKitDataByID(databaseSerializationData.secondWeaponUpgradeKitDataID);
+        weaponData = GetWeaponDataByID(databaseSerializationData.weaponDataID);
+        weaponUpgradeKitData = GetUpgradeKitDataByID(databaseSerializationData.weaponUpgradeKitDataID);
 
         characterData = GetCharacterDataByID(databaseSerializationData.characterDataID);
 

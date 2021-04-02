@@ -5,7 +5,7 @@ using TMPro;
 
 public enum PanelType
 {
-    None, Character, Map, WeaponFirst, WeaponSecond
+    None, Character, Map, Weapon
 }
 
 public class MainMenuUIManager : MonoBehaviour
@@ -30,13 +30,11 @@ public class MainMenuUIManager : MonoBehaviour
     [Header("Data")]
     [SerializeField] List<PurchaseData> characters = new List<PurchaseData>();
     [SerializeField] List<PurchaseData> maps = new List<PurchaseData>();
-    [SerializeField] List<PurchaseData> weaponsFirst = new List<PurchaseData>();
-    [SerializeField] List<PurchaseData> weaponsSecond = new List<PurchaseData>();
+    [SerializeField] List<PurchaseData> weapons = new List<PurchaseData>();
 
     [Header("Mesh visualization")]
     [SerializeField] Transform visualizationObjParent;
-    [SerializeField] Image weaponFirstThumbnail;
-    [SerializeField] Image weaponSecondThumbnail;
+    [SerializeField] Image weaponThumbnail;
 
     [Header("Character info")]
     [SerializeField] RectTransform characterInfoPanel;
@@ -62,15 +60,15 @@ public class MainMenuUIManager : MonoBehaviour
         goldText.text = MoneyManager.GetGoldAmount().ToString();
     }
 
-    void RefreshWeaponIcon(PurchaseData data, bool isItFirst)
+    void RefreshWeaponIcon(PurchaseData data)
     {
-        if (isItFirst)
+        if (data)
         {
-            weaponFirstThumbnail.sprite = data.Thumbnail;
+            weaponThumbnail.sprite = data.Thumbnail;
         }
         else
         {
-            weaponSecondThumbnail.sprite = data.Thumbnail;
+            Debug.Log("Can't refresh weapon icon - data is null!");
         }
     }
 
@@ -99,16 +97,10 @@ public class MainMenuUIManager : MonoBehaviour
         mapsUI.gameObject.SetActive(false);
     }
 
-    public void ShowWeaponsFirst()
+    public void ShowWeapons()
     {
-        currentPanelType = PanelType.WeaponFirst;
-        SpawnDataPrefabsOnView3D(weaponsFirst);
-    }
-
-    public void ShowWeaponsSecond()
-    {
-        currentPanelType = PanelType.WeaponSecond;
-        SpawnDataPrefabsOnView3D(weaponsSecond);
+        currentPanelType = PanelType.Weapon;
+        SpawnDataPrefabsOnView3D(weapons);
     }
 
     public void ShowCharacters()
@@ -160,9 +152,7 @@ public class MainMenuUIManager : MonoBehaviour
                 break;
             case PanelType.Map:         SpawnPurchasableFromList(maps);
                 break;
-            case PanelType.WeaponFirst: SpawnPurchasableFromList(weaponsFirst);
-                break;
-            case PanelType.WeaponSecond:SpawnPurchasableFromList(weaponsSecond);
+            case PanelType.Weapon:      SpawnPurchasableFromList(weapons);
                 break;
             default:
                 break;
@@ -171,13 +161,8 @@ public class MainMenuUIManager : MonoBehaviour
 
     public void RefreshWeaponsUI()
     {
-        WeaponData firstWeapon = Database.instance.GetWeaponData(true);
-        WeaponData secondWeapon = Database.instance.GetWeaponData(false);
-
-        if (firstWeapon)
-            RefreshWeaponIcon(firstWeapon, true);
-        if (secondWeapon)
-            RefreshWeaponIcon(secondWeapon, false);
+        WeaponData weapon = Database.instance.GetWeaponData();
+        RefreshWeaponIcon(weapon);
     }
 
     public void RefreshCharacterSkin()
