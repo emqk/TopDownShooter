@@ -1,9 +1,10 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 
 [RequireComponent(typeof(AudioSource))]
 public class Weapon : MonoBehaviour
 {
-    [SerializeField] Transform shootSource;
+    [SerializeField] List<Transform> shootSources;
     [SerializeField] WeaponData weaponData;
     UpgradeKitData upgradeData;
 
@@ -64,11 +65,27 @@ public class Weapon : MonoBehaviour
     {
         if (timeToShoot <= 0 && !isOverheated)
         {
-            float weaponAccuracy = weaponData.Accuracy;
-            Vector3 projectileDirection = Quaternion.Euler(0, Random.Range(-weaponAccuracy, weaponAccuracy), 0) * shootSource.forward;
+            ShootFromAllSourcesNoCheck();
+
+            timeToShoot = weaponData.ShootRate;
+            currentHeat += weaponData.HeatPerShot;
+            audioSource.PlayOneShot(weaponData.ShootSound);
+            return true;
+        }
+
+        return false;
+    }
+
+    void ShootFromAllSourcesNoCheck()
+    {
+        float weaponAccuracy = weaponData.Accuracy;
+
+        foreach (Transform source in shootSources)
+        {
+            Vector3 projectileDirection = Quaternion.Euler(0, Random.Range(-weaponAccuracy, weaponAccuracy), 0) * source.forward;
             Quaternion projectileRotation = Quaternion.LookRotation(projectileDirection);
 
-            Projectile projectileInstance = Instantiate(weaponData.Projectile, shootSource.transform.position, projectileRotation);
+            Projectile projectileInstance = Instantiate(weaponData.Projectile, source.position, projectileRotation);
             ProjectileData projectileData = weaponData.ProjectileData;
             if (UpgradeData != null)
             {
@@ -83,13 +100,7 @@ public class Weapon : MonoBehaviour
                     , projectileData.MoveSpeed * moveSpeedUpgradeValue);
             }
             projectileInstance.Init(projectileData);
-
-            timeToShoot = weaponData.ShootRate;
-            currentHeat += weaponData.HeatPerShot;
-            audioSource.PlayOneShot(weaponData.ShootSound);
-            return true;
         }
-
-        return false;
+      
     }
 }

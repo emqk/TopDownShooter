@@ -46,7 +46,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40fbe03002e4f904d818c8dd47a7feae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shootSource: {fileID: 7913624166854045396}
+  shootSources:
+  - {fileID: 7913624166854045396}
   weaponData: {fileID: 11400000, guid: 250249b682ab61b41a9bb85a58d74e8e, type: 2}
 --- !u!82 &561045076462038737
 AudioSource:
