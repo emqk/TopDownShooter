@@ -9,7 +9,7 @@ public class AdsManager : MonoBehaviour, IUnityAdsListener
 
     int rewardForRewardedAd = 0;
     int skippableAdCounter = 0;
-    const int skippableAdCounterThreshold = 2;
+    const int skippableAdCounterThreshold = 3;
 
     public static AdsManager instance;
 
@@ -36,6 +36,7 @@ public class AdsManager : MonoBehaviour, IUnityAdsListener
     public void AdvanceCounter()
     {
         skippableAdCounter += 1;
+        Debug.Log("Ad counter advanced " + skippableAdCounter + "/" + skippableAdCounterThreshold);
 
         if (skippableAdCounter >= skippableAdCounterThreshold)
         {

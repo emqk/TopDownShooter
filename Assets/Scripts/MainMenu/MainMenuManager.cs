@@ -13,6 +13,7 @@ public class MainMenuManager : MonoBehaviour
     private void OnLevelWasLoaded(int level)
     {
         Time.timeScale = 1;
+        AdsManager.instance.AdvanceCounter();
     }
 
     public void Play()
