@@ -12,6 +12,7 @@ public class EndPanelUI : MonoBehaviour
     [SerializeField] TextMeshProUGUI wavesText;
 
     [Header("Other")]
+    [SerializeField] RewardButtonPanelUI rewardButtonPanel;
     [SerializeField] TextMeshProUGUI titleText;
     [SerializeField] TextMeshProUGUI moneyText;
 
@@ -52,6 +53,15 @@ public class EndPanelUI : MonoBehaviour
         }
 
         moneyText.text = BattleManager.instance.GetReward().ToString();
+
+        if (AdsManager.instance.CanShowRewardedAd())
+        {
+            rewardButtonPanel.gameObject.SetActive(true);
+        }
+        else
+        {
+            rewardButtonPanel.gameObject.SetActive(false);
+        }
     }
 
     void SetColorToWavesBackground(Color color) 

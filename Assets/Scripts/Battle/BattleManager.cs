@@ -22,6 +22,11 @@ public class BattleManager : MonoBehaviour
         RefreshRewardText();
     }
 
+    public void EndBattle()
+    {
+        UIManager.instance.ShowEndPanel();
+    }
+
     public int GetReward()
     {
         return battleReward;

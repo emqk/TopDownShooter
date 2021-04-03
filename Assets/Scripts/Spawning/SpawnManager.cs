@@ -88,7 +88,7 @@ public class SpawnManager : MonoBehaviour
         if (currentWaveIndex + 1 >= spawnWaves.Count)
         {
             currentWaveIndex += 1;
-            UIManager.instance.ShowEndPanel();
+            BattleManager.instance.EndBattle();
             spawningEnded = true;
         }
         else

@@ -4,9 +4,13 @@ using UnityEngine.Advertisements;
 public class AdsManager : MonoBehaviour, IUnityAdsListener
 {
     const string rewardedPlacementId = "Rewarded_Android";
-    static string androidID = "4075311";
-    public static AdsManager instance;
+    const string androidID = "4075311";
+
     int rewardForRewardedAd = 0;
+    int skippableAdCounter = 0;
+    const int skippableAdCounterThreshold = 2;
+
+    public static AdsManager instance;
 
     void Awake()
     {
@@ -28,21 +32,41 @@ public class AdsManager : MonoBehaviour, IUnityAdsListener
         Advertisement.Initialize(androidID, true);
     }
 
-    public void ShowSkippableAd()
+    public void AdvanceCounter()
+    {
+        skippableAdCounter += 1;
+
+        if (skippableAdCounter >= skippableAdCounterThreshold)
+        {
+            if (ShowSkippableAd())
+            {
+                skippableAdCounter = 0;
+            }
+        }
+    }
+
+    public bool ShowSkippableAd()
     {
         if (Advertisement.IsReady())
         {
             Advertisement.Show();
+            return true;
         }
         else
         {
             Debug.Log("Skippable ad is not ready");
+            return false;
         }
+    }
+
+    public bool CanShowRewardedAd()
+    {
+        return Advertisement.IsReady(rewardedPlacementId);
     }
 
     public void ShowRewardedAd(int reward)
     {
-        if (Advertisement.IsReady(rewardedPlacementId))
+        if (CanShowRewardedAd())
         {
             rewardForRewardedAd = reward;
             Advertisement.Show(rewardedPlacementId);

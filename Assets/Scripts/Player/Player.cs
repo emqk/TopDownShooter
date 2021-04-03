@@ -45,7 +45,7 @@ public class Player : MonoBehaviour, IDamageable
 
     public void Die()
     {
-        UIManager.instance.ShowEndPanel();
+        BattleManager.instance.EndBattle();
     }
 
     void RefreshHPFillUI()
