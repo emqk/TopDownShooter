@@ -6,6 +6,7 @@ public class AdsManager : MonoBehaviour, IUnityAdsListener
     const string rewardedPlacementId = "Rewarded_Android";
     static string androidID = "4075311";
     public static AdsManager instance;
+    int rewardForRewardedAd = 0;
 
     void Awake()
     {
@@ -39,10 +40,11 @@ public class AdsManager : MonoBehaviour, IUnityAdsListener
         }
     }
 
-    public void ShowRewardedAd()
+    public void ShowRewardedAd(int reward)
     {
         if (Advertisement.IsReady(rewardedPlacementId))
         {
+            rewardForRewardedAd = reward;
             Advertisement.Show(rewardedPlacementId);
         }
         else
@@ -67,7 +69,8 @@ public class AdsManager : MonoBehaviour, IUnityAdsListener
             Debug.Log("Ad finished: " + placementId);
             if (placementId == rewardedPlacementId)
             {
-                MoneyManager.AddGold(10);
+                MoneyManager.AddGold(rewardForRewardedAd);
+                Serializer.Serialize();
                 Debug.Log("Added gold from ad!");
             }
         }
