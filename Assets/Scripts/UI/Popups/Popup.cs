@@ -87,7 +87,7 @@ public class Popup : MonoBehaviour
 
     IEnumerator CleanupClose()
     {
-        yield return new WaitForSeconds(0.2f);
+        yield return new WaitForSecondsRealtime(0.2f);
         Destroy(gameObject);
         Destroy(blocker.gameObject);
     }
