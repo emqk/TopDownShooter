@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Advertisements;
 
@@ -91,16 +92,34 @@ public class AdsManager : MonoBehaviour, IUnityAdsListener
         else if (showResult == ShowResult.Finished)
         {
             Debug.Log("Ad finished: " + placementId);
-            if (placementId == rewardedPlacementId)
-            {
-                MoneyManager.AddGold(rewardForRewardedAd);
-                Serializer.Serialize();
-                Debug.Log("Added gold from ad!");
-            }
+            OnRewardedAdSuccess(placementId);
         }
         else if (showResult == ShowResult.Skipped)
         {
             Debug.Log("Ad skipped: " + placementId);
+        }
+    }
+
+    void OnRewardedAdSuccess(string placementId)
+    {
+        if (placementId == rewardedPlacementId)
+        {
+            MoneyManager.AddGold(rewardForRewardedAd);
+            Serializer.Serialize();
+
+            //Show popup
+            string popupContentText = "You've earned " + rewardForRewardedAd + " from watching ad!";
+            PopupData popupData = new PopupData()
+            {
+                popupType = PopupType.Good,
+                title = "Reward received!",
+                description = popupContentText,
+                buttonsData = new List<PopupButttonData>()
+                {
+                    new PopupButttonData() { text = "Ok", onClick = PopupManager.instance.CloseLastPopup }
+                }
+            };
+            PopupManager.instance.CreatePopup(popupData);
         }
     }
 
