@@ -5,7 +5,8 @@ using UnityEngine.AI;
 public class AI : MonoBehaviour, IDamageable
 {
     public int Damage { get => 10; }
-    [SerializeField] Statistic health = new Statistic();
+    [SerializeField] int defaultHealth = 100;
+    Statistic health = new Statistic();
     [SerializeField] Vector2Int rewardRange;
 
     [SerializeField] AudioClip deathSound;
@@ -36,6 +37,8 @@ public class AI : MonoBehaviour, IDamageable
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
+        health = new Statistic(0, defaultHealth, defaultHealth);
+
         Player player = GameObject.FindObjectOfType<Player>();
         ChaseState chaseState = new ChaseState(agent, player);
         AttackState attackState = new AttackState(this, player);
