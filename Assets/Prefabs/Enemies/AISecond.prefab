@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5761446191328258011}
   - component: {fileID: 5761446191328258010}
   m_Layer: 9
-  m_Name: AI
+  m_Name: AISecond
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -57,7 +57,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 3.5
+  m_Speed: 3
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -82,8 +82,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health:
-    maxAmount: 100
-    currentAmount: 100
+    maxAmount: 180
+    currentAmount: 180
     minAmount: 0
   rewardRange: {x: 1, y: 4}
   deathSound: {fileID: 8300000, guid: 8248f11c2ba49ac45966ff013a4f6453, type: 3}
@@ -147,7 +147,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 2bcdf47868881014bbfb424a28884493, type: 2}
+  - {fileID: 2100000, guid: 19b0fd6c0be455d4189bcd2010a94e87, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
