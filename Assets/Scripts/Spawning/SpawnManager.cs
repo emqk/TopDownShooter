@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class SpawnManager : MonoBehaviour
@@ -11,6 +12,8 @@ public class SpawnManager : MonoBehaviour
     bool isWaitingForNextWave = true;
     bool spawningEnded = false;
 
+    List<Spawner> spawners = new List<Spawner>();
+
     public static SpawnManager instance;
 
     private void Awake()
@@ -21,6 +24,17 @@ public class SpawnManager : MonoBehaviour
     void Start()
     {
         timeToNextWave = nextWaveTimeSpan;
+    }
+
+    public void RegisterSpawner(Spawner spawner)
+    {
+        if (spawner == null)
+        {
+            Debug.Log("Can't register spawner - spawner is null!");
+            return;
+        }
+
+        spawners.Add(spawner);
     }
 
     public static void RegisterKill(AI killedAI)
@@ -79,7 +93,7 @@ public class SpawnManager : MonoBehaviour
         SpawnWave currWave = spawnWaves[currentWaveIndex];
         foreach (SpawnData spawnData in currWave.spawnData)
         {
-            spawnData.spawner.StartSpawning(spawnData);
+            StartSpawning(spawnData);
         }
     }
 
@@ -114,5 +128,30 @@ public class SpawnManager : MonoBehaviour
         }
 
         timeToNextWave = nextWaveTimeSpan;
+    }
+
+    public void StartSpawning(SpawnData spawnData)
+    {
+        StartCoroutine(SpawnAndWait(spawnData));
+    }
+
+    IEnumerator SpawnAndWait(SpawnData spawnData)
+    {
+        for (int i = 0; i < spawnData.amountToSpawn; i++)
+        {
+            yield return new WaitForSeconds(spawnData.spawnInterval);
+            SpawnAtRandomSpawner(spawnData.toSpawn);
+        }
+    }
+
+    void SpawnAtRandomSpawner(AI toSpawn)
+    {
+        Spawner targetSpawner = GetRandomSpawner();
+        targetSpawner.SpawnAI(toSpawn);
+    }
+
+    Spawner GetRandomSpawner()
+    {
+        return spawners[Random.Range(0, spawners.Count)];
     }
 }

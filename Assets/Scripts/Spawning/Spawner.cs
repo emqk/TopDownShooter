@@ -1,29 +1,26 @@
-﻿using System.Collections;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Spawner : MonoBehaviour
 {
     [SerializeField] Transform targetToFollow;
     [SerializeField] float spawnRadius;
-    SpawnData spawnData;
 
-    public void StartSpawning(SpawnData newSpawnData)
+    private void Awake()
     {
-        spawnData = newSpawnData;
-        StartCoroutine(SpawnAndWait(spawnData.amountToSpawn, spawnData.spawnInterval));
+        SpawnManager.instance.RegisterSpawner(this);
     }
 
-    IEnumerator SpawnAndWait(int amount, float wait)
+    public void SpawnAI(AI toSpawn) 
     {
-        for (int i = 0; i < amount; i++)
-        {
-            AI aiInstance = Instantiate(spawnData.toSpawn);
-            aiInstance.transform.position = new Vector3(
-                  transform.position.x + Random.Range(-1.0f, 1.0f) * spawnRadius
-                , transform.position.y
-                , transform.position.z + Random.Range(-1.0f, 1.0f) * spawnRadius);
-            yield return new WaitForSeconds(wait);
-        }
+        float angle = Random.Range(0.0f, Mathf.PI * 2.0f);
+        float offset = Random.Range(0.0f, spawnRadius);
+        float x = Mathf.Cos(angle) * offset;
+        float z = Mathf.Sin(angle) * offset;
+
+        Vector3 targetPosition = new Vector3(transform.position.x + x, transform.position.y, transform.position.z + z);
+        Quaternion targetRotation = Quaternion.Euler(0, Random.Range(0.0f, 360.0f), 0);
+
+        AI aiInstance = Instantiate(toSpawn, targetPosition, targetRotation);
     }
 
     private void OnDrawGizmos()

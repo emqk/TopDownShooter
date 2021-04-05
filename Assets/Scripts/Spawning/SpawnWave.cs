@@ -3,9 +3,8 @@
 [System.Serializable]
 public struct SpawnData
 {
-    public Spawner spawner;
-    public int amountToSpawn;
     public AI toSpawn;
+    public int amountToSpawn;
     public float spawnInterval;
 }
 
