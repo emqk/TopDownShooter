@@ -150,31 +150,14 @@ public class SpawnManager : MonoBehaviour
 
     void SpawnAtRandom(AI toSpawn)
     {
-
         // Pick the first indice of a random triangle in the nav mesh
-        int t = Random.Range(0, navMeshTriangulation.indices.Length - 3);
+        int navMeshTrisMax = Random.Range(0, navMeshTriangulation.indices.Length - 3);
 
         // Select a random point on it
-        Vector3 spawnPoint = Vector3.Lerp(navMeshTriangulation.vertices[navMeshTriangulation.indices[t]], navMeshTriangulation.vertices[navMeshTriangulation.indices[t + 1]], Random.value);
-        Vector3.Lerp(spawnPoint, navMeshTriangulation.vertices[navMeshTriangulation.indices[t + 2]], Random.Range(0.0f, 1.0f));
+        Vector3 spawnPoint = Vector3.Lerp(navMeshTriangulation.vertices[navMeshTriangulation.indices[navMeshTrisMax]], navMeshTriangulation.vertices[navMeshTriangulation.indices[navMeshTrisMax + 1]], Random.value);
+        Vector3.Lerp(spawnPoint, navMeshTriangulation.vertices[navMeshTriangulation.indices[navMeshTrisMax + 2]], Random.Range(0.0f, 1.0f));
 
         AI aiInstance = Instantiate(toSpawn, spawnPoint, Quaternion.Euler(0, Random.Range(0.0f, 360.0f), 0));
         Debug.Log("Spawned!");
-    }
-
-    Vector3 FindRandomPositionInsideRect(int width, int height)
-    {
-        return new Vector3(Random.Range(-width, width), 0, Random.Range(-height, height));
-    }
-
-    void SpawnAtRandomSpawner(AI toSpawn)
-    {
-        Spawner targetSpawner = GetRandomSpawner();
-        targetSpawner.SpawnAI(toSpawn);
-    }
-
-    Spawner GetRandomSpawner()
-    {
-        return spawners[Random.Range(0, spawners.Count)];
     }
 }
