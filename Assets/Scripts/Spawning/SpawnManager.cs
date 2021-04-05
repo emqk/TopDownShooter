@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class SpawnManager : MonoBehaviour
 {
@@ -13,6 +14,7 @@ public class SpawnManager : MonoBehaviour
     bool spawningEnded = false;
 
     List<Spawner> spawners = new List<Spawner>();
+    NavMeshTriangulation navMeshTriangulation;
 
     public static SpawnManager instance;
 
@@ -24,6 +26,7 @@ public class SpawnManager : MonoBehaviour
     void Start()
     {
         timeToNextWave = nextWaveTimeSpan;
+        navMeshTriangulation = NavMesh.CalculateTriangulation();
     }
 
     public void RegisterSpawner(Spawner spawner)
@@ -140,8 +143,28 @@ public class SpawnManager : MonoBehaviour
         for (int i = 0; i < spawnData.amountToSpawn; i++)
         {
             yield return new WaitForSeconds(spawnData.spawnInterval);
-            SpawnAtRandomSpawner(spawnData.toSpawn);
+            //SpawnAtRandomSpawner(spawnData.toSpawn);
+            SpawnAtRandom(spawnData.toSpawn);
         }
+    }
+
+    void SpawnAtRandom(AI toSpawn)
+    {
+
+        // Pick the first indice of a random triangle in the nav mesh
+        int t = Random.Range(0, navMeshTriangulation.indices.Length - 3);
+
+        // Select a random point on it
+        Vector3 spawnPoint = Vector3.Lerp(navMeshTriangulation.vertices[navMeshTriangulation.indices[t]], navMeshTriangulation.vertices[navMeshTriangulation.indices[t + 1]], Random.value);
+        Vector3.Lerp(spawnPoint, navMeshTriangulation.vertices[navMeshTriangulation.indices[t + 2]], Random.Range(0.0f, 1.0f));
+
+        AI aiInstance = Instantiate(toSpawn, spawnPoint, Quaternion.Euler(0, Random.Range(0.0f, 360.0f), 0));
+        Debug.Log("Spawned!");
+    }
+
+    Vector3 FindRandomPositionInsideRect(int width, int height)
+    {
+        return new Vector3(Random.Range(-width, width), 0, Random.Range(-height, height));
     }
 
     void SpawnAtRandomSpawner(AI toSpawn)
