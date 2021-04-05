@@ -1,8 +1,11 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class MainMenuManager : MonoBehaviour
 {
+    [SerializeField] LoadingScreenPanelUI loadingScreenPrefab;
+
     private void Start()
     {
         Serializer.Load();
@@ -21,13 +24,20 @@ public class MainMenuManager : MonoBehaviour
         MapData mapData = Database.instance.GetMapData();
         if (mapData)
         {
+            Instantiate(loadingScreenPrefab);
             string sceneName = mapData.SceneName;
-            SceneManager.LoadScene(sceneName);
+            StartCoroutine(DelayedLoadScene(sceneName));
         }
         else
         {
             Debug.LogError("Can't load scene - mapData is null!");
         }
+    }
+
+    IEnumerator DelayedLoadScene(string sceneName)
+    {
+        yield return new WaitForEndOfFrame();
+        SceneManager.LoadScene(sceneName);
     }
 
     public void Quit()

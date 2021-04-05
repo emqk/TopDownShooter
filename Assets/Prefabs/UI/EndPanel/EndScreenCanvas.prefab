@@ -121,6 +121,8 @@ MonoBehaviour:
   rewardButtonPanel: {fileID: 4366822694596768526}
   titleText: {fileID: 3326070993344240126}
   moneyText: {fileID: 3326070993629903371}
+  loadingScreenPrefab: {fileID: 7579136676012988362, guid: 8ad89b41cda58ef4f9c28d38fbd239e0,
+    type: 3}
 --- !u!1001 &1585718038743576462
 PrefabInstance:
   m_ObjectHideFlags: 0

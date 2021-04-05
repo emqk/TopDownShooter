@@ -2,6 +2,7 @@
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using TMPro;
+using System.Collections;
 
 public class EndPanelUI : MonoBehaviour
 {
@@ -15,6 +16,7 @@ public class EndPanelUI : MonoBehaviour
     [SerializeField] RewardButtonPanelUI rewardButtonPanel;
     [SerializeField] TextMeshProUGUI titleText;
     [SerializeField] TextMeshProUGUI moneyText;
+    [SerializeField] LoadingScreenPanelUI loadingScreenPrefab;
 
     public void Open()
     {
@@ -25,6 +27,13 @@ public class EndPanelUI : MonoBehaviour
 
     public void LoadMainMenu()
     {
+        Instantiate(loadingScreenPrefab);
+        StartCoroutine(DelayedLoadMainMenu());
+    }
+
+    IEnumerator DelayedLoadMainMenu()
+    {
+        yield return new WaitForEndOfFrame();
         SceneManager.LoadScene("MainMenu");
     }
 
