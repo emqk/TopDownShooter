@@ -31,10 +31,10 @@ public class NotificationManager : MonoBehaviour
         {
             //Look at camera
             Vector3 dir = (item.transform.position - textLookCamera.transform.position).normalized;
-            item.transform.rotation = Quaternion.LookRotation(dir);
+            //item.transform.rotation = Quaternion.LookRotation(dir);
 
             //Update position
-            item.transform.position += new Vector3(0, textMoveUpSpeed * Time.deltaTime, 0);
+            item.transform.position += new Vector3(0, 0, textMoveUpSpeed * Time.deltaTime);
 
             //Update color
             Color currentColor = item.color;
@@ -46,6 +46,7 @@ public class NotificationManager : MonoBehaviour
     {
         TMP_Text damageInfoInstance = Instantiate(damageTextPrefab);
         damageInfoInstance.transform.position = location;
+        damageInfoInstance.transform.rotation = Quaternion.LookRotation(-Vector3.up);
         damageInfoInstance.text = damage.ToString("f0");
         damageInfoInstances.Add(damageInfoInstance);
 
