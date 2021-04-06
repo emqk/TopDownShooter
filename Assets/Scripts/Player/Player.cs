@@ -1,6 +1,4 @@
 ﻿using UnityEngine;
-using UnityEngine.UI;
-using UnityEngine.Events;
 
 public class Player : MonoBehaviour, IDamageable
 {
@@ -9,13 +7,12 @@ public class Player : MonoBehaviour, IDamageable
     Vector3 defaultWeaponRootLocalPosition;
     Vector3 shootWeaponRootLocalPosition;
     UpgradeKitData firstWeaponUpgradeData;
-    UpgradeKitData secondWeaponUpgradeData;
 
     [SerializeField] Weapon equipedWeapon;
 
-    [SerializeField] UnityEvent onWeaponEquip;
-
     Weapon weapon;
+    const float weaponAfterShootOffset = 0.35f;
+    float weaponMoveToDefaultPositionSpeed = 5;
 
     GameObject characterSkin;
 
@@ -53,7 +50,7 @@ public class Player : MonoBehaviour, IDamageable
         healthUI.Refresh(health.GetAmount(), health.GetAmountNormalized());
     }
 
-    void SetupWeapons()
+    void SetupWeapon()
     {
         WeaponData weaponData = Database.instance.GetWeaponData();
         firstWeaponUpgradeData = Database.instance.GetWeaponUpgradeKitData();
@@ -75,7 +72,10 @@ public class Player : MonoBehaviour, IDamageable
         }
 
         //Set weapon data to all available weapons
-        weapon?.Init(firstWeaponUpgradeData);
+        if (weapon)
+            weapon.Init(firstWeaponUpgradeData);
+        else
+            Debug.Log("Can't setup weapon - weapon is null!");
     }
 
     public void OnWeaponShoot()
@@ -97,27 +97,29 @@ public class Player : MonoBehaviour, IDamageable
         playerController = GetComponent<PlayerController>();
         playerCamera = BattleManager.instance.MainCamera;
         defaultWeaponRootLocalPosition = weaponRoot.localPosition;
-        shootWeaponRootLocalPosition = defaultWeaponRootLocalPosition - weaponRoot.forward * 0.35f;
+        shootWeaponRootLocalPosition = defaultWeaponRootLocalPosition - weaponRoot.forward * weaponAfterShootOffset;
 
         healthUI = UIManager.instance.HealthUI;
         healthUI.Init(transform, playerCamera);
 
         SetupCharacterData();
-        SetupWeapons();
+        SetupWeapon();
         RefreshHPFillUI();
     }
 
     void Update()
     {
-        weapon?.UpdateMe();
-        equipedWeapon?.UpdateWeaponHeatImage();
+        if(weapon)
+            weapon.UpdateMe();
+        if(equipedWeapon)
+            equipedWeapon.UpdateWeaponHeatImage();
 
         UpdateWeaponRootPosition();
     }
 
     void UpdateWeaponRootPosition()
     {
-        weaponRoot.localPosition = Vector3.Lerp(weaponRoot.localPosition, defaultWeaponRootLocalPosition, Time.deltaTime * 5);
+        weaponRoot.localPosition = Vector3.Lerp(weaponRoot.localPosition, defaultWeaponRootLocalPosition, Time.deltaTime * weaponMoveToDefaultPositionSpeed);
     }
 
     private void LateUpdate()
@@ -151,7 +153,5 @@ public class Player : MonoBehaviour, IDamageable
         {
             Debug.Log("Can't equip weapon - weapon data in null!");
         }
-
-        onWeaponEquip.Invoke();
     }
 }
