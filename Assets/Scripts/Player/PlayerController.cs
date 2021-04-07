@@ -5,6 +5,7 @@
 public class PlayerController : MonoBehaviour
 {
     [SerializeField] Transform body;
+    [SerializeField] float constantHeight = 1;
     float movementSpeed;
 
     [Header("Touch input")]
@@ -29,6 +30,13 @@ public class PlayerController : MonoBehaviour
     {
         ControlTouchInput();
         //ControlKeyboardMouseInput();
+
+        SetPositionToDefaultHeight();
+    }
+
+    void SetPositionToDefaultHeight()
+    {
+        transform.position = new Vector3(transform.position.x, constantHeight, transform.position.z);
     }
 
     public void SetMovementSpeed(float newSpeed)
