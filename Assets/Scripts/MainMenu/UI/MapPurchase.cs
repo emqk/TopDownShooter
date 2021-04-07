@@ -77,6 +77,9 @@ public class MapPurchase : Purchasable
             Database.instance.SetMapData((MapData)data);
         }
 
+        //Show default main menu view
+        MainMenuUIManager.instance.ShowMainMenuCanvas();
+
         //Serialize
         Serializer.Serialize();
     }
