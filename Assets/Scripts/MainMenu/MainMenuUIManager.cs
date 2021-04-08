@@ -36,11 +36,6 @@ public class MainMenuUIManager : MonoBehaviour
     [SerializeField] Transform visualizationObjParent;
     [SerializeField] Image weaponThumbnail;
 
-    [Header("Character info")]
-    [SerializeField] RectTransform characterInfoPanel;
-    [SerializeField] TMP_Text healthText;
-    [SerializeField] TMP_Text movementSpeedText;
-
     PanelType currentPanelType = PanelType.None;
 
     public static MainMenuUIManager instance;
@@ -162,14 +157,16 @@ public class MainMenuUIManager : MonoBehaviour
     public void RefreshWeaponsUI()
     {
         WeaponData weapon = Database.instance.GetWeaponData();
+        UpgradeKitData upgradeKitData = Database.instance.GetUpgradeKitDataByID(weapon.UpgradeKit.ID);
+
         RefreshWeaponIcon(weapon);
+        ShowUpgrades(upgradeKitData);
     }
 
     public void RefreshCharacterSkin()
     {
         CharacterData characterData = Database.instance.GetCharacterData();
         RefreshVisualizationFromData(characterData);
-        SetCharacterInfoActive(characterData);
     }
 
     public void RefreshVisualizationFromData(PurchaseData data)
@@ -228,20 +225,6 @@ public class MainMenuUIManager : MonoBehaviour
             UpgradeUIElement instance = Instantiate(upgradeUIPrefab, upgradeElementsPanel);
             instance.SetData(dataInstance);
             instance.Refresh();
-        }
-    }
-
-    public void SetCharacterInfoActive(CharacterData characterData)
-    {
-        if (characterData)
-        {
-            characterInfoPanel.gameObject.SetActive(true);
-            healthText.text = characterData.MaxHealth.ToString();
-            movementSpeedText.text = characterData.MovementSpeed.ToString();
-        }
-        else
-        {
-            characterInfoPanel.gameObject.SetActive(false);
         }
     }
 

@@ -50,17 +50,6 @@ public class MapPurchase : Purchasable
 
         UpgradeKitData upgradeKitData = Database.instance.GetUpgradeKitDataByID(data.UpgradeKit.ID);
 
-        if (type != PanelType.Map)
-        {
-            MainMenuUIManager.instance.SetCharacterInfoActive(null);
-            MainMenuUIManager.instance.ShowUpgrades(upgradeKitData);
-
-            if (data.Prefab)
-            {
-                MainMenuUIManager.instance.RefreshVisualizationFromData(data);
-            }
-        }
-
         if (type == PanelType.Weapon)
         {
             Database.instance.SetWeaponData((WeaponData)data);
@@ -70,7 +59,7 @@ public class MapPurchase : Purchasable
         else if (type == PanelType.Character)
         {
             Database.instance.SetCharacterData((CharacterData)data);
-            MainMenuUIManager.instance.SetCharacterInfoActive((CharacterData)data);
+            MainMenuUIManager.instance.RefreshVisualizationFromData(data);
         }
         else if (type == PanelType.Map)
         {
