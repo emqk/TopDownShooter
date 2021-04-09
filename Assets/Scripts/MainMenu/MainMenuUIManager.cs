@@ -12,8 +12,6 @@ public class MainMenuUIManager : MonoBehaviour
 {
     [SerializeField] TMP_Text goldText;
 
-    [SerializeField] RectTransform mapsUI;
-    [SerializeField] RectTransform purchaseElementsPanel;
     [SerializeField] RectTransform upgradeElementsPanel;
     [SerializeField] MapPurchase purchasePrefab;
     [SerializeField] UpgradeUIElement upgradeUIPrefab;
@@ -72,31 +70,6 @@ public class MainMenuUIManager : MonoBehaviour
         }
     }
 
-    public void ToggleMapsUI()
-    {
-        if (mapsUI.gameObject.activeSelf)
-        {
-            HideMaps();
-        }
-        else
-        {
-            ShowMaps();
-        }
-    }
-
-    void ShowMaps()
-    {
-        ClearPurchasePanel();
-        currentPanelType = PanelType.Map;
-        SpawnPurchasableFromList(maps);
-        mapsUI.gameObject.SetActive(true);
-    }
-
-    void HideMaps()
-    {
-        mapsUI.gameObject.SetActive(false);
-    }
-
     public void ShowWeapons()
     {
         currentPanelType = PanelType.Weapon;
@@ -137,26 +110,6 @@ public class MainMenuUIManager : MonoBehaviour
 
         purchaseProxy.SetPurchaseData(data);
         purchaseProxy.View3D.SetContentObjects(objs);
-    }
-
-    public void ShowPanel(int panelType)
-    {
-        ClearPurchasePanel();
-
-        currentPanelType = (PanelType)panelType;
-        switch (currentPanelType)
-        {
-            case PanelType.None:
-                break;
-            case PanelType.Character:   SpawnPurchasableFromList(characters);
-                break;
-            case PanelType.Map:         SpawnPurchasableFromList(maps);
-                break;
-            case PanelType.Weapon:      SpawnPurchasableFromList(weapons);
-                break;
-            default:
-                break;
-        }
     }
 
     public void RefreshWeaponsUI()
@@ -205,26 +158,6 @@ public class MainMenuUIManager : MonoBehaviour
             Debug.LogError("Can't refresh map data - data is null!");
         }
     }
-
-    void SpawnPurchasableFromList(List<PurchaseData> list)
-    {
-        foreach (PurchaseData data in list)
-        {
-            MapPurchase instance = Instantiate(purchasePrefab, purchaseElementsPanel);
-            bool alreadyPurchased = Database.instance.IsElementOfIDPurchased(data.GetID);
-            instance.SetData(data, currentPanelType, alreadyPurchased);
-            instance.Refresh();
-        }
-    }
-
-    void ClearPurchasePanel()
-    {
-        foreach (Transform child in purchaseElementsPanel)
-        {
-            Destroy(child.gameObject);
-        }
-    }
-
 
     public void ShowUpgrades(UpgradeKitData upgradeKitData)
     {
