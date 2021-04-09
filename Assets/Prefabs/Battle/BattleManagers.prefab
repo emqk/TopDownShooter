@@ -95,6 +95,7 @@ MonoBehaviour:
   weaponHeatImage: {fileID: 0}
   movementJoystick: {fileID: 0}
   rotationJoystick: {fileID: 0}
+  mainBattleCanvas: {fileID: 0}
   endScreenCanvasPrefab: {fileID: 6418205718718172368, guid: ed9d86d74dac9044e9c79b935592bd4b,
     type: 3}
 --- !u!114 &3410247527156802366
@@ -112,21 +113,18 @@ MonoBehaviour:
   nextWaveTimeSpan: 10
   spawnWaves:
   - spawnData:
-    - spawner: {fileID: 0}
+    - toSpawn: {fileID: 5761446191328258010, guid: 56870d1d456f7394993b262a533dc118,
+        type: 3}
       amountToSpawn: 5
-      toSpawn: {fileID: 5761446191328258010, guid: 56870d1d456f7394993b262a533dc118,
-        type: 3}
       spawnInterval: 0.5
-    - spawner: {fileID: 0}
-      amountToSpawn: 10
-      toSpawn: {fileID: 5761446191328258010, guid: 56870d1d456f7394993b262a533dc118,
+    - toSpawn: {fileID: 5761446191328258010, guid: 56870d1d456f7394993b262a533dc118,
         type: 3}
+      amountToSpawn: 10
       spawnInterval: 0.1
   - spawnData:
-    - spawner: {fileID: 0}
-      amountToSpawn: 50
-      toSpawn: {fileID: 5761446191328258010, guid: 56870d1d456f7394993b262a533dc118,
+    - toSpawn: {fileID: 5761446191328258010, guid: 56870d1d456f7394993b262a533dc118,
         type: 3}
+      amountToSpawn: 50
       spawnInterval: 0.01
 --- !u!82 &3410247527156802364
 AudioSource:
@@ -138,7 +136,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: c5536403c56af774b9c78befdde1a831, type: 3}
+  m_audioClip: {fileID: 8300000, guid: c84393609b3a87048a609fefeb8f3266, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
