@@ -33,8 +33,12 @@ public class MainMenuUIManager : MonoBehaviour
     [SerializeField] List<PurchaseData> weapons = new List<PurchaseData>();
 
     [Header("Mesh visualization")]
-    [SerializeField] Transform visualizationObjParent;
+    [SerializeField] TMP_Text characterNameText;
+    [SerializeField] Transform characterVisualizationObjParent;
+    [SerializeField] TMP_Text weaponNameText;
     [SerializeField] Image weaponThumbnail;
+    [SerializeField] TMP_Text mapNameText;
+    [SerializeField] Image mapThumbnail;
 
     PanelType currentPanelType = PanelType.None;
 
@@ -59,6 +63,7 @@ public class MainMenuUIManager : MonoBehaviour
     {
         if (data)
         {
+            weaponNameText.text = data.Title;
             weaponThumbnail.sprite = data.Thumbnail;
         }
         else
@@ -177,12 +182,28 @@ public class MainMenuUIManager : MonoBehaviour
             return;
         }
 
-        foreach (Transform child in visualizationObjParent)
+        foreach (Transform child in characterVisualizationObjParent)
         {
             Destroy(child.gameObject);
         }
 
-        Instantiate(data.Prefab, visualizationObjParent);
+        characterNameText.text = data.Title;
+        Instantiate(data.Prefab, characterVisualizationObjParent);
+    }
+
+    public void RefreshMapUI()
+    {
+        MapData mapData = Database.instance.GetMapData();
+
+        if (mapData)
+        {
+            mapNameText.text = mapData.Title;
+            mapThumbnail.sprite = mapData.Thumbnail;
+        }
+        else
+        {
+            Debug.LogError("Can't refresh map data - data is null!");
+        }
     }
 
     void SpawnPurchasableFromList(List<PurchaseData> list)

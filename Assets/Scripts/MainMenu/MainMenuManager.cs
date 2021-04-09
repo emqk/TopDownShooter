@@ -12,6 +12,7 @@ public class MainMenuManager : MonoBehaviour
         Serializer.Load();
         MainMenuUIManager.instance.RefreshCharacterSkin();
         MainMenuUIManager.instance.RefreshWeaponsUI();
+        MainMenuUIManager.instance.RefreshMapUI();
     }
 
     private void OnLevelWasLoaded(int level)

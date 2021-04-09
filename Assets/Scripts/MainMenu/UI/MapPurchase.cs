@@ -64,6 +64,7 @@ public class MapPurchase : Purchasable
         else if (type == PanelType.Map)
         {
             Database.instance.SetMapData((MapData)data);
+            MainMenuUIManager.instance.RefreshMapUI();
         }
 
         //Show default main menu view

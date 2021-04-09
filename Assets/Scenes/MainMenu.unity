@@ -1044,7 +1044,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '[Weapon name]'
+  m_text: '[Character name]'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 80f008c4b18083046aff3abd34165dee, type: 2}
   m_sharedMaterial: {fileID: 1730803064575847718, guid: 80f008c4b18083046aff3abd34165dee,
@@ -3620,7 +3620,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -0.20495605, y: 37.451996}
+  m_AnchoredPosition: {x: -0.20507812, y: 37.452026}
   m_SizeDelta: {x: -0.40997314, y: 74.90369}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1573860318
@@ -4654,8 +4654,12 @@ MonoBehaviour:
   weapons:
   - {fileID: 11400000, guid: 250249b682ab61b41a9bb85a58d74e8e, type: 2}
   - {fileID: 11400000, guid: 0f3b641c9aacb8c42bd3b4d0bbfad390, type: 2}
-  visualizationObjParent: {fileID: 1132194250}
+  characterNameText: {fileID: 368558932}
+  characterVisualizationObjParent: {fileID: 1132194250}
+  weaponNameText: {fileID: 312810585}
   weaponThumbnail: {fileID: 101132839}
+  mapNameText: {fileID: 919955178}
+  mapThumbnail: {fileID: 932241458}
 --- !u!82 &1944854524
 AudioSource:
   m_ObjectHideFlags: 0
