@@ -63,6 +63,7 @@ public class EndPanelUI : MonoBehaviour
 
         moneyText.text = BattleManager.instance.GetReward().ToString();
 
+#if UNITY_ANDROID
         if (AdsManager.instance.CanShowRewardedAd())
         {
             rewardButtonPanel.gameObject.SetActive(true);
@@ -71,6 +72,10 @@ public class EndPanelUI : MonoBehaviour
         {
             rewardButtonPanel.gameObject.SetActive(false);
         }
+#else
+        rewardButtonPanel.gameObject.SetActive(false);
+#endif
+
     }
 
     void SetColorToWavesBackground(Color color) 

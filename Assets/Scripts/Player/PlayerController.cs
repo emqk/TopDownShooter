@@ -28,8 +28,18 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
+
+#if UNITY_ANDROID
+        //Enable input: Touch screen
         ControlTouchInput();
-        //ControlKeyboardMouseInput();
+#else
+        //Enable input: Mouse + Keyboard 
+        ControlKeyboardMouseInput();
+
+        //Disable joysticks
+        movementJoystick.gameObject.SetActive(false);
+        rotationJoystick.gameObject.SetActive(false);
+#endif
 
         SetPositionToDefaultHeight();
     }

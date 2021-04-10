@@ -29,12 +29,22 @@ public class AdsManager : MonoBehaviour, IUnityAdsListener
 
     void Initialize()
     {
+        //Don't try to initialize if this is desktop build
+#if UNITY_STANDALONE
+        return;
+#endif
+
         Advertisement.AddListener(this);
         Advertisement.Initialize(androidID, true);
     }
 
     public void AdvanceCounter()
     {
+        //Don't try to advance ad counter if this is desktop build
+#if UNITY_STANDALONE
+        return;
+#endif
+
         skippableAdCounter += 1;
         Debug.Log("Ad counter advanced " + skippableAdCounter + "/" + skippableAdCounterThreshold);
 
@@ -49,6 +59,11 @@ public class AdsManager : MonoBehaviour, IUnityAdsListener
 
     public bool ShowSkippableAd()
     {
+        //Don't try to show ad if this is desktop build
+#if UNITY_STANDALONE
+        return false;
+#endif
+
         if (Advertisement.IsReady())
         {
             Advertisement.Show();
@@ -63,11 +78,21 @@ public class AdsManager : MonoBehaviour, IUnityAdsListener
 
     public bool CanShowRewardedAd()
     {
+        //Don't try to show ad if this is desktop build
+#if UNITY_STANDALONE
+        return false;
+#endif
+
         return Advertisement.IsReady(rewardedPlacementId);
     }
 
     public void ShowRewardedAd(int reward)
     {
+        //Don't try to show ad if this is desktop build
+#if UNITY_STANDALONE
+        return;
+#endif
+
         if (CanShowRewardedAd())
         {
             rewardForRewardedAd = reward;
