@@ -1024,16 +1024,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5733780960690124829, guid: 9c68c3ac24565d744835b14bc2476c09,
         type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 250
-      objectReference: {fileID: 0}
-    - target: {fileID: 5733780960690124829, guid: 9c68c3ac24565d744835b14bc2476c09,
-        type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 250
-      objectReference: {fileID: 0}
-    - target: {fileID: 5733780960690124829, guid: 9c68c3ac24565d744835b14bc2476c09,
-        type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -1066,16 +1056,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalRotation.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5733780960690124829, guid: 9c68c3ac24565d744835b14bc2476c09,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: -225
-      objectReference: {fileID: 0}
-    - target: {fileID: 5733780960690124829, guid: 9c68c3ac24565d744835b14bc2476c09,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 225
       objectReference: {fileID: 0}
     - target: {fileID: 5733780960690124829, guid: 9c68c3ac24565d744835b14bc2476c09,
         type: 3}
@@ -1300,16 +1280,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2772571911416982311, guid: 0d3ee2111d43e564a8c81f36ee8206e6,
         type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 250
-      objectReference: {fileID: 0}
-    - target: {fileID: 2772571911416982311, guid: 0d3ee2111d43e564a8c81f36ee8206e6,
-        type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 250
-      objectReference: {fileID: 0}
-    - target: {fileID: 2772571911416982311, guid: 0d3ee2111d43e564a8c81f36ee8206e6,
-        type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -1342,16 +1312,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalRotation.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2772571911416982311, guid: 0d3ee2111d43e564a8c81f36ee8206e6,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 200
-      objectReference: {fileID: 0}
-    - target: {fileID: 2772571911416982311, guid: 0d3ee2111d43e564a8c81f36ee8206e6,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 2772571911416982311, guid: 0d3ee2111d43e564a8c81f36ee8206e6,
         type: 3}
