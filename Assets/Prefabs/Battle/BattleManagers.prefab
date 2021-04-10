@@ -62,7 +62,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17f2b577753da9249947f7dc062124f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  particle: {fileID: 1547882666299719445, guid: 5d193c216dfeab145b3f376ff51140cf,
+  hitParticle: {fileID: 1547882666299719445, guid: 5d193c216dfeab145b3f376ff51140cf,
+    type: 3}
+  blowUpParticle: {fileID: 3819213881921969560, guid: f90d0ee9b5762654fb497628c97dacf0,
     type: 3}
 --- !u!114 &3410247527156802365
 MonoBehaviour:

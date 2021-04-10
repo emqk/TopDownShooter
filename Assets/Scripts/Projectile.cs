@@ -35,7 +35,7 @@ public class Projectile : MonoBehaviour
                 damageable.TakeDamage(damageToGive);
             }
 
-            ParticleManager.instance.SpawnParticle(hit.point, Quaternion.LookRotation(hit.normal));
+            ParticleManager.instance.SpawnHitParticle(hit.point, Quaternion.LookRotation(hit.normal));
             Destroy(gameObject);
         }
     }

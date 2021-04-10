@@ -31,6 +31,7 @@ public class AI : MonoBehaviour, IDamageable
         AudioSource.PlayClipAtPoint(deathSound, transform.position);
         gameObject.SetActive(false);
         SpawnManager.RegisterKill(this);
+        ParticleManager.instance.SpawnBlowUpParticle(transform.position, transform.rotation);
     }
 
 
