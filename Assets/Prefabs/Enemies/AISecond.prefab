@@ -83,7 +83,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   defaultHealth: 180
   rewardRange: {x: 1, y: 4}
-  deathSound: {fileID: 8300000, guid: 8248f11c2ba49ac45966ff013a4f6453, type: 3}
+  deathSound: {fileID: 8300000, guid: a942b5d873e28ef4289f1d054c7e0e5f, type: 3}
 --- !u!1 &8648656862704897303
 GameObject:
   m_ObjectHideFlags: 0
