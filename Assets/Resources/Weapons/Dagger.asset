@@ -29,4 +29,4 @@ MonoBehaviour:
   shootRate: 0.1
   heatPerShot: 0.25
   accuracy: 15
-  shootSound: {fileID: 8300000, guid: 10bcd1e88451e014f9cfd813bc988930, type: 3}
+  shootSound: {fileID: 8300000, guid: 79bff0f364daab541b2bd2268651be5b, type: 3}
