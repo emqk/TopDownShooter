@@ -9827,6 +9827,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3410247527156802364, guid: 283434351c37f1d4f94547f9f5ce394b,
+        type: 3}
+      propertyPath: m_Volume
+      value: 0.6
+      objectReference: {fileID: 0}
     - target: {fileID: 3410247527156802365, guid: 283434351c37f1d4f94547f9f5ce394b,
         type: 3}
       propertyPath: textLookCamera

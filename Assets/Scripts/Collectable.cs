@@ -13,7 +13,7 @@ public class Collectable : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         InvokeCorrectCollectEffect(other.gameObject);
-        AudioSource.PlayClipAtPoint(collectSound, transform.position);
+        AudioManager.PlayClip2D(collectSound);
         Destroy(gameObject);
     }
 
