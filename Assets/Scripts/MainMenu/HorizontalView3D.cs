@@ -43,6 +43,11 @@ public class HorizontalView3D : MonoBehaviour
         OnSelectedChange();
     }
 
+    public void InstantMoveToFocusElement()
+    {
+        content.transform.localPosition = new Vector3(currentMoveOffsetX, 0, 0);
+    }
+
     private void Update()
     {
         if (canMove)
@@ -77,7 +82,6 @@ public class HorizontalView3D : MonoBehaviour
             OnSelectedChange();
         }
     }
-
 
     void OnSelectedChange()
     {

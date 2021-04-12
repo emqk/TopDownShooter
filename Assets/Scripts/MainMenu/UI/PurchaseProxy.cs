@@ -28,6 +28,7 @@ public class PurchaseProxy : MonoBehaviour
         if (index >= 0)
         {
             view3D.SetFocusElement(index);
+            view3D.InstantMoveToFocusElement();
         }
     }
 
