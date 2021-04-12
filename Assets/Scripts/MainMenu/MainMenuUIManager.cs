@@ -73,19 +73,25 @@ public class MainMenuUIManager : MonoBehaviour
     public void ShowWeapons()
     {
         currentPanelType = PanelType.Weapon;
-        SpawnDataPrefabsOnView3D(weapons);
+        WeaponData weaponData = Database.instance.GetWeaponData();
+        string focusID = weaponData ? weaponData.GetID : "";
+        SpawnDataPrefabsOnView3D(weapons, focusID);
     }
 
     public void ShowCharacters()
     {
         currentPanelType = PanelType.Character;
-        SpawnDataPrefabsOnView3D(characters);
+        CharacterData characterData = Database.instance.GetCharacterData();
+        string focusID = characterData ? characterData.GetID : "";
+        SpawnDataPrefabsOnView3D(characters, focusID);
     }
 
     public void ShowMapsNew()
     {
         currentPanelType = PanelType.Map;
-        SpawnDataPrefabsOnView3D(maps);
+        MapData mapData = Database.instance.GetMapData();
+        string focusID = mapData ? mapData.GetID : "";
+        SpawnDataPrefabsOnView3D(maps, focusID);
     }
 
     public void RefreshShopItemInfo()
@@ -100,7 +106,7 @@ public class MainMenuUIManager : MonoBehaviour
         }
     }
 
-    void SpawnDataPrefabsOnView3D(List<PurchaseData> data)
+    void SpawnDataPrefabsOnView3D(List<PurchaseData> data, string focusID)
     {
         GameObject[] objs = new GameObject[data.Count];
         for (int i = 0; i < data.Count; i++)
@@ -108,8 +114,14 @@ public class MainMenuUIManager : MonoBehaviour
             objs[i] = data[i].Prefab;
         }
 
+
         purchaseProxy.SetPurchaseData(data);
         purchaseProxy.View3D.SetContentObjects(objs);
+
+        if (focusID.Length > 0)
+        {
+            purchaseProxy.FocusViewOnElementWithID(focusID);
+        }
     }
 
     public void RefreshWeaponsUI()

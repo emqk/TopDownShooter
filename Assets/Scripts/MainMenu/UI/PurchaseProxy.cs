@@ -21,4 +21,26 @@ public class PurchaseProxy : MonoBehaviour
 
         return purchaseDatas[index];
     }
+
+    public void FocusViewOnElementWithID(string ID)
+    {
+        int index = FindIndexWithID(ID);
+        if (index >= 0)
+        {
+            view3D.SetFocusElement(index);
+        }
+    }
+
+    int FindIndexWithID(string ID)
+    {
+        for (int i = 0; i < purchaseDatas.Count; i++)
+        {
+            if (purchaseDatas[i].GetID == ID)
+            {
+                return i;
+            }
+        }
+
+        return -1;
+    }
 }

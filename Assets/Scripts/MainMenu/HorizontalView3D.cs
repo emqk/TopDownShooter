@@ -33,7 +33,12 @@ public class HorizontalView3D : MonoBehaviour
 
     public void MoveByElements(int amount)
     {
-        selectedIndex = Mathf.Clamp(selectedIndex + amount, 0, currentContentObjects.Count - 1);
+        SetFocusElement(selectedIndex + amount);
+    }
+
+    public void SetFocusElement(int newFocusElementIndex)
+    {
+        selectedIndex = Mathf.Clamp(newFocusElementIndex, 0, currentContentObjects.Count - 1);
         currentMoveOffsetX = -RoundToClosestElement(selectedIndex * spacing);
         OnSelectedChange();
     }
