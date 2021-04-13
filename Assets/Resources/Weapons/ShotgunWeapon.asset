@@ -25,7 +25,7 @@ MonoBehaviour:
       currentLevel: -1
     - upgradeData: {fileID: 11400000, guid: 5e1dda519ba16e84a850203e715aa01d, type: 2}
       currentLevel: -1
-  projectile: {fileID: -8417403802403430722, guid: 2ea9f4cd2428a6b4eb6be68185bc177b,
+  projectile: {fileID: -8417403802403430722, guid: 6055fbda517994e418871501f8808fde,
     type: 3}
   projectileData: {fileID: 11400000, guid: ce96b1beab1db094981633c524d33133, type: 2}
   shootRate: 0.5
