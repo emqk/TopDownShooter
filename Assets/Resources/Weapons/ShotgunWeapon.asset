@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0aab363f5fe91f04997c455702f48aee, type: 3}
+  m_Name: ShotgunWeapon
+  m_EditorClassIdentifier: 
+  ID: Shotgun
+  title: Shotgun
+  thumbnail: {fileID: 21300000, guid: 266817a9ff4066f4baf0492baf8f010a, type: 3}
+  cost: 10
+  description: Cool shotgun
+  prefab: {fileID: 34613934544883695, guid: 71b10a29d3b6db047a274680596db5bc, type: 3}
+  upgradeKit:
+    ID: PistolUpgrade
+    upgradeDatas:
+    - upgradeData: {fileID: 11400000, guid: eb63a62ce8b4c434e818a01e4e565a8a, type: 2}
+      currentLevel: -1
+    - upgradeData: {fileID: 11400000, guid: 5e1dda519ba16e84a850203e715aa01d, type: 2}
+      currentLevel: -1
+  projectile: {fileID: -8417403802403430722, guid: 2ea9f4cd2428a6b4eb6be68185bc177b,
+    type: 3}
+  projectileData: {fileID: 11400000, guid: ce96b1beab1db094981633c524d33133, type: 2}
+  shootRate: 0.5
+  heatPerShot: 0
+  accuracy: 8
+  shootSound: {fileID: 8300000, guid: d360f5acd3be1864484f01d763821b6f, type: 3}
