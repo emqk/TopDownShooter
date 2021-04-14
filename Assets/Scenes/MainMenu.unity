@@ -3774,7 +3774,7 @@ MonoBehaviour:
   focusClosestOnDistance: 0.5
   startMoveOffset: {x: 0, y: 0, z: 0}
   canRotate: 1
-  rotateSpeed: 10
+  rotateSpeed: 20
   startRotation: 0
   onSelectedChange:
     m_PersistentCalls:

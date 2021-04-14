@@ -7,6 +7,16 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: BaseMat
+    second: {fileID: 2100000, guid: 0a380ca7cb174e64b9f9c2a44005da32, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ShootMat
+    second: {fileID: 2100000, guid: 3d188fed7fbcd6c498aff488f27da89c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: TriangleWeaponMat
     second: {fileID: 2100000, guid: a81b0eae4b8154e47affbca380666569, type: 2}
   materials:

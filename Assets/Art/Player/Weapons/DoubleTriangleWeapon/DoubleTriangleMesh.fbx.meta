@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: a2e275b4182b4a84398ddc9ab2e841e9
+guid: 9c1c428c4b0c8974b873e2ac8ffc1a82
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable: []
@@ -7,8 +7,18 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: BaseMat
+    second: {fileID: 2100000, guid: 0a380ca7cb174e64b9f9c2a44005da32, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ShootMat
+    second: {fileID: 2100000, guid: 3d188fed7fbcd6c498aff488f27da89c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: TriangleWeaponMat
-    second: {fileID: 2100000, guid: 5751ec3fa7ca24646be0e2bb7623d1a1, type: 2}
+    second: {fileID: 2100000, guid: a81b0eae4b8154e47affbca380666569, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
