@@ -100,8 +100,7 @@ public class MainMenuUIManager : MonoBehaviour
 
         if (purchaseData)
         {
-            bool alreadyPurchased = Database.instance.IsElementOfIDPurchased(purchaseData.GetID);
-            itemInfoPanel.SetData(purchaseData, currentPanelType, alreadyPurchased);
+            itemInfoPanel.SetData(purchaseData, currentPanelType);
             itemInfoPanel.Refresh();
         }
     }

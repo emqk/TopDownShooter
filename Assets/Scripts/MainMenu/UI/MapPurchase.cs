@@ -11,7 +11,6 @@ public class MapPurchase : Purchasable
         if (MoneyManager.HaveEnoughGold(data.Cost))
         {
             MoneyManager.SpendGold(data.Cost);
-            Purchase();
             Database.instance.AddPurchaseElementID(data);
 
             return true;
@@ -22,7 +21,8 @@ public class MapPurchase : Purchasable
 
     public override void Select()
     {
-        if (!IsPurchased())
+        bool alreadyPurchased = Database.instance.IsElementOfIDPurchased(data.GetID);
+        if (!alreadyPurchased)
         {
             if (Buy())
             {
@@ -38,9 +38,9 @@ public class MapPurchase : Purchasable
                     title = "Can't purchase!",
                     description = "You don't have enough gold to purchase this item!",
                     buttonsData = new List<PopupButttonData>()
-                    {
-                        new PopupButttonData() { text = "Ok", onClick = PopupManager.instance.CloseLastPopup }
-                    }
+                {
+                    new PopupButttonData() { text = "Ok", onClick = PopupManager.instance.CloseLastPopup }
+                }
                 };
                 PopupManager.instance.CreatePopup(popupData);
 
@@ -83,7 +83,7 @@ public class MapPurchase : Purchasable
         if(description)
             description.text = data.Description;
 
-        if (IsPurchased())
+        if (Database.instance.IsElementOfIDPurchased(data.GetID))
         {
             selectText.text = "Use";
         }
@@ -93,11 +93,10 @@ public class MapPurchase : Purchasable
         }
     }
 
-    public void SetData(PurchaseData data, PanelType panelType, bool alreadyPurchased)
+    public void SetData(PurchaseData data, PanelType panelType)
     {
         this.data = data;
         type = panelType;
-        isPurchased = alreadyPurchased;
     }
 
     PanelType GetPanelType()

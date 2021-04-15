@@ -40,8 +40,6 @@ public class UpgradeUIElement : Purchasable
         {
             MoneyManager.SpendGold(cost);
             myDataInstance.Upgrade();
-            if (!myDataInstance.CanBeUpgraded())
-                Purchase();
 
             return true;
         }
@@ -68,19 +66,16 @@ public class UpgradeUIElement : Purchasable
 
     public override void Select()
     {
-        if (!IsPurchased())
+        if (Buy())
         {
-            if (Buy())
-            {
-                Refresh();
-                Serializer.Serialize();
-                Debug.Log("Item has been upgraded!");
-            }
-            else
-            {
-                Debug.Log("Can't be upgraded!");
-                return;
-            }
+            Refresh();
+            Serializer.Serialize();
+            Debug.Log("Item has been upgraded!");
+        }
+        else
+        {
+            Debug.Log("Can't be upgraded!");
+            return;
         }
     }
 
