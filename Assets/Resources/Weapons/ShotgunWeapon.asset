@@ -19,7 +19,7 @@ MonoBehaviour:
   description: Cool shotgun
   prefab: {fileID: 34613934544883695, guid: 71b10a29d3b6db047a274680596db5bc, type: 3}
   upgradeKit:
-    ID: PistolUpgrade
+    ID: ShotgunUpgrade
     upgradeDatas:
     - upgradeData: {fileID: 11400000, guid: eb63a62ce8b4c434e818a01e4e565a8a, type: 2}
       currentLevel: -1

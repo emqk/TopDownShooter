@@ -2,6 +2,7 @@
 
 public class Projectile : MonoBehaviour
 {
+    [SerializeField] LayerMask damageLayerMask;
     ProjectileData projectileData;
     Vector3 lastFramePos = new Vector3();
     RaycastHit hit = new RaycastHit();
@@ -26,7 +27,7 @@ public class Projectile : MonoBehaviour
 
     void CheckCollision()
     {
-        if (Physics.Linecast(lastFramePos, transform.position, out hit))
+        if (Physics.Linecast(lastFramePos, transform.position, out hit, damageLayerMask))
         {
             IDamageable damageable = hit.collider.GetComponent<IDamageable>();
             if (damageable != null)
