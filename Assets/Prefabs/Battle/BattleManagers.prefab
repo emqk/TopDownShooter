@@ -112,7 +112,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d3021aa524000644b8a9a3d976589a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nextWaveTimeSpan: 10
+  nextWaveTimeSpan: 5
   spawnWaves:
   - spawnData:
     - toSpawn: {fileID: 5761446191328258010, guid: 56870d1d456f7394993b262a533dc118,

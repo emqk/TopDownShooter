@@ -5,7 +5,7 @@ using UnityEngine.AI;
 
 public class SpawnManager : MonoBehaviour
 {
-    [SerializeField] float nextWaveTimeSpan = 10;
+    [SerializeField] float nextWaveTimeSpan = 5;
     [SerializeField] List<SpawnWave> spawnWaves;
     int enemiesToKill = 0;
     int currentWaveIndex = -1;
