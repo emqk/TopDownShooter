@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5761446191328258011}
   - component: {fileID: 5761446191328258010}
   m_Layer: 9
-  m_Name: AISecond
+  m_Name: AIFourth
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -57,7 +57,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 3.25
+  m_Speed: 9
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -81,7 +81,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6176a8b176d7fda40a67279b3abc82bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  defaultHealth: 140
+  defaultHealth: 50
   rewardRange: {x: 1, y: 4}
   deathSound: {fileID: 8300000, guid: a942b5d873e28ef4289f1d054c7e0e5f, type: 3}
 --- !u!1 &8648656862704897303
@@ -144,7 +144,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 19b0fd6c0be455d4189bcd2010a94e87, type: 2}
+  - {fileID: 2100000, guid: 3c0def6e84a6c394da8997a20d84c2eb, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
