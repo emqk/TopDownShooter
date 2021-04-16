@@ -21,7 +21,9 @@ MonoBehaviour:
   upgradeKit:
     ID: DaggerUpgrade
     upgradeDatas:
-    - upgradeData: {fileID: 11400000, guid: 5e1dda519ba16e84a850203e715aa01d, type: 2}
+    - upgradeData: {fileID: 11400000, guid: b6c27d6c1afe6ca4a8138cb179dad1ca, type: 2}
+      currentLevel: -1
+    - upgradeData: {fileID: 11400000, guid: e6d85bda3bd19e04cbe0f4245b63939f, type: 2}
       currentLevel: -1
   projectile: {fileID: -8417403802403430722, guid: 2ea9f4cd2428a6b4eb6be68185bc177b,
     type: 3}

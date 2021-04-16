@@ -21,9 +21,9 @@ MonoBehaviour:
   upgradeKit:
     ID: ShotgunUpgrade
     upgradeDatas:
-    - upgradeData: {fileID: 11400000, guid: eb63a62ce8b4c434e818a01e4e565a8a, type: 2}
+    - upgradeData: {fileID: 11400000, guid: 63ea988329ff35f46b0b9c2b09427a40, type: 2}
       currentLevel: -1
-    - upgradeData: {fileID: 11400000, guid: 5e1dda519ba16e84a850203e715aa01d, type: 2}
+    - upgradeData: {fileID: 11400000, guid: e09c938009155a44ba7805df8b3a9bc0, type: 2}
       currentLevel: -1
   projectile: {fileID: -8417403802403430722, guid: 6055fbda517994e418871501f8808fde,
     type: 3}
