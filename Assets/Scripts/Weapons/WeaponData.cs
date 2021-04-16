@@ -6,10 +6,8 @@ public class WeaponData : PurchaseData
     [Header("--------------------------------- [ WEAPON INFO ] ---------------------------------")]
     [Header("Projectile", order = 1)]
     [SerializeField] Projectile projectile;
-    [SerializeField] ProjectileData projectileData;
 
     public Projectile Projectile { get => projectile; }
-    public ProjectileData ProjectileData { get => projectileData; }
 
     [Header("Stats")]
     [SerializeField] float shootRate;

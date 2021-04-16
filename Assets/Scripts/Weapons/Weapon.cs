@@ -86,7 +86,7 @@ public class Weapon : MonoBehaviour
             Quaternion projectileRotation = Quaternion.LookRotation(projectileDirection);
 
             Projectile projectileInstance = Instantiate(weaponData.Projectile, source.position, projectileRotation);
-            ProjectileData projectileData = weaponData.ProjectileData;
+            ProjectileData projectileData = new ProjectileData(projectileInstance.GetDefaultProjectileData()); // Make copy of default projectile data
             if (UpgradeData != null)
             {
                 UpgradeDataInstance damageUpgrade = UpgradeData.GetUpgradeDataInstanceByType(UpgradeType.Damage);
@@ -99,7 +99,7 @@ public class Weapon : MonoBehaviour
                     new Vector2Int((int)(projectileData.DamageRange.x * damageUpgradeValue), (int)(projectileData.DamageRange.y * damageUpgradeValue))
                     , projectileData.MoveSpeed * moveSpeedUpgradeValue);
             }
-            projectileInstance.Init(projectileData);
+            projectileInstance.SetUpgradedProjectileData(projectileData);
         }
       
     }

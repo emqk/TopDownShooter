@@ -3,13 +3,14 @@
 public class Projectile : MonoBehaviour
 {
     [SerializeField] LayerMask damageLayerMask;
-    ProjectileData projectileData;
+    [SerializeField] ProjectileData defaultProjectileData;
+    ProjectileData upgradedProjectileData; //Projectile data agter applying upgrades
     Vector3 lastFramePos = new Vector3();
     RaycastHit hit = new RaycastHit();
 
-    public void Init(ProjectileData data)
+    public void SetUpgradedProjectileData(ProjectileData newUpgradedProjectileData)
     {
-        projectileData = data;
+        upgradedProjectileData = newUpgradedProjectileData;
     }
 
     private void Start()
@@ -20,9 +21,14 @@ public class Projectile : MonoBehaviour
 
     void Update()
     {
-        transform.position += transform.forward * projectileData.MoveSpeed * Time.deltaTime;
+        transform.position += transform.forward * upgradedProjectileData.MoveSpeed * Time.deltaTime;
         CheckCollision();
         lastFramePos = transform.position;
+    }
+
+    public ProjectileData GetDefaultProjectileData()
+    {
+        return defaultProjectileData;
     }
 
     void CheckCollision()
@@ -32,7 +38,7 @@ public class Projectile : MonoBehaviour
             IDamageable damageable = hit.collider.GetComponent<IDamageable>();
             if (damageable != null)
             {
-                int damageToGive = Random.Range(projectileData.DamageRange.x, projectileData.DamageRange.y);
+                int damageToGive = Random.Range(upgradedProjectileData.DamageRange.x, upgradedProjectileData.DamageRange.y);
                 damageable.TakeDamage(damageToGive);
             }
 

@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: -8417403802403430722}
   - component: {fileID: 1676788552495609747}
   m_Layer: 10
-  m_Name: Projectie
+  m_Name: Weapon0Projectile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -47,6 +47,8 @@ MonoBehaviour:
   damageLayerMask:
     serializedVersion: 2
     m_Bits: 1591
+  defaultProjectileData: {fileID: 11400000, guid: 3f5ac53691ccef548970de7c96143fb9,
+    type: 2}
 --- !u!120 &1676788552495609747
 LineRenderer:
   m_ObjectHideFlags: 0
