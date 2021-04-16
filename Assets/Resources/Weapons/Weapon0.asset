@@ -10,16 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0aab363f5fe91f04997c455702f48aee, type: 3}
-  m_Name: TriangleWeapon
+  m_Name: Weapon0
   m_EditorClassIdentifier: 
-  ID: Pistol
-  title: Pistol
+  ID: Weapon0
+  title: Aggresive Triangle
   thumbnail: {fileID: 21300000, guid: 72e72616a0e02c34aa08c4d72f7decf5, type: 3}
-  cost: 8
+  cost: 0
   description: Simple pistol
   prefab: {fileID: 561045076462038700, guid: edfe0afd5267cf6499f4fc8a41c17917, type: 3}
   upgradeKit:
-    ID: PistolUpgrade
+    ID: Weapon0Upgrade
     upgradeDatas:
     - upgradeData: {fileID: 11400000, guid: eb63a62ce8b4c434e818a01e4e565a8a, type: 2}
       currentLevel: -1

@@ -10,20 +10,20 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0aab363f5fe91f04997c455702f48aee, type: 3}
-  m_Name: ShotgunWeapon
+  m_Name: Weapon2
   m_EditorClassIdentifier: 
-  ID: Shotgun
+  ID: Weapon2
   title: Shotgun
   thumbnail: {fileID: 21300000, guid: 266817a9ff4066f4baf0492baf8f010a, type: 3}
   cost: 10
   description: Cool shotgun
   prefab: {fileID: 34613934544883695, guid: 71b10a29d3b6db047a274680596db5bc, type: 3}
   upgradeKit:
-    ID: ShotgunUpgrade
+    ID: Weapon2Upgrade
     upgradeDatas:
-    - upgradeData: {fileID: 11400000, guid: 63ea988329ff35f46b0b9c2b09427a40, type: 2}
+    - upgradeData: {fileID: 11400000, guid: b6c27d6c1afe6ca4a8138cb179dad1ca, type: 2}
       currentLevel: -1
-    - upgradeData: {fileID: 11400000, guid: e09c938009155a44ba7805df8b3a9bc0, type: 2}
+    - upgradeData: {fileID: 11400000, guid: e6d85bda3bd19e04cbe0f4245b63939f, type: 2}
       currentLevel: -1
   projectile: {fileID: -8417403802403430722, guid: 6055fbda517994e418871501f8808fde,
     type: 3}
