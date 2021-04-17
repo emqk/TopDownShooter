@@ -58,7 +58,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 3.75
+  m_Speed: 5
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -82,8 +82,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6176a8b176d7fda40a67279b3abc82bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  defaultHealth: 140
-  rewardRange: {x: 1, y: 4}
+  defaultHealth: 130
+  rewardRange: {x: 0, y: 1}
   deathSound: {fileID: 8300000, guid: a942b5d873e28ef4289f1d054c7e0e5f, type: 3}
 --- !u!1 &8648656862704897303
 GameObject:
