@@ -106,8 +106,13 @@ public class Database : MonoBehaviour
         if (!purchased.Contains(purchaseData.GetID))
         {
             purchased.Add(purchaseData.GetID);
-            //Creating copy of upgradeKit to prevent from changing values directly on ScriptableObject
-            upgrades.Add(purchaseData.UpgradeKit.MakeCopy());
+
+            //Add UpgradeKit's ID to the upgrades list only if UpgradeKit's ID != ""
+            if (purchaseData.UpgradeKit.ID != "")
+            {
+                //Creating copy of upgradeKit to prevent from changing values directly on ScriptableObject
+                upgrades.Add(purchaseData.UpgradeKit.MakeCopy());
+            }
         }
         else
         {
