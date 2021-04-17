@@ -4,16 +4,18 @@ using UnityEngine.AI;
 [RequireComponent(typeof(NavMeshAgent))]
 public class AI : MonoBehaviour, IDamageable
 {
-    public int Damage { get => 10; }
     [SerializeField] int defaultHealth = 100;
-    Statistic health = new Statistic();
+    [SerializeField] Vector2Int damageRange;
     [SerializeField] Vector2Int rewardRange;
 
     [SerializeField] AudioClip deathSound;
 
+    Statistic health = new Statistic();
+
     NavMeshAgent agent;
     StateMachine stateMachine;
     bool deathFromAttack = false;
+
 
     public void TakeDamage(int damageAmount)
     {
@@ -87,6 +89,12 @@ public class AI : MonoBehaviour, IDamageable
         {
             coll.enabled = active;
         }
+    }
+
+    public int GetDamage()
+    {
+        //Adding 1 because random for int is inclusive for max
+        return Random.Range(damageRange.x, damageRange.y + 1);
     }
 
     public int GetReward()

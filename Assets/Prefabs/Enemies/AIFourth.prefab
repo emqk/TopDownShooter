@@ -83,6 +83,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   defaultHealth: 50
+  damageRange: {x: 9, y: 15}
   rewardRange: {x: 0, y: 2}
   deathSound: {fileID: 8300000, guid: a942b5d873e28ef4289f1d054c7e0e5f, type: 3}
 --- !u!1 &8648656862704897303

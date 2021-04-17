@@ -38,7 +38,7 @@ public class AttackState : IState
             float distToPlayerSq = (owner.transform.position - targetPlayer.transform.position).sqrMagnitude;
             if (distToPlayerSq <= distToDieSq)
             {
-                targetPlayer.TakeDamage(owner.Damage);
+                targetPlayer.TakeDamage(owner.GetDamage());
                 owner.Suicide();
             }
             else
