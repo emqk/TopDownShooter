@@ -13,10 +13,10 @@ public class AI : MonoBehaviour, IDamageable
 
     NavMeshAgent agent;
     StateMachine stateMachine;
+    bool deathFromAttack = false;
 
     public void TakeDamage(int damageAmount)
     {
-        Debug.Log("Damage taken: " + damageAmount);
         health.ChangeByAmount(-damageAmount);
         NotificationManager.instance.SpawnDamageInfo(transform.position + new Vector3(0, 2, 0), damageAmount);
 
@@ -34,6 +34,14 @@ public class AI : MonoBehaviour, IDamageable
         ParticleManager.instance.SpawnBlowUpParticle(transform.position, transform.rotation);
     }
 
+    /// <summary>
+    /// Die but without kill reward
+    /// </summary>
+    public void Suicide()
+    {
+        deathFromAttack = true;
+        Die();
+    }
 
     void Start()
     {
@@ -83,7 +91,15 @@ public class AI : MonoBehaviour, IDamageable
 
     public int GetReward()
     {
-        //Adding 1 because random for int is inclusive for max
-        return Random.Range(rewardRange.x, rewardRange.y + 1);
+        if (deathFromAttack)
+        {
+            //If died from attack don't give reward
+            return 0;
+        }
+        else
+        {
+            //Adding 1 because random for int is inclusive for max
+            return Random.Range(rewardRange.x, rewardRange.y + 1);
+        }
     }
 }

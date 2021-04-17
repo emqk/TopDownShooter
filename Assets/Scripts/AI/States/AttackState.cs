@@ -39,7 +39,7 @@ public class AttackState : IState
             if (distToPlayerSq <= distToDieSq)
             {
                 targetPlayer.TakeDamage(owner.Damage);
-                owner.Die();
+                owner.Suicide();
             }
             else
             {
