@@ -7,7 +7,7 @@ public class MoneySerializationData
 
 public static class MoneyManager
 {
-    static Statistic gold = new Statistic(0, 50, int.MaxValue);
+    static Statistic gold = new Statistic(0, 100, int.MaxValue);
 
     public static int GetGoldAmount()
     {

@@ -52,7 +52,7 @@ public class UpgradeKitData
             }
         }
 
-        Debug.LogError("Can't find upgrade data of given type!");
+        Debug.LogError("Can't find upgrade data of given type! -> " + upgradeType);
         return null;
     }
 

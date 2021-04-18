@@ -10,14 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 350c285954b356841b6695fb460124af, type: 3}
-  m_Name: Weapon1_DamageUpgrade
+  m_Name: Weapon1_RateUpgrade
   m_EditorClassIdentifier: 
-  ID: Weapon0_Damage
-  upgradeName: Turbo Damage!
-  upgradeType: 2
-  thumbnail: {fileID: 21300000, guid: 23223a7c86f2ac7489cdb1635c85ed4a, type: 3}
+  ID: Weapon1_Rate
+  upgradeName: Turbo Rate
+  upgradeType: 1
+  thumbnail: {fileID: 21300000, guid: 266817a9ff4066f4baf0492baf8f010a, type: 3}
   powerAndCost:
-  - power: 3
-    cost: 4
-  - power: 5
-    cost: 12
+  - power: 0.85
+    cost: 16
+  - power: 0.7
+    cost: 23
+  - power: 0.5
+    cost: 29
