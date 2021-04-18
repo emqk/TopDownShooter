@@ -20,7 +20,15 @@ public class Weapon : MonoBehaviour
 
     public void Init(UpgradeKitData _upgradeData)
     {
+        WeaponData weaponDataCopy = new WeaponData(weaponData);
+        weaponData = weaponDataCopy;
+
         upgradeData = _upgradeData;
+
+        UpgradeDataInstance shootRateUpgrade = UpgradeData.GetUpgradeDataInstanceByType(UpgradeType.Rate);
+        float shootRateUpgradeValue = weaponData != null && shootRateUpgrade.GetCurrentPowerCostPair() != null ? shootRateUpgrade.GetCurrentPowerCostPair().power : 1;
+        float newShootRate = weaponData.ShootRate * shootRateUpgradeValue;
+        weaponData.SetShootRate(newShootRate);
     }
 
     void Awake()

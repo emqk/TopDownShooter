@@ -20,4 +20,20 @@ public class WeaponData : PurchaseData
     [Header("AudioVisuals")]
     [SerializeField] AudioClip shootSound;
     public AudioClip ShootSound { get => shootSound; }
+
+    public WeaponData(WeaponData weaponData)
+    {
+        projectile = weaponData.projectile;
+
+        shootRate = weaponData.shootRate;
+        heatPerShot = weaponData.heatPerShot;
+        accuracy = weaponData.accuracy;
+
+        shootSound = weaponData.shootSound;
+    }
+
+    public void SetShootRate(float newShootRate)
+    {
+        shootRate = newShootRate;
+    }
 }
