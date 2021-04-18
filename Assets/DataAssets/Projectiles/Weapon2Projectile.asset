@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ebc0660225d7e4429cd581d8e5f65de, type: 3}
   m_Name: Weapon2Projectile
   m_EditorClassIdentifier: 
-  damageRange: {x: 40, y: 150}
-  moveSpeed: 30
+  damageRange: {x: 25, y: 35}
+  moveSpeed: 20
