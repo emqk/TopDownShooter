@@ -4,7 +4,6 @@ public class UIManager : MonoBehaviour
 {
     [Header("Player")]
     [SerializeField] FillUI healthUI;
-    [SerializeField] WeaponHeatImage weaponHeatImage;
     [SerializeField] Joystick movementJoystick;
     [SerializeField] Joystick rotationJoystick;
 
@@ -22,11 +21,6 @@ public class UIManager : MonoBehaviour
     private void Awake()
     {
         instance = this;
-    }
-
-    public WeaponHeatImage GetWeaponHeatImage()
-    {
-        return weaponHeatImage;
     }
 
     public void ShowEndPanel()

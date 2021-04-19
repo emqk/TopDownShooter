@@ -11,10 +11,8 @@ public class WeaponData : PurchaseData
 
     [Header("Stats")]
     [SerializeField] float shootRate;
-    [SerializeField] float heatPerShot;
     [SerializeField] float accuracy;
     public float ShootRate { get => shootRate; }
-    public float HeatPerShot { get => heatPerShot; }
     public float Accuracy { get => accuracy; }
 
     [Header("AudioVisuals")]
@@ -26,7 +24,6 @@ public class WeaponData : PurchaseData
         projectile = weaponData.projectile;
 
         shootRate = weaponData.shootRate;
-        heatPerShot = weaponData.heatPerShot;
         accuracy = weaponData.accuracy;
 
         shootSound = weaponData.shootSound;

@@ -111,8 +111,6 @@ public class Player : MonoBehaviour, IDamageable
     {
         if(weapon)
             weapon.UpdateMe();
-        if(equipedWeapon)
-            equipedWeapon.UpdateWeaponHeatImage();
 
         UpdateWeaponRootPosition();
     }
