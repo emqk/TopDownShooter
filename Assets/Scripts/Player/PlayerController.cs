@@ -16,6 +16,12 @@ public class PlayerController : MonoBehaviour
     Player controlledPlayer;
     Vector2 screenCenter = new Vector2(Screen.width / 2, Screen.height / 2);
 
+    public static PlayerController instance;
+
+    private void Awake()
+    {
+        instance = this;
+    }
 
     void Start()
     {
@@ -109,5 +115,10 @@ public class PlayerController : MonoBehaviour
     {
         Quaternion lookRot = Quaternion.LookRotation(new Vector3(vec.x, 0, vec.y));
         body.rotation = lookRot;
+    }
+
+    public Player GetControlledPlayer()
+    {
+        return controlledPlayer;
     }
 }

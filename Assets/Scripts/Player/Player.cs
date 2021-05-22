@@ -23,6 +23,7 @@ public class Player : MonoBehaviour, IDamageable
 
     PlayerController playerController;
 
+
     public void AddHealth(int amount)
     {
         health.ChangeByAmount(amount);
@@ -33,6 +34,7 @@ public class Player : MonoBehaviour, IDamageable
     {
         health.ChangeByAmount(-damageAmount);
         RefreshHPFillUI();
+        CameraShaker.instance.ShakeCamera(0.5f);
 
         if (!health.IsGreaterThanMinimum())
         {
