@@ -9,6 +9,7 @@ public class AI : MonoBehaviour, IDamageable
     [SerializeField] Vector2Int rewardRange;
 
     [SerializeField] AudioClip deathSound;
+    [SerializeField] float damageRadius = 3;
 
     Statistic health = new Statistic();
 
@@ -16,6 +17,9 @@ public class AI : MonoBehaviour, IDamageable
     StateMachine stateMachine;
     bool deathFromAttack = false;
 
+    const float CHARACTER_HALF_SIZE = 0.5f;
+
+    /////////////// Implement interfaces - BEGIN ///////////////
 
     public void TakeDamage(int damageAmount)
     {
@@ -36,6 +40,13 @@ public class AI : MonoBehaviour, IDamageable
         ParticleManager.instance.SpawnBlowUpParticle(transform.position, transform.rotation);
     }
 
+    public bool IsInDamageRadius(float distance, float radius)
+    {
+        return distance <= radius + CHARACTER_HALF_SIZE;
+    }
+
+    /////////////// Implement interfaces - END ///////////////
+
     /// <summary>
     /// Die but without kill reward
     /// </summary>
@@ -53,7 +64,7 @@ public class AI : MonoBehaviour, IDamageable
         Player player = PlayerController.instance.GetControlledPlayer();
         ChaseState chaseState = new ChaseState(agent, player);
         AttackState attackState = new AttackState(this, player);
-        JumpAttackState jumpAttackState = new JumpAttackState(this, player);
+        JumpAttackState jumpAttackState = new JumpAttackState(this, player, damageRadius);
         MissedAttackState missedAttackState = new MissedAttackState(0.8f);
         stateMachine = new StateMachine(this);
 
@@ -69,8 +80,8 @@ public class AI : MonoBehaviour, IDamageable
         stateMachine.AddTransition(chaseState, jumpAttackState,
         () =>
         {
-            float distSq = (transform.position - player.transform.position).sqrMagnitude;
-            return distSq < 3.5f * 3.5f /*Damage range (4) + Player half(0.5), then sq*/;
+            float dist = Vector3.Distance(transform.position, player.transform.position);
+            return player.IsInDamageRadius(dist, damageRadius);
         });
 
 

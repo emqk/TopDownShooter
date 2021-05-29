@@ -23,12 +23,10 @@ public class Player : MonoBehaviour, IDamageable
 
     PlayerController playerController;
 
+    const float PLAYER_HALF_SIZE = 0.5f;
 
-    public void AddHealth(int amount)
-    {
-        health.ChangeByAmount(amount);
-        RefreshHPFillUI();
-    }
+
+    /////////////// Implement interfaces - BEGIN ///////////////
 
     public void TakeDamage(int damageAmount)
     {
@@ -45,6 +43,19 @@ public class Player : MonoBehaviour, IDamageable
     public void Die()
     {
         BattleManager.instance.EndBattle();
+    }
+
+    public bool IsInDamageRadius(float distance, float radius)
+    {
+        return distance <= radius + PLAYER_HALF_SIZE;
+    }
+
+    /////////////// Implement interfaces - END ///////////////
+
+    public void AddHealth(int amount)
+    {
+        health.ChangeByAmount(amount);
+        RefreshHPFillUI();
     }
 
     void RefreshHPFillUI()
