@@ -4,12 +4,20 @@ public class ParticleManager : MonoBehaviour
 {
     [SerializeField] ParticleSystem hitParticle;
     [SerializeField] ParticleSystem blowUpParticle;
+    [SerializeField] RadialDamageVisualizer radialDamageVisualizer;
 
     public static ParticleManager instance;
 
     void Awake()
     {
         instance = this;
+    }
+
+    public void SpawnRadialDamageVisualizer(Vector3 position, float radius)
+    {
+        RadialDamageVisualizer instance = Instantiate(radialDamageVisualizer);
+        instance.Init(radius);
+        instance.transform.position = position;
     }
 
     public void SpawnHitParticle(Vector3 position, Quaternion rotation)

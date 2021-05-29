@@ -70,7 +70,7 @@ public class AI : MonoBehaviour, IDamageable
         () =>
         {
             float distSq = (transform.position - player.transform.position).sqrMagnitude;
-            return distSq < 12;
+            return distSq < 3.5f * 3.5f /*Damage range (4) + Player half(0.5), then sq*/;
         });
 
 

@@ -9742,6 +9742,12 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3410247527156802363, guid: 283434351c37f1d4f94547f9f5ce394b,
+        type: 3}
+      propertyPath: radialDamageVisualizer
+      value: 
+      objectReference: {fileID: 1289721385080055556, guid: 470f5e32ff73aa742886b7f202c708fa,
+        type: 3}
     - target: {fileID: 3410247527156802364, guid: 283434351c37f1d4f94547f9f5ce394b,
         type: 3}
       propertyPath: m_Volume

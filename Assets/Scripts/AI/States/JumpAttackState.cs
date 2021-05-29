@@ -7,7 +7,8 @@ public class JumpAttackState : IState
     Vector3 targetLocation;
     const float FALL_SPEED = 80;
     const float JUMP_SPEED = 8;
-    const float DAMAGE_RANGE = 2;
+    const float DAMAGE_RADIUS = 3;
+    const float PLAYER_HALF = 0.5f;
 
     Vector3 jumpLocation = new Vector3();
     bool jumpReached = false;
@@ -50,11 +51,12 @@ public class JumpAttackState : IState
             {
                 float distToPlayer = Vector3.Distance(owner.transform.position, targetPlayer.transform.position);
 
-                if (distToPlayer <= DAMAGE_RANGE)
+                if (distToPlayer <= DAMAGE_RADIUS + PLAYER_HALF)
                 {
                     targetPlayer.TakeDamage(owner.GetDamage());
                 }
 
+                ParticleManager.instance.SpawnRadialDamageVisualizer(targetLocation, DAMAGE_RADIUS * 2.0f);
                 attackPerformed = true;
             }
             // Fall on the ground
