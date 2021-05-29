@@ -53,21 +53,34 @@ public class AI : MonoBehaviour, IDamageable
         Player player = PlayerController.instance.GetControlledPlayer();
         ChaseState chaseState = new ChaseState(agent, player);
         AttackState attackState = new AttackState(this, player);
+        JumpAttackState jumpAttackState = new JumpAttackState(this, player);
         MissedAttackState missedAttackState = new MissedAttackState(0.8f);
         stateMachine = new StateMachine(this);
+
         //Attack player
-        stateMachine.AddTransition(chaseState, attackState,
+        //stateMachine.AddTransition(chaseState, attackState,
+        //() =>
+        //{
+        //    float distSq = (transform.position - player.transform.position).sqrMagnitude;
+        //    return distSq < 12;
+        //});
+        
+        //Attack player
+        stateMachine.AddTransition(chaseState, jumpAttackState,
         () =>
         {
             float distSq = (transform.position - player.transform.position).sqrMagnitude;
             return distSq < 12;
         });
+
+
         //Go back to chase when missed attack
-        stateMachine.AddTransition(attackState, missedAttackState,
+        stateMachine.AddTransition(jumpAttackState, missedAttackState,
         () =>
         {
-            return attackState.MissedAttack;
+            return jumpAttackState.AttackPerformed;
         });
+
         //Wait after missed attack
         stateMachine.AddTransition(missedAttackState, chaseState,
         () =>
@@ -89,6 +102,11 @@ public class AI : MonoBehaviour, IDamageable
         {
             coll.enabled = active;
         }
+    }
+
+    public void SetNavMeshAgentActive(bool active)
+    {
+        agent.enabled = active;
     }
 
     public int GetDamage()
