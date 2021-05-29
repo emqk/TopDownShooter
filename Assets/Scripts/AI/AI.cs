@@ -50,7 +50,7 @@ public class AI : MonoBehaviour, IDamageable
         agent = GetComponent<NavMeshAgent>();
         health = new Statistic(0, defaultHealth, defaultHealth);
 
-        Player player = GameObject.FindObjectOfType<Player>();
+        Player player = PlayerController.instance.GetControlledPlayer();
         ChaseState chaseState = new ChaseState(agent, player);
         AttackState attackState = new AttackState(this, player);
         MissedAttackState missedAttackState = new MissedAttackState(0.8f);
