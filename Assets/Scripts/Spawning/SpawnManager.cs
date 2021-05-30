@@ -144,7 +144,7 @@ public class SpawnManager : MonoBehaviour
         {
             yield return new WaitForSeconds(spawnData.spawnInterval);
             //SpawnAtRandomSpawner(spawnData.toSpawn);
-            SpawnAtRandom(spawnData.toSpawn);
+            SpawnAtRandom(spawnData.toSpawn.GetReference());
         }
     }
 

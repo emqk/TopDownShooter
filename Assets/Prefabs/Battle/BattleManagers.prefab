@@ -115,17 +115,14 @@ MonoBehaviour:
   nextWaveTimeSpan: 5
   spawnWaves:
   - spawnData:
-    - toSpawn: {fileID: -7673393273814520324, guid: 56870d1d456f7394993b262a533dc118,
-        type: 3}
+    - toSpawn: {fileID: 11400000, guid: 4611e1a4fe1c76b4bb5e775b630afc75, type: 2}
       amountToSpawn: 5
       spawnInterval: 0.5
-    - toSpawn: {fileID: -1263156593697718826, guid: fb92bb87814ae58459f69c3663574d78,
-        type: 3}
+    - toSpawn: {fileID: 11400000, guid: e9d8b0084d68d2d478720eab38e5ac85, type: 2}
       amountToSpawn: 10
       spawnInterval: 0.1
   - spawnData:
-    - toSpawn: {fileID: -1263156593697718826, guid: fb92bb87814ae58459f69c3663574d78,
-        type: 3}
+    - toSpawn: {fileID: 11400000, guid: 4611e1a4fe1c76b4bb5e775b630afc75, type: 2}
       amountToSpawn: 50
       spawnInterval: 0.01
 --- !u!82 &3410247527156802364

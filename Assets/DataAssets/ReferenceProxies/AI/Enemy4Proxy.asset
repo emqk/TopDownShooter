@@ -1,0 +1,16 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bfc3aa5689b83164b926d5b1efc244d8, type: 3}
+  m_Name: Enemy4Proxy
+  m_EditorClassIdentifier: 
+  reference: {fileID: 6951653370034626064, guid: 89be3f1d2f0663842b6c2462779816d6,
+    type: 3}

@@ -3,7 +3,7 @@
 [System.Serializable]
 public struct SpawnData
 {
-    public AI toSpawn;
+    public AIReferenceProxy toSpawn;
     public int amountToSpawn;
     public float spawnInterval;
 }
