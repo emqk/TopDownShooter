@@ -2,22 +2,21 @@
 using UnityEngine.AI;
 
 [RequireComponent(typeof(NavMeshAgent))]
-public class AI : MonoBehaviour, IDamageable
+public abstract class AI : MonoBehaviour, IDamageable
 {
     [SerializeField] int defaultHealth = 100;
     [SerializeField] Vector2Int damageRange;
     [SerializeField] Vector2Int rewardRange;
 
     [SerializeField] AudioClip deathSound;
-    [SerializeField] float damageRadius = 3;
 
     Statistic health = new Statistic();
 
-    NavMeshAgent agent;
-    StateMachine stateMachine;
+    protected NavMeshAgent agent;
+    protected StateMachine stateMachine;
+    protected Player player;
     bool deathFromAttack = false;
-
-    const float CHARACTER_HALF_SIZE = 0.5f;
+    float characterRadius;
 
     /////////////// Implement interfaces - BEGIN ///////////////
 
@@ -42,10 +41,18 @@ public class AI : MonoBehaviour, IDamageable
 
     public bool IsInDamageRadius(float distance, float radius)
     {
-        return distance <= radius + CHARACTER_HALF_SIZE;
+        return distance <= radius + characterRadius;
     }
 
     /////////////// Implement interfaces - END ///////////////
+
+
+    /////////////// To implement - START ///////////////
+    
+    protected abstract void InitBehaviour();
+
+    /////////////// To implement - END ///////////////
+
 
     /// <summary>
     /// Die but without kill reward
@@ -56,50 +63,18 @@ public class AI : MonoBehaviour, IDamageable
         Die();
     }
 
+
     void Start()
     {
+        player = PlayerController.instance.GetControlledPlayer();
         agent = GetComponent<NavMeshAgent>();
-        health = new Statistic(0, defaultHealth, defaultHealth);
 
-        Player player = PlayerController.instance.GetControlledPlayer();
-        ChaseState chaseState = new ChaseState(agent, player);
-        AttackState attackState = new AttackState(this, player);
-        JumpAttackState jumpAttackState = new JumpAttackState(this, player, damageRadius);
-        MissedAttackState missedAttackState = new MissedAttackState(0.8f);
+        health = new Statistic(0, defaultHealth, defaultHealth);
         stateMachine = new StateMachine(this);
 
-        //Attack player
-        //stateMachine.AddTransition(chaseState, attackState,
-        //() =>
-        //{
-        //    float distSq = (transform.position - player.transform.position).sqrMagnitude;
-        //    return distSq < 12;
-        //});
-        
-        //Attack player
-        stateMachine.AddTransition(chaseState, jumpAttackState,
-        () =>
-        {
-            float dist = Vector3.Distance(transform.position, player.transform.position);
-            return player.IsInDamageRadius(dist, damageRadius);
-        });
+        characterRadius = agent.radius;
 
-
-        //Go back to chase when missed attack
-        stateMachine.AddTransition(jumpAttackState, missedAttackState,
-        () =>
-        {
-            return jumpAttackState.AttackPerformed;
-        });
-
-        //Wait after missed attack
-        stateMachine.AddTransition(missedAttackState, chaseState,
-        () =>
-        {
-            return missedAttackState.WaitingFinished();
-        });
-
-        stateMachine.SetState(chaseState);
+        InitBehaviour();
     }
 
     void Update()

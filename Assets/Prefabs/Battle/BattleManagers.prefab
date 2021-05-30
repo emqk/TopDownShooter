@@ -66,6 +66,7 @@ MonoBehaviour:
     type: 3}
   blowUpParticle: {fileID: 3819213881921969560, guid: f90d0ee9b5762654fb497628c97dacf0,
     type: 3}
+  radialDamageVisualizer: {fileID: 0}
 --- !u!114 &3410247527156802365
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -94,7 +95,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthUI: {fileID: 0}
-  weaponHeatImage: {fileID: 0}
   movementJoystick: {fileID: 0}
   rotationJoystick: {fileID: 0}
   mainBattleCanvas: {fileID: 0}
@@ -115,16 +115,16 @@ MonoBehaviour:
   nextWaveTimeSpan: 5
   spawnWaves:
   - spawnData:
-    - toSpawn: {fileID: 5761446191328258010, guid: 56870d1d456f7394993b262a533dc118,
+    - toSpawn: {fileID: -7673393273814520324, guid: 56870d1d456f7394993b262a533dc118,
         type: 3}
       amountToSpawn: 5
       spawnInterval: 0.5
-    - toSpawn: {fileID: 5761446191328258010, guid: 56870d1d456f7394993b262a533dc118,
+    - toSpawn: {fileID: -1263156593697718826, guid: fb92bb87814ae58459f69c3663574d78,
         type: 3}
       amountToSpawn: 10
       spawnInterval: 0.1
   - spawnData:
-    - toSpawn: {fileID: 5761446191328258010, guid: 56870d1d456f7394993b262a533dc118,
+    - toSpawn: {fileID: -1263156593697718826, guid: fb92bb87814ae58459f69c3663574d78,
         type: 3}
       amountToSpawn: 50
       spawnInterval: 0.01

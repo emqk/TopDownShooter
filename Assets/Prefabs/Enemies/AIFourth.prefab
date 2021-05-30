@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5761446191328258009}
   - component: {fileID: 1795686898690327430}
   - component: {fileID: 5761446191328258011}
-  - component: {fileID: 5761446191328258010}
+  - component: {fileID: 6951653370034626064}
   m_Layer: 9
   m_Name: AIFourth
   m_TagString: Untagged
@@ -70,7 +70,7 @@ NavMeshAgent:
   m_BaseOffset: 1
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!114 &5761446191328258010
+--- !u!114 &6951653370034626064
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -79,13 +79,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 5761446191328258005}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6176a8b176d7fda40a67279b3abc82bd, type: 3}
+  m_Script: {fileID: 11500000, guid: 6def2d5332749a146afaae5d72813290, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   defaultHealth: 50
   damageRange: {x: 9, y: 15}
   rewardRange: {x: 0, y: 2}
   deathSound: {fileID: 8300000, guid: a942b5d873e28ef4289f1d054c7e0e5f, type: 3}
+  damageRadius: 3
 --- !u!1 &8648656862704897303
 GameObject:
   m_ObjectHideFlags: 0
