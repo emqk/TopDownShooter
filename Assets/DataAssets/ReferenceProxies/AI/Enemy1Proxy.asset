@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bfc3aa5689b83164b926d5b1efc244d8, type: 3}
   m_Name: Enemy1Proxy
   m_EditorClassIdentifier: 
-  reference: {fileID: -7673393273814520324, guid: 56870d1d456f7394993b262a533dc118,
+  reference: {fileID: 2628512795868646959, guid: 56870d1d456f7394993b262a533dc118,
     type: 3}

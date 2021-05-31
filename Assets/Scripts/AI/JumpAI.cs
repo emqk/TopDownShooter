@@ -1,23 +1,14 @@
 using UnityEngine;
 
-public class LandAI : AI
+public class JumpAI : AI
 {
     [SerializeField] float damageRadius = 3;
 
     protected override void InitBehaviour()
     {
         ChaseState chaseState = new ChaseState(agent, player);
-        AttackState attackState = new AttackState(this, player);
         JumpAttackState jumpAttackState = new JumpAttackState(this, player, damageRadius);
         MissedAttackState missedAttackState = new MissedAttackState(0.8f);
-
-        //Attack player
-        //stateMachine.AddTransition(chaseState, attackState,
-        //() =>
-        //{
-        //    float distSq = (transform.position - player.transform.position).sqrMagnitude;
-        //    return distSq < 12;
-        //});
 
         //Attack player
         stateMachine.AddTransition(chaseState, jumpAttackState,

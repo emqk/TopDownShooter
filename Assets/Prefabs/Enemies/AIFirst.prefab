@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5761446191328258009}
   - component: {fileID: 6724229511160309395}
   - component: {fileID: 5761446191328258011}
-  - component: {fileID: -7673393273814520324}
+  - component: {fileID: 2628512795868646959}
   m_Layer: 9
   m_Name: AIFirst
   m_TagString: Untagged
@@ -31,6 +31,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 481916936177524268}
+  - {fileID: 2066649521114237058}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -70,7 +71,7 @@ NavMeshAgent:
   m_BaseOffset: 1
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!114 &-7673393273814520324
+--- !u!114 &2628512795868646959
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -79,14 +80,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 5761446191328258005}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6def2d5332749a146afaae5d72813290, type: 3}
+  m_Script: {fileID: 11500000, guid: 1a79839ba23b0174f9bea1dcb20645a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   defaultHealth: 80
   damageRange: {x: 7, y: 11}
   rewardRange: {x: 0, y: 1}
   deathSound: {fileID: 8300000, guid: a942b5d873e28ef4289f1d054c7e0e5f, type: 3}
-  damageRadius: 3
+  blowRadius: 3
+  smokeParticle: {fileID: 7204749863566206235}
 --- !u!1 &8648656862704897303
 GameObject:
   m_ObjectHideFlags: 0
@@ -114,7 +116,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8648656862704897303}
   m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0.0000000073994, y: 0.179, z: -0.019764}
+  m_LocalPosition: {x: 0.0000000073994, y: 0, z: -0.019764}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 5761446191328258009}
@@ -188,3 +190,59 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!1001 &6647380488975597065
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 5761446191328258009}
+    m_Modifications:
+    - target: {fileID: 4678689844329608843, guid: 8af671fc9162ea94bb57d109c1c80a25,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4678689844329608843, guid: 8af671fc9162ea94bb57d109c1c80a25,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4678689844329608843, guid: 8af671fc9162ea94bb57d109c1c80a25,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 4678689844329608843, guid: 8af671fc9162ea94bb57d109c1c80a25,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4678689844329608843, guid: 8af671fc9162ea94bb57d109c1c80a25,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9173443316486287559, guid: 8af671fc9162ea94bb57d109c1c80a25,
+        type: 3}
+      propertyPath: m_Name
+      value: ExplosionSmokeParticle
+      objectReference: {fileID: 0}
+    - target: {fileID: 9173443316486287559, guid: 8af671fc9162ea94bb57d109c1c80a25,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 8af671fc9162ea94bb57d109c1c80a25, type: 3}
+--- !u!4 &2066649521114237058 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4678689844329608843, guid: 8af671fc9162ea94bb57d109c1c80a25,
+    type: 3}
+  m_PrefabInstance: {fileID: 6647380488975597065}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &7204749863566206235 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 4592638636346366738, guid: 8af671fc9162ea94bb57d109c1c80a25,
+    type: 3}
+  m_PrefabInstance: {fileID: 6647380488975597065}
+  m_PrefabAsset: {fileID: 0}

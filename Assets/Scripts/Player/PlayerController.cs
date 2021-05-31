@@ -21,13 +21,13 @@ public class PlayerController : MonoBehaviour
     private void Awake()
     {
         instance = this;
+
+        characterController = GetComponent<CharacterController>();
+        controlledPlayer = GetComponent<Player>();
     }
 
     void Start()
     {
-        characterController = GetComponent<CharacterController>();
-        controlledPlayer = GetComponent<Player>();
-
         movementJoystick = UIManager.instance.MovementJoystick;
         rotationJoystick = UIManager.instance.RotationJoystick;
     }
@@ -120,5 +120,10 @@ public class PlayerController : MonoBehaviour
     public Player GetControlledPlayer()
     {
         return controlledPlayer;
+    }
+
+    public float GetControllerRadius() 
+    {
+        return characterController.radius;
     }
 }

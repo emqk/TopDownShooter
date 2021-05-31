@@ -23,7 +23,7 @@ public class Player : MonoBehaviour, IDamageable
 
     PlayerController playerController;
 
-    const float PLAYER_HALF_SIZE = 0.5f;
+    float playerRadius;
 
 
     /////////////// Implement interfaces - BEGIN ///////////////
@@ -47,7 +47,7 @@ public class Player : MonoBehaviour, IDamageable
 
     public bool IsInDamageRadius(float distance, float radius)
     {
-        return distance <= radius + PLAYER_HALF_SIZE;
+        return distance <= radius + playerRadius;
     }
 
     /////////////// Implement interfaces - END ///////////////
@@ -111,6 +111,8 @@ public class Player : MonoBehaviour, IDamageable
         playerCamera = BattleManager.instance.MainCamera;
         defaultWeaponRootLocalPosition = weaponRoot.localPosition;
         shootWeaponRootLocalPosition = defaultWeaponRootLocalPosition - weaponRoot.forward * weaponAfterShootOffset;
+
+        playerRadius = playerController.GetControllerRadius();
 
         healthUI = UIManager.instance.HealthUI;
         healthUI.Init(transform, playerCamera);
