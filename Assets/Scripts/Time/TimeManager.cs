@@ -32,9 +32,25 @@ public class TimeManager : MonoBehaviour
         }
     }
 
-    public void CreateTimer(float waitTime, UnityAction action)
+    public TimerHandle CreateTimer(float waitTime, UnityAction action)
     {
         Timer newTimer = new Timer(waitTime, action);
         timers.Add(newTimer);
+
+        return new TimerHandle(newTimer);
+    }
+
+    public bool RemoveTimerByHandle(TimerHandle timerHandle)
+    {
+        for (int i = 0; i < timers.Count; i++)
+        {
+            if (timers[i] == timerHandle.GetTimer())
+            {
+                timers.RemoveAt(i);
+                return true;
+            }
+        }
+
+        return false;
     }
 }
