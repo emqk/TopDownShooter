@@ -1,32 +1,38 @@
-﻿using UnityEngine;
-
-public class MissedAttackState : IState
+﻿public class MissedAttackState : IState
 {
     float timeToWait;
-    float currentWaitTime;
+
+    // Runtime data
+    bool isWaitingFinished = false;
+    TimerHandle timerHandle = null;
 
     public MissedAttackState(float _timeToWait)
     {
         timeToWait = _timeToWait;
-        currentWaitTime = 0;
     }
 
     public void OnEnter()
     {
-        currentWaitTime = 0;
+        isWaitingFinished = false;
+        timerHandle = TimeManager.instance.CreateTimer(timeToWait, FinishWaiting);
     }
 
     public void OnExit()
     {
+        TimeManager.instance.RemoveTimerByHandle(timerHandle);
     }
 
     public void OnUpdate()
     {
-        currentWaitTime += Time.deltaTime;
     }
 
     public bool WaitingFinished()
     {
-        return currentWaitTime >= timeToWait;
+        return isWaitingFinished;
+    }
+
+    void FinishWaiting()
+    {
+        isWaitingFinished = true;
     }
 }

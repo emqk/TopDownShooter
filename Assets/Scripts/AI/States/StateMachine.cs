@@ -79,4 +79,10 @@ public class StateMachine
 
         return null;
     }
+
+    public void End()
+    {
+        currentState?.OnExit();
+        currentState = null;
+    }
 }

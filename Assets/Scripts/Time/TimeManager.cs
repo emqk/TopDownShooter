@@ -25,7 +25,7 @@ public class TimeManager : MonoBehaviour
         // Remove finished timers
         for (int i = timers.Count - 1; i >= 0; i--)
         {
-            if (timers[i].IsFinished)
+            if (timers[i].IsFinished || timers[i].IsPendingToKill)
             {
                 timers.RemoveAt(i);
             }
@@ -46,7 +46,7 @@ public class TimeManager : MonoBehaviour
         {
             if (timers[i] == timerHandle.GetTimer())
             {
-                timers.RemoveAt(i);
+                timers[i].IsPendingToKill = true;
                 return true;
             }
         }

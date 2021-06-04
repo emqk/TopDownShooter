@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 3410247527156802365}
   - component: {fileID: 3410247527156802367}
   - component: {fileID: 3410247527156802366}
+  - component: {fileID: 5580296955664240646}
   - component: {fileID: 3410247527156802364}
   m_Layer: 0
   m_Name: BattleManagers
@@ -125,6 +126,18 @@ MonoBehaviour:
     - toSpawn: {fileID: 11400000, guid: 4611e1a4fe1c76b4bb5e775b630afc75, type: 2}
       amountToSpawn: 50
       spawnInterval: 0.01
+--- !u!114 &5580296955664240646
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3410247527156802360}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa7943506c445a249bf38ea1fbd2f5e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!82 &3410247527156802364
 AudioSource:
   m_ObjectHideFlags: 0

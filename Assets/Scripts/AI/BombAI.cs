@@ -8,7 +8,7 @@ public class BombAI : AI
     protected override void InitBehaviour()
     {
         ChaseState chaseState = new ChaseState(agent, player);
-        ExplosionAttackState explosionAttackState = new ExplosionAttackState(this, blowRadius);
+        ExplosionAttackState explosionAttackState = new ExplosionAttackState(this);
 
         //Explode
         stateMachine.AddTransition(chaseState, explosionAttackState,

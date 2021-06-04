@@ -34,9 +34,10 @@ public abstract class AI : MonoBehaviour, IDamageable
     public void Die()
     {
         AudioManager.PlayClip2D(deathSound);
-        gameObject.SetActive(false);
         SpawnManager.RegisterKill(this);
         ParticleManager.instance.SpawnBlowUpParticle(transform.position, transform.rotation);
+        stateMachine.End();
+        gameObject.SetActive(false);
     }
 
     public bool IsInDamageRadius(float distance, float radius)

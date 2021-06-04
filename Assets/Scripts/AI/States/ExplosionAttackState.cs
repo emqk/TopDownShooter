@@ -1,36 +1,29 @@
-using UnityEngine;
-
 public class ExplosionAttackState : IState
 {
     // Data
     BombAI owner;
-    readonly float DAMAGE_RADIUS;
-
-    // Runtime data
     float timeToExplode = 2.0f;
 
-    public ExplosionAttackState(BombAI _owner, float damageRadius)
+    // Runtime data
+    TimerHandle timerHandle = null;
+
+    public ExplosionAttackState(BombAI _owner)
     {
         owner = _owner;
-        DAMAGE_RADIUS = damageRadius;
     }
 
     public void OnEnter()
     {
         owner.ShowSmoke();
+        timerHandle = TimeManager.instance.CreateTimer(timeToExplode, owner.Explode);
     }
 
     public void OnExit()
     {
+        TimeManager.instance.RemoveTimerByHandle(timerHandle);
     }
 
     public void OnUpdate()
     {
-        timeToExplode -= Time.deltaTime;
-        
-        if (timeToExplode <= 0)
-        {
-            owner.Explode();
-        }
     }
 }

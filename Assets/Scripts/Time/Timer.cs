@@ -10,6 +10,9 @@ public class Timer
     public bool IsFinished { get => isFinished; }
     bool isFinished = false;
 
+    public bool IsPendingToKill { get => isPendingToKill; set => isPendingToKill = value; }
+    bool isPendingToKill = false;
+
     public Timer(float _targetTime, UnityAction _action)
     {
         targetTime = _targetTime;
@@ -18,7 +21,7 @@ public class Timer
 
     public void UpdateMe()
     {
-        if (isFinished)
+        if (isFinished || isPendingToKill)
             return;
 
         currentTime += Time.deltaTime;
