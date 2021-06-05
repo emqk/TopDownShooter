@@ -54,7 +54,7 @@ public class JumpAttackState : IState
 
                 if (targetPlayer.IsInDamageRadius(distToPlayer, DAMAGE_RADIUS))
                 {
-                    targetPlayer.TakeDamage(owner.GetDamage());
+                    DamageManager.instance.ApplyDamage(targetPlayer, owner.GetDamage());
                 }
 
                 ParticleManager.instance.SpawnRadialDamageVisualizer(targetLocation, DAMAGE_RADIUS * 2.0f);

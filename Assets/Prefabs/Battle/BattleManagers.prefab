@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3410247527156802362}
   - component: {fileID: 3410247527156802353}
+  - component: {fileID: 2179162944479791863}
   - component: {fileID: 3410247527156802363}
   - component: {fileID: 3410247527156802365}
   - component: {fileID: 3410247527156802367}
@@ -51,6 +52,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rewardText: {fileID: 0}
   mainCamera: {fileID: 0}
+--- !u!114 &2179162944479791863
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3410247527156802360}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 983f1a4e8f71d7448908a797ccb3ede7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &3410247527156802363
 MonoBehaviour:
   m_ObjectHideFlags: 0

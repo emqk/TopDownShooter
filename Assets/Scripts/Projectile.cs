@@ -39,7 +39,7 @@ public class Projectile : MonoBehaviour
             if (damageable != null)
             {
                 int damageToGive = Random.Range(upgradedProjectileData.DamageRange.x, upgradedProjectileData.DamageRange.y);
-                damageable.TakeDamage(damageToGive);
+                DamageManager.instance.ApplyDamage(damageable, damageToGive);
             }
 
             ParticleManager.instance.SpawnHitParticle(hit.point, Quaternion.LookRotation(hit.normal));

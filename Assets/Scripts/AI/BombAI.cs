@@ -31,7 +31,7 @@ public class BombAI : AI
         float distToPlayer = Vector3.Distance(transform.position, player.transform.position);
         if (player.IsInDamageRadius(distToPlayer, blowRadius))
         {
-            player.TakeDamage(GetDamage());
+            DamageManager.instance.ApplyDamage(player, GetDamage());
         }
 
         ParticleManager.instance.SpawnRadialDamageVisualizer(transform.position, blowRadius * 2.0f);

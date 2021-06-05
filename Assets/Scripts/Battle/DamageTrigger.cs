@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class DamageTrigger : MonoBehaviour
@@ -14,7 +12,7 @@ public class DamageTrigger : MonoBehaviour
             IDamageable damageable = other.gameObject.GetComponent<IDamageable>();
             if (damageable != null)
             {
-                damageable.TakeDamage(damage);
+                DamageManager.instance.ApplyDamage(damageable, damage);
             }
         }
     }
