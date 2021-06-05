@@ -1,9 +1,7 @@
 using UnityEngine;
-using TMPro;
 
 public class BattleManager : MonoBehaviour
 {
-    [SerializeField] TextMeshProUGUI rewardText;
     [SerializeField] Camera mainCamera;
 
     int battleReward = 0;
@@ -19,7 +17,7 @@ public class BattleManager : MonoBehaviour
 
     private void Start()
     {
-        RefreshRewardText();
+        UIManager.instance.RefreshRewardText(battleReward, false);
     }
 
     public void EndBattle()
@@ -35,12 +33,7 @@ public class BattleManager : MonoBehaviour
     public void AddToReward(int amount)
     {
         battleReward += amount;
-        RefreshRewardText();
-    }
-
-    void RefreshRewardText()
-    {
-        rewardText.text = battleReward.ToString();
+        UIManager.instance.RefreshRewardText(battleReward);
     }
 
     public void UnPause()

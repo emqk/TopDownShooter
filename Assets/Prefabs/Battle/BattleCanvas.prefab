@@ -175,6 +175,7 @@ GameObject:
   - component: {fileID: 6712761293176640683}
   - component: {fileID: 6712761293176640681}
   - component: {fileID: 6712761293176640680}
+  - component: {fileID: 5685901937194882155}
   m_Layer: 5
   m_Name: GoldText
   m_TagString: Untagged
@@ -299,6 +300,25 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!95 &5685901937194882155
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6712761293176640682}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f4709053d28bb2843a9f38b7f63f93fd, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &6712761293187923278
 GameObject:
   m_ObjectHideFlags: 0

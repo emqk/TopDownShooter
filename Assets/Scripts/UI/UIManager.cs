@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using TMPro;
 
 public class UIManager : MonoBehaviour
 {
@@ -9,6 +10,7 @@ public class UIManager : MonoBehaviour
 
     [Header("Other")]
     [SerializeField] Canvas mainBattleCanvas;
+    [SerializeField] TextMeshProUGUI rewardText;
     [SerializeField] EndPanelUI endScreenCanvasPrefab;
 
     EndPanelUI endPanelInstance;
@@ -35,5 +37,16 @@ public class UIManager : MonoBehaviour
 
         endPanelInstance = Instantiate(endScreenCanvasPrefab);
         endPanelInstance.Open();
+    }
+
+    public void RefreshRewardText(int rewardAmount, bool playAnimation = true)
+    {
+        string newText = rewardAmount.ToString();
+        if (playAnimation && !newText.Equals(rewardText.text))
+        {
+            rewardText.GetComponent<Animator>().Play(0);
+        }
+
+        rewardText.text = newText;
     }
 }
