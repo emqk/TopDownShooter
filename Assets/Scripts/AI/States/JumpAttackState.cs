@@ -54,10 +54,9 @@ public class JumpAttackState : IState
 
                 if (targetPlayer.IsInDamageRadius(distToPlayer, DAMAGE_RADIUS))
                 {
-                    DamageManager.instance.ApplyDamage(targetPlayer, owner.GetDamage());
+                    DamageManager.instance.ApplyRadialDamageToPlayer(owner.GetDamage(), targetLocation, DAMAGE_RADIUS);
                 }
 
-                ParticleManager.instance.SpawnRadialDamageVisualizer(targetLocation, DAMAGE_RADIUS * 2.0f);
                 attackPerformed = true;
             }
             // Fall on the ground

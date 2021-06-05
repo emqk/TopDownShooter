@@ -12,7 +12,7 @@ public class DamageTrigger : MonoBehaviour
             IDamageable damageable = other.gameObject.GetComponent<IDamageable>();
             if (damageable != null)
             {
-                DamageManager.instance.ApplyDamage(damageable, damage);
+                DamageManager.instance.ApplyDamageToObject(damage, damageable);
             }
         }
     }
