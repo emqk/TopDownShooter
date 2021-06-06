@@ -50,13 +50,7 @@ public class JumpAttackState : IState
             // If floor is reached - Deal damage to the player (if in damage range) and end this state
             if (floorReached)
             {
-                float distToPlayer = Vector3.Distance(owner.transform.position, targetPlayer.transform.position);
-
-                if (targetPlayer.IsInDamageRadius(distToPlayer, DAMAGE_RADIUS))
-                {
-                    DamageManager.instance.ApplyRadialDamageToPlayer(owner.GetDamage(), targetLocation, DAMAGE_RADIUS);
-                }
-
+                DamageManager.instance.PerformApplyRadialDamageToPlayer(owner.GetDamage(), targetLocation, DAMAGE_RADIUS);
                 attackPerformed = true;
             }
             // Fall on the ground

@@ -16,10 +16,20 @@ public class DamageManager : MonoBehaviour
         player = PlayerController.instance.GetControlledPlayer();    
     }
 
-    public void ApplyRadialDamageToPlayer(int damage, Vector3 source, float radius)
+    public bool PerformApplyRadialDamageToPlayer(int damage, Vector3 source, float radius)
     {
+        // Show radial damage visualization
         ParticleManager.instance.SpawnRadialDamageVisualizer(source, radius * 2.0f);
-        ApplyDamageToObject(damage, player);
+       
+        // Damage player if in range
+        float distToPlayer = Vector3.Distance(source, player.transform.position);
+        if (player.IsInDamageRadius(distToPlayer, radius))
+        {
+            ApplyDamageToPlayer(damage);
+            return true;
+        }
+
+        return false;
     }
 
     public void ApplyDamageToPlayer(int damage)
