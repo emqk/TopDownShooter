@@ -1116,6 +1116,11 @@ PrefabInstance:
       objectReference: {fileID: 1381954076}
     - target: {fileID: 3410247527156802367, guid: 283434351c37f1d4f94547f9f5ce394b,
         type: 3}
+      propertyPath: rewardText
+      value: 
+      objectReference: {fileID: 1381954082}
+    - target: {fileID: 3410247527156802367, guid: 283434351c37f1d4f94547f9f5ce394b,
+        type: 3}
       propertyPath: targetCanvas
       value: 
       objectReference: {fileID: 1381954079}

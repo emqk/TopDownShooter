@@ -50,7 +50,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4dcbbcca71793114fb250e02a00eacf8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rewardText: {fileID: 0}
   mainCamera: {fileID: 0}
 --- !u!114 &2179162944479791863
 MonoBehaviour:
@@ -80,7 +79,8 @@ MonoBehaviour:
     type: 3}
   blowUpParticle: {fileID: 3819213881921969560, guid: f90d0ee9b5762654fb497628c97dacf0,
     type: 3}
-  radialDamageVisualizer: {fileID: 0}
+  radialDamageVisualizer: {fileID: 1289721385080055556, guid: 470f5e32ff73aa742886b7f202c708fa,
+    type: 3}
 --- !u!114 &3410247527156802365
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -112,6 +112,7 @@ MonoBehaviour:
   movementJoystick: {fileID: 0}
   rotationJoystick: {fileID: 0}
   mainBattleCanvas: {fileID: 0}
+  rewardText: {fileID: 0}
   endScreenCanvasPrefab: {fileID: 6418205718718172368, guid: ed9d86d74dac9044e9c79b935592bd4b,
     type: 3}
 --- !u!114 &3410247527156802366
