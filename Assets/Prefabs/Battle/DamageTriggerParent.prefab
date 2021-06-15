@@ -48,7 +48,7 @@ MonoBehaviour:
   m_Path: {fileID: 0}
   m_UpdateMethod: 0
   m_PositionUnits: 1
-  m_Speed: 8
+  m_Speed: 15
   m_Position: 0
 --- !u!1 &3839620507608783924
 GameObject:
