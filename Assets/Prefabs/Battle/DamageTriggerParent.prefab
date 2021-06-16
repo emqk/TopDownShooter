@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3839620506952916645}
   - component: {fileID: 3839620506952916634}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: DamageTriggerParent
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -63,7 +63,7 @@ GameObject:
   - component: {fileID: 3839620507608783926}
   - component: {fileID: 3839620507608783927}
   - component: {fileID: 3839620507608783923}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Cylinder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -159,7 +159,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b645969cee3fc3a44ad9177878981fb2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 100
+  damage: 40
   damageMask:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -174,7 +174,7 @@ GameObject:
   - component: {fileID: 370408001081714549}
   - component: {fileID: 460478508370051638}
   - component: {fileID: 9177670864997209016}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Particle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
