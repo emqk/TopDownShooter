@@ -218,7 +218,7 @@ Transform:
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 36
+  m_RootOrder: 35
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!208 &12284273
 NavMeshObstacle:
@@ -330,7 +330,7 @@ Transform:
   m_LocalScale: {x: 4, y: 4, z: 4}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 45
+  m_RootOrder: 44
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!208 &36916158
 NavMeshObstacle:
@@ -442,7 +442,7 @@ Transform:
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 68
+  m_RootOrder: 67
   m_LocalEulerAnglesHint: {x: 0, y: -45, z: 0}
 --- !u!208 &42782501
 NavMeshObstacle:
@@ -554,7 +554,7 @@ Transform:
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 48
+  m_RootOrder: 47
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!208 &81096119
 NavMeshObstacle:
@@ -666,7 +666,7 @@ Transform:
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 39
+  m_RootOrder: 38
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!208 &85882512
 NavMeshObstacle:
@@ -778,7 +778,7 @@ Transform:
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 76
+  m_RootOrder: 75
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!208 &136400678
 NavMeshObstacle:
@@ -890,7 +890,7 @@ Transform:
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 67
+  m_RootOrder: 66
   m_LocalEulerAnglesHint: {x: 0, y: -45, z: 0}
 --- !u!208 &162640585
 NavMeshObstacle:
@@ -1002,7 +1002,7 @@ Transform:
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 31
+  m_RootOrder: 30
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!208 &170443471
 NavMeshObstacle:
@@ -1114,7 +1114,7 @@ Transform:
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 58
+  m_RootOrder: 57
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!208 &177665535
 NavMeshObstacle:
@@ -1338,7 +1338,7 @@ Transform:
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 71
+  m_RootOrder: 70
   m_LocalEulerAnglesHint: {x: 0, y: -45, z: 0}
 --- !u!208 &217193889
 NavMeshObstacle:
@@ -1450,7 +1450,7 @@ Transform:
   m_LocalScale: {x: 4, y: 4, z: 4}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 41
+  m_RootOrder: 40
   m_LocalEulerAnglesHint: {x: 0, y: -45, z: 0}
 --- !u!208 &220458486
 NavMeshObstacle:
@@ -1562,7 +1562,7 @@ Transform:
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 85
+  m_RootOrder: 84
   m_LocalEulerAnglesHint: {x: 0, y: 45, z: 0}
 --- !u!208 &222401525
 NavMeshObstacle:
@@ -1674,7 +1674,7 @@ Transform:
   m_LocalScale: {x: 5, y: 5, z: 5}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 28
+  m_RootOrder: 27
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!208 &222941874
 NavMeshObstacle:
@@ -1971,7 +1971,7 @@ Transform:
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 74
+  m_RootOrder: 73
   m_LocalEulerAnglesHint: {x: 0, y: 15, z: 0}
 --- !u!208 &232628481
 NavMeshObstacle:
@@ -2083,7 +2083,7 @@ Transform:
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 88
+  m_RootOrder: 87
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!208 &242161631
 NavMeshObstacle:
@@ -2419,7 +2419,7 @@ Transform:
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 86
+  m_RootOrder: 85
   m_LocalEulerAnglesHint: {x: 0, y: 45, z: 0}
 --- !u!208 &299995391
 NavMeshObstacle:
@@ -2531,7 +2531,7 @@ Transform:
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 81
+  m_RootOrder: 80
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!208 &304649159
 NavMeshObstacle:
@@ -2643,7 +2643,7 @@ Transform:
   m_LocalScale: {x: 2.5, y: 2.5, z: 2.5}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 79
+  m_RootOrder: 78
   m_LocalEulerAnglesHint: {x: 0, y: 45, z: 0}
 --- !u!208 &312223134
 NavMeshObstacle:
@@ -2867,7 +2867,7 @@ Transform:
   m_LocalScale: {x: 4, y: 4, z: 4}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 62
+  m_RootOrder: 61
   m_LocalEulerAnglesHint: {x: 0, y: -45, z: 0}
 --- !u!208 &351501573
 NavMeshObstacle:
@@ -3091,7 +3091,7 @@ Transform:
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 73
+  m_RootOrder: 72
   m_LocalEulerAnglesHint: {x: 0, y: -45, z: 0}
 --- !u!208 &512419380
 NavMeshObstacle:
@@ -3203,7 +3203,7 @@ Transform:
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 80
+  m_RootOrder: 79
   m_LocalEulerAnglesHint: {x: 0, y: 45, z: 0}
 --- !u!208 &515826099
 NavMeshObstacle:
@@ -3315,7 +3315,7 @@ Transform:
   m_LocalScale: {x: 4, y: 4, z: 4}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 46
+  m_RootOrder: 45
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!208 &569246365
 NavMeshObstacle:
@@ -3427,7 +3427,7 @@ Transform:
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 42
+  m_RootOrder: 41
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!208 &572636580
 NavMeshObstacle:
@@ -3780,7 +3780,7 @@ Transform:
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 52
+  m_RootOrder: 51
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!208 &669294770
 NavMeshObstacle:
@@ -3892,7 +3892,7 @@ Transform:
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 43
+  m_RootOrder: 42
   m_LocalEulerAnglesHint: {x: 0, y: 45, z: 0}
 --- !u!208 &716100312
 NavMeshObstacle:
@@ -3910,110 +3910,6 @@ NavMeshObstacle:
   m_CarveOnlyStationary: 1
   m_Center: {x: 0, y: 0, z: 0}
   m_TimeToStationary: 0.5
---- !u!1001 &731499369
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 6039130127475098789, guid: 9ff5c6d899db740448f94d1d99fa5bae,
-        type: 3}
-      propertyPath: enabledTime
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 6039130127475098789, guid: 9ff5c6d899db740448f94d1d99fa5bae,
-        type: 3}
-      propertyPath: disabledTime
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6039130127475098789, guid: 9ff5c6d899db740448f94d1d99fa5bae,
-        type: 3}
-      propertyPath: firstTimePeriod
-      value: 0.76
-      objectReference: {fileID: 0}
-    - target: {fileID: 6039130127475098790, guid: 9ff5c6d899db740448f94d1d99fa5bae,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 93
-      objectReference: {fileID: 0}
-    - target: {fileID: 6039130127475098790, guid: 9ff5c6d899db740448f94d1d99fa5bae,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 6039130127475098790, guid: 9ff5c6d899db740448f94d1d99fa5bae,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -6.68
-      objectReference: {fileID: 0}
-    - target: {fileID: 6039130127475098790, guid: 9ff5c6d899db740448f94d1d99fa5bae,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6039130127475098790, guid: 9ff5c6d899db740448f94d1d99fa5bae,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -14.72
-      objectReference: {fileID: 0}
-    - target: {fileID: 6039130127475098790, guid: 9ff5c6d899db740448f94d1d99fa5bae,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.9238797
-      objectReference: {fileID: 0}
-    - target: {fileID: 6039130127475098790, guid: 9ff5c6d899db740448f94d1d99fa5bae,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6039130127475098790, guid: 9ff5c6d899db740448f94d1d99fa5bae,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0.38268322
-      objectReference: {fileID: 0}
-    - target: {fileID: 6039130127475098790, guid: 9ff5c6d899db740448f94d1d99fa5bae,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6039130127475098790, guid: 9ff5c6d899db740448f94d1d99fa5bae,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6039130127475098790, guid: 9ff5c6d899db740448f94d1d99fa5bae,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: -45
-      objectReference: {fileID: 0}
-    - target: {fileID: 6039130127475098790, guid: 9ff5c6d899db740448f94d1d99fa5bae,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6039130127475098810, guid: 9ff5c6d899db740448f94d1d99fa5bae,
-        type: 3}
-      propertyPath: damage
-      value: 194
-      objectReference: {fileID: 0}
-    - target: {fileID: 6039130127475098810, guid: 9ff5c6d899db740448f94d1d99fa5bae,
-        type: 3}
-      propertyPath: damageMask.m_Bits
-      value: 4294967295
-      objectReference: {fileID: 0}
-    - target: {fileID: 6039130127475098811, guid: 9ff5c6d899db740448f94d1d99fa5bae,
-        type: 3}
-      propertyPath: m_Name
-      value: DamageObstacleArea (2)
-      objectReference: {fileID: 0}
-    - target: {fileID: 6039130127475098811, guid: 9ff5c6d899db740448f94d1d99fa5bae,
-        type: 3}
-      propertyPath: m_Layer
-      value: 11
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 9ff5c6d899db740448f94d1d99fa5bae, type: 3}
 --- !u!1 &768955413
 GameObject:
   m_ObjectHideFlags: 0
@@ -4108,7 +4004,7 @@ Transform:
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 90
+  m_RootOrder: 89
   m_LocalEulerAnglesHint: {x: 0, y: -45, z: 0}
 --- !u!208 &768955418
 NavMeshObstacle:
@@ -4332,7 +4228,7 @@ Transform:
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 77
+  m_RootOrder: 76
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!208 &811341669
 NavMeshObstacle:
@@ -4444,7 +4340,7 @@ Transform:
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 33
+  m_RootOrder: 32
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!208 &824870611
 NavMeshObstacle:
@@ -4556,7 +4452,7 @@ Transform:
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 69
+  m_RootOrder: 68
   m_LocalEulerAnglesHint: {x: 0, y: -45, z: 0}
 --- !u!208 &867346574
 NavMeshObstacle:
@@ -4668,7 +4564,7 @@ Transform:
   m_LocalScale: {x: 4, y: 4, z: 4}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 32
+  m_RootOrder: 31
   m_LocalEulerAnglesHint: {x: 0, y: -45, z: 0}
 --- !u!208 &868970068
 NavMeshObstacle:
@@ -4780,7 +4676,7 @@ Transform:
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 35
+  m_RootOrder: 34
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!208 &994407449
 NavMeshObstacle:
@@ -5116,7 +5012,7 @@ Transform:
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 38
+  m_RootOrder: 37
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!208 &1054145928
 NavMeshObstacle:
@@ -5228,7 +5124,7 @@ Transform:
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 44
+  m_RootOrder: 43
   m_LocalEulerAnglesHint: {x: 0, y: -45, z: 0}
 --- !u!208 &1068227347
 NavMeshObstacle:
@@ -5340,7 +5236,7 @@ Transform:
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 83
+  m_RootOrder: 82
   m_LocalEulerAnglesHint: {x: 0, y: -45, z: 0}
 --- !u!208 &1079297524
 NavMeshObstacle:
@@ -5452,7 +5348,7 @@ Transform:
   m_LocalScale: {x: 5, y: 5, z: 5}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 50
+  m_RootOrder: 49
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!208 &1104275872
 NavMeshObstacle:
@@ -5564,7 +5460,7 @@ Transform:
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 30
+  m_RootOrder: 29
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!208 &1111497164
 NavMeshObstacle:
@@ -5676,7 +5572,7 @@ Transform:
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 91
+  m_RootOrder: 90
   m_LocalEulerAnglesHint: {x: 0, y: 45, z: 0}
 --- !u!208 &1113176010
 NavMeshObstacle:
@@ -5788,7 +5684,7 @@ Transform:
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 89
+  m_RootOrder: 88
   m_LocalEulerAnglesHint: {x: 0, y: -45, z: 0}
 --- !u!208 &1113989939
 NavMeshObstacle:
@@ -5900,7 +5796,7 @@ Transform:
   m_LocalScale: {x: 4, y: 4, z: 4}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 51
+  m_RootOrder: 50
   m_LocalEulerAnglesHint: {x: 0, y: 15, z: 0}
 --- !u!208 &1152284039
 NavMeshObstacle:
@@ -5918,110 +5814,6 @@ NavMeshObstacle:
   m_CarveOnlyStationary: 1
   m_Center: {x: 0, y: 0, z: 0}
   m_TimeToStationary: 0.5
---- !u!1001 &1196443969
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 6039130127475098789, guid: 9ff5c6d899db740448f94d1d99fa5bae,
-        type: 3}
-      propertyPath: enabledTime
-      value: 0.75
-      objectReference: {fileID: 0}
-    - target: {fileID: 6039130127475098789, guid: 9ff5c6d899db740448f94d1d99fa5bae,
-        type: 3}
-      propertyPath: disabledTime
-      value: 0.75
-      objectReference: {fileID: 0}
-    - target: {fileID: 6039130127475098789, guid: 9ff5c6d899db740448f94d1d99fa5bae,
-        type: 3}
-      propertyPath: firstTimePeriod
-      value: 0.78
-      objectReference: {fileID: 0}
-    - target: {fileID: 6039130127475098790, guid: 9ff5c6d899db740448f94d1d99fa5bae,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 94
-      objectReference: {fileID: 0}
-    - target: {fileID: 6039130127475098790, guid: 9ff5c6d899db740448f94d1d99fa5bae,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 6039130127475098790, guid: 9ff5c6d899db740448f94d1d99fa5bae,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -6.518
-      objectReference: {fileID: 0}
-    - target: {fileID: 6039130127475098790, guid: 9ff5c6d899db740448f94d1d99fa5bae,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6039130127475098790, guid: 9ff5c6d899db740448f94d1d99fa5bae,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 4.746
-      objectReference: {fileID: 0}
-    - target: {fileID: 6039130127475098790, guid: 9ff5c6d899db740448f94d1d99fa5bae,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.92387956
-      objectReference: {fileID: 0}
-    - target: {fileID: 6039130127475098790, guid: 9ff5c6d899db740448f94d1d99fa5bae,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6039130127475098790, guid: 9ff5c6d899db740448f94d1d99fa5bae,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0.38268343
-      objectReference: {fileID: 0}
-    - target: {fileID: 6039130127475098790, guid: 9ff5c6d899db740448f94d1d99fa5bae,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6039130127475098790, guid: 9ff5c6d899db740448f94d1d99fa5bae,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6039130127475098790, guid: 9ff5c6d899db740448f94d1d99fa5bae,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 45
-      objectReference: {fileID: 0}
-    - target: {fileID: 6039130127475098790, guid: 9ff5c6d899db740448f94d1d99fa5bae,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6039130127475098810, guid: 9ff5c6d899db740448f94d1d99fa5bae,
-        type: 3}
-      propertyPath: damage
-      value: 194
-      objectReference: {fileID: 0}
-    - target: {fileID: 6039130127475098810, guid: 9ff5c6d899db740448f94d1d99fa5bae,
-        type: 3}
-      propertyPath: damageMask.m_Bits
-      value: 4294967295
-      objectReference: {fileID: 0}
-    - target: {fileID: 6039130127475098811, guid: 9ff5c6d899db740448f94d1d99fa5bae,
-        type: 3}
-      propertyPath: m_Name
-      value: DamageObstacleArea (3)
-      objectReference: {fileID: 0}
-    - target: {fileID: 6039130127475098811, guid: 9ff5c6d899db740448f94d1d99fa5bae,
-        type: 3}
-      propertyPath: m_Layer
-      value: 11
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 9ff5c6d899db740448f94d1d99fa5bae, type: 3}
 --- !u!1 &1233617588
 GameObject:
   m_ObjectHideFlags: 0
@@ -6228,7 +6020,7 @@ Transform:
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 65
+  m_RootOrder: 64
   m_LocalEulerAnglesHint: {x: 0, y: -45, z: 0}
 --- !u!208 &1237270225
 NavMeshObstacle:
@@ -6340,7 +6132,7 @@ Transform:
   m_LocalScale: {x: 4, y: 4, z: 4}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 64
+  m_RootOrder: 63
   m_LocalEulerAnglesHint: {x: 0, y: -45, z: 0}
 --- !u!208 &1259457494
 NavMeshObstacle:
@@ -6452,7 +6244,7 @@ Transform:
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 55
+  m_RootOrder: 54
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!208 &1260332779
 NavMeshObstacle:
@@ -6676,7 +6468,7 @@ Transform:
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 57
+  m_RootOrder: 56
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!208 &1331243906
 NavMeshObstacle:
@@ -6996,7 +6788,7 @@ Transform:
   m_LocalScale: {x: 6, y: 6, z: 6}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 27
+  m_RootOrder: 26
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!208 &1420086600
 NavMeshObstacle:
@@ -7108,7 +6900,7 @@ Transform:
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 54
+  m_RootOrder: 53
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!208 &1453646719
 NavMeshObstacle:
@@ -7220,7 +7012,7 @@ Transform:
   m_LocalScale: {x: 4, y: 4, z: 4}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 63
+  m_RootOrder: 62
   m_LocalEulerAnglesHint: {x: 0, y: -45, z: 0}
 --- !u!208 &1459714778
 NavMeshObstacle:
@@ -7332,7 +7124,7 @@ Transform:
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 34
+  m_RootOrder: 33
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!208 &1488570006
 NavMeshObstacle:
@@ -7444,7 +7236,7 @@ Transform:
   m_LocalScale: {x: 4, y: 4, z: 4}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 37
+  m_RootOrder: 36
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!208 &1563570568
 NavMeshObstacle:
@@ -7556,7 +7348,7 @@ Transform:
   m_LocalScale: {x: 5, y: 5, z: 5}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 75
+  m_RootOrder: 74
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!208 &1629708018
 NavMeshObstacle:
@@ -7674,7 +7466,7 @@ Transform:
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 78
+  m_RootOrder: 77
   m_LocalEulerAnglesHint: {x: 0, y: 45, z: 0}
 --- !u!208 &1736818933
 NavMeshObstacle:
@@ -7786,7 +7578,7 @@ Transform:
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 29
+  m_RootOrder: 28
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!208 &1747826086
 NavMeshObstacle:
@@ -7898,7 +7690,7 @@ Transform:
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 47
+  m_RootOrder: 46
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!208 &1761332618
 NavMeshObstacle:
@@ -7916,110 +7708,6 @@ NavMeshObstacle:
   m_CarveOnlyStationary: 1
   m_Center: {x: 0, y: 0, z: 0}
   m_TimeToStationary: 0.5
---- !u!1001 &1801133786
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 6039130127475098789, guid: 9ff5c6d899db740448f94d1d99fa5bae,
-        type: 3}
-      propertyPath: enabledTime
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 6039130127475098789, guid: 9ff5c6d899db740448f94d1d99fa5bae,
-        type: 3}
-      propertyPath: disabledTime
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6039130127475098789, guid: 9ff5c6d899db740448f94d1d99fa5bae,
-        type: 3}
-      propertyPath: firstTimePeriod
-      value: 1.25
-      objectReference: {fileID: 0}
-    - target: {fileID: 6039130127475098790, guid: 9ff5c6d899db740448f94d1d99fa5bae,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 92
-      objectReference: {fileID: 0}
-    - target: {fileID: 6039130127475098790, guid: 9ff5c6d899db740448f94d1d99fa5bae,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 6039130127475098790, guid: 9ff5c6d899db740448f94d1d99fa5bae,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 8.48847
-      objectReference: {fileID: 0}
-    - target: {fileID: 6039130127475098790, guid: 9ff5c6d899db740448f94d1d99fa5bae,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6039130127475098790, guid: 9ff5c6d899db740448f94d1d99fa5bae,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0.29124376
-      objectReference: {fileID: 0}
-    - target: {fileID: 6039130127475098790, guid: 9ff5c6d899db740448f94d1d99fa5bae,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.96592593
-      objectReference: {fileID: 0}
-    - target: {fileID: 6039130127475098790, guid: 9ff5c6d899db740448f94d1d99fa5bae,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6039130127475098790, guid: 9ff5c6d899db740448f94d1d99fa5bae,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0.2588188
-      objectReference: {fileID: 0}
-    - target: {fileID: 6039130127475098790, guid: 9ff5c6d899db740448f94d1d99fa5bae,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6039130127475098790, guid: 9ff5c6d899db740448f94d1d99fa5bae,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6039130127475098790, guid: 9ff5c6d899db740448f94d1d99fa5bae,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 30
-      objectReference: {fileID: 0}
-    - target: {fileID: 6039130127475098790, guid: 9ff5c6d899db740448f94d1d99fa5bae,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6039130127475098810, guid: 9ff5c6d899db740448f94d1d99fa5bae,
-        type: 3}
-      propertyPath: damage
-      value: 194
-      objectReference: {fileID: 0}
-    - target: {fileID: 6039130127475098810, guid: 9ff5c6d899db740448f94d1d99fa5bae,
-        type: 3}
-      propertyPath: damageMask.m_Bits
-      value: 4294967295
-      objectReference: {fileID: 0}
-    - target: {fileID: 6039130127475098811, guid: 9ff5c6d899db740448f94d1d99fa5bae,
-        type: 3}
-      propertyPath: m_Name
-      value: DamageObstacleArea (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 6039130127475098811, guid: 9ff5c6d899db740448f94d1d99fa5bae,
-        type: 3}
-      propertyPath: m_Layer
-      value: 11
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 9ff5c6d899db740448f94d1d99fa5bae, type: 3}
 --- !u!1 &1810931621
 GameObject:
   m_ObjectHideFlags: 0
@@ -8114,7 +7802,7 @@ Transform:
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 70
+  m_RootOrder: 69
   m_LocalEulerAnglesHint: {x: 0, y: -45, z: 0}
 --- !u!208 &1810931626
 NavMeshObstacle:
@@ -8226,7 +7914,7 @@ Transform:
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 87
+  m_RootOrder: 86
   m_LocalEulerAnglesHint: {x: 0, y: 45, z: 0}
 --- !u!208 &1811102365
 NavMeshObstacle:
@@ -8338,7 +8026,7 @@ Transform:
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 72
+  m_RootOrder: 71
   m_LocalEulerAnglesHint: {x: 0, y: -45, z: 0}
 --- !u!208 &1843978804
 NavMeshObstacle:
@@ -8450,7 +8138,7 @@ Transform:
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 49
+  m_RootOrder: 48
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!208 &1879323523
 NavMeshObstacle:
@@ -8654,7 +8342,7 @@ Transform:
   m_LocalScale: {x: 5, y: 5, z: 5}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 26
+  m_RootOrder: 25
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!208 &1937714128
 NavMeshObstacle:
@@ -8766,7 +8454,7 @@ Transform:
   m_LocalScale: {x: 4, y: 4, z: 4}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 53
+  m_RootOrder: 52
   m_LocalEulerAnglesHint: {x: 0, y: 45, z: 0}
 --- !u!208 &1992332701
 NavMeshObstacle:
@@ -8878,7 +8566,7 @@ Transform:
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 59
+  m_RootOrder: 58
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!208 &2024815622
 NavMeshObstacle:
@@ -8990,7 +8678,7 @@ Transform:
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 61
+  m_RootOrder: 60
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!208 &2030303765
 NavMeshObstacle:
@@ -9214,7 +8902,7 @@ Transform:
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 56
+  m_RootOrder: 55
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!208 &2039690411
 NavMeshObstacle:
@@ -9326,7 +9014,7 @@ Transform:
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 40
+  m_RootOrder: 39
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!208 &2059414143
 NavMeshObstacle:
@@ -9438,7 +9126,7 @@ Transform:
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 84
+  m_RootOrder: 83
   m_LocalEulerAnglesHint: {x: 0, y: 45, z: 0}
 --- !u!208 &2079930174
 NavMeshObstacle:
@@ -9556,7 +9244,7 @@ Transform:
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 60
+  m_RootOrder: 59
   m_LocalEulerAnglesHint: {x: 0, y: 45, z: 0}
 --- !u!208 &2106881720
 NavMeshObstacle:
@@ -9668,7 +9356,7 @@ Transform:
   m_LocalScale: {x: 4, y: 4, z: 4}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 66
+  m_RootOrder: 65
   m_LocalEulerAnglesHint: {x: 0, y: -45, z: 0}
 --- !u!208 &2119427805
 NavMeshObstacle:
@@ -10649,90 +10337,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 407cf2b7a02cd384888a18bc04f067e0, type: 3}
---- !u!1001 &6039130128293402487
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 6039130127475098790, guid: 9ff5c6d899db740448f94d1d99fa5bae,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 25
-      objectReference: {fileID: 0}
-    - target: {fileID: 6039130127475098790, guid: 9ff5c6d899db740448f94d1d99fa5bae,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 6.110913
-      objectReference: {fileID: 0}
-    - target: {fileID: 6039130127475098790, guid: 9ff5c6d899db740448f94d1d99fa5bae,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6039130127475098790, guid: 9ff5c6d899db740448f94d1d99fa5bae,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 7.081981
-      objectReference: {fileID: 0}
-    - target: {fileID: 6039130127475098790, guid: 9ff5c6d899db740448f94d1d99fa5bae,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.92387956
-      objectReference: {fileID: 0}
-    - target: {fileID: 6039130127475098790, guid: 9ff5c6d899db740448f94d1d99fa5bae,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6039130127475098790, guid: 9ff5c6d899db740448f94d1d99fa5bae,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0.38268343
-      objectReference: {fileID: 0}
-    - target: {fileID: 6039130127475098790, guid: 9ff5c6d899db740448f94d1d99fa5bae,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6039130127475098790, guid: 9ff5c6d899db740448f94d1d99fa5bae,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6039130127475098790, guid: 9ff5c6d899db740448f94d1d99fa5bae,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: -45
-      objectReference: {fileID: 0}
-    - target: {fileID: 6039130127475098790, guid: 9ff5c6d899db740448f94d1d99fa5bae,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6039130127475098810, guid: 9ff5c6d899db740448f94d1d99fa5bae,
-        type: 3}
-      propertyPath: damage
-      value: 194
-      objectReference: {fileID: 0}
-    - target: {fileID: 6039130127475098810, guid: 9ff5c6d899db740448f94d1d99fa5bae,
-        type: 3}
-      propertyPath: damageMask.m_Bits
-      value: 4294967295
-      objectReference: {fileID: 0}
-    - target: {fileID: 6039130127475098811, guid: 9ff5c6d899db740448f94d1d99fa5bae,
-        type: 3}
-      propertyPath: m_Name
-      value: DamageObstacleArea
-      objectReference: {fileID: 0}
-    - target: {fileID: 6039130127475098811, guid: 9ff5c6d899db740448f94d1d99fa5bae,
-        type: 3}
-      propertyPath: m_Layer
-      value: 11
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 9ff5c6d899db740448f94d1d99fa5bae, type: 3}
 --- !u!1001 &6264197683212364372
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10975,7 +10579,7 @@ PrefabInstance:
     - target: {fileID: 8488485105859174310, guid: 1535d2f74365b4841bbff3d65e914169,
         type: 3}
       propertyPath: m_RootOrder
-      value: 82
+      value: 81
       objectReference: {fileID: 0}
     - target: {fileID: 8488485105859174310, guid: 1535d2f74365b4841bbff3d65e914169,
         type: 3}
