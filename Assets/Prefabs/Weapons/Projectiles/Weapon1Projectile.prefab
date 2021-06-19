@@ -46,7 +46,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damageLayerMask:
     serializedVersion: 2
-    m_Bits: 1591
+    m_Bits: 3639
   defaultProjectileData: {fileID: 11400000, guid: 27750ee89d22d1642bbe0a79bfcf165c,
     type: 2}
 --- !u!120 &1676788552495609747
