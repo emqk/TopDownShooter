@@ -4697,6 +4697,7 @@ MonoBehaviour:
   maps:
   - {fileID: 11400000, guid: 1ca0d0f3960a2a945969583202f889a3, type: 2}
   - {fileID: 11400000, guid: 87f9dd9c47b46a349aabf5a497b0ceb2, type: 2}
+  - {fileID: 11400000, guid: 6241621a6db724042a11fa4f7cc39e54, type: 2}
   weapons:
   - {fileID: 11400000, guid: 250249b682ab61b41a9bb85a58d74e8e, type: 2}
   - {fileID: 11400000, guid: 0f3b641c9aacb8c42bd3b4d0bbfad390, type: 2}
