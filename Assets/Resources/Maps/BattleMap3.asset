@@ -13,11 +13,11 @@ MonoBehaviour:
   m_Name: BattleMap3
   m_EditorClassIdentifier: 
   ID: BattleMap3
-  title: Battle Map Three
+  title: Deadly Barriers
   thumbnail: {fileID: 21300000, guid: b8bb352ae4a74e54b9b94077d199cccd, type: 3}
   cost: 2
-  description: Brrrr
-  prefab: {fileID: 5698117131018165361, guid: 327aa8654bc6f3e4b8cdcf1626acb7a4, type: 3}
+  description: Oh, wait, is it on!?
+  prefab: {fileID: 5698117131018165361, guid: 6d9fff09dcfcd9f43a94a05c4d415b93, type: 3}
   upgradeKit:
     ID: 
     upgradeDatas: []
