@@ -16,7 +16,7 @@ MonoBehaviour:
   title: Aggresive Triangle
   thumbnail: {fileID: 21300000, guid: 72e72616a0e02c34aa08c4d72f7decf5, type: 3}
   cost: 0
-  description: Simple pistol
+  description: Simple one-shoot weapon
   prefab: {fileID: 561045076462038700, guid: edfe0afd5267cf6499f4fc8a41c17917, type: 3}
   upgradeKit:
     ID: Weapon0Upgrade
@@ -28,6 +28,5 @@ MonoBehaviour:
   projectile: {fileID: -8417403802403430722, guid: 2ea9f4cd2428a6b4eb6be68185bc177b,
     type: 3}
   shootRate: 0.3
-  heatPerShot: 0
   accuracy: 5
   shootSound: {fileID: 8300000, guid: d360f5acd3be1864484f01d763821b6f, type: 3}

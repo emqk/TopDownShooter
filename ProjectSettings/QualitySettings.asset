@@ -118,5 +118,5 @@ QualitySettings:
       type: 2}
     excludedTargetPlatforms: []
   m_PerPlatformDefaultQuality:
-    Android: 2
-    Standalone: 2
+    Android: 0
+    Standalone: 0

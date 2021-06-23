@@ -16,7 +16,7 @@ MonoBehaviour:
   title: Double Strike
   thumbnail: {fileID: 21300000, guid: 3e8bb3ed2bf050e4f92bbb47dd8cbe83, type: 3}
   cost: 55
-  description: Two weapons in one!
+  description: Two deadly rifles
   prefab: {fileID: 5202384375074156633, guid: 8eb9242bceb45a14d8be8ee1ab1de470, type: 3}
   upgradeKit:
     ID: Weapon1Upgrade
@@ -28,6 +28,5 @@ MonoBehaviour:
   projectile: {fileID: -8417403802403430722, guid: d037a3d7271bd114b892fd0a5638ff58,
     type: 3}
   shootRate: 0.3
-  heatPerShot: 0
   accuracy: 2
   shootSound: {fileID: 8300000, guid: 79bff0f364daab541b2bd2268651be5b, type: 3}

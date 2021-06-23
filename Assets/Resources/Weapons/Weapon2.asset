@@ -16,7 +16,7 @@ MonoBehaviour:
   title: Shotgun
   thumbnail: {fileID: 21300000, guid: 266817a9ff4066f4baf0492baf8f010a, type: 3}
   cost: 82
-  description: Cool shotgun
+  description: Weapon with big damage and a spread shot
   prefab: {fileID: 34613934544883695, guid: 71b10a29d3b6db047a274680596db5bc, type: 3}
   upgradeKit:
     ID: Weapon2Upgrade
@@ -30,6 +30,5 @@ MonoBehaviour:
   projectile: {fileID: -8417403802403430722, guid: 6055fbda517994e418871501f8808fde,
     type: 3}
   shootRate: 1
-  heatPerShot: 0
   accuracy: 4
   shootSound: {fileID: 8300000, guid: b3e366afccc3f4e409e8abaf59a98a5b, type: 3}
