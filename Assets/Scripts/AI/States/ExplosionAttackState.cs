@@ -2,7 +2,7 @@ public class ExplosionAttackState : IState
 {
     // Data
     BombAI owner;
-    float timeToExplode = 2.0f;
+    float timeToExplode = 1.25f;
 
     // Runtime data
     TimerHandle timerHandle = null;
