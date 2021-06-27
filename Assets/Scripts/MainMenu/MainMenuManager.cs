@@ -83,6 +83,11 @@ public class MainMenuManager : MonoBehaviour
         SceneManager.LoadScene(sceneName);
     }
 
+    public void SetQualitySettings(int index)
+    {
+        QualitySettings.SetQualityLevel(index);
+    }
+
     public void Quit()
     {
         Application.Quit();

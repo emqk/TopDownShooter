@@ -210,6 +210,11 @@ public class MainMenuUIManager : MonoBehaviour
         purchaseProxy.gameObject.SetActive(true);
     }
 
+    public void SetQualitySettingsFromDropdown(TMP_Dropdown dropdown)
+    {
+        mainMenuManager.SetQualitySettings(dropdown.value);
+    }
+
     public void QuitAppPopup()
     {
         List<PopupButttonData> popupButttonData = new List<PopupButttonData>()
