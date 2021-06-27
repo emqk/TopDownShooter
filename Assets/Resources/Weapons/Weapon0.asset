@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: Weapon0
   title: Aggressive Triangle
-  thumbnail: {fileID: 21300000, guid: 72e72616a0e02c34aa08c4d72f7decf5, type: 3}
+  thumbnail: {fileID: 21300000, guid: de4851625b7e95d4ebc87e31a9bb5a99, type: 3}
   cost: 0
   description: Simple one-shoot weapon
   prefab: {fileID: 561045076462038700, guid: edfe0afd5267cf6499f4fc8a41c17917, type: 3}
