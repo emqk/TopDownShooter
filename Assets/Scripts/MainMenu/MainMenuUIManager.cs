@@ -10,6 +10,7 @@ public enum PanelType
 
 public class MainMenuUIManager : MonoBehaviour
 {
+    [SerializeField] MainMenuManager mainMenuManager;
     [SerializeField] TMP_Text goldText;
 
     [SerializeField] RectTransform upgradeElementsPanel;
@@ -207,5 +208,16 @@ public class MainMenuUIManager : MonoBehaviour
         mainMenuCanvas.gameObject.SetActive(false);
         playerRepresentation.SetActive(false);
         purchaseProxy.gameObject.SetActive(true);
+    }
+
+    public void QuitAppPopup()
+    {
+        List<PopupButttonData> popupButttonData = new List<PopupButttonData>()
+        {
+            new PopupButttonData {text = "No", onClick = PopupManager.instance.CloseLastPopup},
+            new PopupButttonData {text = "Yes", onClick = mainMenuManager.Quit}
+        };
+        PopupData popupData = new PopupData { title = "Quit", description = "Do you really want to quit the game?", popupType = PopupType.Bad, buttonsData = popupButttonData};
+        PopupManager.instance.CreatePopup(popupData);
     }
 }
