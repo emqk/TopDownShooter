@@ -88,6 +88,30 @@ public class MainMenuManager : MonoBehaviour
         QualitySettings.SetQualityLevel(index);
     }
 
+    public void ToggleVSync()
+    {
+        if (QualitySettings.vSyncCount == 0) // If disabled
+        {
+            SetVSync(true);
+        }
+        else
+        {
+            SetVSync(false);
+        }
+    }
+
+    public void SetVSync(bool enable)
+    {
+        if (enable)
+        {
+            QualitySettings.vSyncCount = 1;
+        }
+        else
+        {
+            QualitySettings.vSyncCount = 0;
+        }
+    }
+
     public void Quit()
     {
         Application.Quit();

@@ -215,6 +215,11 @@ public class MainMenuUIManager : MonoBehaviour
         mainMenuManager.SetQualitySettings(dropdown.value);
     }
 
+    public void ToggleVSync()
+    {
+        mainMenuManager.ToggleVSync();
+    }
+
     public void QuitAppPopup()
     {
         List<PopupButttonData> popupButttonData = new List<PopupButttonData>()
