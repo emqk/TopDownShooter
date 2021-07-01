@@ -127,7 +127,11 @@ public class MainMenuUIManager : MonoBehaviour
     public void RefreshWeaponsUI()
     {
         WeaponData weapon = Database.instance.GetWeaponData();
-        UpgradeKitData upgradeKitData = Database.instance.GetUpgradeKitDataByID(weapon.UpgradeKit.ID);
+        UpgradeKitData upgradeKitData = null;
+
+        // Get upgrade kit only if weapon is not null
+        if (weapon)
+            upgradeKitData = Database.instance.GetUpgradeKitDataByID(weapon.UpgradeKit.ID);
 
         RefreshWeaponIcon(weapon);
         ShowUpgrades(upgradeKitData);
