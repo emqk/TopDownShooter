@@ -12,4 +12,5 @@ public struct SpawnData
 public struct SpawnWave
 {
     public List<SpawnData> spawnData;
+    public List<CollectableSpawnWaveData> collectableSpawnData;
 }

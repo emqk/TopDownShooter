@@ -92,8 +92,11 @@ public class SpawnManager : MonoBehaviour
 
         isWaitingForNextWave = false;
 
-        //Start spawning AI
+
+        // Handle spawn wave
         SpawnWave currWave = spawnWaves[currentWaveIndex];
+
+        // Start spawning AI
         foreach (SpawnData spawnData in currWave.spawnData)
         {
             StartSpawning(spawnData);
@@ -113,10 +116,19 @@ public class SpawnManager : MonoBehaviour
             //Show notification about ending wave
             ScreenNotificationData screenNotification = new ScreenNotificationData
             (
-                "Enemies defeated!",
-                2
+                "Enemies defeated!", 2
             );
             NotificationManager.instance.ShowNotification(screenNotification);
+
+            // Spawn collectables
+            SpawnWave currWave = spawnWaves[currentWaveIndex];
+            foreach (CollectableSpawnWaveData collectableSpawnWaveData in currWave.collectableSpawnData)
+            {
+                for (int i = 0; i < collectableSpawnWaveData.amountToSpawn; i++)
+                {
+                    SpawnAtRandomOnNavMesh(collectableSpawnWaveData.toSpawn.gameObject);
+                }
+            }
 
             isWaitingForNextWave = true;
         }
@@ -144,11 +156,11 @@ public class SpawnManager : MonoBehaviour
         {
             yield return new WaitForSeconds(spawnData.spawnInterval);
             //SpawnAtRandomSpawner(spawnData.toSpawn);
-            SpawnAtRandom(spawnData.toSpawn.GetReference());
+            SpawnAtRandomOnNavMesh(spawnData.toSpawn.GetReference().gameObject);
         }
     }
 
-    void SpawnAtRandom(AI toSpawn)
+    void SpawnAtRandomOnNavMesh(GameObject toSpawn)
     {
         // Pick the first indice of a random triangle in the nav mesh
         int navMeshTrisMax = Random.Range(0, navMeshTriangulation.indices.Length - 3);
@@ -157,7 +169,7 @@ public class SpawnManager : MonoBehaviour
         Vector3 spawnPoint = Vector3.Lerp(navMeshTriangulation.vertices[navMeshTriangulation.indices[navMeshTrisMax]], navMeshTriangulation.vertices[navMeshTriangulation.indices[navMeshTrisMax + 1]], Random.value);
         Vector3.Lerp(spawnPoint, navMeshTriangulation.vertices[navMeshTriangulation.indices[navMeshTrisMax + 2]], Random.Range(0.0f, 1.0f));
 
-        AI aiInstance = Instantiate(toSpawn, spawnPoint, Quaternion.Euler(0, Random.Range(0.0f, 360.0f), 0));
+        GameObject instance = Instantiate(toSpawn, spawnPoint, Quaternion.Euler(0, Random.Range(0.0f, 360.0f), 0));
         Debug.Log("Spawned!");
     }
 }
