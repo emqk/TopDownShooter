@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: BattleMap1
   title: Squared madness
-  thumbnail: {fileID: 21300000, guid: 6d469d5ba14d00f4fbc886c1e50e79c3, type: 3}
+  thumbnail: {fileID: 21300000, guid: e0d4bdc81d1deed41a2a0749fd39cd10, type: 3}
   cost: 1
   description: Can you find a path between cubes?
   prefab: {fileID: 5698117131018165361, guid: 6e28ad6e99b515d4c8e7be6f3280995c, type: 3}

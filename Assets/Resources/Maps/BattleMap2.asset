@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: BattleMap2
   title: Red Cylinder
-  thumbnail: {fileID: 21300000, guid: d3afe748ed0d54047a6374c99b322e81, type: 3}
+  thumbnail: {fileID: 21300000, guid: ac3f02596b2fa274aa80a782fbd9c5a9, type: 3}
   cost: 2
   description: Try to avoid red cylinders
   prefab: {fileID: 5698117131018165361, guid: bbf22a671551e3c4e8e279b03de4b055, type: 3}
