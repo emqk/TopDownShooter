@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 4191700807602004744}
   - component: {fileID: 5387082794104473129}
   m_Layer: 0
-  m_Name: CollectableHP
+  m_Name: HP1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -109,5 +109,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   collectType: 0
-  value: 5
+  value: 6
   collectSound: {fileID: 8300000, guid: 19135497e448a004f8639f3f06205300, type: 3}
