@@ -15,7 +15,7 @@ MonoBehaviour:
   ID: Weapon0_Damage
   upgradeName: Turbo Damage!
   upgradeType: 2
-  thumbnail: {fileID: 21300000, guid: 23223a7c86f2ac7489cdb1635c85ed4a, type: 3}
+  thumbnail: {fileID: 21300000, guid: 523952a29b362ec4d9738e0a16969a58, type: 3}
   powerAndCost:
   - power: 1.25
     cost: 10

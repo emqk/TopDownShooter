@@ -15,7 +15,7 @@ MonoBehaviour:
   ID: Weapon0_Speed
   upgradeName: Turbo Speed
   upgradeType: 3
-  thumbnail: {fileID: 21300000, guid: 266817a9ff4066f4baf0492baf8f010a, type: 3}
+  thumbnail: {fileID: 21300000, guid: a270955c7a1d2154589b8281f9032708, type: 3}
   powerAndCost:
   - power: 1.33
     cost: 18

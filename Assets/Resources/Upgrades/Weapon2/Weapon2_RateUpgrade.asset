@@ -15,7 +15,7 @@ MonoBehaviour:
   ID: Weapon2_Rate
   upgradeName: Turbo Rate
   upgradeType: 1
-  thumbnail: {fileID: 21300000, guid: 266817a9ff4066f4baf0492baf8f010a, type: 3}
+  thumbnail: {fileID: 21300000, guid: af10e91f4ed16a74bb1e95705461d42b, type: 3}
   powerAndCost:
   - power: 0.8
     cost: 21
