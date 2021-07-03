@@ -170,6 +170,6 @@ public class SpawnManager : MonoBehaviour
         Vector3.Lerp(spawnPoint, navMeshTriangulation.vertices[navMeshTriangulation.indices[navMeshTrisMax + 2]], Random.Range(0.0f, 1.0f));
 
         GameObject instance = Instantiate(toSpawn, spawnPoint, Quaternion.Euler(0, Random.Range(0.0f, 360.0f), 0));
-        Debug.Log("Spawned!");
+        //Debug.Log("Spawned!");
     }
 }
