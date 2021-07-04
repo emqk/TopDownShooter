@@ -83,6 +83,7 @@ public class UpgradeUIElement : Purchasable
     {
         PowerAndCostPair nextPowerAndCost = myDataInstance.GetNextPowerCostPair();
 
+        title.text = myDataInstance.UpgradeTypeAsText;
         thumbnail.sprite = myDataInstance.Thumbnail;
         costText.text = nextPowerAndCost != null ? myDataInstance.GetNextPowerCostPair().cost.ToString("f0") : "_";
         levelsText.text = myDataInstance.CanBeUpgraded() ? (myDataInstance.CurrentLevel + 1) + " / " + myDataInstance.PowerAndCost.Count : "MAX!";

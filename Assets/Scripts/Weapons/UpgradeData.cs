@@ -107,6 +107,7 @@ public class UpgradeDataInstance
     public string GetID { get => upgradeData.GetID; }
     public string UpgradeName { get => upgradeData.UpgradeName; }
     public UpgradeType UpgradeType { get => upgradeData.UpgradeType; }
+    public string UpgradeTypeAsText { get => upgradeData.GetUpgradeTypeAsText(); }
     public Sprite Thumbnail { get => upgradeData.Thumbnail; }
     public List<PowerAndCostPair> PowerAndCost { get => upgradeData.PowerAndCost; }
     public int MaxLevels { get => upgradeData.MaxLevels; }
@@ -178,6 +179,19 @@ public class UpgradeData : ScriptableObject
     public Sprite Thumbnail { get => thumbnail; }
     public List<PowerAndCostPair> PowerAndCost { get => powerAndCost; }
     public int MaxLevels { get => PowerAndCost.Count; }
+
+
+    public string GetUpgradeTypeAsText()
+    {
+        switch (upgradeType)
+        {
+            case UpgradeType.None:      return "None";
+            case UpgradeType.Rate:      return "Rate";
+            case UpgradeType.Damage:    return "Damage";
+            case UpgradeType.Speed:     return "Speed";
+            default:                    return "None";
+        }
+    }
 }
 
 [System.Serializable]
