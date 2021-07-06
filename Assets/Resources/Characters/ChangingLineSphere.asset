@@ -10,18 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 859a0a37b5c3b8c428d87721e90e74b4, type: 3}
-  m_Name: FarmMan
+  m_Name: ChangingLineSphere
   m_EditorClassIdentifier: 
-  ID: FarmMan
-  title: Farm Man
-  thumbnail: {fileID: 21300000, guid: 3a86580156493b843af19bcc82524eeb, type: 3}
-  cost: 5
-  description: 'Basic character
-
-'
-  prefab: {fileID: 8651642329860659847, guid: 92ad147aa13cc204b9c90c532dc840ab, type: 3}
+  ID: ChangingLineSphere
+  title: Mystical Line
+  thumbnail: {fileID: 21300000, guid: 266817a9ff4066f4baf0492baf8f010a, type: 3}
+  cost: 11
+  description: Outer space object
+  prefab: {fileID: 2692926944869614407, guid: ef2b4a511a0b0a04292d0ae689fadee5, type: 3}
   upgradeKit:
     ID: 
     upgradeDatas: []
-  maxHealth: 80
+  maxHealth: 100
   movementSpeed: 10
