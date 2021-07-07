@@ -15,7 +15,7 @@ MonoBehaviour:
   ID: SphereMan
   title: Common sphere
   thumbnail: {fileID: 21300000, guid: 266817a9ff4066f4baf0492baf8f010a, type: 3}
-  cost: 1
+  cost: 0
   description: Just a sphere you can find on a street
   prefab: {fileID: 2692926944869614407, guid: 8313da45b0914af4384d84832a5a3280, type: 3}
   upgradeKit:

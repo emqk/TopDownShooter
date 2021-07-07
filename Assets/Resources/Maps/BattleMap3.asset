@@ -15,7 +15,7 @@ MonoBehaviour:
   ID: BattleMap3
   title: Deadly Barriers
   thumbnail: {fileID: 21300000, guid: 666b697ae0dd5bb47bc6be0bcd7f278e, type: 3}
-  cost: 2
+  cost: 150
   description: Oh, wait, is it on!?
   prefab: {fileID: 5698117131018165361, guid: 6d9fff09dcfcd9f43a94a05c4d415b93, type: 3}
   upgradeKit:
