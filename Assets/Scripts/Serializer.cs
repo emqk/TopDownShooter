@@ -6,6 +6,7 @@ public class SerializeData
 {
     public DatabaseSerializationData databaseData;
     public MoneySerializationData moneyData;
+    public SettingsData settingsData;
 }
 
 public static class Serializer
@@ -20,7 +21,8 @@ public static class Serializer
         SerializeData dataToSerialize = new SerializeData
         {
             databaseData = Database.instance.GetSerializationData(),
-            moneyData = MoneyManager.GetMoneyData()
+            moneyData = MoneyManager.GetMoneyData(),
+            settingsData = SettingsManager.GetSettingsData()
         };
         string json = JsonUtility.ToJson(dataToSerialize);
         File.WriteAllText(fullPath, json);
@@ -34,6 +36,7 @@ public static class Serializer
         {
             Database.instance.SetDatabaseFromData(serializeData.databaseData);
             MoneyManager.SetMoneyFromData(serializeData.moneyData);
+            SettingsManager.SetSettingsFromData(serializeData.settingsData);
         }
     }
 

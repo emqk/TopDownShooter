@@ -214,22 +214,6 @@ public class MainMenuUIManager : MonoBehaviour
         purchaseProxy.gameObject.SetActive(true);
     }
 
-    public void SetSettingsBasedOnData(SettingsData settingsData)
-    {
-        mainMenuManager.SetQualitySettings(settingsData.qualityIndex);
-        mainMenuManager.SetVSync(settingsData.vSync);
-    }
-
-    public void SetQualitySettingsFromDropdown(TMP_Dropdown dropdown)
-    {
-        mainMenuManager.SetQualitySettings(dropdown.value);
-    }
-
-    public void SetVSync(Toggle toggle)
-    {
-        mainMenuManager.SetVSync(toggle.isOn);
-    }
-
     public void QuitAppPopup()
     {
         List<PopupButttonData> popupButttonData = new List<PopupButttonData>()

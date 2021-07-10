@@ -7,6 +7,7 @@ public class MainMenuManager : MonoBehaviour
 {
     [SerializeField] LoadingScreenPanelUI loadingScreenPrefab;
 
+
     private void Start()
     {
         Serializer.Load();
@@ -81,23 +82,6 @@ public class MainMenuManager : MonoBehaviour
     {
         yield return new WaitForEndOfFrame();
         SceneManager.LoadScene(sceneName);
-    }
-
-    public void SetQualitySettings(int index)
-    {
-        QualitySettings.SetQualityLevel(index);
-    }
-
-    public void SetVSync(bool enable)
-    {
-        if (enable)
-        {
-            QualitySettings.vSyncCount = 1;
-        }
-        else
-        {
-            QualitySettings.vSyncCount = 0;
-        }
     }
 
     public void Quit()
