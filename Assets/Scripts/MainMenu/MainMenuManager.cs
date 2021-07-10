@@ -6,11 +6,30 @@ using UnityEngine.SceneManagement;
 public class MainMenuManager : MonoBehaviour
 {
     [SerializeField] LoadingScreenPanelUI loadingScreenPrefab;
+    [SerializeField] List<PurchaseData> startingPurchaseDatas;
 
+    public static MainMenuManager instance;
+
+    private void Awake()
+    {
+        instance = this;
+    }
 
     private void Start()
     {
-        Serializer.Load();
+        if (Serializer.SaveFileExist())
+        {
+            Serializer.Load();
+        }
+        else
+        {
+            Debug.Log("Save file not found. Starting new game");
+            foreach (PurchaseData data in startingPurchaseDatas)
+            {
+                Database.instance.AddPurchaseElementID(data);
+                EquipPurchaseData(data);
+            }
+        }
         MainMenuUIManager.instance.RefreshCharacterSkin();
         MainMenuUIManager.instance.RefreshWeaponsUI();
         MainMenuUIManager.instance.RefreshMapUI();
@@ -20,6 +39,29 @@ public class MainMenuManager : MonoBehaviour
     {
         Time.timeScale = 1;
         AdsManager.instance.AdvanceCounter();
+    }
+
+    public void EquipPurchaseData(PurchaseData purchaseData)
+    {
+
+        if (purchaseData as WeaponData)
+        {
+            UpgradeKitData upgradeKitData = Database.instance.GetUpgradeKitDataByID(purchaseData.UpgradeKit.ID);
+
+            Database.instance.SetWeaponData((WeaponData)purchaseData);
+            Database.instance.SetWeaponUpgradeKitData(upgradeKitData);
+            MainMenuUIManager.instance.RefreshWeaponsUI();
+        }
+        else if (purchaseData as CharacterData)
+        {
+            Database.instance.SetCharacterData((CharacterData)purchaseData);
+            MainMenuUIManager.instance.RefreshVisualizationFromData(purchaseData);
+        }
+        else if (purchaseData as MapData)
+        {
+            Database.instance.SetMapData((MapData)purchaseData);
+            MainMenuUIManager.instance.RefreshMapUI();
+        }
     }
 
     public void Play()

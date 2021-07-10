@@ -69,8 +69,8 @@ public class UpgradeUIElement : Purchasable
         if (Buy())
         {
             Refresh();
-            Serializer.Serialize();
             Debug.Log("Item has been upgraded!");
+            Serializer.Serialize();
         }
         else
         {

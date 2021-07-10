@@ -6936,6 +6936,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   loadingScreenPrefab: {fileID: 7579136676012988362, guid: 8ad89b41cda58ef4f9c28d38fbd239e0,
     type: 3}
+  startingPurchaseDatas:
+  - {fileID: 11400000, guid: 250249b682ab61b41a9bb85a58d74e8e, type: 2}
+  - {fileID: 11400000, guid: dff96d7855420f34c858bc73a7b1fba2, type: 2}
+  - {fileID: 11400000, guid: 1ca0d0f3960a2a945969583202f889a3, type: 2}
 --- !u!4 &1944854522
 Transform:
   m_ObjectHideFlags: 0

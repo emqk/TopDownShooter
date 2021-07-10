@@ -53,4 +53,9 @@ public static class Serializer
         Debug.LogError("Can't find file at: " + fullPath);
         return null;
     }
+
+    public static bool SaveFileExist()
+    {
+        return File.Exists(fullPath);
+    }
 }
