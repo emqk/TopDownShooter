@@ -22,7 +22,7 @@ public class Weapon : MonoBehaviour
         upgradeData = _upgradeData;
 
         UpgradeDataInstance shootRateUpgrade = UpgradeData.GetUpgradeDataInstanceByType(UpgradeType.Rate);
-        float shootRateUpgradeValue = weaponData != null && shootRateUpgrade.GetCurrentPowerCostPair() != null ? shootRateUpgrade.GetCurrentPowerCostPair().power : 1;
+        float shootRateUpgradeValue = shootRateUpgrade != null && weaponData != null && shootRateUpgrade.GetCurrentPowerCostPair() != null ? shootRateUpgrade.GetCurrentPowerCostPair().power : 1;
         float newShootRate = weaponData.ShootRate * shootRateUpgradeValue;
         weaponData.SetShootRate(newShootRate);
     }

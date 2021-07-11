@@ -12,9 +12,12 @@ public class Collectable : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        InvokeCorrectCollectEffect(other.gameObject);
-        AudioManager.PlayClip2D(collectSound);
-        Destroy(gameObject);
+        if (other.GetComponent<Player>())
+        {
+            InvokeCorrectCollectEffect(other.gameObject);
+            AudioManager.PlayClip2D(collectSound);
+            Destroy(gameObject);
+        }
     }
 
     void InvokeCorrectCollectEffect(GameObject obj)
