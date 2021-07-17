@@ -16,6 +16,23 @@ public class DamageManager : MonoBehaviour
         player = PlayerController.instance.GetControlledPlayer();    
     }
 
+    public void PerformApplyRadialDamageToAllInRadius(int damage, Vector3 source, float radius)
+    {
+        // Show radial damage visualization
+        ParticleManager.instance.SpawnRadialDamageVisualizer(source, radius * 2.0f);
+
+        // Damage player if in range
+        Collider[] overlappingObjects = Physics.OverlapSphere(source, radius);
+        foreach (Collider obj in overlappingObjects)
+        {
+            IDamageable damageable = obj.GetComponent<IDamageable>();
+            if (damageable != null)
+            {
+                ApplyDamageToObject(damage, damageable);
+            }
+        }
+    }
+
     public bool PerformApplyRadialDamageToPlayer(int damage, Vector3 source, float radius)
     {
         // Show radial damage visualization
@@ -31,6 +48,7 @@ public class DamageManager : MonoBehaviour
 
         return false;
     }
+
 
     public void ApplyDamageToPlayer(int damage)
     {

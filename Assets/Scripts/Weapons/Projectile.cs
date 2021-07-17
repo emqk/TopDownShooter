@@ -31,18 +31,23 @@ public class Projectile : MonoBehaviour
         return defaultProjectileData;
     }
 
+    public virtual void OnHit(RaycastHit hit)
+    {
+        IDamageable damageable = hit.collider.GetComponent<IDamageable>();
+        if (damageable != null)
+        {
+            int damageToGive = Random.Range(upgradedProjectileData.DamageRange.x, upgradedProjectileData.DamageRange.y);
+            DamageManager.instance.ApplyDamageToObject(damageToGive, damageable);
+        }
+
+        ParticleManager.instance.SpawnHitParticle(hit.point, Quaternion.LookRotation(hit.normal));
+    }
+
     void CheckCollision()
     {
         if (Physics.Linecast(lastFramePos, transform.position, out hit, damageLayerMask))
         {
-            IDamageable damageable = hit.collider.GetComponent<IDamageable>();
-            if (damageable != null)
-            {
-                int damageToGive = Random.Range(upgradedProjectileData.DamageRange.x, upgradedProjectileData.DamageRange.y);
-                DamageManager.instance.ApplyDamageToObject(damageToGive, damageable);
-            }
-
-            ParticleManager.instance.SpawnHitParticle(hit.point, Quaternion.LookRotation(hit.normal));
+            OnHit(hit);
             Destroy(gameObject);
         }
     }

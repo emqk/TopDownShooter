@@ -7135,6 +7135,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 250249b682ab61b41a9bb85a58d74e8e, type: 2}
   - {fileID: 11400000, guid: 0f3b641c9aacb8c42bd3b4d0bbfad390, type: 2}
   - {fileID: 11400000, guid: e62aa7c450f302e4ebffb638e9facabc, type: 2}
+  - {fileID: 11400000, guid: a0e88919911753d4f93b3d599726f2ea, type: 2}
   characterNameText: {fileID: 368558932}
   characterVisualizationObjParent: {fileID: 1132194250}
   weaponNameText: {fileID: 312810585}
