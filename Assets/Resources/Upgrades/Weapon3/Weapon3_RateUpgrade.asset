@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 350c285954b356841b6695fb460124af, type: 3}
   m_Name: Weapon3_RateUpgrade
   m_EditorClassIdentifier: 
-  ID: Weapon2_Rate
+  ID: Weapon3_Rate
   upgradeName: Turbo Rate
   upgradeType: 1
   thumbnail: {fileID: 21300000, guid: af10e91f4ed16a74bb1e95705461d42b, type: 3}

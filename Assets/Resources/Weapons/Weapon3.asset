@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: Weapon3
   m_EditorClassIdentifier: 
   ID: Weapon3
-  title: Rocket Laucher
-  thumbnail: {fileID: 21300000, guid: da26a91aacdb9d54190f565cbc8a48ed, type: 3}
+  title: Rocket Launcher
+  thumbnail: {fileID: 21300000, guid: af519e231da7bdd479b6aca587784439, type: 3}
   cost: 82
-  description: '[DESCRIPTION HERE]'
+  description: Deadly damage on small range
   prefab: {fileID: 34613934544883695, guid: 2fb578c470c8a164b9695f5139be4036, type: 3}
   upgradeKit:
     ID: Weapon3Upgrade
@@ -25,10 +25,8 @@ MonoBehaviour:
       currentLevel: -1
     - upgradeData: {fileID: 11400000, guid: e3e718322db51054faaa3f06f5967abd, type: 2}
       currentLevel: -1
-    - upgradeData: {fileID: 11400000, guid: 9129735169250b14b96bf579bfce0422, type: 2}
-      currentLevel: -1
   projectile: {fileID: 7057989529095181421, guid: 8a38d3e2e6b6b8742b4693930f321a46,
     type: 3}
-  shootRate: 0.25
-  accuracy: 4
+  shootRate: 1
+  accuracy: 1
   shootSound: {fileID: 8300000, guid: b3e366afccc3f4e409e8abaf59a98a5b, type: 3}

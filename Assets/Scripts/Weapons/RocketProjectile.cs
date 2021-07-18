@@ -6,7 +6,7 @@ public class RocketProjectile : Projectile
 
     public override void OnHit(RaycastHit hit)
     {
-        int damageToGive = Random.Range(GetDefaultProjectileData().DamageRange.x, GetDefaultProjectileData().DamageRange.y);
+        int damageToGive = Random.Range(upgradedProjectileData.DamageRange.x, upgradedProjectileData.DamageRange.y);
         DamageManager.instance.PerformApplyRadialDamageToAllInRadius(damageToGive, transform.position, damageRadius);
     }
 }

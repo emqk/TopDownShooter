@@ -47,7 +47,7 @@ MonoBehaviour:
   damageLayerMask:
     serializedVersion: 2
     m_Bits: 3639
-  defaultProjectileData: {fileID: 11400000, guid: ce96b1beab1db094981633c524d33133,
+  defaultProjectileData: {fileID: 11400000, guid: 151968d69804a3045b1e9c26151b4b51,
     type: 2}
 --- !u!1 &7562454889431744363
 GameObject:

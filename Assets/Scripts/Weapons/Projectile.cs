@@ -4,7 +4,7 @@ public class Projectile : MonoBehaviour
 {
     [SerializeField] LayerMask damageLayerMask;
     [SerializeField] ProjectileData defaultProjectileData;
-    ProjectileData upgradedProjectileData; //Projectile data agter applying upgrades
+    protected ProjectileData upgradedProjectileData; //Projectile data agter applying upgrades
     Vector3 lastFramePos = new Vector3();
     RaycastHit hit = new RaycastHit();
 
